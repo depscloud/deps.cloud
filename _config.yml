@@ -1,0 +1,34 @@
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: "<!--more-->"
+permalink: /blog/:year/:month/:day/:title/
+paginate_path: /blog/page/:num/
+paginate: 5
+
+repository: https://github.com/deps-cloud/deps.cloud
+
+env: production
+
+name: "deps.cloud"
+url: https://www.deps.cloud
+
+exclude:
+  - .idea
+  - Gemfile
+  - Gemfile.lock
+  - s3_website.yml
+  - deploy.sh
+
+include:
+  - pages
+
+keep_files:
+  - statics
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-watch
+
+jekyll-sitemap:
+  source: '_site'

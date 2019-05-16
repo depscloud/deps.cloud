@@ -1,0 +1,7 @@
+/.idea
+/*.iml
+/_site
+
+Gemfile.lock
+.jekyll-metadata
+deploy.sh
