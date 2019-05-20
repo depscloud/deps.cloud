@@ -1,0 +1,41 @@
+body {
+    font-size: 14pt;
+}
+
+.banner {
+    padding-top: 162px;
+    height: 558px;
+    background-image: url(/statics/img/bg.png);
+    background-color: lightblue;
+}
+
+.bannertitle {
+    font-size: 72px;
+    font-weight: bold;
+    text-shadow: 0px 0px 25px #f5f5f5;
+}
+
+@media (min-width: 992px) {
+    .banner {
+        padding-top: 98px;
+    }
+
+    .bannertitle{
+        font-size: 110pt;
+    }
+}
+
+.bannertext {
+    font-size: 22pt;
+    text-shadow: 0px 0px 25px #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.buildfile {
+    margin: 1rem 0 0;
+    font-style: italic;
+}
+
+.buildlang {
+    font-weight: bold;
+}
