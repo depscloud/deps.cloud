@@ -3,82 +3,111 @@ layout: default
 ---
 <div class="banner">
     <div class="container text-center">
-        <div class="bannertitle">deps.cloud</div>
 
-        <div class="bannertext">Helping track and monitor your project dependencies</div>
+        <div class="bannertext">
+            Helping companies track, monitor, and engage with<br>
+            project dependencies and dependents
+        </div>
 
         <div>
             <a class="btn btn-lg btn-light" href="https://github.com/deps-cloud/deps-cloud-project">Follow on GitHub</a>
+            <a class="btn btn-lg btn-light" href="/docs/">Get Started</a>
         </div>
     </div>
 </div>
 
 <div class="container text-center" style="padding: 70px 0;">
     <div style="padding-bottom: 70px;">
-        <h1 style="padding-bottom: 25px;">deps.cloud is currently under construction</h1>
-
         <div>
             We provide a set of services that enable automation and analysis of your projects and their dependencies.
             It works by crawling repositories from GitHub, GitLab, and BitBucket, looking for various dependency management files.
             We then extract, store, and index dependent library information into a comprehensive graph.
+            This information is then exposed through both gRPC and RESTful endpoints.
         </div>
     </div>
 
     <div style="padding-bottom: 70px;">
-        <h1 style="margin-bottom: 50px;">Supported Dependency Management Files</h1>
+        <h1 style="margin-bottom: 50px;">Supported Language Files</h1>
 
         <div class="row">
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/gradle.png" height="75"/>
-                <p class="buildfile">build.gradle</p>
-                <p class="buildlang">Java</p>
+            <div class="col-2"></div>
+            <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-java-tab" data-toggle="pill" href="#v-pills-java" role="tab" aria-controls="v-pills-java" aria-selected="true">Java</a>
+                    <a class="nav-link" id="v-pills-golang-tab" data-toggle="pill" href="#v-pills-golang" role="tab" aria-controls="v-pills-golang" aria-selected="false">Golang</a>
+                    <a class="nav-link" id="v-pills-nodejs-tab" data-toggle="pill" href="#v-pills-nodejs" role="tab" aria-controls="v-pills-nodejs" aria-selected="false">NodeJS</a>
+                    <a class="nav-link" id="v-pills-php-tab" data-toggle="pill" href="#v-pills-php" role="tab" aria-controls="v-pills-php" aria-selected="false">PHP</a>
+                    <a class="nav-link" id="v-pills-rust-tab" data-toggle="pill" href="#v-pills-rust" role="tab" aria-controls="v-pills-rust" aria-selected="false">Rust</a>
+                </div>
             </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/rust.png" height="75"/>
-                <p class="buildfile">cargo.toml</p>
-                <p class="buildlang">Rust</p>
+
+            <div class="col-6">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-java" role="tabpanel" aria-labelledby="v-pills-java-tab">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/statics/img/gradle.png" height="75"/>
+                                <p class="buildfile">build.gradle</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/statics/img/ivy.png" height="75"/>
+                                <p class="buildfile">ivy.xml</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/statics/img/maven.png" height="75"/>
+                                <p class="buildfile">pom.xml</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-golang" role="tabpanel" aria-labelledby="v-pills-golang-tab">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/statics/img/go.png" height="75"/>
+                                <p class="buildfile">Godeps.json</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/statics/img/go.png" height="75"/>
+                                <p class="buildfile">go.mod</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="/statics/img/go.png" height="75"/>
+                                <p class="buildfile">Gopkg.toml</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-nodejs" role="tabpanel" aria-labelledby="v-pills-nodejs-tab">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/statics/img/npm.png" height="75"/>
+                                <p class="buildfile">package.json</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-php" role="tabpanel" aria-labelledby="v-pills-php-tab">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/statics/img/php.png" height="75"/>
+                                <p class="buildfile">composer.json</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-rust" role="tabpanel" aria-labelledby="v-pills-rust-tab">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="/statics/img/rust.png" height="75"/>
+                                <p class="buildfile">cargo.toml</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/php.png" height="75"/>
-                <p class="buildfile">composer.json</p>
-                <p class="buildlang">PHP</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/go.png" height="75"/>
-                <p class="buildfile">Godeps.json</p>
-                <p class="buildlang">Golang</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/go.png" height="75"/>
-                <p class="buildfile">go.mod</p>
-                <p class="buildlang">Golang</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/go.png" height="75"/>
-                <p class="buildfile">Gopkg.toml</p>
-                <p class="buildlang">Golang</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/ivy.png" height="75"/>
-                <p class="buildfile">ivy.xml</p>
-                <p class="buildlang">Java</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/npm.png" height="75"/>
-                <p class="buildfile">package.json</p>
-                <p class="buildlang">NodeJS</p>
-            </div>
-            <div class="col-xs-6 col-md-3 col-lg-2">
-                <img src="/statics/img/maven.png" height="75"/>
-                <p class="buildfile">pom.xml</p>
-                <p class="buildlang">Java</p>
-            </div>
+            <div class="col-2"></div>
         </div>
     </div>
 </div>
 
-<div style="height: 200px; background-color: #efefef;">
+<div style="padding: 54px 0 27px; background-color: #efefef;">
     <div class="text-center">
-
+        deps.cloud - Copyright &copy; 2019
     </div>
 </div>
