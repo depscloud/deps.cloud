@@ -5,8 +5,7 @@ layout: default
     <div class="container text-center">
 
         <div class="bannertext">
-            Helping companies track, monitor, and engage with<br>
-            project dependencies and dependents
+            Helping companies track, monitor, and engage with project dependents
         </div>
 
         <div>
@@ -29,85 +28,72 @@ layout: default
     <div style="padding-bottom: 70px;">
         <h1 style="margin-bottom: 50px;">Supported Language Files</h1>
 
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link active" id="v-pills-java-tab" data-toggle="pill" href="#v-pills-java" role="tab" aria-controls="v-pills-java" aria-selected="true">Java</a>
-                    <a class="nav-link" id="v-pills-golang-tab" data-toggle="pill" href="#v-pills-golang" role="tab" aria-controls="v-pills-golang" aria-selected="false">Golang</a>
-                    <a class="nav-link" id="v-pills-nodejs-tab" data-toggle="pill" href="#v-pills-nodejs" role="tab" aria-controls="v-pills-nodejs" aria-selected="false">NodeJS</a>
-                    <a class="nav-link" id="v-pills-php-tab" data-toggle="pill" href="#v-pills-php" role="tab" aria-controls="v-pills-php" aria-selected="false">PHP</a>
-                    <a class="nav-link" id="v-pills-rust-tab" data-toggle="pill" href="#v-pills-rust" role="tab" aria-controls="v-pills-rust" aria-selected="false">Rust</a>
-                </div>
-            </div>
+        <ul class="nav nav-tabs" id="v-tab" role="tablist">
+            <li><a class="nav-link active" id="v-java-tab" data-toggle="tab" href="#v-java" role="tab" aria-controls="v-java" aria-selected="true">Java</a></li>
+            <li><a class="nav-link" id="v-golang-tab" data-toggle="tab" href="#v-golang" role="tab" aria-controls="v-golang" aria-selected="false">Golang</a></li>
+            <li><a class="nav-link" id="v-nodejs-tab" data-toggle="tab" href="#v-nodejs" role="tab" aria-controls="v-nodejs" aria-selected="false">NodeJS</a></li>
+            <li><a class="nav-link" id="v-php-tab" data-toggle="tab" href="#v-php" role="tab" aria-controls="v-php" aria-selected="false">PHP</a></li>
+            <li><a class="nav-link" id="v-rust-tab" data-toggle="tab" href="#v-rust" role="tab" aria-controls="v-rust" aria-selected="false">Rust</a></li>
+            <li><a class="nav-link" id="v-contribute-tab" href="https://github.com/deps-cloud/des/tree/master/src/extractors" aria-selected="false">Contribute yours...</a></li>
+        </ul>
 
-            <div class="col-6">
-                <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-java" role="tabpanel" aria-labelledby="v-pills-java-tab">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="/statics/img/gradle.png" height="75"/>
-                                <p class="buildfile">build.gradle</p>
-                            </div>
-                            <div class="col-4">
-                                <img src="/statics/img/ivy.png" height="75"/>
-                                <p class="buildfile">ivy.xml</p>
-                            </div>
-                            <div class="col-4">
-                                <img src="/statics/img/maven.png" height="75"/>
-                                <p class="buildfile">pom.xml</p>
-                            </div>
-                        </div>
+        <div class="tab-content" id="v-tabContent">
+            <div class="tab-pane fade show active" id="v-java" role="tabpanel" aria-labelledby="v-java-tab">
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/gradle.png" height="75"/>
+                        <p class="buildfile">build.gradle</p>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-golang" role="tabpanel" aria-labelledby="v-pills-golang-tab">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="/statics/img/go.png" height="75"/>
-                                <p class="buildfile">Godeps.json</p>
-                            </div>
-                            <div class="col-4">
-                                <img src="/statics/img/go.png" height="75"/>
-                                <p class="buildfile">go.mod</p>
-                            </div>
-                            <div class="col-4">
-                                <img src="/statics/img/go.png" height="75"/>
-                                <p class="buildfile">Gopkg.toml</p>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/ivy.png" height="75"/>
+                        <p class="buildfile">ivy.xml</p>
                     </div>
-                    <div class="tab-pane fade" id="v-pills-nodejs" role="tabpanel" aria-labelledby="v-pills-nodejs-tab">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="/statics/img/npm.png" height="75"/>
-                                <p class="buildfile">package.json</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-php" role="tabpanel" aria-labelledby="v-pills-php-tab">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="/statics/img/php.png" height="75"/>
-                                <p class="buildfile">composer.json</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="v-pills-rust" role="tabpanel" aria-labelledby="v-pills-rust-tab">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="/statics/img/rust.png" height="75"/>
-                                <p class="buildfile">cargo.toml</p>
-                            </div>
-                        </div>
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/maven.png" height="75"/>
+                        <p class="buildfile">pom.xml</p>
                     </div>
                 </div>
             </div>
-            <div class="col-2"></div>
+            <div class="tab-pane fade" id="v-golang" role="tabpanel" aria-labelledby="v-golang-tab">
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/go.png" height="75"/>
+                        <p class="buildfile">Godeps.json</p>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/go.png" height="75"/>
+                        <p class="buildfile">go.mod</p>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/go.png" height="75"/>
+                        <p class="buildfile">Gopkg.toml</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-nodejs" role="tabpanel" aria-labelledby="v-nodejs-tab">
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/npm.png" height="75"/>
+                        <p class="buildfile">package.json</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-php" role="tabpanel" aria-labelledby="v-php-tab">
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/php.png" height="75"/>
+                        <p class="buildfile">composer.json</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-rust" role="tabpanel" aria-labelledby="v-rust-tab">
+                <div class="row" style="margin-left: 0; margin-right: 0;">
+                    <div class="col-6 col-md-4 col-lg-3 file-cell">
+                        <img src="/statics/img/rust.png" height="75"/>
+                        <p class="buildfile">cargo.toml</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div style="padding: 54px 0 27px; background-color: #efefef;">
-    <div class="text-center">
-        deps.cloud - Copyright &copy; 2019
     </div>
 </div>
