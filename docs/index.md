@@ -13,9 +13,9 @@ To launch the demo infrastructure, simply run the following:
 
 ```
 $ docker-compose up -d
-Creating docker_des_1 ... done
-Creating docker_dts_1 ... done
-Creating docker_dis_1     ... done
+Creating docker_extractor_1 ... done
+Creating docker_tracker_1 ... done
+Creating docker_indexer_1     ... done
 Creating docker_gateway_1 ... done
 ```
 
@@ -57,6 +57,6 @@ When running locally, we can restart the process to pick up the new configuratio
 You may need to re-create the container.
 
 ```
-$ docker-compose restart dis
-Restarting docker_dis_1 ... done
+$ docker-compose restart indexer
+Restarting docker_indexer_1 ... done
 ```
