@@ -15,83 +15,111 @@ layout: default
     </div>
 </div>
 
-<div class="container text-center" style="padding: 70px 0;">
-    <div style="padding-bottom: 70px;">
-        <div>
-            We provide a set of services that enable automation and analysis of your projects and their dependencies.
-            It works by crawling repositories from GitHub, GitLab, and BitBucket, looking for various dependency management files.
-            We then extract, store, and index dependent library information into a comprehensive graph.
-            This information is then exposed through both gRPC and RESTful endpoints.
+<div class="container text-center" style="padding: 100px 0 60px;">
+    <div class="row">
+        <div class="col-6 col-sm-4 col-md-2" style="padding-bottom: 15px;">
+            <div><i class="fab fa-github" style="font-size: 60px;"></i></div>
+            <div><a href="https://github.com">GitHub</a></div>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-2" style="padding-bottom: 15px;">
+            <div><i class="fab fa-gitlab" style="font-size: 60px;"></i></div>
+            <div><a href="https://gitlab.com">GitLab</a></div>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-2" style="padding-bottom: 15px;">
+            <div><i class="fab fa-bitbucket" style="font-size: 60px;"></i></div>
+            <div><a href="https://bitbucket.org">BitBucket</a></div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6">
+            deps.cloud works by crawling well known sources of repositories such as GitLab, GitHub, and BitBucket.
+            A custom integration can be added to support any JSON API.
         </div>
     </div>
+</div>
 
-    <div style="padding-bottom: 70px;">
-        <h1 style="margin-bottom: 50px;">Supported Language Files</h1>
+<div class="container text-center" style="padding: 60px 0;">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-8" style="padding-bottom: 20px;">
+            From the repositories, we're able to infer relationships between repositories by parsing dependency management files.
+            The relationships between systems are then stored and indexed in an easy to query knowledge graph.
+        </div>
+        <div class="col-12 col-sm-12 col-md-4">
+            <div>
+                <i class="fas fa-project-diagram" style="font-size: 83px; -webkit-transform:rotateY(180deg); -moz-transform:rotateY(180deg); -o-transform:rotateY(180deg); -ms-transform:rotateY(180deg);"></i>
+                <i class="fas fa-project-diagram" style="font-size: 83px;"></i>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <ul class="nav nav-tabs" id="v-tab" role="tablist">
-            <li><a class="nav-link active" id="v-java-tab" data-toggle="tab" href="#v-java" role="tab" aria-controls="v-java" aria-selected="true">Java</a></li>
-            <li><a class="nav-link" id="v-golang-tab" data-toggle="tab" href="#v-golang" role="tab" aria-controls="v-golang" aria-selected="false">Golang</a></li>
-            <li><a class="nav-link" id="v-nodejs-tab" data-toggle="tab" href="#v-nodejs" role="tab" aria-controls="v-nodejs" aria-selected="false">NodeJS</a></li>
-            <li><a class="nav-link" id="v-php-tab" data-toggle="tab" href="#v-php" role="tab" aria-controls="v-php" aria-selected="false">PHP</a></li>
-            <li><a class="nav-link" id="v-rust-tab" data-toggle="tab" href="#v-rust" role="tab" aria-controls="v-rust" aria-selected="false">Rust</a></li>
-            <li><a class="nav-link" id="v-contribute-tab" href="https://github.com/deps-cloud/des/tree/master/src/extractors" aria-selected="false">Contribute yours...</a></li>
-        </ul>
+<div class="container text-center" style="padding: 60px 0;">
+    <h1 style="margin-bottom: 50px;">Supported Language Files</h1>
 
-        <div class="tab-content" id="v-tabContent">
-            <div class="tab-pane fade show active" id="v-java" role="tabpanel" aria-labelledby="v-java-tab">
-                <div class="row" style="margin-left: 0; margin-right: 0;">
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/gradle.png" height="75"/>
-                        <p class="buildfile">build.gradle</p>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/ivy.png" height="75"/>
-                        <p class="buildfile">ivy.xml</p>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/maven.png" height="75"/>
-                        <p class="buildfile">pom.xml</p>
-                    </div>
+    <ul class="nav nav-tabs" id="v-tab" role="tablist">
+        <li><a class="nav-link active" id="v-java-tab" data-toggle="tab" href="#v-java" role="tab" aria-controls="v-java" aria-selected="true">Java</a></li>
+        <li><a class="nav-link" id="v-golang-tab" data-toggle="tab" href="#v-golang" role="tab" aria-controls="v-golang" aria-selected="false">Golang</a></li>
+        <li><a class="nav-link" id="v-nodejs-tab" data-toggle="tab" href="#v-nodejs" role="tab" aria-controls="v-nodejs" aria-selected="false">NodeJS</a></li>
+        <li><a class="nav-link" id="v-php-tab" data-toggle="tab" href="#v-php" role="tab" aria-controls="v-php" aria-selected="false">PHP</a></li>
+        <li><a class="nav-link" id="v-rust-tab" data-toggle="tab" href="#v-rust" role="tab" aria-controls="v-rust" aria-selected="false">Rust</a></li>
+        <li><a class="nav-link" id="v-contribute-tab" href="https://github.com/deps-cloud/des/tree/master/src/extractors" aria-selected="false">Contribute yours...</a></li>
+    </ul>
+
+    <div class="tab-content" id="v-tabContent">
+        <div class="tab-pane fade show active" id="v-java" role="tabpanel" aria-labelledby="v-java-tab">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/gradle.png" height="75"/>
+                    <p class="buildfile">build.gradle</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/ivy.png" height="75"/>
+                    <p class="buildfile">ivy.xml</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/maven.png" height="75"/>
+                    <p class="buildfile">pom.xml</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-golang" role="tabpanel" aria-labelledby="v-golang-tab">
-                <div class="row" style="margin-left: 0; margin-right: 0;">
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/go.png" height="75"/>
-                        <p class="buildfile">Godeps.json</p>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/go.png" height="75"/>
-                        <p class="buildfile">go.mod</p>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/go.png" height="75"/>
-                        <p class="buildfile">Gopkg.toml</p>
-                    </div>
+        </div>
+        <div class="tab-pane fade" id="v-golang" role="tabpanel" aria-labelledby="v-golang-tab">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/go.png" height="75"/>
+                    <p class="buildfile">Godeps.json</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/go.png" height="75"/>
+                    <p class="buildfile">go.mod</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/go.png" height="75"/>
+                    <p class="buildfile">Gopkg.toml</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-nodejs" role="tabpanel" aria-labelledby="v-nodejs-tab">
-                <div class="row" style="margin-left: 0; margin-right: 0;">
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/npm.png" height="75"/>
-                        <p class="buildfile">package.json</p>
-                    </div>
+        </div>
+        <div class="tab-pane fade" id="v-nodejs" role="tabpanel" aria-labelledby="v-nodejs-tab">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/npm.png" height="75"/>
+                    <p class="buildfile">package.json</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-php" role="tabpanel" aria-labelledby="v-php-tab">
-                <div class="row" style="margin-left: 0; margin-right: 0;">
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/php.png" height="75"/>
-                        <p class="buildfile">composer.json</p>
-                    </div>
+        </div>
+        <div class="tab-pane fade" id="v-php" role="tabpanel" aria-labelledby="v-php-tab">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/php.png" height="75"/>
+                    <p class="buildfile">composer.json</p>
                 </div>
             </div>
-            <div class="tab-pane fade" id="v-rust" role="tabpanel" aria-labelledby="v-rust-tab">
-                <div class="row" style="margin-left: 0; margin-right: 0;">
-                    <div class="col-6 col-md-4 col-lg-3 file-cell">
-                        <img src="/statics/img/rust.png" height="75"/>
-                        <p class="buildfile">cargo.toml</p>
-                    </div>
+        </div>
+        <div class="tab-pane fade" id="v-rust" role="tabpanel" aria-labelledby="v-rust-tab">
+            <div class="row" style="margin-left: 0; margin-right: 0;">
+                <div class="col-6 col-md-4 col-lg-3 file-cell">
+                    <img src="/statics/img/rust.png" height="75"/>
+                    <p class="buildfile">cargo.toml</p>
                 </div>
             </div>
         </div>
