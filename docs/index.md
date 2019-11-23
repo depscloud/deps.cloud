@@ -27,7 +27,7 @@ You can test it out by opening any of the following endpoints (browser or curl).
 * [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
 * [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git)
 * [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fextractor)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fextractor)
+* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fapi)
 * [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fextractor&language=go)
 
 ## 2 - Configure Your Provider
