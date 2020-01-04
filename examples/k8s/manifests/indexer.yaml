@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: depscloud-system
+  name: rds-config
+  labels:
+    app: depscloud
+data:
+  config.yaml: |
+    accounts:
+    - github:
+        strategy: HTTP
+        organizations:
+        - deps-cloud
+
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  namespace: depscloud-system
+  name: indexer
+  labels:
+    app: depscloud
+spec:
+  schedule: "* */1 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          volumes:
+          - name: config
+            configMap:
+              name: rds-config
+          initContainers:
+          - name: service-precheck
+            image: mjpitz/service-precheck:latest
+            imagePullPolicy: Always
+            args:
+            - "extractor"
+            - "tracker"
+          containers:
+          - name: indexer
+            image: depscloud/indexer:latest
+            imagePullPolicy: Always
+            args:
+            - "--cron"
+            - "--rds-config=/etc/rds/config.yaml"
+            volumeMounts:
+            - name: config
+              mountPath: /etc/rds
+              readOnly: true
+            resources:
+              limits:
+                cpu: 500m
+                memory: 512Mi
+              requests:
+                cpu: 250m
+                memory: 256Mi
+          restartPolicy: OnFailure

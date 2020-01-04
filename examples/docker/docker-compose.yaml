@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  tracker:
+    image: depscloud/tracker:latest
+    hostname: tracker
+
+  extractor:
+    image: depscloud/extractor:latest
+    hostname: extractor
+    
+  indexer:
+    image: depscloud/indexer:latest
+    hostname: indexer
+    depends_on:
+    - extractor
+    - tracker
+    volumes:
+    - ./rds.yaml:/etc/rds/config.yaml
+    command:
+    - --cron
+    - --rds-config=/etc/rds/config.yaml
+    - --workers=1
+
+  gateway:
+    image: depscloud/gateway:latest
+    hostname: gateway
+    depends_on:
+    - extractor
+    - tracker
+    ports:
+    - 8080:8080

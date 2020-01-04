@@ -3,6 +3,8 @@
 /_site
 /vendor
 
+certs/
+
 Gemfile.lock
 .jekyll-metadata
 deploy.sh

@@ -13,8 +13,11 @@ name: "deps.cloud"
 url: https://www.deps.cloud
 
 exclude:
-  - vendor
+  - .bundle
   - .idea
+  - vendor
+  - DCO
+  - README.md
   - Gemfile
   - Gemfile.lock
   - s3_website.yml
