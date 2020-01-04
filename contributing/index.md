@@ -44,8 +44,8 @@ Each repository ships with two dockerfiles, one for building and testing locally
 The second way to build and run this project.
 This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.
 
-* [Developing in Docker](develop/docker/index.md) (Recommended)
-* [Developing Locally](develop/local/index.md)
+* [Developing in Docker](develop/docker.md) (Recommended)
+* [Developing Locally](develop/local.md)
 
 ## Branching
 
@@ -87,4 +87,4 @@ After a branch has been pushed, you can use [pull requests](https://help.github.
 
 ## Code of Conduct
 
-deps.cloud is governed by the [Contributor Covenant v1.4.1](../CODE_OF_CONDUCT.md).
+deps.cloud is governed by the [Contributor Covenant v1.4.1](/contributing/code-of-conduct/).

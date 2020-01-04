@@ -15,7 +15,7 @@ To help facilitate contributions, each project has a `docker` target that builds
 | Golang | `Makefile` | `make docker` |
 | NodeJS | `package.json` | `npm run docker` |
 
-The target produces a tagged image that you can deployed using the [docker stack](../docker).
+The target produces a tagged image that you can deployed using the [docker stack](docker).
 
 ## Deploying Local Changes
 
