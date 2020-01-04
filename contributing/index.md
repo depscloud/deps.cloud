@@ -57,7 +57,7 @@ git checkout -b gh-11
 ```
 
 In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the deps-cloud-project repository to create a parent issue that the other issues can reference and link to.
+In this case, you should used the deps.cloud repository to create a parent issue that the other issues can reference and link to.
 To link another projects issue, you can use the `<user>/<project>#11` semantic.
 Similarly, you can create a feature branch using the same syntax.
 
