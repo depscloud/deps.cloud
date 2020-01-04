@@ -1,0 +1,148 @@
+---
+layout: default
+title: 
+---
+
+<div class="container" style="padding: 60px 0;">
+    <div class="text-center">
+        <h1>Supported Source Control Providers</h1>
+        <p>Note that there are other custom providers available, but not as well supported.</p>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            {% include card-icon.html
+            border="white"
+            icon="fab fa-github-square"
+            title="GitHub"
+            %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% include card-icon.html
+            border="white"
+            icon="fab fa-gitlab"
+            title="GitLab"
+            %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% include card-icon.html
+            border="white"
+            icon="fab fa-bitbucket"
+            title="BitBucket"
+            %}
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding: 60px 0;">    
+    <div class="text-center">
+        <h1>Supported Manifest Files</h1>
+        <p>
+            Manifest files contain information required for building a knowledge graph.
+            The table below demonstrates how this information is extracted.
+        </p>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Manifest Files</th>
+                <th>Language</th>
+                <th>System</th>
+                <th>Example</th>
+                <th>Organization</th>
+                <th>Module</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><pre>bower.json</pre></td>
+                <td><pre>node</pre></td>
+                <td><pre>bower</pre></td>
+                <td><pre>@deps-cloud/api</pre></td>
+                <td><pre>deps-cloud</pre></td>
+                <td><pre>api</pre></td>
+            </tr>
+            <tr>
+                <td><pre>build.gradle, settings.gradle</pre></td>
+                <td><pre>java</pre></td>
+                <td><pre>gradle</pre></td>
+                <td><pre>com.google.guava:guava</pre></td>
+                <td><pre>com.google.guava</pre></td>
+                <td><pre>guava</pre></td>
+            </tr>
+            <tr>
+                <td><pre>cargo.toml</pre></td>
+                <td><pre>rust</pre></td>
+                <td><pre>cargo</pre></td>
+                <td><pre>bytes</pre></td>
+                <td><pre>_</pre></td>
+                <td><pre>bytes</pre></td>
+            </tr>
+            <tr>
+                <td><pre>composer.json</pre></td>
+                <td><pre>php</pre></td>
+                <td><pre>composer</pre></td>
+                <td><pre>symfony/console</pre></td>
+                <td><pre>symfony</pre></td>
+                <td><pre>console</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Godeps.json</pre></td>
+                <td><pre>go</pre></td>
+                <td><pre>godeps</pre></td>
+                <td><pre>github.com/deps-cloud/api</pre></td>
+                <td><pre>github.com</pre></td>
+                <td><pre>deps-cloud/api</pre></td>
+            </tr>
+            <tr>
+                <td><pre>go.mod</pre></td>
+                <td><pre>go</pre></td>
+                <td><pre>vgo</pre></td>
+                <td><pre>github.com/deps-cloud/api</pre></td>
+                <td><pre>github.com</pre></td>
+                <td><pre>deps-cloud/api</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Gopkg.toml</pre></td>
+                <td><pre>go</pre></td>
+                <td><pre>gopkg</pre></td>
+                <td><pre>github.com/deps-cloud/api</pre></td>
+                <td><pre>github.com</pre></td>
+                <td><pre>deps-cloud/api</pre></td>
+            </tr>
+            <tr>
+                <td><pre>ivy.xml</pre></td>
+                <td><pre>java</pre></td>
+                <td><pre>ivy</pre></td>
+                <td><pre>com.google.guava;guava</pre></td>
+                <td><pre>com.google.guava</pre></td>
+                <td><pre>guava</pre></td>
+            </tr>
+            <tr>
+                <td><pre>package.json</pre></td>
+                <td><pre>nodejs</pre></td>
+                <td><pre>npm</pre></td>
+                <td><pre>@deps-cloud/api</pre></td>
+                <td><pre>deps-cloud</pre></td>
+                <td><pre>api</pre></td>
+            </tr>
+            <tr>
+                <td><pre>pom.xml</pre></td>
+                <td><pre>java</pre></td>
+                <td><pre>maven</pre></td>
+                <td><pre>com.google.guava;guava</pre></td>
+                <td><pre>com.google.guava</pre></td>
+                <td><pre>guava</pre></td>
+            </tr>
+            <tr>
+                <td><pre>vendor.conf</pre></td>
+                <td><pre>go</pre></td>
+                <td><pre>vendor</pre></td>
+                <td><pre>github.com/deps-cloud/api</pre></td>
+                <td><pre>github.com</pre></td>
+                <td><pre>deps-cloud/api</pre></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

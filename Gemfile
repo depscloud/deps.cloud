@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 # gems
+gem 'jekyll', '3.8.6'
 gem 'kramdown'
 gem 'rouge'
 gem 'jekyll-paginate'

@@ -1,33 +1,10 @@
 .banner {
-    padding-top: 98px;
-    padding-bottom: 98px;
+    padding: 178px 0;
 
     height: 355px;
 
     background-image: url(/statics/img/bg.png);
     background-color: lightblue;
-}
-
-.bannertitle {
-    font-size: 53px;
-    font-weight: bold;
-    text-shadow: 0px 0px 25px #f5f5f5;
-}
-
-.bannertext {
-    font-size: 16pt;
-    text-shadow: 0px 0px 25px #f5f5f5;
-    margin-bottom: 10px;
-}
-
-@media (min-width: 992px) {
-    .bannertitle {
-        font-size: 72px;
-    }
-
-    .bannertext {
-        font-size: 22pt;
-    }
 }
 
 .buildfile {
@@ -41,4 +18,10 @@
 
 .file-cell {
     padding-top: 20px;
+}
+
+.container-slim {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
 }

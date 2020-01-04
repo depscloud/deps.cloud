@@ -13,6 +13,7 @@ name: "deps.cloud"
 url: https://www.deps.cloud
 
 exclude:
+  - vendor
   - .idea
   - Gemfile
   - Gemfile.lock
