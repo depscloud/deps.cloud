@@ -15,6 +15,7 @@ url: https://www.deps.cloud
 exclude:
   - .bundle
   - .idea
+  - examples
   - vendor
   - DCO
   - README.md
