@@ -5,7 +5,7 @@ title: User Guides
 
 # Kubernetes
 
-This guide explains how to run the deps.cloud infrastructure within a Kubernetes cluster.
+This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster.
 
 The configuration files used in this guide can be found in the `examples/k8s` directory of the [deps.cloud](https://github.com/deps-cloud/deps.cloud) repository.
 

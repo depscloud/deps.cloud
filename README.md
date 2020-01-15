@@ -11,6 +11,7 @@ The information is then served over gRPC or REST for easy consumption by automat
 * [Contributing](/contributing/index.md)
 * User Guides
   * [Docker](/docs/index.md)
+  * [Helm](/docs/user_guides/helm.md)
   * [Kubernetes](/docs/user_guides/kubernetes.md)
 
 
