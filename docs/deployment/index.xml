@@ -43,7 +43,7 @@ You can test it out by opening any of the following endpoints (browser or curl).
 &lt;/ul&gt;
 &lt;h2 id=&#34;2---configure-your-provider&#34;&gt;2 - Configure Your Provider&lt;/h2&gt;
 &lt;p&gt;Once the demo infrastructure is up and running, you can easily modify the &lt;code&gt;rds.yaml&lt;/code&gt; file to include more accounts to index.
-For more information on how to configure each integration, see the &lt;a href=&#34;https://deps.cloud/docs/configuration/&#34;&gt;configuration&lt;/a&gt; section.
+For more information on how to configure each integration, see the &lt;a href=&#34;https://deps.cloud/docs/integrations/&#34;&gt;integrations&lt;/a&gt; section.
 For now, let&amp;rsquo;s simply add your GitHub ID to the existing block.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;accounts:
 - github:

@@ -132,8 +132,8 @@ Each repository ships with two dockerfiles, one for building and testing locally
 The second way to build and run this project.
 This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;developing-in-docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;developing-locally/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
 &lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
@@ -191,7 +191,7 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.&l
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;#&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
 &lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
