@@ -29,8 +29,8 @@ Each repository ships with two dockerfiles, one for building and testing locally
 The second way to build and run this project.
 This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.
 
-* [Developing in Docker](developing-in-docker/) (Recommended)
-* [Developing Locally](developing-locally/)
+* [Developing in Docker](/docs/contributing/docker/) (Recommended)
+* [Developing Locally](/docs/contributing/local/)
 
 ## Branching
 

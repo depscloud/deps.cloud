@@ -34,7 +34,7 @@ You can test it out by opening any of the following endpoints (browser or curl).
 ## 2 - Configure Your Provider
 
 Once the demo infrastructure is up and running, you can easily modify the `rds.yaml` file to include more accounts to index.
-For more information on how to configure each integration, see the [configuration](/docs/configuration/) section.
+For more information on how to configure each integration, see the [integrations](/docs/integrations/) section.
 For now, let's simply add your GitHub ID to the existing block.
 
 ```
