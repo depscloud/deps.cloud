@@ -1,3 +1,6 @@
 DirectoryPath: public
 IgnoreDirectoryMissingTrailingSlash: true
 IgnoreAltMissing: true
+IgnoreURLs:
+  - ^http://.*localhost:8080.*$
+  - ^https://gitter.im/mjpitz$

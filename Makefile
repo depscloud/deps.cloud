@@ -13,4 +13,5 @@ build:
 
 test:
 	bin/htmltest
+	bin/htmltest --conf .htmltest.external.yml
 
