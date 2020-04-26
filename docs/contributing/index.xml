@@ -1,0 +1,263 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deps.cloud – Contributing</title>
+    <link>https://deps.cloud/docs/contributing/</link>
+    <description>Recent content in Contributing on deps.cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://deps.cloud/docs/contributing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Code of Conduct</title>
+      <link>https://deps.cloud/docs/contributing/code-of-conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/code-of-conduct/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;
+&lt;p&gt;In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to making participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;
+&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;
+&lt;p&gt;Examples of behavior that contributes to creating a positive environment
+include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using welcoming and inclusive language&lt;/li&gt;
+&lt;li&gt;Being respectful of differing viewpoints and experiences&lt;/li&gt;
+&lt;li&gt;Gracefully accepting constructive criticism&lt;/li&gt;
+&lt;li&gt;Focusing on what is best for the community&lt;/li&gt;
+&lt;li&gt;Showing empathy towards other community members&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Examples of unacceptable behavior by participants include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The use of sexualized language or imagery and unwelcome sexual attention or
+advances&lt;/li&gt;
+&lt;li&gt;Trolling, insulting/derogatory comments, and personal or political attacks&lt;/li&gt;
+&lt;li&gt;Public or private harassment&lt;/li&gt;
+&lt;li&gt;Publishing others&amp;rsquo; private information, such as a physical or electronic
+address, without explicit permission&lt;/li&gt;
+&lt;li&gt;Other conduct which could reasonably be considered inappropriate in a
+professional setting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;our-responsibilities&#34;&gt;Our Responsibilities&lt;/h2&gt;
+&lt;p&gt;Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.&lt;/p&gt;
+&lt;p&gt;Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.&lt;/p&gt;
+&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct applies both within project spaces and in public spaces
+when an individual is representing the project or its community. Examples of
+representing a project or community include using an official project e-mail
+address, posting via an official social media account, or acting as an appointed
+representative at an online or offline event. Representation of a project may be
+further defined and clarified by project maintainers.&lt;/p&gt;
+&lt;h2 id=&#34;enforcement&#34;&gt;Enforcement&lt;/h2&gt;
+&lt;p&gt;Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the project owner on &lt;a href=&#34;https://gitter.im/mjpitz&#34;&gt;Gitter&lt;/a&gt;. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.&lt;/p&gt;
+&lt;p&gt;Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project&amp;rsquo;s leadership.&lt;/p&gt;
+&lt;h2 id=&#34;attribution&#34;&gt;Attribution&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct is adapted from the &lt;a href=&#34;https://www.contributor-covenant.org&#34;&gt;Contributor Covenant&lt;/a&gt;, version 1.4,
+available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&#34;&gt;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For answers to common questions about this code of conduct, see
+&lt;a href=&#34;https://www.contributor-covenant.org/faq&#34;&gt;https://www.contributor-covenant.org/faq&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Community</title>
+      <link>https://deps.cloud/docs/contributing/community/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/community/</guid>
+      <description>
+        
+        
+        &lt;p&gt;There are a few different mechanisms that you can use to get ahold of the team.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://findcollabs.com/project/deps-cloud-GIOlcUiHE9XD2UVlxrNl&#34;&gt;FindCollabs&lt;/a&gt; is by and large used for status updates and is checked regularly.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitter.im/depscloud/community&#34;&gt;Gitter&lt;/a&gt; is used for more back and forth communication and will yield faster response times.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Based on conversations with the team, we decided to leverage Gitter as the primary form of communication.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://groups.google.com/a/deps.cloud/forum/#!forum/community/join&#34;&gt;community&lt;/a&gt; meeting is a great way to get face to face time with the members of the team.
+It can also be a great way to get introduced to the project and where to get started.
+The community meeting is held every two weeks (starting 2019/12/30).
+By joining the community Google group, you will automatically receive a calendar event for the meeting.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Working with Git</title>
+      <link>https://deps.cloud/docs/contributing/git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/git/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve forked the repository, you&amp;rsquo;ll want to clone it locally for development.
+For convenience, I tend to work out of the GOPATH directory.
+Using the following command, you can quickly build a directory for all the deps-cloud related work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/deps-cloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, clone the upstream project.
+This will allow you to regularly pull updates from the &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:deps-cloud/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building-and-running-projects&#34;&gt;Building and Running Projects&lt;/h2&gt;
+&lt;p&gt;There are two ways you can build and run this project.
+First you can develop using docker (the recommended way).
+Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
+The second way to build and run this project.
+This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;developing-in-docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;developing-locally/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
+&lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
+To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In some rare occasions you might be working on a issue that requires work across multiple repositories.
+In this case, you should used the &lt;a href=&#34;https://github.com/deps-cloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
+To link another projects issue, you can use the &lt;code&gt;&amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11&lt;/code&gt; semantic.
+Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b &amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
+&lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
+&lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
+When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fron here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
+After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developing in Docker</title>
+      <link>https://deps.cloud/docs/contributing/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the directions .
+You can deploy the stack using either SQLite or MySQL as a backend data store.&lt;/p&gt;
+&lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
+&lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Managed by&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;docker&lt;/code&gt; Target&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Golang&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NodeJS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;npm run docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;#&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developing Locally</title>
+      <link>https://deps.cloud/docs/contributing/local/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/local/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Local targets are available for development.
+In order to leverage those targets, you will need to install the appropriate tooling.
+While most projects are written in Golang, there are a few that will require NodeJS or Ruby.
+To help simplify some of the setup, I&amp;rsquo;ve included a general guide to managing these versions locally.&lt;/p&gt;
+&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;p&gt;Install and manage Golang versions using &lt;a href=&#34;https://github.com/moovweb/gvm&#34;&gt;gvm&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+$ source ${HOME}/.gvm/scripts/gvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you should be able to install and use specific versions of Golang.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gvm install go1.12.4
+$ gvm alias create default go1.12.4
+$ gvm use default
+$ go version
+go version go1.12.4 darwin/amd64
+$ which go
+${HOME}/.gvm/gos/go1.12.4/bin/go
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nodejs&#34;&gt;NodeJS&lt;/h2&gt;
+&lt;p&gt;Install and manage NodeJS versions using &lt;a href=&#34;https://github.com/nvm-sh/nvm&#34;&gt;nvm&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
+Then, you should be able to install and use specific versions of NodeJS.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ nvm install 10.15.3
+$ nvm alias default v10.15.3    # all new shells will use 10.15.3
+$ nvm use default               # changes node version for the current terminal
+$ nvm current                   # verify you&#39;re using the right version
+v10.15.3
+$ which node
+${HOME}/.nvm/versions/node/v10.15.3/bin/node
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ruby&#34;&gt;Ruby&lt;/h2&gt;
+&lt;p&gt;Install and manage Ruby versions using &lt;a href=&#34;https://rvm.io/&#34;&gt;rvm&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## OSX
+$ brew install gpg2
+$ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+## Linux
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+$ curl -sSL https://get.rvm.io | bash -s stable
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
+Then, you should be able to install and use specific versions of Ruby.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ rvm install 2.3.7
+$ rvm alias create default 2.3.7
+$ rvm use default
+$ rvm current
+ruby-2.3.7
+$ which ruby
+${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

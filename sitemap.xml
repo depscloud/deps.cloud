@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://deps.cloud/docs/what-is-depscloud/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/manifests/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/code-of-conduct/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/deployment/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/gateway/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/integrations/github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/integrations/gitlab/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/indexer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/integrations/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/deployment/k8s/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/integrations/bitbucket/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/deployment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/deployment/helm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/tracker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/git/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/extractor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/local/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/</loc>
+  </url>
+  
+</urlset>

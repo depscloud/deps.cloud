@@ -1,0 +1,247 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deps.cloud – API Services</title>
+    <link>https://deps.cloud/docs/services/</link>
+    <description>Recent content in API Services on deps.cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://deps.cloud/docs/services/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Gateway</title>
+      <link>https://deps.cloud/docs/services/gateway/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/gateway/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/gateway&#34;&gt;https://github.com/deps-cloud/gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Gateway is an extremely thin, lightweight, reverse proxy.
+It provides a RESTful interface that translates requests into gRPC calls.
+This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
+&lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
+These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
+These annotations are used to generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
+This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
+&lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
+&lt;p&gt;In addition to serving the API, it also serves the associated swagger documentation.
+You can explore the API further at the links below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/extractor/#swagger-explorer&#34;&gt;Extractor Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/tracker/#swagger-explorer&#34;&gt;Tracker Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Indexer</title>
+      <link>https://deps.cloud/docs/services/indexer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/indexer/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/indexer&#34;&gt;https://github.com/deps-cloud/indexer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The indexer process is typically run as a cron job.
+On a configured schedule, it will re-index all available repositories.
+While not ideal, this solution provides an easy way to get started.
+If needed, the indexing process can be sharded across multiple different indexers.
+This will allow some indexers to run on more frequent intervals while others run on less frequent ones.&lt;/p&gt;
+&lt;h2 id=&#34;on-cloning&#34;&gt;On Cloning&lt;/h2&gt;
+&lt;p&gt;When the indexer clones a repository, it uses &lt;code&gt;/tmp&lt;/code&gt; to create an ephemeral directory.
+It then performs a shallow clone of a repository into that tmp directory.
+When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
+&lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
+A single worker can process a large number of repositories fairly quick.
+Two workers is often more than sufficient.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Tracker</title>
+      <link>https://deps.cloud/docs/services/tracker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/tracker/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/tracker&#34;&gt;https://github.com/deps-cloud/tracker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The tracker is a Go process used to encapsulate operations around the database.
+It contains four gRPC services, three of which are currently implemented.
+The &lt;code&gt;TopologyService&lt;/code&gt; was initially specified but later implemented as a client-side feature.
+While it can be implemented on the server side, the memory and disk requirements vary greatly between queries making it difficult to size appropriately.&lt;/p&gt;
+&lt;h2 id=&#34;data-model&#34;&gt;Data Model&lt;/h2&gt;
+&lt;p&gt;At it&amp;rsquo;s core, there are 4 key data models to be aware of in the &lt;code&gt;tracker&lt;/code&gt; process.
+They are &lt;code&gt;source&lt;/code&gt;, &lt;code&gt;manages&lt;/code&gt;, &lt;code&gt;module&lt;/code&gt;, and &lt;code&gt;depends&lt;/code&gt;.
+Both &lt;code&gt;source&lt;/code&gt; and &lt;code&gt;module&lt;/code&gt; are nodes in the graph.
+&lt;code&gt;manages&lt;/code&gt; and &lt;code&gt;depends&lt;/code&gt; are the edges between them.
+The following snippet depicts how these components relate to one another.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source --&amp;gt;|manages| module
+module --&amp;gt;|depends| module 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each component has it&amp;rsquo;s own schema or payload.
+The block of YAML below provides a rough idea for the data stored on each item.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;https&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;//github.com/deps-cloud/api.git&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;manages&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;go|node|java|php&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;system&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;vgo|gopkg|npm|bower|ivy|maven|gradle|composer...&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;version&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;latest&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;module&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;go|node|java|php&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organization&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;github.com&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;module&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;deps-cloud/api&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;depends&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;language&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;go|node|java|php&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;version_constraint&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;~&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.1.0&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;scopes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- direct&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- indirect&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;These items are then serialized and deserialized into the database.&lt;/p&gt;
+&lt;h3 id=&#34;database-schema&#34;&gt;Database Schema&lt;/h3&gt;
+&lt;p&gt;The database schema is loosely based off that of Dropbox&amp;rsquo;s &lt;a href=&#34;https://www.youtube.com/watch?v=VZ-zJEWi-Vo&#34;&gt;Edgestore&lt;/a&gt;.
+It&amp;rsquo;s since been modified to support more graph type queries, but has proved to work really well.
+When looking through the table, you&amp;rsquo;ll notice the data appears as such.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;graph_item_type&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;source|manages|module|depends&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;k1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;base64(sha256sum(data))&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;k2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;base64(sha256sum(data))&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;graph_item_encoding&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;json&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;graph_item_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;|
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;  {&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;&amp;#34;key&amp;#34;: &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;}&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When &lt;code&gt;k1&lt;/code&gt; equals &lt;code&gt;k2&lt;/code&gt;, the item is a node.
+In this case, the value for &lt;code&gt;k1&lt;/code&gt; and &lt;code&gt;k2&lt;/code&gt; are generated off the item data.
+When &lt;code&gt;k1&lt;/code&gt; != &lt;code&gt;k2&lt;/code&gt;, the item is an edge between nodes &lt;code&gt;k1&lt;/code&gt; and &lt;code&gt;k2&lt;/code&gt;.
+This means the current implementation only supports having a single edge between two nodes.
+There is some upcoming work that will allow for multiple edges to exist.&lt;/p&gt;
+&lt;h2 id=&#34;swagger-explorer&#34;&gt;Swagger Explorer&lt;/h2&gt;
+&lt;p&gt;By leveraging the grpc-gateway project, we&amp;rsquo;re able to easily generate Swagger documentation for the API.
+This allows you to leverage the Swagger UI to easily browse the API and it&amp;rsquo;s operations.
+For convenience, this has been embedded below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;code&gt;api.deps.cloud&lt;/code&gt; require use of the &lt;code&gt;HTTPS&lt;/code&gt; scheme.
+I was unable to find a way to make this the default so be sure to switch.&lt;/p&gt;
+
+&lt;div id=&#34;ohpen_swagger_ui&#34;&gt;&lt;/div&gt;	
+&lt;script&gt;
+window.onload = function() {
+  const ui = SwaggerUIBundle({
+    url: &#34;https://api.deps.cloud/swagger/v1alpha/tracker/tracker.swagger.json&#34;,
+    dom_id: &#39;#ohpen_swagger_ui&#39;,
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ]
+  })
+
+  window.ui = ui
+}
+&lt;/script&gt;		
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Extractor</title>
+      <link>https://deps.cloud/docs/services/extractor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/extractor/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/extractor&#34;&gt;https://github.com/deps-cloud/extractor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The extractor is a NodeJS process written in TypeScript.
+This was an intentional design decision when it came to writing this part of the system.
+In previous implementations, attempting to work with manifest files in a strongly typed language proved to be rather tedious.
+As a result, it inspired the use of a more scientific language where there is more flexibility around the data types we&amp;rsquo;re working with.
+While both JavaScript and Python afforded the flexibility I was looking for in a system, it was Typescript that offered the best of both worlds.&lt;/p&gt;
+&lt;h2 id=&#34;contributing-an-extractor&#34;&gt;Contributing an extractor&lt;/h2&gt;
+&lt;p&gt;This is by far, one of the easiest ways to contribute to the project.
+It involves adding a new class to the code base under the &lt;a href=&#34;https://github.com/deps-cloud/extractor/tree/master/src/extractors&#34;&gt;&lt;code&gt;src/extractors&lt;/code&gt;&lt;/a&gt; directory.
+Once the new extractor is added, you can register it using the &lt;a href=&#34;https://github.com/deps-cloud/extractor/blob/master/src/extractors/ExtractorRegistry.ts&#34;&gt;&lt;code&gt;ExtractorRegistry&lt;/code&gt;&lt;/a&gt;.
+The following code snippet illustrates the bare elements needed to write a custom extractor.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;FileExtractor&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;implements&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Extractor&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;requires&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;my-file.ext&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;];&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;extract&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt;: &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;files&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;p&lt;/span&gt;: &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ExtractorFile&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;})&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Promise&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DependencyManagementFile&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;...&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;files&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;my-file.ext&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;].&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;json&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;allDependencies&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[];&lt;/span&gt;
+
+        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;language&lt;/span&gt;: &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;Languages.NODE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;system&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;my-system&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;organization&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;module&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;version&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+            &lt;span style=&#34;color:#000&#34;&gt;dependencies&lt;/span&gt;: &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;allDependencies&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;};&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;swagger-explorer&#34;&gt;Swagger Explorer&lt;/h2&gt;
+&lt;p&gt;By leveraging the grpc-gateway project, we&amp;rsquo;re able to easily generate Swagger documentation for the API.
+This allows you to leverage the Swagger UI to easily browse the API and it&amp;rsquo;s operations.
+For convenience, this has been embedded below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;code&gt;api.deps.cloud&lt;/code&gt; require use of the &lt;code&gt;HTTPS&lt;/code&gt; scheme.
+I was unable to find a way to make this the default so be sure to switch.&lt;/p&gt;
+
+&lt;div id=&#34;ohpen_swagger_ui&#34;&gt;&lt;/div&gt;	
+&lt;script&gt;
+window.onload = function() {
+  const ui = SwaggerUIBundle({
+    url: &#34;https://api.deps.cloud/swagger/v1alpha/extractor/extractor.swagger.json&#34;,
+    dom_id: &#39;#ohpen_swagger_ui&#39;,
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ]
+  })
+
+  window.ui = ui
+}
+&lt;/script&gt;		
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
