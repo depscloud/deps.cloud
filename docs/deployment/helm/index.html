@@ -25,7 +25,7 @@
 <meta property="og:description" content="Track, monitor, and engage with project dependents" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/helm/" />
-<meta property="og:site_name" content="deps.cloud" />
+<meta property="og:updated_time" content="2020-04-28T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Helm">
 <meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Helm"/>
@@ -42,11 +42,6 @@
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
   crossorigin="anonymous"></script>
 
 
@@ -77,18 +72,7 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; Search this site…"
-  aria-label="Search this site…"
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.c11015d412f5d0a8bf5d03c7c77f06c36124a15c9a7354e946fa8e3436f71d98a27324f66f0c52e14b0d310c93ab6f225c57c0ae46e242b1b6efa7e832dd29f2.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
 
 </div>
 </nav>
@@ -107,18 +91,7 @@
   
   <form class="td-sidebar__search d-flex align-items-center">
     
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; Search this site…"
-  aria-label="Search this site…"
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.c11015d412f5d0a8bf5d03c7c77f06c36124a15c9a7354e946fa8e3436f71d98a27324f66f0c52e14b0d310c93ab6f225c57c0ae46e242b1b6efa7e832dd29f2.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
 
 
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
@@ -698,17 +671,14 @@
 </ol>
 <h2 id="1---adding-the-helm-repository">1 - Adding the Helm Repository</h2>
 <p>In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.</p>
-<pre><code>$ helm repo add depscloud-stable https://deps-cloud.github.io/charts/stable
-&quot;depscloud-stable&quot; has been added to your repositories
-</code></pre><p>To use more experimental changes, you can tap our incubator repository instead.</p>
-<pre><code>$ helm repo add depscloud-incubator https://deps-cloud.github.io/charts/incubator
-&quot;depscloud-incubator&quot; has been added to your repositories
+<pre><code>$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
+&quot;depscloud&quot; has been added to your repositories
 </code></pre><h2 id="2---deploy-the-depscloud-infrastructure">2 - Deploy the deps.cloud Infrastructure</h2>
 <p>Once the deps.cloud chart repository has been added, you can install the charts as follows.</p>
-<pre><code>$ helm upgrade -i tracker depscloud-stable/tracker
-$ helm upgrade -i extractor depscloud-stable/extractor
-$ helm upgrade -i gateway depscloud-stable/gateway
-$ helm upgrade -i indexer depscloud-stable/indexer
+<pre><code>$ helm upgrade -i tracker depscloud/tracker
+$ helm upgrade -i extractor depscloud/extractor
+$ helm upgrade -i gateway depscloud/gateway
+$ helm upgrade -i indexer depscloud/indexer
 </code></pre><p>This same set of commands can be used to upgrade the charts.</p>
 <h2 id="3---querying-the-depscloud-infrastructure">3 - Querying the deps.cloud Infrastructure</h2>
 <p>Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
@@ -753,7 +723,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">releaseName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>indexer<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">chart</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">repository</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//deps-cloud.github.io/charts/stable<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">repository</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//deps-cloud.github.io/deploy/charts<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>indexer<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">0.1.2</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">values</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
@@ -885,7 +855,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 28, 2020
 </div>
 </div>
 
@@ -973,9 +943,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 
 
 
-
-
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
 
 
 
