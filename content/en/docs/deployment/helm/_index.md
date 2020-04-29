@@ -2,6 +2,7 @@
 title: "Helm"
 linkTitle: "Helm"
 weight: 30
+date: 2020-04-28
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster using the [Helm](https://helm.sh/) package manager.
@@ -17,15 +18,8 @@ This guide explains how to run the deps.cloud infrastructure within a [Kubernete
 In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.
 
 ```
-$ helm repo add depscloud-stable https://deps-cloud.github.io/charts/stable
-"depscloud-stable" has been added to your repositories
-```
-
-To use more experimental changes, you can tap our incubator repository instead.
-
-```
-$ helm repo add depscloud-incubator https://deps-cloud.github.io/charts/incubator
-"depscloud-incubator" has been added to your repositories
+$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
+"depscloud" has been added to your repositories
 ```
 
 ## 2 - Deploy the deps.cloud Infrastructure
@@ -33,10 +27,10 @@ $ helm repo add depscloud-incubator https://deps-cloud.github.io/charts/incubato
 Once the deps.cloud chart repository has been added, you can install the charts as follows.
 
 ```
-$ helm upgrade -i tracker depscloud-stable/tracker
-$ helm upgrade -i extractor depscloud-stable/extractor
-$ helm upgrade -i gateway depscloud-stable/gateway
-$ helm upgrade -i indexer depscloud-stable/indexer
+$ helm upgrade -i tracker depscloud/tracker
+$ helm upgrade -i extractor depscloud/extractor
+$ helm upgrade -i gateway depscloud/gateway
+$ helm upgrade -i indexer depscloud/indexer
 ```
 
 This same set of commands can be used to upgrade the charts.
@@ -99,7 +93,7 @@ metadata:
 spec:
   releaseName: indexer
   chart:
-    repository: https://deps-cloud.github.io/charts/stable
+    repository: https://deps-cloud.github.io/deploy/charts
     name: indexer
     version: 0.1.2
   values:
