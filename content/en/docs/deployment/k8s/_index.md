@@ -2,11 +2,10 @@
 title: "Kubernetes"
 linkTitle: "Kubernetes"
 weight: 20
+date: 2020-04-28
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster.
-
-The configuration files used in this guide can be found in the `examples/k8s` directory of the [deps.cloud](https://github.com/deps-cloud/deps.cloud) repository.
 
 ## Prerequisites
 
@@ -20,7 +19,7 @@ MySQL requires a persistent volume to be able to ensure the data is persisted to
 In Kubernetes, a [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) can either be manually provisioned by a System Administrator or Dynamically provisioned using a [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/).
 To figure out if you need to install a Storage Class, you can use `kubectl` to see which ones have been configured on the cluster already.
 
-```
+```bash
 $ kubectl get storageclasses.storage.k8s.io
 NAME                 PROVISIONER                    AGE
 standard (default)   k8s.io/minikube-hostpath       14d
@@ -30,309 +29,101 @@ If you're have none, you can configure a `local-storage` class.
 This leverages the storage provided by the host that the pod is running on.
 It also creates an affinity so that the next time the pod restarts, it will prefer that host over the others.
 
-```yaml 
+```bash
+$ cat <<EOF | kubectl apply -f -
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: local-storage
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
+EOF
 ```
 
-To enable the storage class, you can apply the configuration provided by the repository.
+## 2 - Set-up Workspace
 
-```
-$ kubectl apply -f local-storage.yaml
-```
+Before deploying any workloads, we first need a workspace to deploy into.
+The following command creates a Kubernetes [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) 
+with the name `depscloud-system`.
 
-## 2 - Deploy the deps.cloud Infrastructure
-
-The next step of the process is to deploy the components of the deps.cloud ecosystem.
-There are a few different moving parts to this system.
-First let's create the namespace that these systems will be running in.
-
-```
-$ kubectl apply -f manifests/_.yaml
+```bash
+$ kubectl create ns depscloud-system
 ```
 
-The dependency extraction service (`extractor.yaml`) is responsible for matching and extracting data from files.
-It's deployed as a replicated `Deployment` so that it can elastically scale to the needed request load.
+Once created, [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), 
+[Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/), and 
+[RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) can be used to lock down the system.
+All the resources created in this walk through will be deployed to this namespace.
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: depscloud-system
-  name: extractor
-  labels:
-    app: depscloud
-spec:
-  replicas: 5
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  selector:
-    matchLabels:
-      app: extractor
-  template:
-    metadata:
-      labels:
-        app: extractor
-    spec:
-      containers:
-      - name: extractor
-        image: depscloud/extractor:latest
-        imagePullPolicy: Always
-        resources:
-          limits:
-            cpu: 200m
-            memory: 200Mi
-          requests:
-            cpu: 100m
-            memory: 100Mi
+## 3 - Deploy MySQL
 
----
-# Headless service for stable DNS entries of members
+If you don't already have a MySQL database available, you can deploy one using one of the many helm charts out there. 
+The following deployment was generated from the [bitnami/mysql](https://github.com/bitnami/charts/tree/master/bitnami/mysql).
+
+```bash
+$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+```
+
+This deployment comes with a single primary node and a read only replica node. 
+
+## 4 - Configure deps.cloud
+
+By default, the tracker and indexer do not come configured.
+This allows operators to connect it to provide their specific configuration.
+To configure these processes, you'll need to create two 
+[secrets](https://kubernetes.io/docs/concepts/configuration/secret/) in the `depscloud-system` namespace.
+
+To configure the tracker, you'll need to provide a `depscloud-tracker` secret.
+This secret is used to connect the tracker to the previously provisioned MySQL database. 
+
+```bash
+$ cat <<EOF | kubectl apply -f -
 apiVersion: v1
-kind: Service
+kind: Secret
 metadata:
   namespace: depscloud-system
-  name: extractor
-  labels:
-    app: depscloud
-spec:
-  selector:
-    app: extractor
-  clusterIP: None
-  ports:
-  - name: grpc
-    port: 8090
-    targetPort: 8090
+  name: depscloud-tracker
+stringData:
+  STORAGE_DRIVER: mysql
+  STORAGE_ADDRESS: user:password@tcp(mysql:3306)/depscloud
+  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql-slave:3306)/depscloud
+EOF
 ```
 
-This system requires no dependencies and can easily be applied to the cluster.
+To configure the indexer, you'll need to provide a `depscloud-indexer` secret.
+This file tells the indexer how to discovery and clone repositories. 
+The following configuration will index the deps.cloud repositories.
 
-```
-$ kubectl apply -f manifests/extractor.yaml
-```
-
-The dependency tracker service (`tracker.yaml`) contains the business logic for inserting and retrieving data from the database (`mysql.yaml`).
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: depscloud-system
-  name: tracker
-  labels:
-    app: depscloud
-spec:
-  replicas: 3
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  selector:
-    matchLabels:
-      app: tracker
-  template:
-    metadata:
-      labels:
-        app: tracker
-    spec:
-      initContainers:
-      - name: service-precheck
-        image: mjpitz/service-precheck:latest
-        imagePullPolicy: Always
-        args:
-        - "mysql"
-        - "mysql-read"
-      containers:
-      - name: dts
-        image: depscloud/tracker:latest
-        imagePullPolicy: Always
-        args:
-        - --storage-driver=mysql
-        - --storage-address=user:password@tcp(mysql-0.mysql:3306)/depscloud
-        - --storage-readonly-address=user:password@tcp(mysql:3306)/depscloud
-        resources:
-          limits:
-            cpu: 200m
-            memory: 200Mi
-          requests:
-            cpu: 100m
-            memory: 100Mi
-
----
-# Headless service for stable DNS entries of members
+```bash
+$ cat <<EOF | kubectl apply -f -
 apiVersion: v1
-kind: Service
+kind: Secret
 metadata:
   namespace: depscloud-system
-  name: tracker
-  labels:
-    app: depscloud
-spec:
-  selector:
-    app: tracker
-  clusterIP: None
-  ports:
-  - name: grpc
-    port: 8090
-    targetPort: 8090
-```
-
-To apply, you'll need to install both mysql and the tracker.
-
-```
-$ kubectl apply -f manifests/mysql.yaml
-$ kubectl apply -f manifests/tracker.yaml
-```
-
-These two services are implemented using [gRPC](http://grpc.io).
-gRPC enables stream based responses that ease the demand on the remote system during graph traversals.
-Since gRPC isn't currently available in the browser, we provide a simple RESTful gateway (`gateway.yaml`) to facilitate communication with the backend systems.
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  namespace: depscloud-system
-  name: gateway
-  labels:
-    app: depscloud
-spec:
-  replicas: 3
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  selector:
-    matchLabels:
-      app: gateway
-  template:
-    metadata:
-      labels:
-        app: gateway
-    spec:
-      initContainers:
-      - name: service-precheck
-        image: mjpitz/service-precheck:latest
-        imagePullPolicy: Always
-        args:
-        - "des"
-        - "dts"
-      containers:
-      - name: gateway
-        image: depscloud/gateway:latest
-        imagePullPolicy: Always
-        resources:
-          limits:
-            cpu: 200m
-            memory: 200Mi
-          requests:
-            cpu: 100m
-            memory: 100Mi
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: depscloud-system
-  name: gateway
-  labels:
-    app: depscloud
-spec:
-  selector:
-    app: gateway
-  type: LoadBalancer
-  ports:
-  - name: http
-    port: 8080
-    targetPort: 8080
-```
-
-This system requires the extractor and tracker to be running before it can be started up.
-
-```
-$ kubectl apply -f manifests/gateway.yaml
-```
-
-The dependency indexer scheduled job (`indexer.yaml`) is deployed on a schedule to allow maintainers of this process to adjust scheduling as needed.
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  namespace: depscloud-system
-  name: rds-config
-  labels:
-    app: depscloud
-data:
+  name: depscloud-indexer
+stringData:
   config.yaml: |
     accounts:
     - github:
         strategy: HTTP
         organizations:
         - deps-cloud
-
----
-apiVersion: batch/v1beta1
-kind: CronJob
-metadata:
-  namespace: depscloud-system
-  name: indexer
-  labels:
-    app: depscloud
-spec:
-  schedule: "*/1 * * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          volumes:
-          - name: config
-            configMap:
-              name: rds-config
-          initContainers:
-          - name: service-precheck
-            image: mjpitz/service-precheck:latest
-            imagePullPolicy: Always
-            args:
-            - "extractor"
-            - "tracker"
-          containers:
-          - name: indexer
-            image: depscloud/indexer:latest
-            imagePullPolicy: IfNotPresent
-            args:
-            - "--cron"
-            - "--rds-config=/etc/rds/config.yaml"
-            volumeMounts:
-            - name: config
-              mountPath: /etc/rds
-              readOnly: true
-            resources:
-              limits:
-                cpu: 500m
-                memory: 512Mi
-              requests:
-                cpu: 250m
-                memory: 256Mi
-          restartPolicy: OnFailure
+EOF
 ```
 
-This is the last component that kicks off the whole indexing process.
-It can currently be run as a cron or as a daemon, but the preferred deployment is as a a cron.
+You can learn more about how to configure the indexer process on the [integrations](/docs/integrations/) page.
 
+## 4 - Deploy deps.cloud
+
+After the tracker and indexer have been configured, you'll be able to deploy the deps.cloud infrastructure.
+This configuration can be found with the other deployment configuration on [GitHub](https://github.com/deps-cloud/deploy). 
+
+```bash
+$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
 ```
-$ kubectl apply -f manifests/indexer.yaml
-```
 
-## 3 - Querying the deps.cloud Infrastructure
-
-Once all processes have completed and are healthy, you should be able to interact with the API pretty easily. To quickly test this, you can port forward to one of the `gateway` pods directly.
+Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
+To quickly test this, you can port forward to one of the `gateway` pods directly.
 
 ```
 $ kubectl port-forward -n depscloud-system gateway-797fd99747-j4wbb 8080:8080
@@ -347,29 +138,3 @@ Once the port is forwarded, the following endpoints should be able to be reached
 * [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fdes)
 * [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fdes)
 * [What repositories produce can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fdes&language=go)
-
-## Deploying in a Single Command
-
-While in the previous sections we ran each process manually, the setup does support applying the configuration all at once.
-This can ease the set up process by reducing the manual work involved.
-Simply apply all manifests as follows:
-
-```
-$ kubectl apply -f manifests/
-namespace/depscloud-system created
-deployment.apps/extractor created
-service/extractor created
-configmap/rds-config created
-cronjob.batch/indexer created
-deployment.apps/tracker created
-service/tracker created
-deployment.apps/gateway created
-service/gateway created
-configmap/mysql created
-statefulset.apps/mysql created
-service/mysql created
-service/mysql-read created
-```
-
-This is possible through the use of liveness/readiness probes and the [service-precheck](https://github.com/mjpitz/service-precheck) initContainer.
-The service-precheck initContainer is responsible for blocking the startup of the pod until upstream service dependencies are ready.
