@@ -2,6 +2,7 @@
 title: "Deployment"
 linkTitle: "Deployment"
 weight: 30
+date: 2020-04-28
 ---
 
 The deployment of deps.cloud was intentionally made easy.

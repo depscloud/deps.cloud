@@ -1,6 +1,7 @@
 ---
 title: "Contributing"
 linkTitle: "Contributing"
+date: 2020-04-28
 ---
 
 All projects are open to contributions.

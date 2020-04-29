@@ -2,6 +2,7 @@
 title: "Working with Git"
 linkTitle: "Working with Git"
 weight: 30
+date: 2020-04-28
 ---
 
 ## Cloning Projects

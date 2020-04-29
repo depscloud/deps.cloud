@@ -2,6 +2,7 @@
 title: "GitLab"
 linkTitle: "GitLab"
 weight: 20
+date: 2020-04-28
 ---
 
 GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider.

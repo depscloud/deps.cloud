@@ -2,6 +2,7 @@
 title: Developing Locally
 linkTitle: Developing Locally
 weight: 41
+date: 2020-04-28
 ---
 
 Local targets are available for development.
