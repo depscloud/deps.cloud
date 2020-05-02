@@ -7,7 +7,7 @@ date: 2020-04-28
 
 In this quick start guide, we'll use [docker-compose](https://docs.docker.com/compose) to create our demo infrastructure.
 
-To get started quickly, you should clone the [deps.cloud](https://github.com/deps-cloud/deps.cloud) repository and leverage the configuration under the `examples/docker` directory.
+To get started quickly, you should clone the [deploy](https://github.com/deps-cloud/deploy) repository and leverage the configuration under the `docker` directory.
 
 ## 1 - Launch deps.cloud
 

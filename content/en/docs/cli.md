@@ -45,10 +45,16 @@ https://github.com/deps-cloud/cli/releases/latest
 
 The `depscloud-cli` can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the `DEPSCLOUD_BASE_URL` environment variable.
-Here's an example of how to configure it to use the public API (default behavior).
+Here's an example of how to configure it to use the public API (default behavior) 
 
 ```bash
 export DEPSCLOUD_BASE_URL="https://api.deps.cloud"
+```
+
+If you're trying things out locally, you can also point it at an instance running in [docker](/docs/deployment/docker).
+
+```bash
+export DEPSCLOUD_BASE_URL="http://localhost:8080"
 ```
 
 I've found having a shorthand to be valuable when querying for information on a regular basis.
