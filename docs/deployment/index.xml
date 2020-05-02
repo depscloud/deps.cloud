@@ -24,7 +24,7 @@
         
         
         &lt;p&gt;In this quick start guide, we&amp;rsquo;ll use &lt;a href=&#34;https://docs.docker.com/compose&#34;&gt;docker-compose&lt;/a&gt; to create our demo infrastructure.&lt;/p&gt;
-&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/deps-cloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;examples/docker&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/deps-cloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.&lt;/p&gt;
 &lt;h2 id=&#34;1---launch-depscloud&#34;&gt;1 - Launch deps.cloud&lt;/h2&gt;
 &lt;p&gt;To launch the demo infrastructure, simply run the following:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ docker-compose up -d

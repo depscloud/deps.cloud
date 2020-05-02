@@ -32,7 +32,7 @@ $ depscloud-cli get -h Retrieve information from the graph Usage: depscloud-cli 
 $ depscloud-cli get -h Retrieve information from the graph Usage: depscloud-cli get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service topology Get the module topology of either dependents or dependencies Flags: -h, --help help for get Use &#34;depscloud-cli get [command] --help&#34; for more information about a command.">
 <meta itemprop="datePublished" content="2020-04-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-04-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="759">
+<meta itemprop="wordCount" content="778">
 
 
 
@@ -696,8 +696,10 @@ Use <span style="color:#4e9a06">&#34;depscloud-cli get [command] --help&#34;</sp
 <h2 id="configuration">Configuration</h2>
 <p>The <code>depscloud-cli</code> can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the <code>DEPSCLOUD_BASE_URL</code> environment variable.
-Here&rsquo;s an example of how to configure it to use the public API (default behavior).</p>
+Here&rsquo;s an example of how to configure it to use the public API (default behavior)</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://api.deps.cloud&#34;</span>
+</code></pre></div><p>If you&rsquo;re trying things out locally, you can also point it at an instance running in <a href="/docs/deployment/docker">docker</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://localhost:8080&#34;</span>
 </code></pre></div><p>I&rsquo;ve found having a shorthand to be valuable when querying for information on a regular basis.
 In experimentation, I&rsquo;ve found the <code>deps</code> alias to work well.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">alias</span> <span style="color:#000">deps</span><span style="color:#ce5c00;font-weight:bold">=</span>depscloud-cli
