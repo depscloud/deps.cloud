@@ -1,23 +1,24 @@
 version: "3.7"
 
 services:
-  mysql:
-    image: mysql:8
-    hostname: mysql
+  postgres:
+    image: postgres:12.3
+    hostname: postgres
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: depscloud
-    expose:
-    - 3306
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: depscloud
+    ports:
+    - 5432:5432
 
   tracker:
     image: depscloud/tracker:latest
     hostname: tracker
+    depends_on:
+    - postgres
     command:
-    - --storage-driver=mysql
-    - --storage-address=user:password@tcp(mysql:3306)/depscloud
+    - --storage-driver=pgx
+    - --storage-address=postgres://user:password@postgres:5432/depscloud
 
   extractor:
     image: depscloud/extractor:latest
@@ -43,4 +44,4 @@ services:
     - extractor
     - tracker
     ports:
-    - 8081:8080
+    - 8080:8080
