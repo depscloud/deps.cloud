@@ -5,7 +5,7 @@ build-deps:
 	curl https://raw.githubusercontent.com/wjdp/htmltest/master/godownloader.sh | bash
 
 deps: build-deps
-	git submodule update --init --recursive --force
+	git submodule update --init --recursive
 	npm install
 
 build:
