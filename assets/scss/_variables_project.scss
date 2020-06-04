@@ -11,3 +11,7 @@ $google_font_family: "Roboto:300,300i,400,400i,700,700i";
     max-width: 300px;
     margin-bottom: 30px;
 }
+
+.collapse:not(.show) {
+    display: block !important;
+}
