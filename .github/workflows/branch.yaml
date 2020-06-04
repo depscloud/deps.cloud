@@ -1,0 +1,33 @@
+name: branch
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        env:
+          HUGO_VERSION: 0.69.2
+        run: |
+          curl -LO https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
+          dpkg -i hugo_extended_${HUGO_VERSION}_Linux-64bit.deb && rm hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
+          npm install
+          make build-deps
+          make build test
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          enable_jekyll: false
