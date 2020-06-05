@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/contributing/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,15 +20,29 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Contributing | deps.cloud</title><meta property="og:title" content="Contributing" />
-<meta property="og:description" content="Track, monitor, and engage with project dependents" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/contributing/" />
-<meta property="og:updated_time" content="2020-04-28T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Contributing">
-<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Contributing"/>
-<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
+<title>Data Model | deps.cloud</title><meta property="og:title" content="Data Model" />
+<meta property="og:description" content="This page serves as documentation of the open source data model for the deps.cloud system.
+Logical Model The logical model is the user facing representation of the data in the system. It is defined using protocol buffers. The complete schema can be found in the API repository. To summarize, there are four distinct entities in the deps.cloud database.
+Sources represent origins for information. These can be source control systems like GitHub, GitLab, or BitBucket." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/data-model/" />
+<meta property="article:published_time" content="2020-06-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-03T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Data Model">
+<meta itemprop="description" content="This page serves as documentation of the open source data model for the deps.cloud system.
+Logical Model The logical model is the user facing representation of the data in the system. It is defined using protocol buffers. The complete schema can be found in the API repository. To summarize, there are four distinct entities in the deps.cloud database.
+Sources represent origins for information. These can be source control systems like GitHub, GitLab, or BitBucket.">
+<meta itemprop="datePublished" content="2020-06-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="491">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Model"/>
+<meta name="twitter:description" content="This page serves as documentation of the open source data model for the deps.cloud system.
+Logical Model The logical model is the user facing representation of the data in the system. It is defined using protocol buffers. The complete schema can be found in the API repository. To summarize, there are four distinct entities in the deps.cloud database.
+Sources represent origins for information. These can be source control systems like GitHub, GitLab, or BitBucket."/>
 
 
 
@@ -46,7 +59,7 @@
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -109,7 +122,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
     <li class="collapse show" id="docs">
@@ -137,7 +150,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdata-model" href="/docs/data-model/">Data Model</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdata-model" href="/docs/data-model/">Data Model</a>
       
       
       
@@ -455,7 +468,7 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Contributing</a>
+    <a  href="/docs/contributing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
     <li class="collapse " id="docscontributing">
@@ -472,10 +485,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/code-of-conduct/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Code of Conduct</a>
+    <a  href="/docs/contributing/code-of-conduct/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Code of Conduct</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontributingcode-of-conduct">
+    <li class="collapse " id="docscontributingcode-of-conduct">
       
       
       
@@ -495,10 +508,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/community/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Community</a>
+    <a  href="/docs/contributing/community/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Community</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontributingcommunity">
+    <li class="collapse " id="docscontributingcommunity">
       
       
       
@@ -518,10 +531,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/git/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Working with Git</a>
+    <a  href="/docs/contributing/git/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Git</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontributinggit">
+    <li class="collapse " id="docscontributinggit">
       
       
       
@@ -541,10 +554,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/docker/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Developing in Docker</a>
+    <a  href="/docs/contributing/docker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Developing in Docker</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontributingdocker">
+    <li class="collapse " id="docscontributingdocker">
       
       
       
@@ -564,10 +577,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/local/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Developing Locally</a>
+    <a  href="/docs/contributing/local/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Developing Locally</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontributinglocal">
+    <li class="collapse " id="docscontributinglocal">
       
       
       
@@ -607,6 +620,14 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#logical-model">Logical Model</a></li>
+    <li><a href="#database-schema">Database Schema</a></li>
+    <li><a href="#swappable-storage-engines">Swappable Storage Engines</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -632,7 +653,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/contributing/">Contributing</a>
+	<a href="https://deps.cloud/docs/data-model/">Data Model</a>
 </li>
 
 	</ol>
@@ -640,106 +661,72 @@
 
             
 <div class="td-content">
-	<h1>Contributing</h1>
-        
-	
-	<p>All projects are open to contributions.
-Be sure to consult the resources below prior to contributing a line of code.</p>
-
-        <div class="section-index">
+	<h1>Data Model</h1>
     
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/contributing/code-of-conduct/">Code of Conduct</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/contributing/community/">Community</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/contributing/git/">Working with Git</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/contributing/docker/">Developing in Docker</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/contributing/local/">Developing Locally</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
+	       
+	<p>This page serves as documentation of the open source data model for the deps.cloud system.</p>
+<h2 id="logical-model">Logical Model</h2>
+<p>The logical model is the user facing representation of the data in the system.
+It is defined using <a href="https://developers.google.com/protocol-buffers/">protocol buffers</a>.
+The complete schema can be found in the <a href="https://github.com/deps-cloud/api">API</a> repository.
+To summarize, there are four distinct entities in the deps.cloud database.</p>
+<p><em>Sources</em> represent origins for information.
+These can be source control systems like GitHub, GitLab, or BitBucket.
+Or they can be artifactories like JFrog Artifactory or Sonatype Nexus.
+Sources are keyed by their URL and are represented as nodes in the dependency graph.</p>
+<p><em>Modules</em> represent libraries or applications in the dependency graph.
+Modules are extracted from <a href="/docs/manifests/">manifest files</a>.
+They are keyed by all their data, and are represented as nodes in the dependency graph.</p>
+<p><em>Manages</em> represent the relationship between a <em>source</em> and a <em>module</em>.
+It contains information about how a given module is managed such as the toolchain.</p>
+<p><em>Depends</em> represents the relationship between two <em>modules</em>.
+It contains information about how the modules depend on one another.
+This includes things like version constraint, scopes, and a reference to the source.</p>
+<p>This data can be visualized as such:</p>
+<p><img src="/images/data-model.png" alt="data-model"></p>
+<h2 id="database-schema">Database Schema</h2>
+<p>The database schema is inspired by <a href="https://youtu.be/VZ-zJEWi-Vo?t=588">EdgeStore</a> at <a href="https://dropbox.tech/infrastructure/reintroducing-edgestore">Dropbox</a>.
+With a few modifications, we were able to successfully model a dependency graph.
+Below, you will find a copy of a create table statement for MySQL.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#204a87;font-weight:bold">CREATE</span> <span style="color:#204a87;font-weight:bold">TABLE</span> <span style="color:#204a87;font-weight:bold">IF</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#204a87;font-weight:bold">EXISTS</span> <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">dts_graphdata</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#000;font-weight:bold">(</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">graph_item_type</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">varchar</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">55</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k1</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">64</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k2</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">64</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k3</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">varchar</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">64</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">encoding</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">tinyint</span> <span style="color:#204a87;font-weight:bold">DEFAULT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">graph_item_data</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">text</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">last_modified</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">datetime</span> <span style="color:#204a87;font-weight:bold">DEFAULT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">date_deleted</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#204a87;font-weight:bold">datetime</span> <span style="color:#204a87;font-weight:bold">DEFAULT</span> <span style="color:#000">NULL</span><span style="color:#000;font-weight:bold">,</span>
+  <span style="color:#204a87;font-weight:bold">PRIMARY</span> <span style="color:#204a87;font-weight:bold">KEY</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">graph_item_type</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k1</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k2</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">k3</span><span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">ENGINE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">InnoDB</span> <span style="color:#204a87;font-weight:bold">DEFAULT</span> <span style="color:#204a87;font-weight:bold">CHARSET</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">utf8mb4</span> <span style="color:#204a87;font-weight:bold">COLLATE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">utf8mb4_0900_ai_ci</span>
+</code></pre></div><p>This schema is able to represent a dependency graph with the help of a few simple rules.</p>
+<ol>
+<li>When <code>k1 == k2</code>, the row represents a node in the graph</li>
+<li>When <code>k1 != k2</code>, the row represents an edge between <code>k1</code> and <code>k2</code></li>
+<li><code>k3</code> allows for multiple edges to exist between nodes, but is restricted to one per source</li>
+</ol>
+<p>To help make this more concrete, consider the following simplified table:</p>
+<pre><code>| graph_item_type | k1     | k2     | k3     | encoding | graph_item_data |
+|-----------------|--------|--------|--------|----------|-----------------|
+| depends         | msha   | osha   | ssha   |        1 | { ... }         |
+| manages         | ssha   | msha   |        |        1 | { ... }         |
+| module          | msha   | msha   |        |        1 | { ... }         |
+| module          | osha   | osha   |        |        1 | { ... }         |
+| source          | ssha   | ssha   |        |        1 | { ... }         |
+</code></pre><p>The following statements can be made about the data shown in the table.</p>
+<ul>
+<li>Source <code>ssha</code> manages module <code>msha</code>.</li>
+<li>Module <code>msha</code> depends on module <code>osha</code> for source <code>ssha</code>.</li>
+</ul>
+<h2 id="swappable-storage-engines">Swappable Storage Engines</h2>
+<p>While only SQL support is implemented today, it&rsquo;s possible to support NoSQL systems too.
+This is made possible by the simplified schema and data abstraction layer.
+Currently supported databases:</p>
+<ul>
+<li><a href="https://www.sqlite.org/">SQLite</a></li>
+<li><a href="https://www.mysql.com/">MySQL</a></li>
+<li><a href="https://postgresql.org/">Postgres</a></li>
+</ul>
 
 	
 		<style>
@@ -803,9 +790,10 @@ Be sure to consult the resources below prior to contributing a line of code.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 28, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2020
 </div>
 </div>
+
 
           </main>
         </div>

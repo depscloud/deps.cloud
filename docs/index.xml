@@ -222,6 +222,83 @@ Most people are still more familiar with things like &lt;a href=&#34;https://www
 So the first implementation was done on top of a SQL system.
 From there, a simple service interface was born.
 This makes it easy to swap the storage technology out for different solutions.&lt;/p&gt;
+&lt;p&gt;For more information on the data layer, see the &lt;a href=&#34;https://deps.cloud/docs/data-model/&#34;&gt;Data Model&lt;/a&gt; documentation.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Data Model</title>
+      <link>https://deps.cloud/docs/data-model/</link>
+      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/data-model/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page serves as documentation of the open source data model for the deps.cloud system.&lt;/p&gt;
+&lt;h2 id=&#34;logical-model&#34;&gt;Logical Model&lt;/h2&gt;
+&lt;p&gt;The logical model is the user facing representation of the data in the system.
+It is defined using &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;protocol buffers&lt;/a&gt;.
+The complete schema can be found in the &lt;a href=&#34;https://github.com/deps-cloud/api&#34;&gt;API&lt;/a&gt; repository.
+To summarize, there are four distinct entities in the deps.cloud database.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Sources&lt;/em&gt; represent origins for information.
+These can be source control systems like GitHub, GitLab, or BitBucket.
+Or they can be artifactories like JFrog Artifactory or Sonatype Nexus.
+Sources are keyed by their URL and are represented as nodes in the dependency graph.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Modules&lt;/em&gt; represent libraries or applications in the dependency graph.
+Modules are extracted from &lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;manifest files&lt;/a&gt;.
+They are keyed by all their data, and are represented as nodes in the dependency graph.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Manages&lt;/em&gt; represent the relationship between a &lt;em&gt;source&lt;/em&gt; and a &lt;em&gt;module&lt;/em&gt;.
+It contains information about how a given module is managed such as the toolchain.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Depends&lt;/em&gt; represents the relationship between two &lt;em&gt;modules&lt;/em&gt;.
+It contains information about how the modules depend on one another.
+This includes things like version constraint, scopes, and a reference to the source.&lt;/p&gt;
+&lt;p&gt;This data can be visualized as such:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/data-model.png&#34; alt=&#34;data-model&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;database-schema&#34;&gt;Database Schema&lt;/h2&gt;
+&lt;p&gt;The database schema is inspired by &lt;a href=&#34;https://youtu.be/VZ-zJEWi-Vo?t=588&#34;&gt;EdgeStore&lt;/a&gt; at &lt;a href=&#34;https://dropbox.tech/infrastructure/reintroducing-edgestore&#34;&gt;Dropbox&lt;/a&gt;.
+With a few modifications, we were able to successfully model a dependency graph.
+Below, you will find a copy of a create table statement for MySQL.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;IF&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;EXISTS&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dts_graphdata&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;varchar&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;55&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k3&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;varchar&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;encoding&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;tinyint&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_data&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last_modified&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;datetime&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;date_deleted&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;datetime&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k3&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ENGINE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;InnoDB&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;CHARSET&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;utf8mb4&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;COLLATE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;utf8mb4_0900_ai_ci&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This schema is able to represent a dependency graph with the help of a few simple rules.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When &lt;code&gt;k1 == k2&lt;/code&gt;, the row represents a node in the graph&lt;/li&gt;
+&lt;li&gt;When &lt;code&gt;k1 != k2&lt;/code&gt;, the row represents an edge between &lt;code&gt;k1&lt;/code&gt; and &lt;code&gt;k2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;k3&lt;/code&gt; allows for multiple edges to exist between nodes, but is restricted to one per source&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To help make this more concrete, consider the following simplified table:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;| graph_item_type | k1     | k2     | k3     | encoding | graph_item_data |
+|-----------------|--------|--------|--------|----------|-----------------|
+| depends         | msha   | osha   | ssha   |        1 | { ... }         |
+| manages         | ssha   | msha   |        |        1 | { ... }         |
+| module          | msha   | msha   |        |        1 | { ... }         |
+| module          | osha   | osha   |        |        1 | { ... }         |
+| source          | ssha   | ssha   |        |        1 | { ... }         |
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The following statements can be made about the data shown in the table.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Source &lt;code&gt;ssha&lt;/code&gt; manages module &lt;code&gt;msha&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Module &lt;code&gt;msha&lt;/code&gt; depends on module &lt;code&gt;osha&lt;/code&gt; for source &lt;code&gt;ssha&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;swappable-storage-engines&#34;&gt;Swappable Storage Engines&lt;/h2&gt;
+&lt;p&gt;While only SQL support is implemented today, it&amp;rsquo;s possible to support NoSQL systems too.
+This is made possible by the simplified schema and data abstraction layer.
+Currently supported databases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sqlite.org/&#34;&gt;SQLite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://postgresql.org/&#34;&gt;Postgres&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
