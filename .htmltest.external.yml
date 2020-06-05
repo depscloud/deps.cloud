@@ -4,3 +4,4 @@ IgnoreAltMissing: true
 IgnoreURLs:
   - ^http://.*localhost:8080.*$
   - ^https://gitter.im/mjpitz$
+  - ^https://deps.cloud/.*$
