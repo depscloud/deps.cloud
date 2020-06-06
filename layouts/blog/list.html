@@ -2,17 +2,13 @@
 {{ if .Parent.IsHome }}
 	{{ $.Scratch.Set "blog-pages" (where .Site.RegularPages "Section" .Section) }}
 {{ else }}
-	{{$.Scratch.Set "blog-pages" .Pages }}
+	{{ $.Scratch.Set "blog-pages" .Pages }}
 {{ end }}
-
-{{ $pag := .Paginate (( $.Scratch.Get "blog-pages").GroupByDate "2006")}}
-{{ $pageGroups := $pag.PageGroups}}
 
 <div class="row" style="max-width:800px;">
 	<div class="col-12">
-		{{ range $pageGroups }}
 		<ul class="list-unstyled mt-4">
-			{{ range .Pages }}
+			{{ range $.Scratch.Get "blog-pages" }}
 			<li class="media mb-4">
 				<div class="media-body">
 					<h5 class="mt-0 mb-1"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
@@ -24,7 +20,6 @@
 			</li>
 			{{ end }}
 		</ul>
-		{{ end }}
 	</div>
 </div>
 <div class="row pl-2 pt-2">
