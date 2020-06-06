@@ -655,15 +655,16 @@
 	
 	<p>This section provides guidance on how to configure the underlying system.
 Keep in mind, how you update the configuration depends on your deployment strategy.
-If you&rsquo;re using Docker, you will be changing the <code>rds.yaml</code> file.
-If you&rsquo;re using Kubernetes, you will need to change the <code>rds-config</code> <code>ConfigMap</code>.</p>
+If you&rsquo;re using Docker, you will be changing the <code>config.yaml</code> file.
+If you&rsquo;re using Kubernetes, you will need to change the <code>config.yaml</code> key in the <code>indexer</code> <code>Secret</code>.</p>
 <p>Discovery is responsible for the discovery of repositories from different sources.
 These sources include systems like BitBucket, GitHub, and GitLab.
 Configuring the system to read from these different sources is rather easy.
 See the following configuration guides on how to configure the system for your corresponding provider.</p>
 <div class="row" style="max-width: 80%;">
-    <div class="col-sm-6 col-md-4">
-      
+  <div class="col-sm-6 col-md-4">
+    
+
 
 
 
@@ -671,7 +672,9 @@ See the following configuration guides on how to configure the system for your c
 
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
-        <i class="fab fa-github-square" style="width:100%"></i>
+        
+        <img src="/images/github.png" style="width:158px;"/>
+        
     </div>
 
     <div class="card-body text-center">
@@ -682,9 +685,10 @@ See the following configuration guides on how to configure the system for your c
     </div>
 </div>
 
-    </div>
-    <div class="col-sm-6 col-md-4">
-      
+  </div>
+  <div class="col-sm-6 col-md-4">
+    
+
 
 
 
@@ -692,7 +696,9 @@ See the following configuration guides on how to configure the system for your c
 
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
-        <i class="fab fa-gitlab" style="width:100%"></i>
+        
+        <img src="/images/gitlab.png" style="width:158px;"/>
+        
     </div>
 
     <div class="card-body text-center">
@@ -703,9 +709,10 @@ See the following configuration guides on how to configure the system for your c
     </div>
 </div>
 
-    </div>
-    <div class="col-sm-6 col-md-4">
-      
+  </div>
+  <div class="col-sm-6 col-md-4">
+    
+
 
 
 
@@ -713,7 +720,9 @@ See the following configuration guides on how to configure the system for your c
 
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
-        <i class="fab fa-bitbucket" style="width:100%"></i>
+        
+        <img src="/images/bitbucket.png" style="width:158px;"/>
+        
     </div>
 
     <div class="card-body text-center">
@@ -724,8 +733,8 @@ See the following configuration guides on how to configure the system for your c
     </div>
 </div>
 
-    </div>
   </div>
+</div>
 
         <div class="section-index">
     
