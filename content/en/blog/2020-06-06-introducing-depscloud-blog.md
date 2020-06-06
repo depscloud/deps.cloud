@@ -2,7 +2,6 @@
 title: "Introducing the deps.cloud blog"
 author: Mya Pitzeruse
 date: 2020-06-06
-draft: true
 ---
 
 Welcome to the deps.cloud blog!
