@@ -1,4 +1,5 @@
 {{ $border := .Get "border" }}
+{{ $src := .Get "src" }}
 {{ $icon := .Get "icon" }}
 {{ $title := .Get "title" }}
 {{ $link := .Get "link" }}
@@ -6,7 +7,11 @@
 
 <div class="card" style="margin-bottom: 30px; border-color: {{ $border }}">
     <div class="text-center" style="font-size: 8rem;">
+        {{ if $src }}
+        <img src="{{ $src }}" style="width:158px;"/>
+        {{ else }}
         <i class="{{ $icon }}" style="width:100%"></i>
+        {{ end }}
     </div>
 
     <div class="card-body text-center">
