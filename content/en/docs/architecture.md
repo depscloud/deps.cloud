@@ -64,3 +64,5 @@ Knowing that this layer of the stack was likely to be swapped out with Company X
 So the first implementation was done on top of a SQL system.
 From there, a simple service interface was born.
 This makes it easy to swap the storage technology out for different solutions.
+
+For more information on the data layer, see the [Data Model](/docs/data-model/) documentation.
