@@ -1,0 +1,17 @@
+<div class="clearfix mb-0 pt-5" style="color:white;">
+  {{ if .PrevInSection }}
+  <span style="float:left;">
+    <a href="{{.PrevInSection.RelPermalink}}" class="btn btn-primary"><span class="mr-1">←</span> {{ T "ui_pager_prev" }}</a>
+  </span>
+  {{ end }}
+
+  {{ if .NextInSection }}
+  <span style="float:right;">
+    <a href="{{.NextInSection.RelPermalink}}" class="btn btn-primary">{{ T "ui_pager_next" }} <span class="ml-1">→</span></a>
+  </span>
+  {{ end }}
+</div>
+
+<ul class="list-unstyled  justify-content-between align-items-center " style="color: white !important;">
+
+</ul>
