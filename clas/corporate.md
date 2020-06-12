@@ -86,7 +86,10 @@ complete details of its source and of any license or other restriction
 agreements) of which you are personally aware, and conspicuously marking the 
 work as "Submitted on behalf of a third-party: [named here]".
 
-8. It is your responsibility to notify deps.cloud when any change is required 
-to the list of designated employees authorized to submit Contributions on 
-behalf of the Corporation, or to the Corporation's Point of Contact with 
-deps.cloud.
+---
+
+Name:         Jane Smith
+Title:        Head of OpenSource
+Employer:     Company X
+Date:         YYYY-MM-DD
+Work Email:   jsmith@company.com
