@@ -2,7 +2,7 @@
 
 To help protect the project owners and contributors to the project, we've established a common set of CLAs.
 The Individual Contributor Agreement should be signed by anyone submitting code to the project.
-The Coorporate Contributor Agreement should be signed by any organization who's engineers are submitting code on their behalf.
+The Corporate Contributor Agreement should be signed by any organization who's engineers are submitting code on their behalf.
 
 ### Individual Contributors
 
