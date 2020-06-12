@@ -2,7 +2,7 @@
 title: "Command Line"
 linkTitle: "Command Line"
 weight: 40
-date: 2020-04-28
+date: 2020-06-12
 ---
 
 * Repository: https://github.com/deps-cloud/cli

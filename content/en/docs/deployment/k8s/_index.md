@@ -2,7 +2,7 @@
 title: "Kubernetes"
 linkTitle: "Kubernetes"
 weight: 20
-date: 2020-04-28
+date: 2020-06-12
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster.

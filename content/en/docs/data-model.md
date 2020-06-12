@@ -2,7 +2,7 @@
 title: "Data Model"
 linkTitle: "Data Model"
 weight: 15
-date: 2020-06-03
+date: 2020-06-12
 ---
 
 This page serves as documentation of the open source data model for the deps.cloud system.

@@ -3,7 +3,7 @@ title: "Deployment"
 linkTitle: "Deployment"
 weight: 30
 no_list: true
-date: 2020-06-06
+date: 2020-06-12
 ---
 
 The deployment of deps.cloud was intentionally made easy.

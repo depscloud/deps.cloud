@@ -2,7 +2,7 @@
 title: "Bitbucket"
 linkTitle: "Bitbucket"
 weight: 30
-date: 2020-04-28
+date: 2020-06-12
 ---
 
 BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence).

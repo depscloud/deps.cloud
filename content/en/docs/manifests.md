@@ -2,7 +2,7 @@
 title: "Manifest Files"
 linkTitle: "Manifest Files"
 weight: 5
-date: 2020-04-28
+date: 2020-06-12
 ---
 
 A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.

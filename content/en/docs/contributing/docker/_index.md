@@ -2,7 +2,7 @@
 title: Developing in Docker
 linkTitle: Developing in Docker
 weight: 40
-date: 2020-04-28
+date: 2020-06-12
 ---
 
 In order to start developing using Docker, first deploy the stack using the directions .
