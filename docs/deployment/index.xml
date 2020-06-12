@@ -4,7 +4,7 @@
     <link>https://deps.cloud/docs/deployment/</link>
     <description>Recent content in Deployment on deps.cloud</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://deps.cloud/docs/deployment/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Docs: Docker</title>
       <link>https://deps.cloud/docs/deployment/docker/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/deployment/docker/</guid>
       <description>
@@ -69,7 +69,7 @@ Restarting docker_indexer_1 ... done
     <item>
       <title>Docs: Kubernetes</title>
       <link>https://deps.cloud/docs/deployment/k8s/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/deployment/k8s/</guid>
       <description>
@@ -174,7 +174,7 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
     <item>
       <title>Docs: Helm</title>
       <link>https://deps.cloud/docs/deployment/helm/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/deployment/helm/</guid>
       <description>

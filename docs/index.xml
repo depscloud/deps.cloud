@@ -4,7 +4,7 @@
     <link>https://deps.cloud/docs/</link>
     <description>Recent content in Documentation on deps.cloud</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://deps.cloud/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Docs: What is deps.cloud?</title>
       <link>https://deps.cloud/docs/what-is-depscloud/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/what-is-depscloud/</guid>
       <description>
@@ -52,7 +52,7 @@ In Java, a &lt;code&gt;pom.xml&lt;/code&gt; or &lt;code&gt;build.gradle&lt;/code
     <item>
       <title>Docs: Manifest Files</title>
       <link>https://deps.cloud/docs/manifests/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/manifests/</guid>
       <description>
@@ -173,7 +173,7 @@ Since there is no standardization across languages, extraction may vary between 
     <item>
       <title>Docs: Architecture</title>
       <link>https://deps.cloud/docs/architecture/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/architecture/</guid>
       <description>
@@ -230,7 +230,7 @@ This makes it easy to swap the storage technology out for different solutions.&l
     <item>
       <title>Docs: Data Model</title>
       <link>https://deps.cloud/docs/data-model/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/data-model/</guid>
       <description>
@@ -306,7 +306,7 @@ Currently supported databases:&lt;/p&gt;
     <item>
       <title>Docs: Command Line</title>
       <link>https://deps.cloud/docs/cli/</link>
-      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/cli/</guid>
       <description>
