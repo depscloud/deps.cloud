@@ -697,8 +697,8 @@ As a result, it inspired the use of a more scientific language where there is mo
 While both JavaScript and Python afforded the flexibility I was looking for in a system, it was Typescript that offered the best of both worlds.</p>
 <h2 id="contributing-an-extractor">Contributing an extractor</h2>
 <p>This is by far, one of the easiest ways to contribute to the project.
-It involves adding a new class to the code base under the <a href="https://github.com/deps-cloud/extractor/tree/master/src/extractors"><code>src/extractors</code></a> directory.
-Once the new extractor is added, you can register it using the <a href="https://github.com/deps-cloud/extractor/blob/master/src/extractors/ExtractorRegistry.ts"><code>ExtractorRegistry</code></a>.
+It involves adding a new class to the code base under the <a href="https://github.com/deps-cloud/extractor/tree/main/src/extractors"><code>src/extractors</code></a> directory.
+Once the new extractor is added, you can register it using the <a href="https://github.com/deps-cloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts"><code>ExtractorRegistry</code></a>.
 The following code snippet illustrates the bare elements needed to write a custom extractor.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#204a87;font-weight:bold">export</span> <span style="color:#204a87;font-weight:bold">default</span> <span style="color:#204a87;font-weight:bold">class</span> <span style="color:#000">FileExtractor</span> <span style="color:#204a87;font-weight:bold">implements</span> <span style="color:#000">Extractor</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#000">requires</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">string</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#000;font-weight:bold">{</span>
