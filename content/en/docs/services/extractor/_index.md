@@ -20,8 +20,8 @@ While both JavaScript and Python afforded the flexibility I was looking for in a
 ## Contributing an extractor
 
 This is by far, one of the easiest ways to contribute to the project.
-It involves adding a new class to the code base under the [`src/extractors`](https://github.com/deps-cloud/extractor/tree/master/src/extractors) directory.
-Once the new extractor is added, you can register it using the [`ExtractorRegistry`](https://github.com/deps-cloud/extractor/blob/master/src/extractors/ExtractorRegistry.ts).
+It involves adding a new class to the code base under the [`src/extractors`](https://github.com/deps-cloud/extractor/tree/main/src/extractors) directory.
+Once the new extractor is added, you can register it using the [`ExtractorRegistry`](https://github.com/deps-cloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts).
 The following code snippet illustrates the bare elements needed to write a custom extractor.
 
 ```typescript
