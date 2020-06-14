@@ -51,7 +51,7 @@ find . -maxdepth &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt
 
 find . -maxdepth &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt; -name .git &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    xargs dirname &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    xargs -I&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt; git --git-dir&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt;/.git --work-tree&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt; push -u orgin &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BRANCH_NAME&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    xargs -I&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt; git --git-dir&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt;/.git --work-tree&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt; push -u origin &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BRANCH_NAME&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# update the default branch&lt;/span&gt;
 
@@ -76,7 +76,9 @@ curl -sSL -H &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Authorization: &
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# delete the master branch&lt;/span&gt;
 
-find . -maxdepth &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt; -name .git &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; xargs dirname &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; xargs -I&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt; git --git-dir&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt;/.git --work-tree&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt; push origin :master
+find . -maxdepth &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt; -name .git &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    xargs dirname &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;\
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    xargs -I&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{}&lt;/span&gt; git --git-dir&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt;/.git --work-tree&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;={}&lt;/span&gt; push origin :master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

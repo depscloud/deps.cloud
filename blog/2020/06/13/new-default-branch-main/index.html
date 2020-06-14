@@ -32,7 +32,7 @@ To help show our support for the black community, the default branch has been re
 To help show our support for the black community, the default branch has been renamed to main. While this is one small change in one project, we hope that many others follow suit.">
 <meta itemprop="datePublished" content="2020-06-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="376">
+<meta itemprop="wordCount" content="378">
 
 
 
@@ -161,7 +161,7 @@ find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .gi
 
 find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .git <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    xargs dirname <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>    xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> git --git-dir<span style="color:#ce5c00;font-weight:bold">={}</span>/.git --work-tree<span style="color:#ce5c00;font-weight:bold">={}</span> push -u orgin <span style="color:#4e9a06">${</span><span style="color:#000">BRANCH_NAME</span><span style="color:#4e9a06">}</span>
+</span><span style="color:#4e9a06"></span>    xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> git --git-dir<span style="color:#ce5c00;font-weight:bold">={}</span>/.git --work-tree<span style="color:#ce5c00;font-weight:bold">={}</span> push -u origin <span style="color:#4e9a06">${</span><span style="color:#000">BRANCH_NAME</span><span style="color:#4e9a06">}</span>
 
 <span style="color:#8f5902;font-style:italic"># update the default branch</span>
 
@@ -186,7 +186,9 @@ curl -sSL -H <span style="color:#4e9a06">&#34;Authorization: </span><span style=
 
 <span style="color:#8f5902;font-style:italic"># delete the master branch</span>
 
-find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .git <span style="color:#000;font-weight:bold">|</span> xargs dirname <span style="color:#000;font-weight:bold">|</span> xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> git --git-dir<span style="color:#ce5c00;font-weight:bold">={}</span>/.git --work-tree<span style="color:#ce5c00;font-weight:bold">={}</span> push origin :master
+find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .git <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    xargs dirname <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> git --git-dir<span style="color:#ce5c00;font-weight:bold">={}</span>/.git --work-tree<span style="color:#ce5c00;font-weight:bold">={}</span> push origin :master
 </code></pre></div>
   
 
