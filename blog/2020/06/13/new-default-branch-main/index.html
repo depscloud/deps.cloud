@@ -32,7 +32,7 @@ To help show our support for the black community, the default branch has been re
 To help show our support for the black community, the default branch has been renamed to main. While this is one small change in one project, we hope that many others follow suit.">
 <meta itemprop="datePublished" content="2020-06-13T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-13T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="378">
+<meta itemprop="wordCount" content="392">
 
 
 
@@ -165,12 +165,15 @@ find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .gi
 
 <span style="color:#8f5902;font-style:italic"># update the default branch</span>
 
-curl -sSL -H <span style="color:#4e9a06">&#34;Authorization: </span><span style="color:#4e9a06">${</span><span style="color:#000">GITHUB_AUTHORIZATION</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">&#34;</span> https://api.github.com/users/<span style="color:#4e9a06">${</span><span style="color:#000">GITHUB_GROUP</span><span style="color:#4e9a06">}</span>/repos <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>    jq -r .<span style="color:#ce5c00;font-weight:bold">[]</span>.name <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+find . -maxdepth <span style="color:#0000cf;font-weight:bold">2</span> -name .git <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    xargs dirname <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    xargs basename -a <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> <span style="color:#204a87">echo</span> https://api.github.com/repos/<span style="color:#4e9a06">${</span><span style="color:#000">GITHUB_GROUP</span><span style="color:#4e9a06">}</span>/<span style="color:#ce5c00;font-weight:bold">{}</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    xargs -I<span style="color:#ce5c00;font-weight:bold">{}</span> curl <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>        -X PATCH <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>        -H <span style="color:#4e9a06">&#34;Content-Type: application/json&#34;</span> <span style="color:#4e9a06">\
-</span><span style="color:#4e9a06"></span>        -d <span style="color:#4e9a06">&#34;{\&#34;default_branch\&#34;: \&#34;</span><span style="color:#4e9a06">${</span><span style="color:#000">BRANCH_NAME</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">\&#34;}&#34;</span> https://api.github.com/repos/<span style="color:#4e9a06">${</span><span style="color:#000">GITHUB_GROUP</span><span style="color:#4e9a06">}</span>/<span style="color:#ce5c00;font-weight:bold">{}</span>
+</span><span style="color:#4e9a06"></span>        -H <span style="color:#4e9a06">&#34;Authorization: </span><span style="color:#4e9a06">${</span><span style="color:#000">GITHUB_AUTHORIZATION</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>        -d <span style="color:#4e9a06">&#34;{\&#34;default_branch\&#34;: \&#34;</span><span style="color:#4e9a06">${</span><span style="color:#000">BRANCH_NAME</span><span style="color:#4e9a06">}</span><span style="color:#4e9a06">\&#34;}&#34;</span> <span style="color:#ce5c00;font-weight:bold">{}</span>
 
 <span style="color:#8f5902;font-style:italic">##</span>
 <span style="color:#8f5902;font-style:italic">## Congratulations!</span>
