@@ -37,7 +37,7 @@ find . -maxdepth 2 -name .git | \
 
 find . -maxdepth 2 -name .git | \
     xargs dirname | \
-    xargs -I{} git --git-dir={}/.git --work-tree={} push -u orgin ${BRANCH_NAME}
+    xargs -I{} git --git-dir={}/.git --work-tree={} push -u origin ${BRANCH_NAME}
 
 # update the default branch
 
@@ -62,5 +62,7 @@ curl -sSL -H "Authorization: ${GITHUB_AUTHORIZATION}" https://api.github.com/use
 
 # delete the master branch
 
-find . -maxdepth 2 -name .git | xargs dirname | xargs -I{} git --git-dir={}/.git --work-tree={} push origin :master
+find . -maxdepth 2 -name .git | \
+    xargs dirname | \
+    xargs -I{} git --git-dir={}/.git --work-tree={} push origin :master
 ```
