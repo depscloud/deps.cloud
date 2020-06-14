@@ -41,12 +41,15 @@ find . -maxdepth 2 -name .git | \
 
 # update the default branch
 
-curl -sSL -H "Authorization: ${GITHUB_AUTHORIZATION}" https://api.github.com/users/${GITHUB_GROUP}/repos | \
-    jq -r .[].name | \
+find . -maxdepth 2 -name .git | \
+    xargs dirname | \
+    xargs basename -a | \
+    xargs -I{} echo https://api.github.com/repos/${GITHUB_GROUP}/{} | \
     xargs -I{} curl \
         -X PATCH \
         -H "Content-Type: application/json" \
-        -d "{\"default_branch\": \"${BRANCH_NAME}\"}" https://api.github.com/repos/${GITHUB_GROUP}/{}
+        -H "Authorization: ${GITHUB_AUTHORIZATION}" \
+        -d "{\"default_branch\": \"${BRANCH_NAME}\"}" {}
 
 ##
 ## Congratulations!
