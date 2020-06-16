@@ -62,6 +62,11 @@ if (!doNotTrack) {
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
 
   </head>
   <body class="td-page">
@@ -100,7 +105,18 @@ if (!doNotTrack) {
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.a7b5a2f3f2a5547b5dbf92574a5db66f4f6837e804c52470bb54fa2fe6027380dabc508d59a598c13af11caf246a75fb71be070d9397ade5cafc11dc9f80c4b5.json"
+  data-offline-search-base-href="/"
+>
 
 </div>
 </nav>
@@ -112,19 +128,6 @@ if (!doNotTrack) {
 <section class="row td-search-result">
 <div class="col-12 col-md-8 offset-md-2">
 <h2 class="ml-4">Search Results</h2>
-
-<script>
-(function() {
-var cx = '017487221271611979926:eoeczqvytvh';
-var gcse = document.createElement('script');
-gcse.type = 'text/javascript';
-gcse.async = true;
-gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(gcse, s);
-})();
-</script>
-			<gcse:searchresults-only></gcse:searchresults-only>
 
 </div>
 </section>
@@ -212,7 +215,9 @@ s.parentNode.insertBefore(gcse, s);
 
 
 
-<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
