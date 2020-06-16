@@ -92,4 +92,6 @@ Name:         Jane Smith
 Title:        Head of OpenSource
 Employer:     Company X
 Date:         YYYY-MM-DD
-Work Email:   jsmith@company.com
+Work Email:   jsmith@companyx.com
+GitHub Organizations:
+- CompanyX
