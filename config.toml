@@ -142,7 +142,12 @@ enable = false
 	name = "User mailing List"
 	url = "https://groups.google.com/a/deps.cloud/forum/#!forum/community/join"
 	icon = "fa fa-envelope"
-	desc = "Discussion and help from your fellow users"
+	desc = "Discussion and help from your fellow users."
+[[params.links.user]]
+	name = "Slack"
+	url = "https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A"
+	icon = "fab fa-slack"
+	desc = "Find help and ask questions."
 [[params.links.user]]
 	name ="Twitter"
 	url = "https://twitter.com/depscloud"
@@ -156,12 +161,7 @@ enable = false
 	icon = "fab fa-github"
 	desc = "Development takes place here!"
 [[params.links.developer]]
-	name = "Gitter"
-	url = "https://gitter.im/depscloud/community"
-	icon = "fab fa-gitter"
-	desc = "Chat with other project developers"
-[[params.links.developer]]
 	name = "Developer mailing List"
 	url = "https://groups.google.com/a/deps.cloud/forum/#!forum/community/join"
 	icon = "fa fa-envelope"
-	desc = "Discuss development issues around the project"
+	desc = "Discuss development issues around the project."
