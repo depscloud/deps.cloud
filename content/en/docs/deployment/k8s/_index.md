@@ -2,7 +2,7 @@
 title: "Kubernetes"
 linkTitle: "Kubernetes"
 weight: 20
-date: 2020-06-12
+date: 2020-06-20
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster.
@@ -44,10 +44,10 @@ EOF
 
 Before deploying any workloads, we first need a workspace to deploy into.
 The following command creates a Kubernetes [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) 
-with the name `depscloud-system`.
+with the name `depscloud`.
 
 ```bash
-$ kubectl create ns depscloud-system
+$ kubectl create ns depscloud
 ```
 
 Once created, [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/), 
@@ -61,7 +61,7 @@ If you don't already have a MySQL database available, you can deploy one using o
 The following deployment was generated from the [bitnami/mysql](https://github.com/bitnami/charts/tree/master/bitnami/mysql).
 
 ```bash
-$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
 ```
 
 This deployment comes with a single primary node and a read only replica node. 
@@ -71,7 +71,7 @@ This deployment comes with a single primary node and a read only replica node.
 By default, the tracker and indexer do not come configured.
 This allows operators to connect it to provide their specific configuration.
 To configure these processes, you'll need to create two 
-[secrets](https://kubernetes.io/docs/concepts/configuration/secret/) in the `depscloud-system` namespace.
+[secrets](https://kubernetes.io/docs/concepts/configuration/secret/) in the `depscloud` namespace.
 
 To configure the tracker, you'll need to provide a `depscloud-tracker` secret.
 This secret is used to connect the tracker to the previously provisioned MySQL database. 
@@ -81,7 +81,7 @@ $ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: depscloud-system
+  namespace: depscloud
   name: depscloud-tracker
 stringData:
   STORAGE_DRIVER: mysql
@@ -99,7 +99,7 @@ $ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  namespace: depscloud-system
+  namespace: depscloud
   name: depscloud-indexer
 stringData:
   config.yaml: |
@@ -119,14 +119,14 @@ After the tracker and indexer have been configured, you'll be able to deploy the
 This configuration can be found with the other deployment configuration on [GitHub](https://github.com/deps-cloud/deploy). 
 
 ```bash
-$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
 ```
 
 Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
 To quickly test this, you can port forward to one of the `gateway` pods directly.
 
 ```
-$ kubectl port-forward -n depscloud-system gateway-797fd99747-j4wbb 8080:8080
+$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
 Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
 ```
@@ -134,7 +134,7 @@ Forwarding from [::1]:8080 -> 8080
 Once the port is forwarded, the following endpoints should be able to be reached.
 
 * [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
-* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fdes.git)
-* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fdes)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fdes)
-* [What repositories produce can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fdes&language=go)
+* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git)
+* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fextractor)
+* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fapi)
+* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fextractor&language=go)
