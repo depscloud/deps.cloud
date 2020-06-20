@@ -43,6 +43,11 @@
   </url>
   
   <url>
+    <loc>https://deps.cloud/docs/deployment/k8s/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deps.cloud/docs/contributing/community/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url>
@@ -63,8 +68,8 @@
   </url>
   
   <url>
-    <loc>https://deps.cloud/docs/deployment/k8s/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <loc>https://deps.cloud/docs/deployment/helm/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -74,11 +79,6 @@
   
   <url>
     <loc>https://deps.cloud/docs/deployment/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deps.cloud/docs/deployment/helm/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url>
   

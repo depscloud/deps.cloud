@@ -25,7 +25,7 @@
 <meta property="og:description" content="Track, monitor, and engage with project dependents" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/helm/" />
-<meta property="og:updated_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="og:updated_time" content="2020-06-20T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Helm">
 <meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Helm"/>
@@ -109,7 +109,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7b5a2f3f2a5547b5dbf92574a5db66f4f6837e804c52470bb54fa2fe6027380dabc508d59a598c13af11caf246a75fb71be070d9397ade5cafc11dc9f80c4b5.json"
+  data-offline-search-index-json-src="/offline-search-index.10acff2280589413804463fc8ae1acf7aba88c7dfd543063d74806d14cefd77089f2c321043211bd7fd1a065b5fc9297042db47a54d9f82af0a37f05cefefa99.json"
   data-offline-search-base-href="/"
 >
 
@@ -139,7 +139,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7b5a2f3f2a5547b5dbf92574a5db66f4f6837e804c52470bb54fa2fe6027380dabc508d59a598c13af11caf246a75fb71be070d9397ade5cafc11dc9f80c4b5.json"
+  data-offline-search-index-json-src="/offline-search-index.10acff2280589413804463fc8ae1acf7aba88c7dfd543063d74806d14cefd77089f2c321043211bd7fd1a065b5fc9297042db47a54d9f82af0a37f05cefefa99.json"
   data-offline-search-base-href="/"
 >
 
@@ -663,7 +663,8 @@ if (!doNotTrack) {
     <li><a href="#1---adding-the-helm-repository">1 - Adding the Helm Repository</a></li>
     <li><a href="#2---deploy-the-depscloud-infrastructure">2 - Deploy the deps.cloud Infrastructure</a></li>
     <li><a href="#3---querying-the-depscloud-infrastructure">3 - Querying the deps.cloud Infrastructure</a></li>
-    <li><a href="#4---optionally-installments">4 - Optionally Installments</a>
+    <li><a href="#4---configuring-using-valuesyaml">4 - Configuring using values.yaml</a></li>
+    <li><a href="#5---optional-installments">5 - Optional Installments</a>
       <ul>
         <li><a href="#ingress">Ingress</a></li>
         <li><a href="#using-helm-operator">Using helm-operator</a></li>
@@ -729,28 +730,58 @@ if (!doNotTrack) {
 <p>In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.</p>
 <pre><code>$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
 &quot;depscloud&quot; has been added to your repositories
+
+$ helm repo update
 </code></pre><h2 id="2---deploy-the-depscloud-infrastructure">2 - Deploy the deps.cloud Infrastructure</h2>
 <p>Once the deps.cloud chart repository has been added, you can install the charts as follows.</p>
-<pre><code>$ helm upgrade -i tracker depscloud/tracker
-$ helm upgrade -i extractor depscloud/extractor
-$ helm upgrade -i gateway depscloud/gateway
-$ helm upgrade -i indexer depscloud/indexer
-</code></pre><p>This same set of commands can be used to upgrade the charts.</p>
+<pre><code>$ kubectl create ns depscloud
+namespace/depscloud created
+
+$ helm upgrade -n depscloud -i depscloud depscloud/depscloud
+Release &quot;depscloud&quot; does not exist. Installing it now.
+NAME: depscloud
+LAST DEPLOYED: Sat Jun 20 16:50:57 2020
+NAMESPACE: depscloud
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+</code></pre><p>This same command can be used to upgrade the system in the future.</p>
 <h2 id="3---querying-the-depscloud-infrastructure">3 - Querying the deps.cloud Infrastructure</h2>
 <p>Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
-To quickly test this, you can port forward to one of the <code>gateway</code> pods directly.</p>
-<pre><code>$ kubectl port-forward -n depscloud-system gateway-797fd99747-j4wbb 8080:8080
+Note that there will be no data in the API until the indexer process has run.
+To quickly test this, you can port forward the <code>depscloud-gateway</code> service.</p>
+<pre><code>$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
 Forwarding from 127.0.0.1:8080 -&gt; 8080
 Forwarding from [::1]:8080 -&gt; 8080
 </code></pre><p>Once the port is forwarded, the following endpoints should be able to be reached.</p>
 <ul>
 <li><a href="http://localhost:8080/v1alpha/sources">What sources have been indexed?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fdes.git">What modules are produced by this repository?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=deps-cloud%2Fdes">What modules do I depend on and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=deps-cloud%2Fdes">What modules depend on me and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=deps-cloud%2Fdes&amp;language=go">What repositories produce can produce this module?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git">What modules are produced by this repository?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=deps-cloud%2Fextractor">What modules do I depend on and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=deps-cloud%2Fapi">What modules depend on me and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=deps-cloud%2Fextractor&amp;language=go">What repositories can produce this module?</a></li>
 </ul>
-<h2 id="4---optionally-installments">4 - Optionally Installments</h2>
+<h2 id="4---configuring-using-valuesyaml">4 - Configuring using values.yaml</h2>
+<p>A <code>values.yaml</code> file can be used to maintain deployment specific configuration.
+The content below provides an example of how to configure the indexer to crawl the deps-cloud account.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#8f5902;font-style:italic"># contents of values.yaml</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">indexer</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">config</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">github</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">clone</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HTTP<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">organizations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span>- deps-cloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">tracker</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">storage</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">driver</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>sqlite|mysql|postgres<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">address</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">readOnlyAddress</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Then during install, you can pass in the <code>values.yaml</code> file.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ helm upgrade -n depscloud -i depscloud depscloud/depscloud -f values.yaml
+</code></pre></div><h2 id="5---optional-installments">5 - Optional Installments</h2>
 <p>The following are optional considerations.
 You do not need to install them to run the system, but can make managing it easier.</p>
 <h3 id="ingress">Ingress</h3>
@@ -758,15 +789,16 @@ You do not need to install them to run the system, but can make managing it easi
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>networking.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Ingress<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>api<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">rules</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">host</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>api.deps.cloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span>- <span style="color:#204a87;font-weight:bold">host</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud.internal.company.net<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">http</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">paths</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span>- <span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>/<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">backend</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">serviceName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>gateway<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">serviceName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud-gateway<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">servicePort</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">80</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h3 id="using-helm-operator">Using helm-operator</h3>
 <p>The <a href="https://github.com/fluxcd/helm-operator">helm-operator</a> provided by fluxcd is an extremely powerful resource.
@@ -774,22 +806,23 @@ If provides a way to manage Helm releases within a cluster through custom resour
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>helm.fluxcd.io/v1<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HelmRelease<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>indexer<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>prod<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">releaseName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>indexer<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">releaseName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">chart</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">repository</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//deps-cloud.github.io/deploy/charts<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>indexer<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">0.1.2</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">values</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">schedule</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;@daily&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">config</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">github</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HTTP<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">organizations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">              </span>- deps-cloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">indexer</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">schedule</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;@daily&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">config</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span>- <span style="color:#204a87;font-weight:bold">github</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">              </span><span style="color:#204a87;font-weight:bold">clone</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HTTP<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">              </span><span style="color:#204a87;font-weight:bold">organizations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">                </span>- deps-cloud<span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
         <div class="section-index">
     
@@ -913,7 +946,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 20, 2020
 </div>
 </div>
 

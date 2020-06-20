@@ -25,7 +25,7 @@
 <meta property="og:description" content="Track, monitor, and engage with project dependents" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/k8s/" />
-<meta property="og:updated_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="og:updated_time" content="2020-06-20T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Kubernetes">
 <meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes"/>
@@ -109,7 +109,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7b5a2f3f2a5547b5dbf92574a5db66f4f6837e804c52470bb54fa2fe6027380dabc508d59a598c13af11caf246a75fb71be070d9397ade5cafc11dc9f80c4b5.json"
+  data-offline-search-index-json-src="/offline-search-index.10acff2280589413804463fc8ae1acf7aba88c7dfd543063d74806d14cefd77089f2c321043211bd7fd1a065b5fc9297042db47a54d9f82af0a37f05cefefa99.json"
   data-offline-search-base-href="/"
 >
 
@@ -139,7 +139,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a7b5a2f3f2a5547b5dbf92574a5db66f4f6837e804c52470bb54fa2fe6027380dabc508d59a598c13af11caf246a75fb71be070d9397ade5cafc11dc9f80c4b5.json"
+  data-offline-search-index-json-src="/offline-search-index.10acff2280589413804463fc8ae1acf7aba88c7dfd543063d74806d14cefd77089f2c321043211bd7fd1a065b5fc9297042db47a54d9f82af0a37f05cefefa99.json"
   data-offline-search-base-href="/"
 >
 
@@ -742,8 +742,8 @@ It also creates an affinity so that the next time the pod restarts, it will pref
 </code></pre></div><h2 id="2---set-up-workspace">2 - Set-up Workspace</h2>
 <p>Before deploying any workloads, we first need a workspace to deploy into.
 The following command creates a Kubernetes <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">namespace</a>
-with the name <code>depscloud-system</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create ns depscloud-system
+with the name <code>depscloud</code>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create ns depscloud
 </code></pre></div><p>Once created, <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">Network Policies</a>,
 <a href="https://kubernetes.io/docs/concepts/policy/resource-quotas/">Resource Quotas</a>, and
 <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">RBAC</a> can be used to lock down the system.
@@ -751,20 +751,20 @@ All the resources created in this walk through will be deployed to this namespac
 <h2 id="3---deploy-mysql">3 - Deploy MySQL</h2>
 <p>If you don&rsquo;t already have a MySQL database available, you can deploy one using one of the many helm charts out there.
 The following deployment was generated from the <a href="https://github.com/bitnami/charts/tree/master/bitnami/mysql">bitnami/mysql</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
 </code></pre></div><p>This deployment comes with a single primary node and a read only replica node.</p>
 <h2 id="4---configure-depscloud">4 - Configure deps.cloud</h2>
 <p>By default, the tracker and indexer do not come configured.
 This allows operators to connect it to provide their specific configuration.
 To configure these processes, you&rsquo;ll need to create two
-<a href="https://kubernetes.io/docs/concepts/configuration/secret/">secrets</a> in the <code>depscloud-system</code> namespace.</p>
+<a href="https://kubernetes.io/docs/concepts/configuration/secret/">secrets</a> in the <code>depscloud</code> namespace.</p>
 <p>To configure the tracker, you&rsquo;ll need to provide a <code>depscloud-tracker</code> secret.
 This secret is used to connect the tracker to the previously provisioned MySQL database.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat <span style="color:#4e9a06">&lt;&lt;EOF | kubectl apply -f -
 </span><span style="color:#4e9a06">apiVersion: v1
 </span><span style="color:#4e9a06">kind: Secret
 </span><span style="color:#4e9a06">metadata:
-</span><span style="color:#4e9a06">  namespace: depscloud-system
+</span><span style="color:#4e9a06">  namespace: depscloud
 </span><span style="color:#4e9a06">  name: depscloud-tracker
 </span><span style="color:#4e9a06">stringData:
 </span><span style="color:#4e9a06">  STORAGE_DRIVER: mysql
@@ -778,7 +778,7 @@ The following configuration will index the deps.cloud repositories.</p>
 </span><span style="color:#4e9a06">apiVersion: v1
 </span><span style="color:#4e9a06">kind: Secret
 </span><span style="color:#4e9a06">metadata:
-</span><span style="color:#4e9a06">  namespace: depscloud-system
+</span><span style="color:#4e9a06">  namespace: depscloud
 </span><span style="color:#4e9a06">  name: depscloud-indexer
 </span><span style="color:#4e9a06">stringData:
 </span><span style="color:#4e9a06">  config.yaml: |
@@ -792,19 +792,19 @@ The following configuration will index the deps.cloud repositories.</p>
 <h2 id="4---deploy-depscloud">4 - Deploy deps.cloud</h2>
 <p>After the tracker and indexer have been configured, you&rsquo;ll be able to deploy the deps.cloud infrastructure.
 This configuration can be found with the other deployment configuration on <a href="https://github.com/deps-cloud/deploy">GitHub</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud-system -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
 </code></pre></div><p>Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
 To quickly test this, you can port forward to one of the <code>gateway</code> pods directly.</p>
-<pre><code>$ kubectl port-forward -n depscloud-system gateway-797fd99747-j4wbb 8080:8080
+<pre><code>$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
 Forwarding from 127.0.0.1:8080 -&gt; 8080
 Forwarding from [::1]:8080 -&gt; 8080
 </code></pre><p>Once the port is forwarded, the following endpoints should be able to be reached.</p>
 <ul>
 <li><a href="http://localhost:8080/v1alpha/sources">What sources have been indexed?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fdes.git">What modules are produced by this repository?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=deps-cloud%2Fdes">What modules do I depend on and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=deps-cloud%2Fdes">What modules depend on me and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=deps-cloud%2Fdes&amp;language=go">What repositories produce can produce this module?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git">What modules are produced by this repository?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=deps-cloud%2Fextractor">What modules do I depend on and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=deps-cloud%2Fapi">What modules depend on me and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=deps-cloud%2Fextractor&amp;language=go">What repositories can produce this module?</a></li>
 </ul>
 
         <div class="section-index">
@@ -929,7 +929,7 @@ Forwarding from [::1]:8080 -&gt; 8080
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 20, 2020
 </div>
 </div>
 
