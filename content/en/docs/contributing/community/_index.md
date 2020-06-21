@@ -2,17 +2,20 @@
 title: "Community"
 linkTitle: "Community"
 weight: 20
-date: 2020-06-12
+date: 2020-06-17
 ---
 
-There are a few different mechanisms that you can use to get ahold of the team.
+## Online
 
-* [FindCollabs](https://findcollabs.com/project/deps-cloud-GIOlcUiHE9XD2UVlxrNl) is by and large used for status updates and is checked regularly.
-* [Gitter](https://gitter.im/depscloud/community) is used for more back and forth communication and will yield faster response times.
+The team has used several different communication tools.
+Like most projects, we wound up on [Slack].
+If you have trouble joining, please do not hesitate to reach out to the [mailing list](mailto:community@deps.cloud) for additional support.
 
-Based on conversations with the team, we decided to leverage Gitter as the primary form of communication.
+## Meetings
 
-The [community](https://groups.google.com/a/deps.cloud/forum/#!forum/community/join) meeting is a great way to get face to face time with the members of the team.
-It can also be a great way to get introduced to the project and where to get started.
-The community meeting is held every two weeks (starting 2019/12/30).
-By joining the community Google group, you will automatically receive a calendar event for the meeting.
+Until further notice community meetings have been paused.
+If large enough interest is generated, we can start them back up again.
+
+<br/>
+
+[Slack]: https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A
