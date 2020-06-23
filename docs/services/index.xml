@@ -102,8 +102,6 @@ While it can be implemented on the server side, the memory and disk requirements
 &lt;p&gt;By leveraging the grpc-gateway project, we&amp;rsquo;re able to easily generate Swagger documentation for the API.
 This allows you to leverage the Swagger UI to easily browse the API and it&amp;rsquo;s operations.
 For convenience, this has been embedded below.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;code&gt;api.deps.cloud&lt;/code&gt; require use of the &lt;code&gt;HTTPS&lt;/code&gt; scheme.
-I was unable to find a way to make this the default so be sure to switch.&lt;/p&gt;
 
 &lt;div id=&#34;ohpen_swagger_ui&#34;&gt;&lt;/div&gt;	
 &lt;script&gt;
@@ -175,8 +173,6 @@ The following code snippet illustrates the bare elements needed to write a custo
 &lt;p&gt;By leveraging the grpc-gateway project, we&amp;rsquo;re able to easily generate Swagger documentation for the API.
 This allows you to leverage the Swagger UI to easily browse the API and it&amp;rsquo;s operations.
 For convenience, this has been embedded below.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;code&gt;api.deps.cloud&lt;/code&gt; require use of the &lt;code&gt;HTTPS&lt;/code&gt; scheme.
-I was unable to find a way to make this the default so be sure to switch.&lt;/p&gt;
 
 &lt;div id=&#34;ohpen_swagger_ui&#34;&gt;&lt;/div&gt;	
 &lt;script&gt;
