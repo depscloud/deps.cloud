@@ -22,24 +22,24 @@
 
 <title>Tracker | deps.cloud</title><meta property="og:title" content="Tracker" />
 <meta property="og:description" content="Repository: https://github.com/deps-cloud/tracker Runtime: Golang Language: Golang  Background The tracker is a Go process used to encapsulate operations around the database. It contains four gRPC services, three of which are currently implemented. The TopologyService was initially specified but later implemented as a client-side feature. While it can be implemented on the server side, the memory and disk requirements vary greatly between queries making it difficult to size appropriately.
-Data Model At it&rsquo;s core, there are 4 key data models to be aware of in the tracker process." />
+Swagger Explorer By leveraging the grpc-gateway project, we&rsquo;re able to easily generate Swagger documentation for the API." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/services/tracker/" />
 <meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Tracker">
 <meta itemprop="description" content="Repository: https://github.com/deps-cloud/tracker Runtime: Golang Language: Golang  Background The tracker is a Go process used to encapsulate operations around the database. It contains four gRPC services, three of which are currently implemented. The TopologyService was initially specified but later implemented as a client-side feature. While it can be implemented on the server side, the memory and disk requirements vary greatly between queries making it difficult to size appropriately.
-Data Model At it&rsquo;s core, there are 4 key data models to be aware of in the tracker process.">
+Swagger Explorer By leveraging the grpc-gateway project, we&rsquo;re able to easily generate Swagger documentation for the API.">
 <meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="359">
+<meta itemprop="wordCount" content="154">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tracker"/>
 <meta name="twitter:description" content="Repository: https://github.com/deps-cloud/tracker Runtime: Golang Language: Golang  Background The tracker is a Go process used to encapsulate operations around the database. It contains four gRPC services, three of which are currently implemented. The TopologyService was initially specified but later implemented as a client-side feature. While it can be implemented on the server side, the memory and disk requirements vary greatly between queries making it difficult to size appropriately.
-Data Model At it&rsquo;s core, there are 4 key data models to be aware of in the tracker process."/>
+Swagger Explorer By leveraging the grpc-gateway project, we&rsquo;re able to easily generate Swagger documentation for the API."/>
 
 
 <script type="application/javascript">
@@ -121,7 +121,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7136d023de728fe6c56986ae2dfb145d1e80c37e42e6d6903f174a34ed9fbbc27495d80ad91e8d9497fddbac6339b9a30cf55cd715ebdbef04f5f1debc14bf88.json"
+  data-offline-search-index-json-src="/offline-search-index.1941438b4a36bc957db7bfd7a1c6e2eb011d7b04847e2946d441fd63f7c98dad75d3723407e51f9c66b7be5fdad21fe8fcf5c1503ff4bc3c14f4b6e750010201.json"
   data-offline-search-base-href="/"
 >
 
@@ -151,7 +151,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7136d023de728fe6c56986ae2dfb145d1e80c37e42e6d6903f174a34ed9fbbc27495d80ad91e8d9497fddbac6339b9a30cf55cd715ebdbef04f5f1debc14bf88.json"
+  data-offline-search-index-json-src="/offline-search-index.1941438b4a36bc957db7bfd7a1c6e2eb011d7b04847e2946d441fd63f7c98dad75d3723407e51f9c66b7be5fdad21fe8fcf5c1503ff4bc3c14f4b6e750010201.json"
   data-offline-search-base-href="/"
 >
 
@@ -414,18 +414,6 @@ if (!doNotTrack) {
 
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#background">Background</a></li>
-    <li><a href="#data-model">Data Model</a>
-      <ul>
-        <li><a href="#database-schema">Database Schema</a></li>
-      </ul>
-    </li>
-    <li><a href="#swagger-explorer">Swagger Explorer</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -481,53 +469,6 @@ if (!doNotTrack) {
 It contains four gRPC services, three of which are currently implemented.
 The <code>TopologyService</code> was initially specified but later implemented as a client-side feature.
 While it can be implemented on the server side, the memory and disk requirements vary greatly between queries making it difficult to size appropriately.</p>
-<h2 id="data-model">Data Model</h2>
-<p>At it&rsquo;s core, there are 4 key data models to be aware of in the <code>tracker</code> process.
-They are <code>source</code>, <code>manages</code>, <code>module</code>, and <code>depends</code>.
-Both <code>source</code> and <code>module</code> are nodes in the graph.
-<code>manages</code> and <code>depends</code> are the edges between them.
-The following snippet depicts how these components relate to one another.</p>
-<pre><code>source --&gt;|manages| module
-module --&gt;|depends| module 
-</code></pre><p>Each component has it&rsquo;s own schema or payload.
-The block of YAML below provides a rough idea for the data stored on each item.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">source</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>https<span style="color:#000;font-weight:bold">:</span>//github.com/deps-cloud/api.git<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">manages</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">language</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>go|node|java|php<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">system</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>vgo|gopkg|npm|bower|ivy|maven|gradle|composer...<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">version</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>latest<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">module</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">language</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>go|node|java|php<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">organization</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>github.com<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">module</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>deps-cloud/api<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">depends</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">language</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>go|node|java|php<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">version_constraint</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>~<span style="color:#0000cf;font-weight:bold">0.1.0</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">scopes</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- direct<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- indirect<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>These items are then serialized and deserialized into the database.</p>
-<h3 id="database-schema">Database Schema</h3>
-<p>The database schema is loosely based off that of Dropbox&rsquo;s <a href="https://www.youtube.com/watch?v=VZ-zJEWi-Vo">Edgestore</a>.
-It&rsquo;s since been modified to support more graph type queries, but has proved to work really well.
-When looking through the table, you&rsquo;ll notice the data appears as such.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">graph_item_type</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>source|manages|module|depends<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">k1</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>base64(sha256sum(data))<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">k2</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>base64(sha256sum(data))<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">graph_item_encoding</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>json<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">graph_item_data</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#8f5902;font-style:italic">|
-</span><span style="color:#8f5902;font-style:italic">  {</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">&#34;key&#34;: </span><span style="color:#4e9a06">&#34;value&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span>}<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>When <code>k1</code> equals <code>k2</code>, the item is a node.
-In this case, the value for <code>k1</code> and <code>k2</code> are generated off the item data.
-When <code>k1</code> != <code>k2</code>, the item is an edge between nodes <code>k1</code> and <code>k2</code>.
-This means the current implementation only supports having a single edge between two nodes.
-There is some upcoming work that will allow for multiple edges to exist.</p>
 <h2 id="swagger-explorer">Swagger Explorer</h2>
 <p>By leveraging the grpc-gateway project, we&rsquo;re able to easily generate Swagger documentation for the API.
 This allows you to leverage the Swagger UI to easily browse the API and it&rsquo;s operations.
