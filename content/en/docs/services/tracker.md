@@ -22,7 +22,4 @@ By leveraging the grpc-gateway project, we're able to easily generate Swagger do
 This allows you to leverage the Swagger UI to easily browse the API and it's operations.
 For convenience, this has been embedded below.
 
-**NOTE:** `api.deps.cloud` require use of the `HTTPS` scheme.
-I was unable to find a way to make this the default so be sure to switch.
-
 {{< swaggerui src="https://api.deps.cloud/swagger/v1alpha/tracker/tracker.swagger.json" >}}
