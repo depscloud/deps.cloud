@@ -228,6 +228,210 @@ This makes it easy to swap the storage technology out for different solutions.&l
     </item>
     
     <item>
+      <title>Docs: Code of Conduct</title>
+      <link>https://deps.cloud/docs/contributing/code-of-conduct/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/code-of-conduct/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;our-pledge&#34;&gt;Our Pledge&lt;/h2&gt;
+&lt;p&gt;In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to making participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.&lt;/p&gt;
+&lt;h2 id=&#34;our-standards&#34;&gt;Our Standards&lt;/h2&gt;
+&lt;p&gt;Examples of behavior that contributes to creating a positive environment
+include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using welcoming and inclusive language&lt;/li&gt;
+&lt;li&gt;Being respectful of differing viewpoints and experiences&lt;/li&gt;
+&lt;li&gt;Gracefully accepting constructive criticism&lt;/li&gt;
+&lt;li&gt;Focusing on what is best for the community&lt;/li&gt;
+&lt;li&gt;Showing empathy towards other community members&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Examples of unacceptable behavior by participants include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The use of sexualized language or imagery and unwelcome sexual attention or
+advances&lt;/li&gt;
+&lt;li&gt;Trolling, insulting/derogatory comments, and personal or political attacks&lt;/li&gt;
+&lt;li&gt;Public or private harassment&lt;/li&gt;
+&lt;li&gt;Publishing others&amp;rsquo; private information, such as a physical or electronic
+address, without explicit permission&lt;/li&gt;
+&lt;li&gt;Other conduct which could reasonably be considered inappropriate in a
+professional setting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;our-responsibilities&#34;&gt;Our Responsibilities&lt;/h2&gt;
+&lt;p&gt;Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.&lt;/p&gt;
+&lt;p&gt;Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.&lt;/p&gt;
+&lt;h2 id=&#34;scope&#34;&gt;Scope&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct applies both within project spaces and in public spaces
+when an individual is representing the project or its community. Examples of
+representing a project or community include using an official project e-mail
+address, posting via an official social media account, or acting as an appointed
+representative at an online or offline event. Representation of a project may be
+further defined and clarified by project maintainers.&lt;/p&gt;
+&lt;h2 id=&#34;enforcement&#34;&gt;Enforcement&lt;/h2&gt;
+&lt;p&gt;Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the project owner on &lt;a href=&#34;https://gitter.im/mjpitz&#34;&gt;Gitter&lt;/a&gt;. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.&lt;/p&gt;
+&lt;p&gt;Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project&amp;rsquo;s leadership.&lt;/p&gt;
+&lt;h2 id=&#34;attribution&#34;&gt;Attribution&lt;/h2&gt;
+&lt;p&gt;This Code of Conduct is adapted from the &lt;a href=&#34;https://www.contributor-covenant.org&#34;&gt;Contributor Covenant&lt;/a&gt;, version 1.4,
+available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&#34;&gt;https://www.contributor-covenant.org/version/1/4/code-of-conduct.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For answers to common questions about this code of conduct, see
+&lt;a href=&#34;https://www.contributor-covenant.org/faq&#34;&gt;https://www.contributor-covenant.org/faq&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Docker</title>
+      <link>https://deps.cloud/docs/deployment/docker/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/deployment/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this quick start guide, we&amp;rsquo;ll use &lt;a href=&#34;https://docs.docker.com/compose&#34;&gt;docker-compose&lt;/a&gt; to create our demo infrastructure.&lt;/p&gt;
+&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/deps-cloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2 id=&#34;1---launch-depscloud&#34;&gt;1 - Launch deps.cloud&lt;/h2&gt;
+&lt;p&gt;To launch the demo infrastructure, simply run the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose up -d
+Creating docker_extractor_1 ... done
+Creating docker_tracker_1 ... done
+Creating docker_indexer_1     ... done
+Creating docker_gateway_1 ... done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;That&amp;rsquo;s it!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The deps.cloud demo infrastructure is up and running.
+You can test it out by opening any of the following endpoints (browser or curl).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2---configure-your-provider&#34;&gt;2 - Configure Your Provider&lt;/h2&gt;
+&lt;p&gt;Once the demo infrastructure is up and running, you can easily modify the &lt;code&gt;rds.yaml&lt;/code&gt; file to include more accounts to index.
+For more information on how to configure each integration, see the &lt;a href=&#34;https://deps.cloud/docs/integrations/&#34;&gt;integrations&lt;/a&gt; section.
+For now, let&amp;rsquo;s simply add your GitHub ID to the existing block.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;accounts:
+- github:
+    strategy: HTTP
+    users:
+    - { .GitHubLogin }
+    organizations:
+    - deps-cloud
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The configuration will not be automatically reloaded.
+Any process consuming the configuration will need to be restarted.&lt;/p&gt;
+&lt;h2 id=&#34;3---rerun-indexer&#34;&gt;3 - Rerun Indexer&lt;/h2&gt;
+&lt;p&gt;The indexer process is typically run as a cronjob.
+Because of this, it will typically pick up the configuration on it&amp;rsquo;s next run.
+When running locally, we can restart the process to pick up the new configuration.
+You may need to re-create the container.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ docker-compose restart indexer
+Restarting docker_indexer_1 ... done
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Gateway</title>
+      <link>https://deps.cloud/docs/services/gateway/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/gateway/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/gateway&#34;&gt;https://github.com/deps-cloud/gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Gateway is an extremely thin, lightweight, reverse proxy.
+It provides a RESTful interface that translates requests into gRPC calls.
+This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
+&lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
+These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
+These annotations are used to generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
+This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
+&lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
+&lt;p&gt;In addition to serving the API, it also serves the associated swagger documentation.
+You can explore the API further at the links below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/extractor/#swagger-explorer&#34;&gt;Extractor Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/tracker/#swagger-explorer&#34;&gt;Tracker Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GitHub</title>
+      <link>https://deps.cloud/docs/integrations/github/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/integrations/github/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GitHub is largest source of repositories.
+Most companies have an account where they maintain their code repositories.
+Due to the system&amp;rsquo;s popularity, it was one of the first integrations that was targeted.
+Below, you&amp;rsquo;ll find the full set of configuration options that can be specified for a GitHub account.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# full github schema&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;base_url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;base_url&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    upload_url: &amp;lt;base_url&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;users&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    organizations:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;organization&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    strategy: SSH | HTTP&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;oauth2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;oauth_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      token_type: &amp;lt;token_type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;refresh_token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;refresh_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      expiry: &amp;lt;expiry&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.
+While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does not pull groups for the authenticated user&lt;/li&gt;
+&lt;li&gt;pulls groups for the configured users&lt;/li&gt;
+&lt;li&gt;pulls repositories for all users and groups (configured and discovered)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;p&gt;Crawl all of Google&amp;rsquo;s public repositories on &lt;a href=&#34;https://github.com/google&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- google&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Data Model</title>
       <link>https://deps.cloud/docs/data-model/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
@@ -299,6 +503,422 @@ Currently supported databases:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://postgresql.org/&#34;&gt;Postgres&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Kubernetes</title>
+      <link>https://deps.cloud/docs/deployment/k8s/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/deployment/k8s/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;1---configure-a-storage-class&#34;&gt;1 - Configure a Storage Class&lt;/h2&gt;
+&lt;p&gt;deps.cloud leverages MySQL to store a given graphs dependency information.
+MySQL requires a persistent volume to be able to ensure the data is persisted to disk.
+In Kubernetes, a &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/persistent-volumes/&#34;&gt;Persistent Volume&lt;/a&gt; can either be manually provisioned by a System Administrator or Dynamically provisioned using a &lt;a href=&#34;https://kubernetes.io/docs/concepts/storage/storage-classes/&#34;&gt;Storage Class&lt;/a&gt;.
+To figure out if you need to install a Storage Class, you can use &lt;code&gt;kubectl&lt;/code&gt; to see which ones have been configured on the cluster already.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl get storageclasses.storage.k8s.io
+NAME                 PROVISIONER                    AGE
+standard &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;default&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;   k8s.io/minikube-hostpath       14d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re have none, you can configure a &lt;code&gt;local-storage&lt;/code&gt; class.
+This leverages the storage provided by the host that the pod is running on.
+It also creates an affinity so that the next time the pod restarts, it will prefer that host over the others.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;lt;&amp;lt;EOF | kubectl apply -f -
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;apiVersion: storage.k8s.io/v1
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kind: StorageClass
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;metadata:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  name: local-storage
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;provisioner: kubernetes.io/no-provisioner
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;volumeBindingMode: WaitForFirstConsumer
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2---set-up-workspace&#34;&gt;2 - Set-up Workspace&lt;/h2&gt;
+&lt;p&gt;Before deploying any workloads, we first need a workspace to deploy into.
+The following command creates a Kubernetes &lt;a href=&#34;https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/&#34;&gt;namespace&lt;/a&gt;
+with the name &lt;code&gt;depscloud&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl create ns depscloud
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once created, &lt;a href=&#34;https://kubernetes.io/docs/concepts/services-networking/network-policies/&#34;&gt;Network Policies&lt;/a&gt;,
+&lt;a href=&#34;https://kubernetes.io/docs/concepts/policy/resource-quotas/&#34;&gt;Resource Quotas&lt;/a&gt;, and
+&lt;a href=&#34;https://kubernetes.io/docs/reference/access-authn-authz/rbac/&#34;&gt;RBAC&lt;/a&gt; can be used to lock down the system.
+All the resources created in this walk through will be deployed to this namespace.&lt;/p&gt;
+&lt;h2 id=&#34;3---deploy-mysql&#34;&gt;3 - Deploy MySQL&lt;/h2&gt;
+&lt;p&gt;If you don&amp;rsquo;t already have a MySQL database available, you can deploy one using one of the many helm charts out there.
+The following deployment was generated from the &lt;a href=&#34;https://github.com/bitnami/charts/tree/master/bitnami/mysql&#34;&gt;bitnami/mysql&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This deployment comes with a single primary node and a read only replica node.&lt;/p&gt;
+&lt;h2 id=&#34;4---configure-depscloud&#34;&gt;4 - Configure deps.cloud&lt;/h2&gt;
+&lt;p&gt;By default, the tracker and indexer do not come configured.
+This allows operators to connect it to provide their specific configuration.
+To configure these processes, you&amp;rsquo;ll need to create two
+&lt;a href=&#34;https://kubernetes.io/docs/concepts/configuration/secret/&#34;&gt;secrets&lt;/a&gt; in the &lt;code&gt;depscloud&lt;/code&gt; namespace.&lt;/p&gt;
+&lt;p&gt;To configure the tracker, you&amp;rsquo;ll need to provide a &lt;code&gt;depscloud-tracker&lt;/code&gt; secret.
+This secret is used to connect the tracker to the previously provisioned MySQL database.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;lt;&amp;lt;EOF | kubectl apply -f -
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;apiVersion: v1
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kind: Secret
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;metadata:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  namespace: depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  name: depscloud-tracker
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;stringData:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_DRIVER: mysql
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_ADDRESS: user:password@tcp(mysql:3306)/depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql-slave:3306)/depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To configure the indexer, you&amp;rsquo;ll need to provide a &lt;code&gt;depscloud-indexer&lt;/code&gt; secret.
+This file tells the indexer how to discovery and clone repositories.
+The following configuration will index the deps.cloud repositories.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ cat &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;lt;&amp;lt;EOF | kubectl apply -f -
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;apiVersion: v1
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;kind: Secret
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;metadata:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  namespace: depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  name: depscloud-indexer
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;stringData:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  config.yaml: |
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    accounts:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    - github:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        strategy: HTTP
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        organizations:
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        - deps-cloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can learn more about how to configure the indexer process on the &lt;a href=&#34;https://deps.cloud/docs/integrations/&#34;&gt;integrations&lt;/a&gt; page.&lt;/p&gt;
+&lt;h2 id=&#34;4---deploy-depscloud&#34;&gt;4 - Deploy deps.cloud&lt;/h2&gt;
+&lt;p&gt;After the tracker and indexer have been configured, you&amp;rsquo;ll be able to deploy the deps.cloud infrastructure.
+This configuration can be found with the other deployment configuration on &lt;a href=&#34;https://github.com/deps-cloud/deploy&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
+To quickly test this, you can port forward to one of the &lt;code&gt;gateway&lt;/code&gt; pods directly.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
+Forwarding from 127.0.0.1:8080 -&amp;gt; 8080
+Forwarding from [::1]:8080 -&amp;gt; 8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once the port is forwarded, the following endpoints should be able to be reached.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Community</title>
+      <link>https://deps.cloud/docs/contributing/community/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/community/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;online&#34;&gt;Online&lt;/h2&gt;
+&lt;p&gt;The team has used several different communication tools.
+Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
+If you have trouble joining, please do not hesitate to reach out to the &lt;a href=&#34;mailto:community@deps.cloud&#34;&gt;mailing list&lt;/a&gt; for additional support.&lt;/p&gt;
+&lt;h2 id=&#34;meetings&#34;&gt;Meetings&lt;/h2&gt;
+&lt;p&gt;Until further notice community meetings have been paused.
+If large enough interest is generated, we can start them back up again.&lt;/p&gt;
+&lt;br/&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GitLab</title>
+      <link>https://deps.cloud/docs/integrations/gitlab/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/integrations/gitlab/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider.
+Many companies choose to run this system internally.
+Below, you will find the list of options that can be configured to get the system running.
+Either &lt;code&gt;private&lt;/code&gt; or &lt;code&gt;oauth&lt;/code&gt; should be provided.
+Otherwise, you will only have access to public repositories.
+I&amp;rsquo;ve found configuring the &lt;a href=&#34;https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html&#34;&gt;&lt;code&gt;private&lt;/code&gt; token&lt;/a&gt; to be the easiest.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# full gitlab schema&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;gitlab&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;base_url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;base_url&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    users:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    groups:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;groupname&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    strategy: SSH | HTTP&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;private&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;private_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    oauth:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;oauth_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      application_id: &amp;lt;application_id&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.
+While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pulls groups for the authenticated user&lt;/li&gt;
+&lt;li&gt;does not pull groups for the configured users&lt;/li&gt;
+&lt;li&gt;pulls repositories for all users and groups (configured and discovered)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;p&gt;Crawl all of Nvidia&amp;rsquo;s public repositories on &lt;a href=&#34;https://gitlab.com/nvidia&#34;&gt;GitLab&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;gitlab&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;groups&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- nvidia&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Indexer</title>
+      <link>https://deps.cloud/docs/services/indexer/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/indexer/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/indexer&#34;&gt;https://github.com/deps-cloud/indexer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The indexer process is typically run as a cron job.
+On a configured schedule, it will re-index all available repositories.
+While not ideal, this solution provides an easy way to get started.
+If needed, the indexing process can be sharded across multiple different indexers.
+This will allow some indexers to run on more frequent intervals while others run on less frequent ones.&lt;/p&gt;
+&lt;h2 id=&#34;on-cloning&#34;&gt;On Cloning&lt;/h2&gt;
+&lt;p&gt;When the indexer clones a repository, it uses &lt;code&gt;/tmp&lt;/code&gt; to create an ephemeral directory.
+It then performs a shallow clone of a repository into that tmp directory.
+When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
+&lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
+A single worker can process a large number of repositories fairly quick.
+Two workers is often more than sufficient.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Helm</title>
+      <link>https://deps.cloud/docs/deployment/helm/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/deployment/helm/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster using the &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; package manager.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;helm&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;1---adding-the-helm-repository&#34;&gt;1 - Adding the Helm Repository&lt;/h2&gt;
+&lt;p&gt;In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
+&amp;quot;depscloud&amp;quot; has been added to your repositories
+
+$ helm repo update
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2---deploy-the-depscloud-infrastructure&#34;&gt;2 - Deploy the deps.cloud Infrastructure&lt;/h2&gt;
+&lt;p&gt;Once the deps.cloud chart repository has been added, you can install the charts as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl create ns depscloud
+namespace/depscloud created
+
+$ helm upgrade -n depscloud -i depscloud depscloud/depscloud
+Release &amp;quot;depscloud&amp;quot; does not exist. Installing it now.
+NAME: depscloud
+LAST DEPLOYED: Sat Jun 20 16:50:57 2020
+NAMESPACE: depscloud
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This same command can be used to upgrade the system in the future.&lt;/p&gt;
+&lt;h2 id=&#34;3---querying-the-depscloud-infrastructure&#34;&gt;3 - Querying the deps.cloud Infrastructure&lt;/h2&gt;
+&lt;p&gt;Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
+Note that there will be no data in the API until the indexer process has run.
+To quickly test this, you can port forward the &lt;code&gt;depscloud-gateway&lt;/code&gt; service.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
+Forwarding from 127.0.0.1:8080 -&amp;gt; 8080
+Forwarding from [::1]:8080 -&amp;gt; 8080
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once the port is forwarded, the following endpoints should be able to be reached.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4---configuring-using-valuesyaml&#34;&gt;4 - Configuring using values.yaml&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;values.yaml&lt;/code&gt; file can be used to maintain deployment specific configuration.
+The content below provides an example of how to configure the indexer to crawl the deps-cloud account.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# contents of values.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;indexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;clone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;- deps-cloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;tracker&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;storage&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;driver&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;sqlite|mysql|postgres&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;readOnlyAddress&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then during install, you can pass in the &lt;code&gt;values.yaml&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ helm upgrade -n depscloud -i depscloud depscloud/depscloud -f values.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;5---optional-installments&#34;&gt;5 - Optional Installments&lt;/h2&gt;
+&lt;p&gt;The following are optional considerations.
+You do not need to install them to run the system, but can make managing it easier.&lt;/p&gt;
+&lt;h3 id=&#34;ingress&#34;&gt;Ingress&lt;/h3&gt;
+&lt;p&gt;By using an ingress address and controller, you can easily expose the REST API.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;networking.k8s.io/v1beta1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;Ingress&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;namespace&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;spec&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;rules&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;host&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud.internal.company.net&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;paths&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;/&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;backend&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;serviceName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud-gateway&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;servicePort&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;80&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;using-helm-operator&#34;&gt;Using helm-operator&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/fluxcd/helm-operator&#34;&gt;helm-operator&lt;/a&gt; provided by fluxcd is an extremely powerful resource.
+If provides a way to manage Helm releases within a cluster through custom resource definitions.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;apiVersion&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;helm.fluxcd.io/v1&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;kind&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HelmRelease&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;metadata&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;namespace&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;spec&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;releaseName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;chart&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;https&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;//deps-cloud.github.io/deploy/charts&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;values&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;indexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;schedule&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;@daily&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;        &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;              &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;clone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;              &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;                &lt;/span&gt;- deps-cloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Bitbucket</title>
+      <link>https://deps.cloud/docs/integrations/bitbucket/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/integrations/bitbucket/</guid>
+      <description>
+        
+        
+        &lt;p&gt;BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence).
+Below is the complete set of options that can be used to configure your integration.
+Either &lt;code&gt;basic&lt;/code&gt; or &lt;code&gt;oauth&lt;/code&gt; should be provided.
+Otherwise, you will only have access to public repositories.
+I&amp;rsquo;ve found that &lt;code&gt;basic&lt;/code&gt; using an &lt;a href=&#34;https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html&#34;&gt;application password&lt;/a&gt; has been the easiest to configure.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# full bitbucket schema&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;bitbucket&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;users&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    teams:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;teamname&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    strategy: SSH | HTTP&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;basic&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;username&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      password: &amp;lt;app_password&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;oauth&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;oauth_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      application_id: &amp;lt;application_id&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.
+While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does not pull groups for the authenticated user&lt;/li&gt;
+&lt;li&gt;does not pull groups for the configured users&lt;/li&gt;
+&lt;li&gt;pulls repositories for all configured users and groups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;p&gt;Crawl all of Atlassian&amp;rsquo;s public repositories on &lt;a href=&#34;https://api.bitbucket.org/2.0/repositories/atlassian&#34;&gt;BitBucket&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;bitbucket&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;teams&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- atlassian&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Working with Git</title>
+      <link>https://deps.cloud/docs/contributing/git/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/git/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve forked the repository, you&amp;rsquo;ll want to clone it locally for development.
+For convenience, I tend to work out of the GOPATH directory.
+Using the following command, you can quickly build a directory for all the deps-cloud related work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/deps-cloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, clone the upstream project.
+This will allow you to regularly pull updates from the &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:deps-cloud/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building-and-running-projects&#34;&gt;Building and Running Projects&lt;/h2&gt;
+&lt;p&gt;There are two ways you can build and run this project.
+First you can develop using docker (the recommended way).
+Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
+The second way to build and run this project.
+This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
+&lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
+To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In some rare occasions you might be working on a issue that requires work across multiple repositories.
+In this case, you should used the &lt;a href=&#34;https://github.com/deps-cloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
+To link another projects issue, you can use the &lt;code&gt;&amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11&lt;/code&gt; semantic.
+Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b &amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
+&lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
+&lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
+When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fron here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
+After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
 
       </description>
     </item>
@@ -430,6 +1050,108 @@ Consider the following simple example.&lt;/p&gt;
 Each tier contains a list of modules that can be built in parallel.
 Should a change be made to &lt;code&gt;deps-cloud/api&lt;/code&gt;, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developing in Docker</title>
+      <link>https://deps.cloud/docs/contributing/docker/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the directions .
+You can deploy the stack using either SQLite or MySQL as a backend data store.&lt;/p&gt;
+&lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
+&lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Managed by&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;docker&lt;/code&gt; Target&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Golang&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NodeJS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;npm run docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developing Locally</title>
+      <link>https://deps.cloud/docs/contributing/local/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/local/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Local targets are available for development.
+In order to leverage those targets, you will need to install the appropriate tooling.
+While most projects are written in Golang, there are a few that will require NodeJS or Ruby.
+To help simplify some of the setup, I&amp;rsquo;ve included a general guide to managing these versions locally.&lt;/p&gt;
+&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
+&lt;p&gt;Install and manage Golang versions using &lt;a href=&#34;https://github.com/moovweb/gvm&#34;&gt;gvm&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+$ source ${HOME}/.gvm/scripts/gvm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you should be able to install and use specific versions of Golang.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ gvm install go1.12.4
+$ gvm alias create default go1.12.4
+$ gvm use default
+$ go version
+go version go1.12.4 darwin/amd64
+$ which go
+${HOME}/.gvm/gos/go1.12.4/bin/go
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nodejs&#34;&gt;NodeJS&lt;/h2&gt;
+&lt;p&gt;Install and manage NodeJS versions using &lt;a href=&#34;https://github.com/nvm-sh/nvm&#34;&gt;nvm&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
+Then, you should be able to install and use specific versions of NodeJS.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ nvm install 10.15.3
+$ nvm alias default v10.15.3    # all new shells will use 10.15.3
+$ nvm use default               # changes node version for the current terminal
+$ nvm current                   # verify you&#39;re using the right version
+v10.15.3
+$ which node
+${HOME}/.nvm/versions/node/v10.15.3/bin/node
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ruby&#34;&gt;Ruby&lt;/h2&gt;
+&lt;p&gt;Install and manage Ruby versions using &lt;a href=&#34;https://rvm.io/&#34;&gt;rvm&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## OSX
+$ brew install gpg2
+$ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+## Linux
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+$ curl -sSL https://get.rvm.io | bash -s stable
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
+Then, you should be able to install and use specific versions of Ruby.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ rvm install 2.3.7
+$ rvm alias create default 2.3.7
+$ rvm use default
+$ rvm current
+ruby-2.3.7
+$ which ruby
+${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
+&lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
     

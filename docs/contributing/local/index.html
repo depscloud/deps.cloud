@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/contributing/local/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -22,14 +21,28 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Developing Locally | deps.cloud</title><meta property="og:title" content="Developing Locally" />
-<meta property="og:description" content="Track, monitor, and engage with project dependents" />
-<meta property="og:type" content="website" />
+<meta property="og:description" content="Local targets are available for development. In order to leverage those targets, you will need to install the appropriate tooling. While most projects are written in Golang, there are a few that will require NodeJS or Ruby. To help simplify some of the setup, I&rsquo;ve included a general guide to managing these versions locally.
+Golang Install and manage Golang versions using gvm.
+$ bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) $ source ${HOME}/." />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contributing/local/" />
-<meta property="og:updated_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Developing Locally">
-<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Local targets are available for development. In order to leverage those targets, you will need to install the appropriate tooling. While most projects are written in Golang, there are a few that will require NodeJS or Ruby. To help simplify some of the setup, I&rsquo;ve included a general guide to managing these versions locally.
+Golang Install and manage Golang versions using gvm.
+$ bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) $ source ${HOME}/.">
+<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="287">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Developing Locally"/>
-<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
+<meta name="twitter:description" content="Local targets are available for development. In order to leverage those targets, you will need to install the appropriate tooling. While most projects are written in Golang, there are a few that will require NodeJS or Ruby. To help simplify some of the setup, I&rsquo;ve included a general guide to managing these versions locally.
+Golang Install and manage Golang versions using gvm.
+$ bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) $ source ${HOME}/."/>
 
 
 <script type="application/javascript">
@@ -64,7 +77,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -92,7 +105,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
 			</li>
 			
 			
@@ -159,10 +172,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs">
+    <li class="collapse " id="docs">
       
       
       
@@ -209,71 +222,20 @@ if (!doNotTrack) {
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/integrations/github/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">GitHub</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsintegrationsgithub">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsgithub" href="/docs/integrations/github/">GitHub</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/integrations/gitlab/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">GitLab</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsintegrationsgitlab">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsgitlab" href="/docs/integrations/gitlab/">GitLab</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/integrations/bitbucket/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Bitbucket</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsintegrationsbitbucket">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsbitbucket" href="/docs/integrations/bitbucket/">Bitbucket</a>
       
       
     </li>
@@ -301,71 +263,20 @@ if (!doNotTrack) {
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/docker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Docker</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsdeploymentdocker">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentdocker" href="/docs/deployment/docker/">Docker</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/k8s/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Kubernetes</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsdeploymentk8s">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentk8s" href="/docs/deployment/k8s/">Kubernetes</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/helm/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Helm</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsdeploymenthelm">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymenthelm" href="/docs/deployment/helm/">Helm</a>
       
       
     </li>
@@ -399,42 +310,26 @@ if (!doNotTrack) {
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/gateway/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Gateway</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservicesgateway">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesgateway" href="/docs/services/gateway/">Gateway</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/indexer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexer</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservicesindexer">
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesindexer" href="/docs/services/indexer/">Indexer</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicestracker" href="/docs/services/tracker/">Tracker</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesextractor" href="/docs/services/extractor/">Extractor</a>
       
       
     </li>
@@ -453,59 +348,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/tracker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tracker</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservicestracker">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/extractor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extractor</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservicesextractor">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Contributing</a>
+    <a  href="/docs/contributing/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
     <li class="collapse show" id="docscontributing">
@@ -514,117 +357,32 @@ if (!doNotTrack) {
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/code-of-conduct/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Code of Conduct</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontributingcode-of-conduct">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingcode-of-conduct" href="/docs/contributing/code-of-conduct/">Code of Conduct</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/community/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Community</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontributingcommunity">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingcommunity" href="/docs/contributing/community/">Community</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/git/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Git</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontributinggit">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributinggit" href="/docs/contributing/git/">Working with Git</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/docker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Developing in Docker</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontributingdocker">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingdocker" href="/docs/contributing/docker/">Developing in Docker</a>
       
       
       
       
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contributing/local/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Developing Locally</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docscontributinglocal">
       
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontributinglocal" href="/docs/contributing/local/">Developing Locally</a>
       
       
     </li>
@@ -701,8 +459,8 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>Developing Locally</h1>
-        
-	
+    
+	       
 	<p>Local targets are available for development.
 In order to leverage those targets, you will need to install the appropriate tooling.
 While most projects are written in Golang, there are a few that will require NodeJS or Ruby.
@@ -751,66 +509,6 @@ ruby-2.3.7
 $ which ruby
 ${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
 </code></pre>
-        <div class="section-index">
-    
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
-
 	
 		<style>
   .feedback--answer {
@@ -876,6 +574,7 @@ ${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
 	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
 </div>
 </div>
+
 
           </main>
         </div>
