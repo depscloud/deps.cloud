@@ -5,7 +5,7 @@ weight: 20
 date: 2020-06-12
 ---
 
-* Repository: https://github.com/deps-cloud/indexer
+* Repository: https://github.com/depscloud/indexer
 * Runtime: [Golang](https://golang.org/)
 * Language: [Golang](https://golang.org/)
 

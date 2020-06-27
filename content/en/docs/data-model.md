@@ -11,7 +11,7 @@ This page serves as documentation of the open source data model for the deps.clo
 
 The logical model is the user facing representation of the data in the system.
 It is defined using [protocol buffers](https://developers.google.com/protocol-buffers/).
-The complete schema can be found in the [API](https://github.com/deps-cloud/api) repository.
+The complete schema can be found in the [API](https://github.com/depscloud/api) repository.
 To summarize, there are four distinct entities in the deps.cloud database.
 
 *Sources* represent origins for information.

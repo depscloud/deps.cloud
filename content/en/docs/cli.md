@@ -5,7 +5,7 @@ weight: 40
 date: 2020-06-12
 ---
 
-* Repository: https://github.com/deps-cloud/cli
+* Repository: https://github.com/depscloud/cli
 * Runtime: [Golang](https://golang.org/)
 * Language: [Golang](https://golang.org/)
 
@@ -39,7 +39,7 @@ Use "depscloud-cli get [command] --help" for more information about a command.
 
 In order to install the CLI, you'll need to download the binary from GitHub.
 
-https://github.com/deps-cloud/cli/releases/latest
+https://github.com/depscloud/cli/releases/latest
 
 ## Configuration
 
@@ -84,9 +84,9 @@ The second option is to list all modules produced by a given repository.
 To query for this information, simply add the `--url` or `-u` flag.
 
 ```bash
-$ depscloud-cli get modules -u https://github.com/deps-cloud/api.git
-{"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"deps-cloud/api"}}
-{"manages":{"language":"node","system":"npm","version":"0.1.0"},"module":{"language":"node","organization":"deps-cloud","module":"api"}}
+$ depscloud-cli get modules -u https://github.com/depscloud/api.git
+{"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"depscloud/api"}}
+{"manages":{"language":"node","system":"npm","version":"0.1.0"},"module":{"language":"node","organization":"depscloud","module":"api"}}
 ```
 
 ### Sources
@@ -106,8 +106,8 @@ To query or this information, the `--language`, `--organization`, and `--module`
 Alternatively, the corresponding shorthands `-l`, `-o`, and `-m` can be used respectively.
 
 ```bash
-$ depscloud-cli get sources -l go -o github.com -m deps-cloud/api
-{"source":{"url":"https://github.com/deps-cloud/api.git"},"manages":{"language":"go","system":"vgo","version":"latest"}}
+$ depscloud-cli get sources -l go -o github.com -m depscloud/api
+{"source":{"url":"https://github.com/depscloud/api.git"},"manages":{"language":"go","system":"vgo","version":"latest"}}
 ```
 
 ### Dependents
@@ -116,10 +116,10 @@ Dependent modules are those who consume the module you're querying for.
 That is, modules who list your module as a dependency.
 
 ```bash
-$ depscloud-cli get dependents -l go -o github.com -m deps-cloud/api
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"deps-cloud/gateway"}}
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"deps-cloud/tracker"}}
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"deps-cloud/indexer"}}
+$ depscloud-cli get dependents -l go -o github.com -m depscloud/api
+{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/gateway"}}
+{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/tracker"}}
+{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/indexer"}}
 ```
 
 ### Dependencies
@@ -128,7 +128,7 @@ Dependencies are the modules that your module requires.
 This should rarely differ from the modules you list in your appropriate manifest file (`package.json`, `go.mod`, etc.)
 
 ```bash
-$ depscloud-cli get dependencies -l go -o github.com -m deps-cloud/api
+$ depscloud-cli get dependencies -l go -o github.com -m depscloud/api
 {"depends":{"language":"go","version_constraint":"v1.3.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"gogo/protobuf"}}
 {"depends":{"language":"go","version_constraint":"v0.3.2","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/text"}}
 {"depends":{"language":"go","version_constraint":"v0.0.0-20190628185345-da137c7871d7","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/net"}}
@@ -152,8 +152,8 @@ By implementing this as a client-side feature, we defer the memory/disk cost to 
 Topologies can be queried in both the `dependencies` and `dependents` direction.
 
 ```bash
-$ depscloud-cli get topology dependencies -l go -o github.com -m deps-cloud/api
-{"language":"go","organization":"github.com","module":"deps-cloud/api"}
+$ depscloud-cli get topology dependencies -l go -o github.com -m depscloud/api
+{"language":"go","organization":"github.com","module":"depscloud/api"}
 {"language":"go","organization":"github.com","module":"gogo/protobuf"}
 {"language":"go","organization":"golang.org","module":"x/text"}
 {"language":"go","organization":"golang.org","module":"x/net"}
@@ -165,12 +165,12 @@ $ depscloud-cli get topology dependencies -l go -o github.com -m deps-cloud/api
 ```
 
 ```bash
-$ depscloud-cli get topology dependents -l go -o github.com -m deps-cloud/api
-{"language":"go","organization":"github.com","module":"deps-cloud/api"}
-{"language":"go","organization":"github.com","module":"deps-cloud/gateway"}
-{"language":"go","organization":"github.com","module":"deps-cloud/cli"}
-{"language":"go","organization":"github.com","module":"deps-cloud/tracker"}
-{"language":"go","organization":"github.com","module":"deps-cloud/indexer"}
+$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api
+{"language":"go","organization":"github.com","module":"depscloud/api"}
+{"language":"go","organization":"github.com","module":"depscloud/gateway"}
+{"language":"go","organization":"github.com","module":"depscloud/cli"}
+{"language":"go","organization":"github.com","module":"depscloud/tracker"}
+{"language":"go","organization":"github.com","module":"depscloud/indexer"}
 ```
 
 By adding the `--tiered` flag, you will get a structured set of results back.
@@ -178,11 +178,11 @@ This is great for building automation around your source code as it not only ide
 Consider the following simple example.
 
 ```bash
-$ depscloud-cli get topology dependents -l go -o github.com -m deps-cloud/api --tiered
-[{"language":"go","organization":"github.com","module":"deps-cloud/api"}]
-[{"language":"go","organization":"github.com","module":"deps-cloud/gateway"},{"language":"go","organization":"github.com","module":"deps-cloud/cli"},{"language":"go","organization":"github.com","module":"deps-cloud/tracker"},{"language":"go","organization":"github.com","module":"deps-cloud/indexer"}]
+$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api --tiered
+[{"language":"go","organization":"github.com","module":"depscloud/api"}]
+[{"language":"go","organization":"github.com","module":"depscloud/gateway"},{"language":"go","organization":"github.com","module":"depscloud/cli"},{"language":"go","organization":"github.com","module":"depscloud/tracker"},{"language":"go","organization":"github.com","module":"depscloud/indexer"}]
 ```
 
 In this case, we only have two tiers.
 Each tier contains a list of modules that can be built in parallel.
-Should a change be made to `deps-cloud/api`, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.
+Should a change be made to `depscloud/api`, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.

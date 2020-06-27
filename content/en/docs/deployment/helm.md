@@ -18,7 +18,7 @@ This guide explains how to run the deps.cloud infrastructure within a [Kubernete
 In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.
 
 ```
-$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
+$ helm repo add depscloud https://depscloud.github.io/deploy/charts
 "depscloud" has been added to your repositories
 
 $ helm repo update
@@ -59,15 +59,15 @@ Forwarding from [::1]:8080 -> 8080
 Once the port is forwarded, the following endpoints should be able to be reached.
 
 * [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
-* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git)
-* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fextractor)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fapi)
-* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fextractor&language=go)
+* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git)
+* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=depscloud%2Fextractor)
+* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=depscloud%2Fapi)
+* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=depscloud%2Fextractor&language=go)
 
 ## 4 - Configuring using values.yaml
 
 A `values.yaml` file can be used to maintain deployment specific configuration.
-The content below provides an example of how to configure the indexer to crawl the deps-cloud account.
+The content below provides an example of how to configure the indexer to crawl the depscloud account.
 
 ```yaml
 # contents of values.yaml
@@ -78,7 +78,7 @@ indexer:
           clone:
             strategy: HTTP
           organizations:
-            - deps-cloud
+            - depscloud
 
 tracker:
   storage:
@@ -133,7 +133,7 @@ metadata:
 spec:
   releaseName: depscloud
   chart:
-    repository: https://deps-cloud.github.io/deploy/charts
+    repository: https://depscloud.github.io/deploy/charts
     name: depscloud
   values:
     indexer:
@@ -144,5 +144,5 @@ spec:
               clone:
                 strategy: HTTP
               organizations:
-                - deps-cloud
+                - depscloud
 ```

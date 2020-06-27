@@ -9,17 +9,17 @@ date: 2020-06-12
 
 Once you've forked the repository, you'll want to clone it locally for development.
 For convenience, I tend to work out of the GOPATH directory.
-Using the following command, you can quickly build a directory for all the deps-cloud related work.
+Using the following command, you can quickly build a directory for all the depscloud related work.
 
 ```bash
-$ mkdir -p ${GOPATH}/src/github.com/deps-cloud && cd $_
+$ mkdir -p ${GOPATH}/src/github.com/depscloud && cd $_
 ```
 
 Once you have a workspace, clone the upstream project.
 This will allow you to regularly pull updates from the `origin`.
 
 ```bash
-$ git clone git@github.com:deps-cloud/<project>.git
+$ git clone git@github.com:depscloud/<project>.git
 ```
 
 ## Building and Running Projects
@@ -43,7 +43,7 @@ $ git checkout -b gh-11
 ```
 
 In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the [deps.cloud](https://github.com/deps-cloud/deps.cloud) repository to create a parent issue that the other issues can reference and link to.
+In this case, you should used the [deps.cloud](https://github.com/depscloud/deps.cloud) repository to create a parent issue that the other issues can reference and link to.
 To link another projects issue, you can use the `<user>/<project>#11` semantic.
 Similarly, you can create a feature branch using the same syntax.
 
