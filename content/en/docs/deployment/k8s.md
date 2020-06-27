@@ -61,7 +61,7 @@ If you don't already have a MySQL database available, you can deploy one using o
 The following deployment was generated from the [bitnami/mysql](https://github.com/bitnami/charts/tree/master/bitnami/mysql).
 
 ```bash
-$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/mysql.yaml
 ```
 
 This deployment comes with a single primary node and a read only replica node. 
@@ -107,7 +107,7 @@ stringData:
     - github:
         strategy: HTTP
         organizations:
-        - deps-cloud
+        - depscloud
 EOF
 ```
 
@@ -116,10 +116,10 @@ You can learn more about how to configure the indexer process on the [integratio
 ## 4 - Deploy deps.cloud
 
 After the tracker and indexer have been configured, you'll be able to deploy the deps.cloud infrastructure.
-This configuration can be found with the other deployment configuration on [GitHub](https://github.com/deps-cloud/deploy). 
+This configuration can be found with the other deployment configuration on [GitHub](https://github.com/depscloud/deploy). 
 
 ```bash
-$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/depscloud-system.yaml
 ```
 
 Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
@@ -134,7 +134,7 @@ Forwarding from [::1]:8080 -> 8080
 Once the port is forwarded, the following endpoints should be able to be reached.
 
 * [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
-* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git)
-* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fextractor)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fapi)
-* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fextractor&language=go)
+* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git)
+* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=depscloud%2Fextractor)
+* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=depscloud%2Fapi)
+* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=depscloud%2Fextractor&language=go)

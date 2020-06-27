@@ -127,8 +127,8 @@ footer_about_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/deps-cloud/deps.cloud/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/deps-cloud/deps.cloud/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page, 
@@ -145,7 +145,7 @@ enable = false
 	desc = "Discussion and help from your fellow users."
 [[params.links.user]]
 	name = "Slack"
-	url = "https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A"
+	url = "https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A"
 	icon = "fab fa-slack"
 	desc = "Find help and ask questions."
 [[params.links.user]]
@@ -157,7 +157,7 @@ enable = false
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/deps-cloud/"
+	url = "https://github.com/depscloud/"
 	icon = "fab fa-github"
 	desc = "Development takes place here!"
 [[params.links.developer]]

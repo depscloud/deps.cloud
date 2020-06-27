@@ -5,7 +5,7 @@ weight: 10
 date: 2020-06-12
 ---
 
-* Repository: https://github.com/deps-cloud/gateway
+* Repository: https://github.com/depscloud/gateway
 * Runtime: [Golang](https://golang.org/)
 * Language: [Golang](https://golang.org/)
 

@@ -7,7 +7,7 @@ date: 2020-06-12
 
 In this quick start guide, we'll use [docker-compose](https://docs.docker.com/compose) to create our demo infrastructure.
 
-To get started quickly, you should clone the [deploy](https://github.com/deps-cloud/deploy) repository and leverage the configuration under the `docker` directory.
+To get started quickly, you should clone the [deploy](https://github.com/depscloud/deploy) repository and leverage the configuration under the `docker` directory.
 
 ## 1 - Launch deps.cloud
 
@@ -27,10 +27,10 @@ The deps.cloud demo infrastructure is up and running.
 You can test it out by opening any of the following endpoints (browser or curl).
 
 * [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
-* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git)
-* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=deps-cloud%2Fextractor)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=deps-cloud%2Fapi)
-* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=deps-cloud%2Fextractor&language=go)
+* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git)
+* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=depscloud%2Fextractor)
+* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=depscloud%2Fapi)
+* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=depscloud%2Fextractor&language=go)
 
 ## 2 - Configure Your Provider
 
@@ -45,7 +45,7 @@ accounts:
     users:
     - { .GitHubLogin }
     organizations:
-    - deps-cloud
+    - depscloud
 ```
 
 The configuration will not be automatically reloaded.

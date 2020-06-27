@@ -5,7 +5,7 @@ weight: 30
 date: 2020-06-12
 ---
 
-* Repository: https://github.com/deps-cloud/tracker
+* Repository: https://github.com/depscloud/tracker
 * Runtime: [Golang](https://golang.org/)
 * Language: [Golang](https://golang.org/)
 

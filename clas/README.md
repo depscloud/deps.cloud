@@ -11,7 +11,7 @@ A copy of this agreement can be found in [individual.md](individual.md).
 This agreement will need to be signed by anyone looking to contribute code to the project.  
 To sign this agreement, you can go here and sign using your github account:
 
-https://cla-assistant.io/deps-cloud/deps.cloud
+https://cla-assistant.io/depscloud/deps.cloud
 
 ### Corporate Contributors
 

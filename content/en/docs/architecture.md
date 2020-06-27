@@ -15,22 +15,22 @@ While there are several components that make up the ecosystem, each of them serv
 
 ### Components
 
-[Gateway](https://github.com/deps-cloud/gateway) is the face of the API services.
+[Gateway](https://github.com/depscloud/gateway) is the face of the API services.
 It provides a RESTful HTTP interface to the backing gRPC services.
 See the [gateway docs](/docs/services/gateway/) for more information.
 
-[Tracker](https://github.com/deps-cloud/tracker) provides several APIs for navigating the graph of information.
+[Tracker](https://github.com/depscloud/tracker) provides several APIs for navigating the graph of information.
 This service leverages other storage systems such as SQLite or MySQL to store the graph data.
 See the [tracker docs](/docs/services/tracker/) for more information.
 
-[Extractor](https://github.com/deps-cloud/extractor) is responsible for looking at different manifest files and extracting dependency information from them.
+[Extractor](https://github.com/depscloud/extractor) is responsible for looking at different manifest files and extracting dependency information from them.
 This mechanism is easily pluggable to support a large range of different manifest files.
 See the [extractor docs](/docs/services/extractor/) for more information.
 
-The [indexer](https://github.com/deps-cloud/indexer) is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.
+The [indexer](https://github.com/depscloud/indexer) is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.
 See the [indexer docs](/docs/services/indexer/) for more information.
 
-The [command line interface](https://github.com/deps-cloud/cli) or CLI provides end users with an easy ability to query the API.
+The [command line interface](https://github.com/depscloud/cli) or CLI provides end users with an easy ability to query the API.
 See the [CLI docs](/docs/cli/) for more information.
 
 ## Design Decisions

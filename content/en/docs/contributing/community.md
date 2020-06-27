@@ -18,4 +18,4 @@ If large enough interest is generated, we can start them back up again.
 
 <br/>
 
-[Slack]: https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A
+[Slack]: https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A

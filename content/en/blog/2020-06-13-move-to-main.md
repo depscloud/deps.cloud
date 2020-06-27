@@ -20,7 +20,7 @@ While this script is specific to GitHub, it should be easy to modify for other s
 # setup credentials for the api
 
 export GITHUB_AUTHORIZATION="token OAUTH-TOKEN"
-export GITHUB_GROUP="deps-cloud"
+export GITHUB_GROUP="depscloud"
 export BRANCH_NAME="main"
 
 # start with a fresh copy of your code (just to be safe)
