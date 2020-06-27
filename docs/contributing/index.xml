@@ -97,7 +97,7 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
         
         &lt;h2 id=&#34;online&#34;&gt;Online&lt;/h2&gt;
 &lt;p&gt;The team has used several different communication tools.
-Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
+Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
 If you have trouble joining, please do not hesitate to reach out to the &lt;a href=&#34;mailto:community@deps.cloud&#34;&gt;mailing list&lt;/a&gt; for additional support.&lt;/p&gt;
 &lt;h2 id=&#34;meetings&#34;&gt;Meetings&lt;/h2&gt;
 &lt;p&gt;Until further notice community meetings have been paused.
@@ -119,11 +119,11 @@ If large enough interest is generated, we can start them back up again.&lt;/p&gt
         &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
 &lt;p&gt;Once you&amp;rsquo;ve forked the repository, you&amp;rsquo;ll want to clone it locally for development.
 For convenience, I tend to work out of the GOPATH directory.
-Using the following command, you can quickly build a directory for all the deps-cloud related work.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/deps-cloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
+Using the following command, you can quickly build a directory for all the depscloud related work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/depscloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, clone the upstream project.
 This will allow you to regularly pull updates from the &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:deps-cloud/&amp;lt;project&amp;gt;.git
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:depscloud/&amp;lt;project&amp;gt;.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building-and-running-projects&#34;&gt;Building and Running Projects&lt;/h2&gt;
 &lt;p&gt;There are two ways you can build and run this project.
 First you can develop using docker (the recommended way).
@@ -139,7 +139,7 @@ This mechanism is not recommended, but can often help quickly testing things wit
 To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the &lt;a href=&#34;https://github.com/deps-cloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
+In this case, you should used the &lt;a href=&#34;https://github.com/depscloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
 To link another projects issue, you can use the &lt;code&gt;&amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11&lt;/code&gt; semantic.
 Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b &amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11

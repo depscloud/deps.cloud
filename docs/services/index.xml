@@ -24,7 +24,7 @@
         
         
         &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/gateway&#34;&gt;https://github.com/deps-cloud/gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;https://github.com/depscloud/gateway&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -58,7 +58,7 @@ You can explore the API further at the links below.&lt;/p&gt;
         
         
         &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/indexer&#34;&gt;https://github.com/deps-cloud/indexer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;https://github.com/depscloud/indexer&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -89,7 +89,7 @@ Two workers is often more than sufficient.&lt;/p&gt;
         
         
         &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/tracker&#34;&gt;https://github.com/deps-cloud/tracker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/tracker&#34;&gt;https://github.com/depscloud/tracker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -132,7 +132,7 @@ window.onload = function() {
         
         
         &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/deps-cloud/extractor&#34;&gt;https://github.com/deps-cloud/extractor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/extractor&#34;&gt;https://github.com/depscloud/extractor&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Runtime: &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Language: &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -144,8 +144,8 @@ As a result, it inspired the use of a more scientific language where there is mo
 While both JavaScript and Python afforded the flexibility I was looking for in a system, it was Typescript that offered the best of both worlds.&lt;/p&gt;
 &lt;h2 id=&#34;contributing-an-extractor&#34;&gt;Contributing an extractor&lt;/h2&gt;
 &lt;p&gt;This is by far, one of the easiest ways to contribute to the project.
-It involves adding a new class to the code base under the &lt;a href=&#34;https://github.com/deps-cloud/extractor/tree/main/src/extractors&#34;&gt;&lt;code&gt;src/extractors&lt;/code&gt;&lt;/a&gt; directory.
-Once the new extractor is added, you can register it using the &lt;a href=&#34;https://github.com/deps-cloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts&#34;&gt;&lt;code&gt;ExtractorRegistry&lt;/code&gt;&lt;/a&gt;.
+It involves adding a new class to the code base under the &lt;a href=&#34;https://github.com/depscloud/extractor/tree/main/src/extractors&#34;&gt;&lt;code&gt;src/extractors&lt;/code&gt;&lt;/a&gt; directory.
+Once the new extractor is added, you can register it using the &lt;a href=&#34;https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts&#34;&gt;&lt;code&gt;ExtractorRegistry&lt;/code&gt;&lt;/a&gt;.
 The following code snippet illustrates the bare elements needed to write a custom extractor.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;FileExtractor&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;implements&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Extractor&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;requires&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;

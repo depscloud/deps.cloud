@@ -24,7 +24,7 @@
         
         
         &lt;p&gt;In this quick start guide, we&amp;rsquo;ll use &lt;a href=&#34;https://docs.docker.com/compose&#34;&gt;docker-compose&lt;/a&gt; to create our demo infrastructure.&lt;/p&gt;
-&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/deps-cloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/depscloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.&lt;/p&gt;
 &lt;h2 id=&#34;1---launch-depscloud&#34;&gt;1 - Launch deps.cloud&lt;/h2&gt;
 &lt;p&gt;To launch the demo infrastructure, simply run the following:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ docker-compose up -d
@@ -37,10 +37,10 @@ Creating docker_gateway_1 ... done
 You can test it out by opening any of the following endpoints (browser or curl).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=depscloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=depscloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=depscloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;2---configure-your-provider&#34;&gt;2 - Configure Your Provider&lt;/h2&gt;
 &lt;p&gt;Once the demo infrastructure is up and running, you can easily modify the &lt;code&gt;rds.yaml&lt;/code&gt; file to include more accounts to index.
@@ -52,7 +52,7 @@ For now, let&amp;rsquo;s simply add your GitHub ID to the existing block.&lt;/p&
     users:
     - { .GitHubLogin }
     organizations:
-    - deps-cloud
+    - depscloud
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The configuration will not be automatically reloaded.
 Any process consuming the configuration will need to be restarted.&lt;/p&gt;
 &lt;h2 id=&#34;3---rerun-indexer&#34;&gt;3 - Rerun Indexer&lt;/h2&gt;
@@ -112,7 +112,7 @@ All the resources created in this walk through will be deployed to this namespac
 &lt;h2 id=&#34;3---deploy-mysql&#34;&gt;3 - Deploy MySQL&lt;/h2&gt;
 &lt;p&gt;If you don&amp;rsquo;t already have a MySQL database available, you can deploy one using one of the many helm charts out there.
 The following deployment was generated from the &lt;a href=&#34;https://github.com/bitnami/charts/tree/master/bitnami/mysql&#34;&gt;bitnami/mysql&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/mysql.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This deployment comes with a single primary node and a read only replica node.&lt;/p&gt;
 &lt;h2 id=&#34;4---configure-depscloud&#34;&gt;4 - Configure deps.cloud&lt;/h2&gt;
 &lt;p&gt;By default, the tracker and indexer do not come configured.
@@ -147,13 +147,13 @@ The following configuration will index the deps.cloud repositories.&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;    - github:
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        strategy: HTTP
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        organizations:
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        - deps-cloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;        - depscloud
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;EOF&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can learn more about how to configure the indexer process on the &lt;a href=&#34;https://deps.cloud/docs/integrations/&#34;&gt;integrations&lt;/a&gt; page.&lt;/p&gt;
 &lt;h2 id=&#34;4---deploy-depscloud&#34;&gt;4 - Deploy deps.cloud&lt;/h2&gt;
 &lt;p&gt;After the tracker and indexer have been configured, you&amp;rsquo;ll be able to deploy the deps.cloud infrastructure.
-This configuration can be found with the other deployment configuration on &lt;a href=&#34;https://github.com/deps-cloud/deploy&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+This configuration can be found with the other deployment configuration on &lt;a href=&#34;https://github.com/depscloud/deploy&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/depscloud-system.yaml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
 To quickly test this, you can port forward to one of the &lt;code&gt;gateway&lt;/code&gt; pods directly.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
@@ -162,10 +162,10 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once the port is forwarded, the following endpoints should be able to be reached.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=depscloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=depscloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=depscloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -189,7 +189,7 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
 &lt;/ol&gt;
 &lt;h2 id=&#34;1---adding-the-helm-repository&#34;&gt;1 - Adding the Helm Repository&lt;/h2&gt;
 &lt;p&gt;In order to leverage the deps.cloud Helm charts, you first need to add the deps.cloud stable repository.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ helm repo add depscloud https://deps-cloud.github.io/deploy/charts
+&lt;pre&gt;&lt;code&gt;$ helm repo add depscloud https://depscloud.github.io/deploy/charts
 &amp;quot;depscloud&amp;quot; has been added to your repositories
 
 $ helm repo update
@@ -217,14 +217,14 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once the port is forwarded, the following endpoints should be able to be reached.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/sources&#34;&gt;What sources have been indexed?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=deps-cloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=deps-cloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git&#34;&gt;What modules are produced by this repository?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;amp;module=depscloud%2Fextractor&#34;&gt;What modules do I depend on and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;amp;module=depscloud%2Fapi&#34;&gt;What modules depend on me and what version?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;amp;module=depscloud%2Fextractor&amp;amp;language=go&#34;&gt;What repositories can produce this module?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;4---configuring-using-valuesyaml&#34;&gt;4 - Configuring using values.yaml&lt;/h2&gt;
 &lt;p&gt;A &lt;code&gt;values.yaml&lt;/code&gt; file can be used to maintain deployment specific configuration.
-The content below provides an example of how to configure the indexer to crawl the deps-cloud account.&lt;/p&gt;
+The content below provides an example of how to configure the indexer to crawl the depscloud account.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# contents of values.yaml&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;indexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -233,7 +233,7 @@ The content below provides an example of how to configure the indexer to crawl t
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;clone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;          &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;- deps-cloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;            &lt;/span&gt;- depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;tracker&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;storage&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -272,7 +272,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;spec&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;releaseName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;chart&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;https&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;//deps-cloud.github.io/deploy/charts&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;repository&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;https&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;//depscloud.github.io/deploy/charts&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;values&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;indexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
@@ -283,7 +283,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;              &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;clone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;                &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;              &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;                &lt;/span&gt;- deps-cloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;                &lt;/span&gt;- depscloud&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>

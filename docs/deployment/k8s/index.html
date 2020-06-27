@@ -119,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.283502528fcef76e987a81cf3f7a70accd0bd543d6643928190a409f888c9c650ca02ad795a0ef4dd555ef0438feb146678f308c69e6912dea9c0859059ab156.json"
+  data-offline-search-index-json-src="/offline-search-index.a515263010726cf3bdb032b3001243e047c67bb17c5f82ea7f5c9459562c0f8d1d4eed4374f634fcb9db51192404cbcb72fb772f39afd236f458f4a3dc41e3ee.json"
   data-offline-search-base-href="/"
 >
 
@@ -149,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.283502528fcef76e987a81cf3f7a70accd0bd543d6643928190a409f888c9c650ca02ad795a0ef4dd555ef0438feb146678f308c69e6912dea9c0859059ab156.json"
+  data-offline-search-index-json-src="/offline-search-index.a515263010726cf3bdb032b3001243e047c67bb17c5f82ea7f5c9459562c0f8d1d4eed4374f634fcb9db51192404cbcb72fb772f39afd236f458f4a3dc41e3ee.json"
   data-offline-search-base-href="/"
 >
 
@@ -506,7 +506,7 @@ All the resources created in this walk through will be deployed to this namespac
 <h2 id="3---deploy-mysql">3 - Deploy MySQL</h2>
 <p>If you don&rsquo;t already have a MySQL database available, you can deploy one using one of the many helm charts out there.
 The following deployment was generated from the <a href="https://github.com/bitnami/charts/tree/master/bitnami/mysql">bitnami/mysql</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/mysql.yaml
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/mysql.yaml
 </code></pre></div><p>This deployment comes with a single primary node and a read only replica node.</p>
 <h2 id="4---configure-depscloud">4 - Configure deps.cloud</h2>
 <p>By default, the tracker and indexer do not come configured.
@@ -541,13 +541,13 @@ The following configuration will index the deps.cloud repositories.</p>
 </span><span style="color:#4e9a06">    - github:
 </span><span style="color:#4e9a06">        strategy: HTTP
 </span><span style="color:#4e9a06">        organizations:
-</span><span style="color:#4e9a06">        - deps-cloud
+</span><span style="color:#4e9a06">        - depscloud
 </span><span style="color:#4e9a06">EOF</span>
 </code></pre></div><p>You can learn more about how to configure the indexer process on the <a href="/docs/integrations/">integrations</a> page.</p>
 <h2 id="4---deploy-depscloud">4 - Deploy deps.cloud</h2>
 <p>After the tracker and indexer have been configured, you&rsquo;ll be able to deploy the deps.cloud infrastructure.
-This configuration can be found with the other deployment configuration on <a href="https://github.com/deps-cloud/deploy">GitHub</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://deps-cloud.github.io/deploy/k8s/depscloud-system.yaml
+This configuration can be found with the other deployment configuration on <a href="https://github.com/depscloud/deploy">GitHub</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/depscloud-system.yaml
 </code></pre></div><p>Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
 To quickly test this, you can port forward to one of the <code>gateway</code> pods directly.</p>
 <pre><code>$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
@@ -556,10 +556,10 @@ Forwarding from [::1]:8080 -&gt; 8080
 </code></pre><p>Once the port is forwarded, the following endpoints should be able to be reached.</p>
 <ul>
 <li><a href="http://localhost:8080/v1alpha/sources">What sources have been indexed?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdeps-cloud%2Fextractor.git">What modules are produced by this repository?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=deps-cloud%2Fextractor">What modules do I depend on and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=deps-cloud%2Fapi">What modules depend on me and what version?</a></li>
-<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=deps-cloud%2Fextractor&amp;language=go">What repositories can produce this module?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git">What modules are produced by this repository?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&amp;module=depscloud%2Fextractor">What modules do I depend on and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&amp;module=depscloud%2Fapi">What modules depend on me and what version?</a></li>
+<li><a href="http://localhost:8080/v1alpha/modules/source?organization=github.com&amp;module=depscloud%2Fextractor&amp;language=go">What repositories can produce this module?</a></li>
 </ul>
 
 	
@@ -583,10 +583,10 @@ Forwarding from [::1]:8080 -&gt; 8080
 <button class="feedback--answer feedback--answer-yes">Yes</button>
 <button class="feedback--answer feedback--answer-no">No</button>
 <p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/deps-cloud/deps.cloud/issues/new">tell us how we can improve</a>.
+  Glad to hear it! Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
 </p>
 <p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/deps-cloud/deps.cloud/issues/new">tell us how we can improve</a>.
+  Sorry to hear that. Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
 </p>
 <script>
   const yesButton = document.querySelector('.feedback--answer-yes');
@@ -649,7 +649,7 @@ Forwarding from [::1]:8080 -&gt; 8080
   </li>
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
-    <a class="text-white" target="_blank" href="https://join.slack.com/t/deps-cloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
       <i class="fab fa-slack"></i>
     </a>
   </li>
@@ -673,7 +673,7 @@ Forwarding from [::1]:8080 -&gt; 8080
 <ul class="list-inline mb-0">
   
   <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
-    <a class="text-white" target="_blank" href="https://github.com/deps-cloud/">
+    <a class="text-white" target="_blank" href="https://github.com/depscloud/">
       <i class="fab fa-github"></i>
     </a>
   </li>
