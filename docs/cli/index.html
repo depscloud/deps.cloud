@@ -22,24 +22,24 @@
 
 <title>Command Line | deps.cloud</title><meta property="og:title" content="Command Line" />
 <meta property="og:description" content="Repository: https://github.com/depscloud/cli Runtime: Golang Language: Golang  Background Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
-$ depscloud-cli get -h Retrieve information from the graph Usage: depscloud-cli get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service topology Get the module topology of either dependents or dependencies Flags: -h, --help help for get Use &#34;depscloud-cli get [command] --help&#34; for more information about a command." />
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/cli/" />
 <meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Command Line">
 <meta itemprop="description" content="Repository: https://github.com/depscloud/cli Runtime: Golang Language: Golang  Background Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
-$ depscloud-cli get -h Retrieve information from the graph Usage: depscloud-cli get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service topology Get the module topology of either dependents or dependencies Flags: -h, --help help for get Use &#34;depscloud-cli get [command] --help&#34; for more information about a command.">
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command.">
 <meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="778">
+<meta itemprop="wordCount" content="810">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Command Line"/>
 <meta name="twitter:description" content="Repository: https://github.com/depscloud/cli Runtime: Golang Language: Golang  Background Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
-$ depscloud-cli get -h Retrieve information from the graph Usage: depscloud-cli get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service topology Get the module topology of either dependents or dependencies Flags: -h, --help help for get Use &#34;depscloud-cli get [command] --help&#34; for more information about a command."/>
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command."/>
 
 
 <script type="application/javascript">
@@ -119,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a515263010726cf3bdb032b3001243e047c67bb17c5f82ea7f5c9459562c0f8d1d4eed4374f634fcb9db51192404cbcb72fb772f39afd236f458f4a3dc41e3ee.json"
+  data-offline-search-index-json-src="/offline-search-index.2f55e4618fd838afa078236621838a7222918610fb07ac1e9df772ddb70fd06ba1b2751d92b9ac9a6d92827dc349c6665604d24e7f8b7a9d25ac02114f5ca3fa.json"
   data-offline-search-base-href="/"
 >
 
@@ -149,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a515263010726cf3bdb032b3001243e047c67bb17c5f82ea7f5c9459562c0f8d1d4eed4374f634fcb9db51192404cbcb72fb772f39afd236f458f4a3dc41e3ee.json"
+  data-offline-search-index-json-src="/offline-search-index.2f55e4618fd838afa078236621838a7222918610fb07ac1e9df772ddb70fd06ba1b2751d92b9ac9a6d92827dc349c6665604d24e7f8b7a9d25ac02114f5ca3fa.json"
   data-offline-search-base-href="/"
 >
 
@@ -474,36 +474,46 @@ if (!doNotTrack) {
 <p>Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API.
 It helps obfuscate the specifics about each endpoint by encapsulating them behind a target.
 Currently, this tool provides read only access to API.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get -h
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get -h
 Retrieve information from the graph
 
 Usage:
-  depscloud-cli get <span style="color:#ce5c00;font-weight:bold">[</span>command<span style="color:#ce5c00;font-weight:bold">]</span>
+  deps get <span style="color:#ce5c00;font-weight:bold">[</span>command<span style="color:#ce5c00;font-weight:bold">]</span>
 
 Available Commands:
   dependencies Get the list of modules the given module depends on
   dependents   Get the list of modules that depend on the given module
   modules      Get a list of modules from the service
   sources      Get a list of <span style="color:#204a87">source</span> repositories from the service
-  topology     Get the module topology of either dependents or dependencies
 
 Flags:
   -h, --help   <span style="color:#204a87">help</span> <span style="color:#204a87;font-weight:bold">for</span> get
 
-Use <span style="color:#4e9a06">&#34;depscloud-cli get [command] --help&#34;</span> <span style="color:#204a87;font-weight:bold">for</span> more information about a command.
+Use <span style="color:#4e9a06">&#34;deps get [command] --help&#34;</span> <span style="color:#204a87;font-weight:bold">for</span> more information about a command.
 </code></pre></div><h2 id="installation">Installation</h2>
-<p>In order to install the CLI, you&rsquo;ll need to download the binary from GitHub.</p>
+<p>You can install our CLI a few different ways.
+On Ubuntu, you can tap our <code>apt</code> repository.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;deb [trusted=yes] https://apt.fury.io/depscloud/ /&#34;</span> <span style="color:#000;font-weight:bold">|</span> sudo tee /etc/apt/sources.list.d/depscloud.list
+$ sudo apt-get update
+$ sudo apt-get install depscloud-cli
+
+$ deps version
+deps <span style="color:#ce5c00;font-weight:bold">{</span>version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><p>On OSX, you can tap our <a href="https://brew.sh/">Homebrew</a> repository.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew tap depscloud/tap
+$ brew install depscloud-cli
+
+$ deps version
+deps <span style="color:#ce5c00;font-weight:bold">{</span>version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><p>Finally, you can download one of the latest binaries from GitHub releases.</p>
 <p><a href="https://github.com/depscloud/cli/releases/latest">https://github.com/depscloud/cli/releases/latest</a></p>
 <h2 id="configuration">Configuration</h2>
-<p>The <code>depscloud-cli</code> can be configured to point at a custom deployment of the deps.cloud ecosystem.
+<p>The <code>deps</code> can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the <code>DEPSCLOUD_BASE_URL</code> environment variable.
 Here&rsquo;s an example of how to configure it to use the public API (default behavior)</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://api.deps.cloud&#34;</span>
 </code></pre></div><p>If you&rsquo;re trying things out locally, you can also point it at an instance running in <a href="/docs/deployment/docker">docker</a>.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://localhost:8080&#34;</span>
-</code></pre></div><p>I&rsquo;ve found having a shorthand to be valuable when querying for information on a regular basis.
-In experimentation, I&rsquo;ve found the <code>deps</code> alias to work well.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">alias</span> <span style="color:#000">deps</span><span style="color:#ce5c00;font-weight:bold">=</span>depscloud-cli
 </code></pre></div><h2 id="use-cases">Use Cases</h2>
 <p>There are many use cases that this tool supports.
 This section details several sample queries to help get folks started.</p>
@@ -511,11 +521,11 @@ This section details several sample queries to help get folks started.</p>
 <p>Modules represent both libraries and applications in the dependency graph.
 These can be queried for in one of two ways.
 The first option is to list all modules the service knows about.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get modules
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get modules
 ...
 </code></pre></div><p>The second option is to list all modules produced by a given repository.
 To query for this information, simply add the <code>--url</code> or <code>-u</code> flag.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get modules -u https://github.com/depscloud/api.git
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get modules -u https://github.com/depscloud/api.git
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;vgo&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;latest&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;node&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;npm&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;0.1.0&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;node&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;depscloud&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;api&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 </code></pre></div><h3 id="sources">Sources</h3>
@@ -523,24 +533,24 @@ To query for this information, simply add the <code>--url</code> or <code>-u</co
 It can later be used to represent other sources of dependency information (like <a href="https://www.sonatype.com/product-nexus-repository">Nexus</a> and other artifact repositories).
 Similar to <code>modules</code>, <code>sources</code> can queried multiple ways.
 The first option is to list all sources the service knowns about.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get sources
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get sources
 ...
 </code></pre></div><p>The second option is to list all sources for a given module.
 To query or this information, the <code>--language</code>, <code>--organization</code>, and <code>--module</code> flags must be provided.
 Alternatively, the corresponding shorthands <code>-l</code>, <code>-o</code>, and <code>-m</code> can be used respectively.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get sources -l go -o github.com -m depscloud/api
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get sources -l go -o github.com -m depscloud/api
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;source&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;url&#34;</span>:<span style="color:#4e9a06">&#34;https://github.com/depscloud/api.git&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;vgo&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;latest&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 </code></pre></div><h3 id="dependents">Dependents</h3>
 <p>Dependent modules are those who consume the module you&rsquo;re querying for.
 That is, modules who list your module as a dependency.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get dependents -l go -o github.com -m depscloud/api
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents -l go -o github.com -m depscloud/api
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 </code></pre></div><h3 id="dependencies">Dependencies</h3>
 <p>Dependencies are the modules that your module requires.
 This should rarely differ from the modules you list in your appropriate manifest file (<code>package.json</code>, <code>go.mod</code>, etc.)</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get dependencies -l go -o github.com -m depscloud/api
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependencies -l go -o github.com -m depscloud/api
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.3.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;gogo/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.3.2&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;indirect&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/text&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.0.0-20190628185345-da137c7871d7&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;indirect&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/net&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
@@ -557,7 +567,7 @@ While the <a href="/docs/services/tracker/">tracker</a> API calls out to a <code
 This is due to the fact that the subgraph needs to be buffered before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.</p>
 <p>Topologies can be queried in both the <code>dependencies</code> and <code>dependents</code> direction.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get topology dependencies -l go -o github.com -m depscloud/api
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependencies topology -l go -o github.com -m depscloud/api
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;gogo/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/text&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
@@ -567,7 +577,7 @@ By implementing this as a client-side feature, we defer the memory/disk cost to 
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/sys&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc-ecosystem/grpc-gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents topology -l go -o github.com -m depscloud/api
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/cli&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
@@ -576,7 +586,7 @@ By implementing this as a client-side feature, we defer the memory/disk cost to 
 </code></pre></div><p>By adding the <code>--tiered</code> flag, you will get a structured set of results back.
 This is great for building automation around your source code as it not only identifies the order in which things should be built, but it also provides tiers where parallel builds can occur.
 Consider the following simple example.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api --tiered
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents topology -l go -o github.com -m depscloud/api --tiered
 <span style="color:#ce5c00;font-weight:bold">[{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}]</span>
 <span style="color:#ce5c00;font-weight:bold">[{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/cli&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}]</span>
 </code></pre></div><p>In this case, we only have two tiers.
