@@ -16,34 +16,55 @@ It helps obfuscate the specifics about each endpoint by encapsulating them behin
 Currently, this tool provides read only access to API.
 
 ```bash
-$ depscloud-cli get -h
+$ deps get -h
 Retrieve information from the graph
 
 Usage:
-  depscloud-cli get [command]
+  deps get [command]
 
 Available Commands:
   dependencies Get the list of modules the given module depends on
   dependents   Get the list of modules that depend on the given module
   modules      Get a list of modules from the service
   sources      Get a list of source repositories from the service
-  topology     Get the module topology of either dependents or dependencies
 
 Flags:
   -h, --help   help for get
 
-Use "depscloud-cli get [command] --help" for more information about a command.
+Use "deps get [command] --help" for more information about a command.
 ```
 
 ## Installation
 
-In order to install the CLI, you'll need to download the binary from GitHub.
+You can install our CLI a few different ways.
+On Ubuntu, you can tap our `apt` repository.
+
+```bash
+$ echo "deb [trusted=yes] https://apt.fury.io/depscloud/ /" | sudo tee /etc/apt/sources.list.d/depscloud.list
+$ sudo apt-get update
+$ sudo apt-get install depscloud-cli
+
+$ deps version
+deps {version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z}
+```
+
+On OSX, you can tap our [Homebrew](https://brew.sh/) repository.
+
+```bash
+$ brew tap depscloud/tap
+$ brew install depscloud-cli
+
+$ deps version
+deps {version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z}
+```
+
+Finally, you can download one of the latest binaries from GitHub releases.
 
 https://github.com/depscloud/cli/releases/latest
 
 ## Configuration
 
-The `depscloud-cli` can be configured to point at a custom deployment of the deps.cloud ecosystem.
+The `deps` can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the `DEPSCLOUD_BASE_URL` environment variable.
 Here's an example of how to configure it to use the public API (default behavior) 
 
@@ -55,13 +76,6 @@ If you're trying things out locally, you can also point it at an instance runnin
 
 ```bash
 export DEPSCLOUD_BASE_URL="http://localhost:8080"
-```
-
-I've found having a shorthand to be valuable when querying for information on a regular basis.
-In experimentation, I've found the `deps` alias to work well.
-
-```bash
-alias deps=depscloud-cli
 ```
 
 ## Use Cases
@@ -76,7 +90,7 @@ These can be queried for in one of two ways.
 The first option is to list all modules the service knows about.
 
 ```bash
-$ depscloud-cli get modules
+$ deps get modules
 ...
 ```
 
@@ -84,7 +98,7 @@ The second option is to list all modules produced by a given repository.
 To query for this information, simply add the `--url` or `-u` flag.
 
 ```bash
-$ depscloud-cli get modules -u https://github.com/depscloud/api.git
+$ deps get modules -u https://github.com/depscloud/api.git
 {"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"depscloud/api"}}
 {"manages":{"language":"node","system":"npm","version":"0.1.0"},"module":{"language":"node","organization":"depscloud","module":"api"}}
 ```
@@ -97,7 +111,7 @@ Similar to `modules`, `sources` can queried multiple ways.
 The first option is to list all sources the service knowns about.
 
 ```bash
-$ depscloud-cli get sources
+$ deps get sources
 ...
 ```
 
@@ -106,7 +120,7 @@ To query or this information, the `--language`, `--organization`, and `--module`
 Alternatively, the corresponding shorthands `-l`, `-o`, and `-m` can be used respectively.
 
 ```bash
-$ depscloud-cli get sources -l go -o github.com -m depscloud/api
+$ deps get sources -l go -o github.com -m depscloud/api
 {"source":{"url":"https://github.com/depscloud/api.git"},"manages":{"language":"go","system":"vgo","version":"latest"}}
 ```
 
@@ -116,7 +130,7 @@ Dependent modules are those who consume the module you're querying for.
 That is, modules who list your module as a dependency.
 
 ```bash
-$ depscloud-cli get dependents -l go -o github.com -m depscloud/api
+$ deps get dependents -l go -o github.com -m depscloud/api
 {"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/gateway"}}
 {"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/tracker"}}
 {"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/indexer"}}
@@ -128,7 +142,7 @@ Dependencies are the modules that your module requires.
 This should rarely differ from the modules you list in your appropriate manifest file (`package.json`, `go.mod`, etc.)
 
 ```bash
-$ depscloud-cli get dependencies -l go -o github.com -m depscloud/api
+$ deps get dependencies -l go -o github.com -m depscloud/api
 {"depends":{"language":"go","version_constraint":"v1.3.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"gogo/protobuf"}}
 {"depends":{"language":"go","version_constraint":"v0.3.2","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/text"}}
 {"depends":{"language":"go","version_constraint":"v0.0.0-20190628185345-da137c7871d7","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/net"}}
@@ -152,7 +166,7 @@ By implementing this as a client-side feature, we defer the memory/disk cost to 
 Topologies can be queried in both the `dependencies` and `dependents` direction.
 
 ```bash
-$ depscloud-cli get topology dependencies -l go -o github.com -m depscloud/api
+$ deps get dependencies topology -l go -o github.com -m depscloud/api
 {"language":"go","organization":"github.com","module":"depscloud/api"}
 {"language":"go","organization":"github.com","module":"gogo/protobuf"}
 {"language":"go","organization":"golang.org","module":"x/text"}
@@ -165,7 +179,7 @@ $ depscloud-cli get topology dependencies -l go -o github.com -m depscloud/api
 ```
 
 ```bash
-$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api
+$ deps get dependents topology -l go -o github.com -m depscloud/api
 {"language":"go","organization":"github.com","module":"depscloud/api"}
 {"language":"go","organization":"github.com","module":"depscloud/gateway"}
 {"language":"go","organization":"github.com","module":"depscloud/cli"}
@@ -178,7 +192,7 @@ This is great for building automation around your source code as it not only ide
 Consider the following simple example.
 
 ```bash
-$ depscloud-cli get topology dependents -l go -o github.com -m depscloud/api --tiered
+$ deps get dependents topology -l go -o github.com -m depscloud/api --tiered
 [{"language":"go","organization":"github.com","module":"depscloud/api"}]
 [{"language":"go","organization":"github.com","module":"depscloud/gateway"},{"language":"go","organization":"github.com","module":"depscloud/cli"},{"language":"go","organization":"github.com","module":"depscloud/tracker"},{"language":"go","organization":"github.com","module":"depscloud/indexer"}]
 ```
