@@ -7,12 +7,12 @@ date: 2020-07-01
 All projects are open to contributions.
 Be sure to consult all the resources below prior to contributing.
 
-# Process and Project Management
+## Process and Project Management
 
 The deps.cloud project leverages a public [GitHub Project](https://github.com/orgs/depscloud/projects/1) for tracking its work items.
 For new comers, there's a section that provides some detail around how to get started developing on the project.
 
-# Contributor Agreements
+## Contributor Agreements
 
 To help protect the project owners and contributors to the project, we've established a common set of CLAs.
 The Individual Contributor Agreement should be signed by anyone who submits code to the project.
