@@ -2,7 +2,7 @@
 title: Indexer
 linkTitle: Indexer
 weight: 20
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/indexer
@@ -11,7 +11,7 @@ date: 2020-06-12
 
 ## Background
 
-The indexer process is typically run as a cron job.
+The indexer process often runs as a cron job.
 On a configured schedule, it will re-index all available repositories.
 While not ideal, this solution provides an easy way to get started.
 If needed, the indexing process can be sharded across multiple different indexers.
@@ -24,5 +24,5 @@ It then performs a shallow clone of a repository into that tmp directory.
 When the indexing process is complete, all of this is cleaned up.
 
 One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of `--workers`.
-A single worker can process a large number of repositories fairly quick.
+A single worker can process many repositories fairly quick.
 Two workers is often more than sufficient.

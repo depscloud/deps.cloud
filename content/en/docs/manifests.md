@@ -2,7 +2,7 @@
 title: "Manifest Files"
 linkTitle: "Manifest Files"
 weight: 5
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.
@@ -15,14 +15,14 @@ Since there is no standardization across languages, extraction may vary between 
 
 | Manifest File                   | Language | System     | Example                     | Organization       | Module           |
 |---------------------------------|----------|------------|-----------------------------|--------------------|------------------|
-| `bower.json`                    | `node`   | `bower`    | `@depscloud/api`           | `depscloud`       | `api`            |
+| `bower.json`                    | `node`   | `bower`    | `@depscloud/api`            | `depscloud`        | `api`            |
 | `build.gradle, settings.gradle` | `java`   | `gradle`   | `com.google.guava:guava`    | `com.google.guava` | `guava`          |
 | `cargo.toml`                    | `rust`   | `cargo`    | `bytes`                     | `_`                | `bytes`          |
 | `composer.json`                 | `php`    | `composer` | `symfony/console`           | `symfony`          | `console`        |
-| `Godeps.json`                   | `go`     | `godeps`   | `github.com/depscloud/api` | `github.com`       | `depscloud/api` |
-| `go.mod`                        | `go`     | `vgo`      | `github.com/depscloud/api` | `github.com`       | `depscloud/api` |
-| `Gopkg.toml`                    | `go`     | `gopkg`    | `github.com/depscloud/api` | `github.com`       | `depscloud/api` |
+| `Godeps.json`                   | `go`     | `godeps`   | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
+| `go.mod`                        | `go`     | `vgo`      | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
+| `Gopkg.toml`                    | `go`     | `gopkg`    | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
 | `ivy.xml`                       | `java`   | `ivy`      | `com.google.guava;guava`    | `com.google.guava` | `guava`          |
-| `package.json`                  | `node`   | `npm`      | `@depscloud/api`           | `depscloud`       | `api`            |
+| `package.json`                  | `node`   | `npm`      | `@depscloud/api`            | `depscloud`        | `api`            |
 | `pom.xml`                       | `java`   | `maven`    | `com.google.guava;guava`    | `com.google.guava` | `guava`          |
-| `vendor.conf`                   | `go`     | `vendor`   | `github.com/depscloud/api` | `github.com`       | `depscloud/api` |
+| `vendor.conf`                   | `go`     | `vendor`   | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |

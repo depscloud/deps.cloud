@@ -2,7 +2,7 @@
 title: "Working with Git"
 linkTitle: "Working with Git"
 weight: 30
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 ## Cloning Projects
@@ -68,5 +68,5 @@ When pushing a branch to, you can specify the `-u` option to have your local bra
 $ git push -u <myuser> gh-11
 ```
 
-Fron here, all `git push` operations will default to using your fork.
+From here, all `git push` operations will default to using your fork.
 After a branch has been pushed, you can use [pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) to have your code reviewed by the team.

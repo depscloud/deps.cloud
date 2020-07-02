@@ -2,7 +2,7 @@
 title: "Command Line"
 linkTitle: "Command Line"
 weight: 40
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/cli
@@ -199,4 +199,4 @@ $ deps get dependents topology -l go -o github.com -m depscloud/api --tiered
 
 In this case, we only have two tiers.
 Each tier contains a list of modules that can be built in parallel.
-Should a change be made to `depscloud/api`, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.
+When one tier is complete, the next tier can be processed safely without worrying about transitive dependency issues.

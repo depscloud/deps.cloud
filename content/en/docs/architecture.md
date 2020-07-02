@@ -2,7 +2,7 @@
 title: "Architecture"
 linkTitle: "Architecture"
 weight: 10
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 This page serves as documentation of the open source architecture for the deps.cloud system.
@@ -60,9 +60,9 @@ When you think of a dependency graph, it's easy to jump to the conclusion to use
 However, when working with folks in the open source community, it's hard to find people with prior experience on graph databases.
 Most people are still more familiar with things like [MySQL](https://www.mysql.com/) or [MongoDB](https://www.mongodb.com/).
 
-Knowing that this layer of the stack was likely to be swapped out with Company X's preferred store, I wanted it to be pluggable.
-So the first implementation was done on top of a SQL system.
-From there, a simple service interface was born.
+Knowing this layer of the stack was likely to be swapped out with Company X's preferred store, I wanted it to be pluggable.
+So the first implementation was on top of an SQL system.
+From there, we were able to extract a simple service interface.
 This makes it easy to swap the storage technology out for different solutions.
 
 For more information on the data layer, see the [Data Model](/docs/data-model/) documentation.

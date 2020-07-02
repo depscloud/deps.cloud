@@ -2,7 +2,7 @@
 title: Extractor
 type: swagger
 weight: 40
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/extractor
@@ -21,7 +21,7 @@ While both JavaScript and Python afforded the flexibility I was looking for in a
 
 This is by far, one of the easiest ways to contribute to the project.
 It involves adding a new class to the code base under the [`src/extractors`](https://github.com/depscloud/extractor/tree/main/src/extractors) directory.
-Once the new extractor is added, you can register it using the [`ExtractorRegistry`](https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts).
+Once you've added the new extractor, you can register it using the [`ExtractorRegistry`](https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts).
 The following code snippet illustrates the bare elements needed to write a custom extractor.
 
 ```typescript

@@ -6,7 +6,7 @@ no_list: true
 date: 2020-06-12
 ---
 
-The deployment of deps.cloud was intentionally made easy.
+The deployment of deps.cloud is easy.
 While there may still be some rough edges, the intent was to make it possible for any company to drop it into place.
 The sections below provide you with details around the various deployment options.
 

@@ -2,7 +2,7 @@
 title: "Data Model"
 linkTitle: "Data Model"
 weight: 15
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 This page serves as documentation of the open source data model for the deps.cloud system.
@@ -36,7 +36,7 @@ This data can be visualized as such:
 
 ## Database Schema
 
-The database schema is inspired by [EdgeStore](https://youtu.be/VZ-zJEWi-Vo?t=588) at [Dropbox](https://dropbox.tech/infrastructure/reintroducing-edgestore).
+The database schema was inspired by [EdgeStore](https://youtu.be/VZ-zJEWi-Vo?t=588) at [Dropbox](https://dropbox.tech/infrastructure/reintroducing-edgestore).
 With a few modifications, we were able to successfully model a dependency graph.
 Below, you will find a copy of a create table statement for MySQL. 
 
@@ -79,9 +79,9 @@ The following statements can be made about the data shown in the table.
 
 ## Swappable Storage Engines
 
-While only SQL support is implemented today, it's possible to support NoSQL systems too.
+While only SQL support is available today, it's possible to support NoSQL systems too.
 This is made possible by the simplified schema and data abstraction layer.
-Currently supported databases:
+Current database support:
 
 * [SQLite](https://www.sqlite.org/)
 * [MySQL](https://www.mysql.com/)

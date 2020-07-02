@@ -2,7 +2,7 @@
 title: Gateway
 linkTitle: Gateway
 weight: 10
-date: 2020-06-12
+date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/gateway
@@ -16,7 +16,7 @@ It provides a RESTful interface that translates requests into gRPC calls.
 This is done using the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) project.
 `grpc-gateway` provides a library and several Protocol Buffer plugins.
 These plugins make it possible to annotate service calls defined in `.proto` files with RESTful semantics.
-These annotations are used to generate associated HTTP handlers and [Swagger](https://swagger.io/) documentation.
+These annotations generate associated HTTP handlers and [Swagger](https://swagger.io/) documentation.
 
 In addition to servicing requests, it aggregates both the [extractor](/docs/services/extractor) and [tracker](/docs/services/tracker) systems behind a single interface.
 This makes configuring tools like the [CLI](/docs/cli) a lot easier.
