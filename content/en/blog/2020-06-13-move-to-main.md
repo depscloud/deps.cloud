@@ -1,5 +1,5 @@
 ---
-title: "New Default Branch: main"
+title: "New default branch: main"
 author: Mya Pitzeruse
 date: 2020-06-13
 ---
