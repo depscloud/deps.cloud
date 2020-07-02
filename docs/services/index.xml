@@ -17,7 +17,7 @@
     <item>
       <title>Docs: Gateway</title>
       <link>https://deps.cloud/docs/services/gateway/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/gateway/</guid>
       <description>
@@ -34,7 +34,7 @@ It provides a RESTful interface that translates requests into gRPC calls.
 This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
 &lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
 These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
-These annotations are used to generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
+These annotations generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
 &lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
 This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
 &lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
@@ -51,7 +51,7 @@ You can explore the API further at the links below.&lt;/p&gt;
     <item>
       <title>Docs: Indexer</title>
       <link>https://deps.cloud/docs/services/indexer/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/indexer/</guid>
       <description>
@@ -63,7 +63,7 @@ You can explore the API further at the links below.&lt;/p&gt;
 &lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;The indexer process is typically run as a cron job.
+&lt;p&gt;The indexer process often runs as a cron job.
 On a configured schedule, it will re-index all available repositories.
 While not ideal, this solution provides an easy way to get started.
 If needed, the indexing process can be sharded across multiple different indexers.
@@ -73,7 +73,7 @@ This will allow some indexers to run on more frequent intervals while others run
 It then performs a shallow clone of a repository into that tmp directory.
 When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
 &lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
-A single worker can process a large number of repositories fairly quick.
+A single worker can process many repositories fairly quick.
 Two workers is often more than sufficient.&lt;/p&gt;
 
       </description>
@@ -125,7 +125,7 @@ window.onload = function() {
     <item>
       <title>Docs: Extractor</title>
       <link>https://deps.cloud/docs/services/extractor/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/extractor/</guid>
       <description>
@@ -145,7 +145,7 @@ While both JavaScript and Python afforded the flexibility I was looking for in a
 &lt;h2 id=&#34;contributing-an-extractor&#34;&gt;Contributing an extractor&lt;/h2&gt;
 &lt;p&gt;This is by far, one of the easiest ways to contribute to the project.
 It involves adding a new class to the code base under the &lt;a href=&#34;https://github.com/depscloud/extractor/tree/main/src/extractors&#34;&gt;&lt;code&gt;src/extractors&lt;/code&gt;&lt;/a&gt; directory.
-Once the new extractor is added, you can register it using the &lt;a href=&#34;https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts&#34;&gt;&lt;code&gt;ExtractorRegistry&lt;/code&gt;&lt;/a&gt;.
+Once you&amp;rsquo;ve added the new extractor, you can register it using the &lt;a href=&#34;https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts&#34;&gt;&lt;code&gt;ExtractorRegistry&lt;/code&gt;&lt;/a&gt;.
 The following code snippet illustrates the bare elements needed to write a custom extractor.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;FileExtractor&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;implements&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Extractor&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;requires&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;string&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;

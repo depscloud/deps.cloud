@@ -89,19 +89,19 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
     <item>
       <title>Docs: Community</title>
       <link>https://deps.cloud/docs/contributing/community/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/community/</guid>
       <description>
         
         
         &lt;h2 id=&#34;online&#34;&gt;Online&lt;/h2&gt;
-&lt;p&gt;The team has used several different communication tools.
+&lt;p&gt;The team has used several communication tools.
 Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
 If you have trouble joining, please do not hesitate to reach out to the &lt;a href=&#34;mailto:community@deps.cloud&#34;&gt;mailing list&lt;/a&gt; for additional support.&lt;/p&gt;
 &lt;h2 id=&#34;meetings&#34;&gt;Meetings&lt;/h2&gt;
 &lt;p&gt;Until further notice community meetings have been paused.
-If large enough interest is generated, we can start them back up again.&lt;/p&gt;
+If large enough interest has been expressed, we can start them back up again.&lt;/p&gt;
 &lt;br/&gt;
 
       </description>
@@ -110,7 +110,7 @@ If large enough interest is generated, we can start them back up again.&lt;/p&gt
     <item>
       <title>Docs: Working with Git</title>
       <link>https://deps.cloud/docs/contributing/git/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/git/</guid>
       <description>
@@ -150,7 +150,7 @@ Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
 When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fron here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
 After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
 
       </description>

@@ -17,13 +17,13 @@
     <item>
       <title>Docs: GitHub</title>
       <link>https://deps.cloud/docs/integrations/github/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/integrations/github/</guid>
       <description>
         
         
-        &lt;p&gt;GitHub is largest source of repositories.
+        &lt;p&gt;GitHub is the largest source of repositories.
 Most companies have an account where they maintain their code repositories.
 Due to the system&amp;rsquo;s popularity, it was one of the first integrations that was targeted.
 Below, you&amp;rsquo;ll find the full set of configuration options that can be specified for a GitHub account.&lt;/p&gt;
@@ -46,7 +46,7 @@ Below, you&amp;rsquo;ll find the full set of configuration options that can be s
 While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;does not pull groups for the authenticated user&lt;/li&gt;
-&lt;li&gt;pulls groups for the configured users&lt;/li&gt;
+&lt;li&gt;pull groups for the configured users&lt;/li&gt;
 &lt;li&gt;pulls repositories for all users and groups (configured and discovered)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;

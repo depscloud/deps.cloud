@@ -21,22 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>What is deps.cloud? | deps.cloud</title><meta property="og:title" content="What is deps.cloud?" />
-<meta property="og:description" content="-- deps.cloud was written to help engineers manage changes across a large number of source repositories. When an organization is small, engineers are often able to reason about how their repositories relate to one another. While submitting patches is a manual task, it&rsquo;s often something that can be completed quickly. As an organization grows, the number of repositories often grow as well. And as the number repositories grow, reasoning about how they relate to one another becomes a challenge." />
+<meta property="og:description" content="-- deps.cloud is a tool built to help engineers understand how their projects relate to one another. When an organization is small, this is a rather easy thing to do. As an organization grows, the number of repositories often grow as well. As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.
+To solve this problem, deps.cloud stores information in a queryable dependency graph." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/what-is-depscloud/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="What is deps.cloud?">
-<meta itemprop="description" content="-- deps.cloud was written to help engineers manage changes across a large number of source repositories. When an organization is small, engineers are often able to reason about how their repositories relate to one another. While submitting patches is a manual task, it&rsquo;s often something that can be completed quickly. As an organization grows, the number of repositories often grow as well. And as the number repositories grow, reasoning about how they relate to one another becomes a challenge.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="157">
+<meta itemprop="description" content="-- deps.cloud is a tool built to help engineers understand how their projects relate to one another. When an organization is small, this is a rather easy thing to do. As an organization grows, the number of repositories often grow as well. As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.
+To solve this problem, deps.cloud stores information in a queryable dependency graph.">
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="257">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What is deps.cloud?"/>
-<meta name="twitter:description" content="-- deps.cloud was written to help engineers manage changes across a large number of source repositories. When an organization is small, engineers are often able to reason about how their repositories relate to one another. While submitting patches is a manual task, it&rsquo;s often something that can be completed quickly. As an organization grows, the number of repositories often grow as well. And as the number repositories grow, reasoning about how they relate to one another becomes a challenge."/>
+<meta name="twitter:description" content="-- deps.cloud is a tool built to help engineers understand how their projects relate to one another. When an organization is small, this is a rather easy thing to do. As an organization grows, the number of repositories often grow as well. As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.
+To solve this problem, deps.cloud stores information in a queryable dependency graph."/>
 
 
 <script type="application/javascript">
@@ -116,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -146,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -453,21 +456,26 @@ if (!doNotTrack) {
     
 	       
 	<!--<value statement....>-->
-<p>deps.cloud was written to help engineers manage changes across a large number of source repositories.
-When an organization is small, engineers are often able to reason about how their repositories relate to one another.
-While submitting patches is a manual task, it&rsquo;s often something that can be completed quickly.
+<p>deps.cloud is a tool built to help engineers understand how their projects relate to one another.
+When an organization is small, this is a rather easy thing to do.
 As an organization grows, the number of repositories often grow as well.
-And as the number repositories grow, reasoning about how they relate to one another becomes a challenge.</p>
-<p>To solve this problem, deps.cloud stores this information in a queryable dependency graph.
+As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.</p>
+<p>To solve this problem, deps.cloud stores information in a queryable dependency graph.
 It does this by parsing and indexing <a href="/docs/manifests/">manifest files</a> that communicate a given projects requirements.
 In NodeJS, this is often a <code>package.json</code> file.
 In Java, a <code>pom.xml</code> or <code>build.gradle</code>.</p>
 <h2 id="what-problems-can-depscloud-solve">What problems can deps.cloud solve?</h2>
-<ul>
-<li>Identify heavily used open source solutions across your code base</li>
-<li>Propagate updates for security vulnerabilities across impacted projects</li>
-<li>Refactor interfaces and clean up deprecated code</li>
-</ul>
+<p><em>Identify heavily used open source solutions across your code base</em></p>
+<p>Regardless of organization size, deps.cloud can help track open source libraries and their use across your ecosystem.
+Monitor direct consumers of an open source project as well as the full dependency tree.</p>
+<p><em>Refactor interfaces and clean up deprecated code</em></p>
+<p>Changing existing interfaces can often be problematic.
+You often need to provide two versions of a method, publish a new version of the library, update all consumers, and remove the old method.
+This process can often take several versions to roll through completely.
+With deps.cloud, you can be proactive in propagating changes across library consumers.</p>
+<p><em>Propagate updates for security vulnerabilities across impacted projects</em></p>
+<p>Using libraries means you eventually have to handle an upgrade to address a CVE.
+deps.cloud not only show what systems are consuming a potentially vulnerable library, but also the versions used by your ecosystem.</p>
 <h2 id="further-reading">Further Reading</h2>
 <ul>
 <li><a href="/docs/manifests/">Manifest Files</a></li>
@@ -537,7 +545,7 @@ In Java, a <code>pom.xml</code> or <code>build.gradle</code>.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

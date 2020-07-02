@@ -26,14 +26,14 @@ Logical Model The logical model is the user facing representation of the data in
 Sources represent origins for information. These can be source control systems like GitHub, GitLab, or BitBucket." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/data-model/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Data Model">
 <meta itemprop="description" content="This page serves as documentation of the open source data model for the deps.cloud system.
 Logical Model The logical model is the user facing representation of the data in the system. It is defined using protocol buffers. The complete schema can be found in the API repository. To summarize, there are four distinct entities in the deps.cloud database.
 Sources represent origins for information. These can be source control systems like GitHub, GitLab, or BitBucket.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="491">
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -152,7 +152,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -480,7 +480,7 @@ This includes things like version constraint, scopes, and a reference to the sou
 <p>This data can be visualized as such:</p>
 <p><img src="/images/data-model.png" alt="data-model"></p>
 <h2 id="database-schema">Database Schema</h2>
-<p>The database schema is inspired by <a href="https://youtu.be/VZ-zJEWi-Vo?t=588">EdgeStore</a> at <a href="https://dropbox.tech/infrastructure/reintroducing-edgestore">Dropbox</a>.
+<p>The database schema was inspired by <a href="https://youtu.be/VZ-zJEWi-Vo?t=588">EdgeStore</a> at <a href="https://dropbox.tech/infrastructure/reintroducing-edgestore">Dropbox</a>.
 With a few modifications, we were able to successfully model a dependency graph.
 Below, you will find a copy of a create table statement for MySQL.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#204a87;font-weight:bold">CREATE</span> <span style="color:#204a87;font-weight:bold">TABLE</span> <span style="color:#204a87;font-weight:bold">IF</span> <span style="color:#204a87;font-weight:bold">NOT</span> <span style="color:#204a87;font-weight:bold">EXISTS</span> <span style="color:#ce5c00;font-weight:bold">`</span><span style="color:#000">dts_graphdata</span><span style="color:#ce5c00;font-weight:bold">`</span> <span style="color:#000;font-weight:bold">(</span>
@@ -514,9 +514,9 @@ Below, you will find a copy of a create table statement for MySQL.</p>
 <li>Module <code>msha</code> depends on module <code>osha</code> for source <code>ssha</code>.</li>
 </ul>
 <h2 id="swappable-storage-engines">Swappable Storage Engines</h2>
-<p>While only SQL support is implemented today, it&rsquo;s possible to support NoSQL systems too.
+<p>While only SQL support is available today, it&rsquo;s possible to support NoSQL systems too.
 This is made possible by the simplified schema and data abstraction layer.
-Currently supported databases:</p>
+Current database support:</p>
 <ul>
 <li><a href="https://www.sqlite.org/">SQLite</a></li>
 <li><a href="https://www.mysql.com/">MySQL</a></li>
@@ -585,7 +585,7 @@ Currently supported databases:</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

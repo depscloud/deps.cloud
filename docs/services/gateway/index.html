@@ -21,22 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Gateway | deps.cloud</title><meta property="og:title" content="Gateway" />
-<meta property="og:description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations are used to generate associated HTTP handlers and Swagger documentation." />
+<meta property="og:description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations generate associated HTTP handlers and Swagger documentation.
+In addition to servicing requests, it aggregates both the extractor and tracker systems behind a single interface." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/services/gateway/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Gateway">
-<meta itemprop="description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations are used to generate associated HTTP handlers and Swagger documentation.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="126">
+<meta itemprop="description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations generate associated HTTP handlers and Swagger documentation.
+In addition to servicing requests, it aggregates both the extractor and tracker systems behind a single interface.">
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="123">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Gateway"/>
-<meta name="twitter:description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations are used to generate associated HTTP handlers and Swagger documentation."/>
+<meta name="twitter:description" content="Repository: https://github.com/depscloud/gateway Runtime: Golang Language: Golang  Background Gateway is an extremely thin, lightweight, reverse proxy. It provides a RESTful interface that translates requests into gRPC calls. This is done using the grpc-gateway project. grpc-gateway provides a library and several Protocol Buffer plugins. These plugins make it possible to annotate service calls defined in .proto files with RESTful semantics. These annotations generate associated HTTP handlers and Swagger documentation.
+In addition to servicing requests, it aggregates both the extractor and tracker systems behind a single interface."/>
 
 
 <script type="application/javascript">
@@ -116,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -146,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -466,7 +469,7 @@ It provides a RESTful interface that translates requests into gRPC calls.
 This is done using the <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> project.
 <code>grpc-gateway</code> provides a library and several Protocol Buffer plugins.
 These plugins make it possible to annotate service calls defined in <code>.proto</code> files with RESTful semantics.
-These annotations are used to generate associated HTTP handlers and <a href="https://swagger.io/">Swagger</a> documentation.</p>
+These annotations generate associated HTTP handlers and <a href="https://swagger.io/">Swagger</a> documentation.</p>
 <p>In addition to servicing requests, it aggregates both the <a href="/docs/services/extractor">extractor</a> and <a href="/docs/services/tracker">tracker</a> systems behind a single interface.
 This makes configuring tools like the <a href="/docs/cli">CLI</a> a lot easier.</p>
 <h2 id="swagger-explorers">Swagger Explorers</h2>
@@ -539,7 +542,7 @@ You can explore the API further at the links below.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

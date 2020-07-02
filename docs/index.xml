@@ -17,28 +17,33 @@
     <item>
       <title>Docs: What is deps.cloud?</title>
       <link>https://deps.cloud/docs/what-is-depscloud/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/what-is-depscloud/</guid>
       <description>
         
         
         &lt;!--&lt;value statement....&gt;--&gt;
-&lt;p&gt;deps.cloud was written to help engineers manage changes across a large number of source repositories.
-When an organization is small, engineers are often able to reason about how their repositories relate to one another.
-While submitting patches is a manual task, it&amp;rsquo;s often something that can be completed quickly.
+&lt;p&gt;deps.cloud is a tool built to help engineers understand how their projects relate to one another.
+When an organization is small, this is a rather easy thing to do.
 As an organization grows, the number of repositories often grow as well.
-And as the number repositories grow, reasoning about how they relate to one another becomes a challenge.&lt;/p&gt;
-&lt;p&gt;To solve this problem, deps.cloud stores this information in a queryable dependency graph.
+As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.&lt;/p&gt;
+&lt;p&gt;To solve this problem, deps.cloud stores information in a queryable dependency graph.
 It does this by parsing and indexing &lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;manifest files&lt;/a&gt; that communicate a given projects requirements.
 In NodeJS, this is often a &lt;code&gt;package.json&lt;/code&gt; file.
 In Java, a &lt;code&gt;pom.xml&lt;/code&gt; or &lt;code&gt;build.gradle&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;what-problems-can-depscloud-solve&#34;&gt;What problems can deps.cloud solve?&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Identify heavily used open source solutions across your code base&lt;/li&gt;
-&lt;li&gt;Propagate updates for security vulnerabilities across impacted projects&lt;/li&gt;
-&lt;li&gt;Refactor interfaces and clean up deprecated code&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Identify heavily used open source solutions across your code base&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Regardless of organization size, deps.cloud can help track open source libraries and their use across your ecosystem.
+Monitor direct consumers of an open source project as well as the full dependency tree.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Refactor interfaces and clean up deprecated code&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Changing existing interfaces can often be problematic.
+You often need to provide two versions of a method, publish a new version of the library, update all consumers, and remove the old method.
+This process can often take several versions to roll through completely.
+With deps.cloud, you can be proactive in propagating changes across library consumers.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Propagate updates for security vulnerabilities across impacted projects&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Using libraries means you eventually have to handle an upgrade to address a CVE.
+deps.cloud not only show what systems are consuming a potentially vulnerable library, but also the versions used by your ecosystem.&lt;/p&gt;
 &lt;h2 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;Manifest Files&lt;/a&gt;&lt;/li&gt;
@@ -52,7 +57,7 @@ In Java, a &lt;code&gt;pom.xml&lt;/code&gt; or &lt;code&gt;build.gradle&lt;/code
     <item>
       <title>Docs: Manifest Files</title>
       <link>https://deps.cloud/docs/manifests/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/manifests/</guid>
       <description>
@@ -173,7 +178,7 @@ Since there is no standardization across languages, extraction may vary between 
     <item>
       <title>Docs: Architecture</title>
       <link>https://deps.cloud/docs/architecture/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/architecture/</guid>
       <description>
@@ -218,12 +223,92 @@ Adding REST support was easy with the help of the &lt;a href=&#34;https://github
 &lt;p&gt;When you think of a dependency graph, it&amp;rsquo;s easy to jump to the conclusion to use one of the existing &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_database&#34;&gt;graph databases&lt;/a&gt; out there.
 However, when working with folks in the open source community, it&amp;rsquo;s hard to find people with prior experience on graph databases.
 Most people are still more familiar with things like &lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt; or &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;MongoDB&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Knowing that this layer of the stack was likely to be swapped out with Company X&amp;rsquo;s preferred store, I wanted it to be pluggable.
-So the first implementation was done on top of a SQL system.
-From there, a simple service interface was born.
+&lt;p&gt;Knowing this layer of the stack was likely to be swapped out with Company X&amp;rsquo;s preferred store, I wanted it to be pluggable.
+So the first implementation was on top of an SQL system.
+From there, we were able to extract a simple service interface.
 This makes it easy to swap the storage technology out for different solutions.&lt;/p&gt;
 &lt;p&gt;For more information on the data layer, see the &lt;a href=&#34;https://deps.cloud/docs/data-model/&#34;&gt;Data Model&lt;/a&gt; documentation.&lt;/p&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Gateway</title>
+      <link>https://deps.cloud/docs/services/gateway/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/gateway/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;https://github.com/depscloud/gateway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;Gateway is an extremely thin, lightweight, reverse proxy.
+It provides a RESTful interface that translates requests into gRPC calls.
+This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
+&lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
+These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
+These annotations generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
+This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
+&lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
+&lt;p&gt;In addition to serving the API, it also serves the associated swagger documentation.
+You can explore the API further at the links below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/extractor/#swagger-explorer&#34;&gt;Extractor Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/tracker/#swagger-explorer&#34;&gt;Tracker Swagger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GitHub</title>
+      <link>https://deps.cloud/docs/integrations/github/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/integrations/github/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GitHub is the largest source of repositories.
+Most companies have an account where they maintain their code repositories.
+Due to the system&amp;rsquo;s popularity, it was one of the first integrations that was targeted.
+Below, you&amp;rsquo;ll find the full set of configuration options that can be specified for a GitHub account.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# full github schema&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;base_url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;base_url&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    upload_url: &amp;lt;base_url&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;users&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    organizations:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;organization&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    strategy: SSH | HTTP&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;oauth2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;oauth_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      token_type: &amp;lt;token_type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;refresh_token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;refresh_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      expiry: &amp;lt;expiry&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.
+While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;does not pull groups for the authenticated user&lt;/li&gt;
+&lt;li&gt;pull groups for the configured users&lt;/li&gt;
+&lt;li&gt;pulls repositories for all users and groups (configured and discovered)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;p&gt;Crawl all of Google&amp;rsquo;s public repositories on &lt;a href=&#34;https://github.com/google&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- google&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -352,89 +437,9 @@ Restarting docker_indexer_1 ... done
     </item>
     
     <item>
-      <title>Docs: Gateway</title>
-      <link>https://deps.cloud/docs/services/gateway/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/services/gateway/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;https://github.com/depscloud/gateway&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;Gateway is an extremely thin, lightweight, reverse proxy.
-It provides a RESTful interface that translates requests into gRPC calls.
-This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
-&lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
-These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
-These annotations are used to generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
-This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
-&lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
-&lt;p&gt;In addition to serving the API, it also serves the associated swagger documentation.
-You can explore the API further at the links below.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/extractor/#swagger-explorer&#34;&gt;Extractor Swagger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/tracker/#swagger-explorer&#34;&gt;Tracker Swagger&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: GitHub</title>
-      <link>https://deps.cloud/docs/integrations/github/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/integrations/github/</guid>
-      <description>
-        
-        
-        &lt;p&gt;GitHub is largest source of repositories.
-Most companies have an account where they maintain their code repositories.
-Due to the system&amp;rsquo;s popularity, it was one of the first integrations that was targeted.
-Below, you&amp;rsquo;ll find the full set of configuration options that can be specified for a GitHub account.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# full github schema&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;base_url&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;base_url&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    upload_url: &amp;lt;base_url&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;users&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;username&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    organizations:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- &amp;lt;organization&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;    strategy: SSH | HTTP&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;oauth2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;oauth_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      token_type: &amp;lt;token_type&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;      &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;refresh_token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;&amp;lt;refresh_token&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;      expiry: &amp;lt;expiry&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.
-While we work on getting parity between each of the providers take note that this implementation:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;does not pull groups for the authenticated user&lt;/li&gt;
-&lt;li&gt;pulls groups for the configured users&lt;/li&gt;
-&lt;li&gt;pulls repositories for all users and groups (configured and discovered)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;Crawl all of Google&amp;rsquo;s public repositories on &lt;a href=&#34;https://github.com/google&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;accounts&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;&lt;/span&gt;- &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;github&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;organizations&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- google&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Data Model</title>
       <link>https://deps.cloud/docs/data-model/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/data-model/</guid>
       <description>
@@ -461,7 +466,7 @@ This includes things like version constraint, scopes, and a reference to the sou
 &lt;p&gt;This data can be visualized as such:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/data-model.png&#34; alt=&#34;data-model&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;database-schema&#34;&gt;Database Schema&lt;/h2&gt;
-&lt;p&gt;The database schema is inspired by &lt;a href=&#34;https://youtu.be/VZ-zJEWi-Vo?t=588&#34;&gt;EdgeStore&lt;/a&gt; at &lt;a href=&#34;https://dropbox.tech/infrastructure/reintroducing-edgestore&#34;&gt;Dropbox&lt;/a&gt;.
+&lt;p&gt;The database schema was inspired by &lt;a href=&#34;https://youtu.be/VZ-zJEWi-Vo?t=588&#34;&gt;EdgeStore&lt;/a&gt; at &lt;a href=&#34;https://dropbox.tech/infrastructure/reintroducing-edgestore&#34;&gt;Dropbox&lt;/a&gt;.
 With a few modifications, we were able to successfully model a dependency graph.
 Below, you will find a copy of a create table statement for MySQL.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;IF&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;EXISTS&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dts_graphdata&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
@@ -495,14 +500,66 @@ Below, you will find a copy of a create table statement for MySQL.&lt;/p&gt;
 &lt;li&gt;Module &lt;code&gt;msha&lt;/code&gt; depends on module &lt;code&gt;osha&lt;/code&gt; for source &lt;code&gt;ssha&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;swappable-storage-engines&#34;&gt;Swappable Storage Engines&lt;/h2&gt;
-&lt;p&gt;While only SQL support is implemented today, it&amp;rsquo;s possible to support NoSQL systems too.
+&lt;p&gt;While only SQL support is available today, it&amp;rsquo;s possible to support NoSQL systems too.
 This is made possible by the simplified schema and data abstraction layer.
-Currently supported databases:&lt;/p&gt;
+Current database support:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sqlite.org/&#34;&gt;SQLite&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://postgresql.org/&#34;&gt;Postgres&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Community</title>
+      <link>https://deps.cloud/docs/contributing/community/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/community/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;online&#34;&gt;Online&lt;/h2&gt;
+&lt;p&gt;The team has used several communication tools.
+Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
+If you have trouble joining, please do not hesitate to reach out to the &lt;a href=&#34;mailto:community@deps.cloud&#34;&gt;mailing list&lt;/a&gt; for additional support.&lt;/p&gt;
+&lt;h2 id=&#34;meetings&#34;&gt;Meetings&lt;/h2&gt;
+&lt;p&gt;Until further notice community meetings have been paused.
+If large enough interest has been expressed, we can start them back up again.&lt;/p&gt;
+&lt;br/&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Indexer</title>
+      <link>https://deps.cloud/docs/services/indexer/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/services/indexer/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;https://github.com/depscloud/indexer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;The indexer process often runs as a cron job.
+On a configured schedule, it will re-index all available repositories.
+While not ideal, this solution provides an easy way to get started.
+If needed, the indexing process can be sharded across multiple different indexers.
+This will allow some indexers to run on more frequent intervals while others run on less frequent ones.&lt;/p&gt;
+&lt;h2 id=&#34;on-cloning&#34;&gt;On Cloning&lt;/h2&gt;
+&lt;p&gt;When the indexer clones a repository, it uses &lt;code&gt;/tmp&lt;/code&gt; to create an ephemeral directory.
+It then performs a shallow clone of a repository into that tmp directory.
+When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
+&lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
+A single worker can process many repositories fairly quick.
+Two workers is often more than sufficient.&lt;/p&gt;
 
       </description>
     </item>
@@ -613,27 +670,6 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
     </item>
     
     <item>
-      <title>Docs: Community</title>
-      <link>https://deps.cloud/docs/contributing/community/</link>
-      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contributing/community/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;online&#34;&gt;Online&lt;/h2&gt;
-&lt;p&gt;The team has used several different communication tools.
-Like most projects, we wound up on &lt;a href=&#34;https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A&#34;&gt;Slack&lt;/a&gt;.
-If you have trouble joining, please do not hesitate to reach out to the &lt;a href=&#34;mailto:community@deps.cloud&#34;&gt;mailing list&lt;/a&gt; for additional support.&lt;/p&gt;
-&lt;h2 id=&#34;meetings&#34;&gt;Meetings&lt;/h2&gt;
-&lt;p&gt;Until further notice community meetings have been paused.
-If large enough interest is generated, we can start them back up again.&lt;/p&gt;
-&lt;br/&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: GitLab</title>
       <link>https://deps.cloud/docs/integrations/gitlab/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
@@ -681,32 +717,50 @@ While we work on getting parity between each of the providers take note that thi
     </item>
     
     <item>
-      <title>Docs: Indexer</title>
-      <link>https://deps.cloud/docs/services/indexer/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <title>Docs: Working with Git</title>
+      <link>https://deps.cloud/docs/contributing/git/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/services/indexer/</guid>
+      <guid>https://deps.cloud/docs/contributing/git/</guid>
       <description>
         
         
-        &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;https://github.com/depscloud/indexer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
+        &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve forked the repository, you&amp;rsquo;ll want to clone it locally for development.
+For convenience, I tend to work out of the GOPATH directory.
+Using the following command, you can quickly build a directory for all the depscloud related work.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/depscloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, clone the upstream project.
+This will allow you to regularly pull updates from the &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:depscloud/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building-and-running-projects&#34;&gt;Building and Running Projects&lt;/h2&gt;
+&lt;p&gt;There are two ways you can build and run this project.
+First you can develop using docker (the recommended way).
+Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
+The second way to build and run this project.
+This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;The indexer process is typically run as a cron job.
-On a configured schedule, it will re-index all available repositories.
-While not ideal, this solution provides an easy way to get started.
-If needed, the indexing process can be sharded across multiple different indexers.
-This will allow some indexers to run on more frequent intervals while others run on less frequent ones.&lt;/p&gt;
-&lt;h2 id=&#34;on-cloning&#34;&gt;On Cloning&lt;/h2&gt;
-&lt;p&gt;When the indexer clones a repository, it uses &lt;code&gt;/tmp&lt;/code&gt; to create an ephemeral directory.
-It then performs a shallow clone of a repository into that tmp directory.
-When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
-&lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
-A single worker can process a large number of repositories fairly quick.
-Two workers is often more than sufficient.&lt;/p&gt;
+&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
+&lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
+To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In some rare occasions you might be working on a issue that requires work across multiple repositories.
+In this case, you should used the &lt;a href=&#34;https://github.com/depscloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
+To link another projects issue, you can use the &lt;code&gt;&amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11&lt;/code&gt; semantic.
+Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b &amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
+&lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
+&lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
+When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
+After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
 
       </description>
     </item>
@@ -875,58 +929,9 @@ While we work on getting parity between each of the providers take note that thi
     </item>
     
     <item>
-      <title>Docs: Working with Git</title>
-      <link>https://deps.cloud/docs/contributing/git/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contributing/git/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
-&lt;p&gt;Once you&amp;rsquo;ve forked the repository, you&amp;rsquo;ll want to clone it locally for development.
-For convenience, I tend to work out of the GOPATH directory.
-Using the following command, you can quickly build a directory for all the depscloud related work.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/depscloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, clone the upstream project.
-This will allow you to regularly pull updates from the &lt;code&gt;origin&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git clone git@github.com:depscloud/&amp;lt;project&amp;gt;.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;building-and-running-projects&#34;&gt;Building and Running Projects&lt;/h2&gt;
-&lt;p&gt;There are two ways you can build and run this project.
-First you can develop using docker (the recommended way).
-Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
-The second way to build and run this project.
-This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
-&lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
-To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the &lt;a href=&#34;https://github.com/depscloud/deps.cloud&#34;&gt;deps.cloud&lt;/a&gt; repository to create a parent issue that the other issues can reference and link to.
-To link another projects issue, you can use the &lt;code&gt;&amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11&lt;/code&gt; semantic.
-Similarly, you can create a feature branch using the same syntax.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b &amp;lt;user&amp;gt;/&amp;lt;project&amp;gt;#11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
-&lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
-&lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
-When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Fron here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
-After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Command Line</title>
       <link>https://deps.cloud/docs/cli/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/cli/</guid>
       <description>
@@ -1058,7 +1063,7 @@ Consider the following simple example.&lt;/p&gt;
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;organization&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github.com&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;depscloud/gateway&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;organization&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github.com&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;depscloud/cli&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;organization&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github.com&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;depscloud/tracker&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;,&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;organization&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github.com&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;depscloud/indexer&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this case, we only have two tiers.
 Each tier contains a list of modules that can be built in parallel.
-Should a change be made to &lt;code&gt;depscloud/api&lt;/code&gt;, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.&lt;/p&gt;
+When one tier is complete, the next tier can be processed safely without worrying about transitive dependency issues.&lt;/p&gt;
 
       </description>
     </item>

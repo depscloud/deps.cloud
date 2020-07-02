@@ -27,16 +27,16 @@ Components Gateway is the face of the API services. It provides a RESTful HTTP i
 Tracker provides several APIs for navigating the graph of information. This service leverages other storage systems such as SQLite or MySQL to store the graph data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/architecture/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Architecture">
 <meta itemprop="description" content="This page serves as documentation of the open source architecture for the deps.cloud system.
 Overview While there are several components that make up the ecosystem, each of them serve their own purpose.
 Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services. See the gateway docs for more information.
 Tracker provides several APIs for navigating the graph of information. This service leverages other storage systems such as SQLite or MySQL to store the graph data.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="455">
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="456">
 
 
 
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -509,9 +509,9 @@ Adding REST support was easy with the help of the <a href="https://github.com/gr
 <p>When you think of a dependency graph, it&rsquo;s easy to jump to the conclusion to use one of the existing <a href="https://en.wikipedia.org/wiki/Graph_database">graph databases</a> out there.
 However, when working with folks in the open source community, it&rsquo;s hard to find people with prior experience on graph databases.
 Most people are still more familiar with things like <a href="https://www.mysql.com/">MySQL</a> or <a href="https://www.mongodb.com/">MongoDB</a>.</p>
-<p>Knowing that this layer of the stack was likely to be swapped out with Company X&rsquo;s preferred store, I wanted it to be pluggable.
-So the first implementation was done on top of a SQL system.
-From there, a simple service interface was born.
+<p>Knowing this layer of the stack was likely to be swapped out with Company X&rsquo;s preferred store, I wanted it to be pluggable.
+So the first implementation was on top of an SQL system.
+From there, we were able to extract a simple service interface.
 This makes it easy to swap the storage technology out for different solutions.</p>
 <p>For more information on the data layer, see the <a href="/docs/data-model/">Data Model</a> documentation.</p>
 
@@ -577,7 +577,7 @@ This makes it easy to swap the storage technology out for different solutions.</
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

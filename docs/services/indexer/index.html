@@ -21,22 +21,22 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Indexer | deps.cloud</title><meta property="og:title" content="Indexer" />
-<meta property="og:description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process is typically run as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones." />
+<meta property="og:description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process often runs as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/services/indexer/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Indexer">
-<meta itemprop="description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process is typically run as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="149">
+<meta itemprop="description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process often runs as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones.">
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="145">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Indexer"/>
-<meta name="twitter:description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process is typically run as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones."/>
+<meta name="twitter:description" content="Repository: https://github.com/depscloud/indexer Runtime: Golang Language: Golang  Background The indexer process often runs as a cron job. On a configured schedule, it will re-index all available repositories. While not ideal, this solution provides an easy way to get started. If needed, the indexing process can be sharded across multiple different indexers. This will allow some indexers to run on more frequent intervals while others run on less frequent ones."/>
 
 
 <script type="application/javascript">
@@ -116,7 +116,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -146,7 +146,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -461,7 +461,7 @@ if (!doNotTrack) {
 <li>Language: <a href="https://golang.org/">Golang</a></li>
 </ul>
 <h2 id="background">Background</h2>
-<p>The indexer process is typically run as a cron job.
+<p>The indexer process often runs as a cron job.
 On a configured schedule, it will re-index all available repositories.
 While not ideal, this solution provides an easy way to get started.
 If needed, the indexing process can be sharded across multiple different indexers.
@@ -471,7 +471,7 @@ This will allow some indexers to run on more frequent intervals while others run
 It then performs a shallow clone of a repository into that tmp directory.
 When the indexing process is complete, all of this is cleaned up.</p>
 <p>One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of <code>--workers</code>.
-A single worker can process a large number of repositories fairly quick.
+A single worker can process many repositories fairly quick.
 Two workers is often more than sufficient.</p>
 
 	
@@ -536,7 +536,7 @@ Two workers is often more than sufficient.</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

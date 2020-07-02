@@ -25,14 +25,14 @@
 $ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/cli/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Command Line">
 <meta itemprop="description" content="Repository: https://github.com/depscloud/cli Runtime: Golang Language: Golang  Background Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
 $ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="810">
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="802">
 
 
 
@@ -119,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -149,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -591,7 +591,7 @@ Consider the following simple example.</p>
 <span style="color:#ce5c00;font-weight:bold">[{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/cli&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}]</span>
 </code></pre></div><p>In this case, we only have two tiers.
 Each tier contains a list of modules that can be built in parallel.
-Should a change be made to <code>depscloud/api</code>, I could comfortably update and publish all modules in the second tier without worrying about transitive dependency resolution issues.</p>
+When one tier is complete, the next tier can be processed safely without worrying about transitive dependency issues.</p>
 
 	
 		<style>
@@ -655,7 +655,7 @@ Should a change be made to <code>depscloud/api</code>, I could comfortably updat
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

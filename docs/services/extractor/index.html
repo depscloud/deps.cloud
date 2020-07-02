@@ -24,12 +24,12 @@
 <meta property="og:description" content="Repository: https://github.com/depscloud/extractor Runtime: NodeJS Language: TypeScript  Background The extractor is a NodeJS process written in TypeScript. This was an intentional design decision when it came to writing this part of the system. In previous implementations, attempting to work with manifest files in a strongly typed language proved to be rather tedious. As a result, it inspired the use of a more scientific language where there is more flexibility around the data types we&rsquo;re working with." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/services/extractor/" />
-<meta property="article:published_time" content="2020-06-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-12T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:published_time" content="2020-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-01T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Extractor">
 <meta itemprop="description" content="Repository: https://github.com/depscloud/extractor Runtime: NodeJS Language: TypeScript  Background The extractor is a NodeJS process written in TypeScript. This was an intentional design decision when it came to writing this part of the system. In previous implementations, attempting to work with manifest files in a strongly typed language proved to be rather tedious. As a result, it inspired the use of a more scientific language where there is more flexibility around the data types we&rsquo;re working with.">
-<meta itemprop="datePublished" content="2020-06-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-12T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-07-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-01T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="272">
 
 
@@ -118,7 +118,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7257a70d643c63a912fa4a707b9e7dbeeb3b52e0ecc1af8111ec3f73b08238601b045a8d3c807025146e4829617a56d79ec1374a88709a85c97d8ad2c72bad5f.json"
+  data-offline-search-index-json-src="/offline-search-index.3695f00c96fb7a66997cab482a29f892e398cba336a2e5bfabeb2f1ecdd3a7496ee73569e689db01d58ec3cab9cf94db0ee14d2f6f98c2033bd76a48026b9c69.json"
   data-offline-search-base-href="/"
 >
 
@@ -478,7 +478,7 @@ While both JavaScript and Python afforded the flexibility I was looking for in a
 <h2 id="contributing-an-extractor">Contributing an extractor</h2>
 <p>This is by far, one of the easiest ways to contribute to the project.
 It involves adding a new class to the code base under the <a href="https://github.com/depscloud/extractor/tree/main/src/extractors"><code>src/extractors</code></a> directory.
-Once the new extractor is added, you can register it using the <a href="https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts"><code>ExtractorRegistry</code></a>.
+Once you&rsquo;ve added the new extractor, you can register it using the <a href="https://github.com/depscloud/extractor/blob/main/src/extractors/ExtractorRegistry.ts"><code>ExtractorRegistry</code></a>.
 The following code snippet illustrates the bare elements needed to write a custom extractor.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#204a87;font-weight:bold">export</span> <span style="color:#204a87;font-weight:bold">default</span> <span style="color:#204a87;font-weight:bold">class</span> <span style="color:#000">FileExtractor</span> <span style="color:#204a87;font-weight:bold">implements</span> <span style="color:#000">Extractor</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#000">requires</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">string</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#000;font-weight:bold">{</span>
@@ -585,7 +585,7 @@ window.onload = function() {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified June 12, 2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified July 1, 2020
 </div>
 </div>
 

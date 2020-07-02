@@ -4,17 +4,27 @@
   
   <url>
     <loc>https://deps.cloud/docs/what-is-depscloud/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deps.cloud/docs/manifests/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deps.cloud/docs/architecture/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/gateway/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/integrations/github/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,18 +38,18 @@
   </url>
   
   <url>
-    <loc>https://deps.cloud/docs/services/gateway/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deps.cloud/docs/integrations/github/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://deps.cloud/docs/data-model/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/community/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/services/indexer/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,23 +58,18 @@
   </url>
   
   <url>
-    <loc>https://deps.cloud/docs/contributing/community/</loc>
-    <lastmod>2020-06-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://deps.cloud/docs/integrations/gitlab/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deps.cloud/docs/services/indexer/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deps.cloud/docs/integrations/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/git/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -88,22 +93,17 @@
   </url>
   
   <url>
-    <loc>https://deps.cloud/docs/contributing/git/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://deps.cloud/docs/cli/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://deps.cloud/docs/contributing/docker/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deps.cloud/docs/services/extractor/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deps.cloud/docs/contributing/docker/</loc>
     <lastmod>2020-06-12T00:00:00+00:00</lastmod>
   </url>
   
