@@ -97,9 +97,9 @@ find . -maxdepth &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt
         
         &lt;p&gt;Welcome to the deps.cloud blog!
 It will be an easy way to stay on top of the latest news, release notes, and updates from the community.
-Since the project is composed of several pieces, it can be hard to track progress across all of them.
-This enables the presentation of cross cutting features and larger changes to the ecosystem.&lt;/p&gt;
-&lt;p&gt;Contributors and consumers are encouraged to generate content for the blog.
+Since the project contains several pieces, it can be hard to track progress across all of them.
+This enables the presentation of cross-cutting features and larger changes to the ecosystem.&lt;/p&gt;
+&lt;p&gt;Contributors and consumers are welcome to generate content for the blog.
 For contributors, it&amp;rsquo;s a great way to showcase a feature you&amp;rsquo;ve contributed to the project.
 For consumers, it&amp;rsquo;s an opportunity to discuss how it&amp;rsquo;s been able to help benefit your ecosystems.&lt;/p&gt;
 &lt;p&gt;We look forward to your contributions!&lt;/p&gt;
