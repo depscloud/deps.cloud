@@ -66,7 +66,7 @@ func main() {
     restServer := runtime.NewServeMux()
     httpServer := http.NewServeMux()
 
-    // register all services to both grpc and gateway.
+    // register all services with both grpc and rest.
     sourceService := tracker.NewSourceServiceClient(trackerConn)
     tracker.RegisterSourceServiceServer(grpcServer, proxies.NewSourceServiceProxy(sourceService))
     _ = tracker.RegisterSourceServiceHandlerClient(ctx, restServer, sourceService)
