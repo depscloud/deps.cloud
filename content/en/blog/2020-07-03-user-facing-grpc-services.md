@@ -7,9 +7,9 @@ date: 2020-07-03
 [gRPC](https://grpc.io/) is a remote procedure call framework used to facilitate inter-process communication.
 Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco.
 While many companies have adopted gRPC internally, few have leveraged it closer to the edge.
-In this post, we will demonstrate how to set up a public facing gRPC service.
+In this post, we will demonstrate how we set up a public facing gRPC service.
 
-Before going too far, let's first cover some benefits and challenges when using a tool like gRPC.
+Before getting too far into things, it's important to first understand the benefits and challenges when using gRPC.
 
 #### Benefits to using gRPC
 
@@ -21,7 +21,7 @@ Before going too far, let's first cover some benefits and challenges when using 
 #### Challenges with gRPC
 
 * Requires [HTTP/2](https://http2.github.io/) all the way through the call stack
-  * When running through a proxy service like on Cloudflare, connections often degrade to HTTP/1.1
+  * When connecting through a proxy service like on Cloudflare, connections often degrade to HTTP/1.1
 * Browser based user experiences requires support from the ecosystem
   * REST endpoints not available out of box
   * Browser based calls require use of `grpc-web`
@@ -30,11 +30,11 @@ Due to potential protocol downgrades, it's important to verify this is a possibl
 For example, some load balancer implementations do not support HTTP/2.
 You should check with your cloud provider to see if they offer either an HTTP/2 compatible, or a layer 4 load balancer.
 
-If you're running through a [Kubernetes ingress](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/),
+If you're connecting through a [Kubernetes ingress](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/),
 then you will need to ensure that your ingress controller supports gRPC.
 I've found this [table](https://docs.google.com/spreadsheets/d/1DnsHtdHbxjvHmxvlu7VhzWcWgLAn_Mc5L1WlhLDA__k)
-to be extremely useful when evaluating ingress solutions.
-It breaks down each controller by features and their support.
+to be valuable when evaluating ingress solutions.
+It breaks down common features across ingress controllers, popular implementations, and their support.
 
 ## Serving REST and gRPC on the same address
 
@@ -94,9 +94,9 @@ func main() {
 ```
 
 That's it!
-Walking around TLS termination can be a bit tricky.
+Working around TLS termination can be a bit tricky.
 For a closer look at our implementation, take a look at the [gateway](https://github.com/depscloud/gateway) process.
-This process typically sits behind a reverse proxy or ingress controller and mediates communication with the backend services. 
+This typically sits behind a reverse proxy and mediates communication with the backend services. 
 
 ## Configuring an ingress controller
 
@@ -140,11 +140,11 @@ spec:
 
 ## Connecting a client application
 
-If you're forcing SSL, you want to make sure your clients are passing along SSL credentials.
-When using a service like [LetsEncrypt](https://letsencrypt.org/), you shouldn't need to pass in any certificates.
-Simply instantiate an empty SSL credential.
+If you force SSL, you want to make sure clients pass along SSL credentials.
+When using [LetsEncrypt](https://letsencrypt.org/), you shouldn't need to pass in any certificates.
+Simply instantiate empty SSL credentials.
 
-Here's an example using the Go client.
+Here's an example using Go.
 
 ```go
 package main
@@ -201,5 +201,5 @@ async function main() {
 }
 ```
 
-Because gRPC offers code generation across 12 different languages, supporting new client languages is easy.
+Because gRPC offers code generation across 12 different languages, supporting new clients is easy.
 Simply resolve the protocol buffer definition, supply the plugin to the compiler, and generate!
