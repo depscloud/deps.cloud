@@ -11,6 +11,7 @@ Be sure to consult all the resources below prior to contributing.
 
 The deps.cloud project leverages a public [GitHub Project](https://github.com/orgs/depscloud/projects/1) for tracking its work items.
 For new comers, there's a section that provides some detail around how to get started developing on the project.
+If you want to submit an issue, you can open one up under the [deps.cloud](https://github.com/depscloud/deps.cloud/issues/new) project.
 
 ## Contributor Agreements
 
