@@ -113,6 +113,11 @@
   </url>
   
   <url>
+    <loc>https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/</loc>
+    <lastmod>2020-07-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deps.cloud/docs/contributing/</loc>
     <lastmod>2020-07-01T00:00:00+00:00</lastmod>
   </url>

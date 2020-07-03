@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.1" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>User-facing gRPC services | deps.cloud</title><meta property="og:title" content="User-facing gRPC services" />
+<meta property="og:description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
+Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/" />
+<meta property="article:published_time" content="2020-07-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-03T00:00:00+00:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="User-facing gRPC services">
+<meta itemprop="description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
+Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC.">
+<meta itemprop="datePublished" content="2020-07-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-07-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="766">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="User-facing gRPC services"/>
+<meta name="twitter:description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
+Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143087272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.34d77a800159e664d089ba271177c24df7303c5cfc7ed2ccc3fcfdb90d6a4571.css" as="style">
+<link href="/scss/main.min.34d77a800159e664d089ba271177c24df7303c5cfc7ed2ccc3fcfdb90d6a4571.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-lowercase">deps.cloud</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/blog/" ><span class="active">Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.7df7343f3406bf5ae534aa1200a5c5e0ce113cf94271fa90bbd4a42678bcf1b5f28de161a9f4e8e6eabde250fdc42da12abe14603e14aeb124cc21ccc4d3b24d.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"></div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none"></div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+            <a class="btn btn-lg -bg-primary td-rss-button d-none d-lg-block" href="https://deps.cloud/blog/index.xml" target="_blank">
+              RSS <i class="fa fa-rss ml-2 "></i>
+            </a>
+            
+<div>
+  <p><a href="/blog/">&lt; Back to Blog</a></p>
+</div>
+
+<div style="max-width:900px;">
+  <h1>User-facing gRPC services</h1>
+  
+  <div class="td-byline mb-4">
+    By <b>Mya Pitzeruse</b> |
+    <time datetime="2020-07-03" class="text-muted">Friday, July 03, 2020</time>
+  </div>
+  <p><a href="https://grpc.io/">gRPC</a> is a remote procedure call framework used to facilitate inter-process communication.
+Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco.
+While many companies have adopted gRPC internally, few have leveraged it closer to the edge.
+In this post, we will demonstrate how we set up a public facing gRPC service.</p>
+<p>Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC.</p>
+<h4 id="benefits-to-using-grpc">Benefits to using gRPC</h4>
+<ul>
+<li>Generic service definition language</li>
+<li>Code generation support for <a href="https://grpc.io/docs/languages/">12 languages</a></li>
+<li>Support for bi-directional streaming APIs, enabling more complex APIs</li>
+<li>Integrated authentication</li>
+</ul>
+<h4 id="challenges-with-grpc">Challenges with gRPC</h4>
+<ul>
+<li>Requires <a href="https://http2.github.io/">HTTP/2</a> all the way through the call stack
+<ul>
+<li>When connecting through a proxy service like on Cloudflare, connections often degrade to HTTP/1.1</li>
+</ul>
+</li>
+<li>Browser based user experiences requires support from the ecosystem
+<ul>
+<li>REST endpoints not available out of box</li>
+<li>Browser based calls require use of <code>grpc-web</code></li>
+</ul>
+</li>
+</ul>
+<p>Due to potential protocol downgrades, it&rsquo;s important to verify this is a possible solution for your stack.
+For example, some load balancer implementations do not support HTTP/2.
+You should check with your cloud provider to see if they offer either an HTTP/2 compatible, or a layer 4 load balancer.</p>
+<p>If you&rsquo;re connecting through a <a href="https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/">Kubernetes ingress</a>,
+then you will need to ensure that your ingress controller supports gRPC.
+I&rsquo;ve found this <a href="https://docs.google.com/spreadsheets/d/1DnsHtdHbxjvHmxvlu7VhzWcWgLAn_Mc5L1WlhLDA__k">table</a>
+to be valuable when evaluating ingress solutions.
+It breaks down common features across ingress controllers, popular implementations, and their support.</p>
+<h2 id="serving-rest-and-grpc-on-the-same-address">Serving REST and gRPC on the same address</h2>
+<p>Once you&rsquo;ve verified that your providers can support HTTP/2 you can start to think about code.
+<code>api.deps.cloud</code> not only provides a RESTful interface, but a gRPC one as well.
+As a consumer of a service, I find this to be a really convenient feature.
+We&rsquo;re able to do this using the <a href="https://github.com/grpc-ecosystem/grpc-gateway">grpc-gateway</a> project and some clever
+structuring of server handlers.
+The Golang snippet below walks you through the general setup.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
+    <span style="color:#4e9a06">&#34;github.com/depscloud/api/v1alpha/tracker&#34;</span>
+    <span style="color:#4e9a06">&#34;github.com/depscloud/gateway/internal/proxies&#34;</span>
+
+    <span style="color:#4e9a06">&#34;github.com/grpc-ecosystem/grpc-gateway/runtime&#34;</span>
+
+    <span style="color:#4e9a06">&#34;github.com/rs/cors&#34;</span>
+        
+    <span style="color:#4e9a06">&#34;golang.org/x/net/http2&#34;</span>
+    <span style="color:#4e9a06">&#34;golang.org/x/net/http2/h2c&#34;</span>
+
+    <span style="color:#4e9a06">&#34;google.golang.org/grpc&#34;</span>
+<span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">// set up all servers.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">grpcServer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">grpc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewServer</span><span style="color:#000;font-weight:bold">()</span>
+    <span style="color:#000">restServer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">runtime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewServeMux</span><span style="color:#000;font-weight:bold">()</span>
+    <span style="color:#000">httpServer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">http</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewServeMux</span><span style="color:#000;font-weight:bold">()</span>
+
+    <span style="color:#8f5902;font-style:italic">// register all services with both grpc and rest.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">sourceService</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">tracker</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewSourceServiceClient</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">trackerConn</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#000">tracker</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">RegisterSourceServiceServer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">grpcServer</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">proxies</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewSourceServiceProxy</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sourceService</span><span style="color:#000;font-weight:bold">))</span>
+    <span style="color:#000">_</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000">tracker</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">RegisterSourceServiceHandlerClient</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ctx</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">restServer</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">sourceService</span><span style="color:#000;font-weight:bold">)</span>
+    <span style="color:#8f5902;font-style:italic">// ...
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#8f5902;font-style:italic">// detect and handle grpc requests.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// this approach does incur a small performance penalty, 
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// but is pretty acceptable for communication happening at the edge. 
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">httpServer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HandleFunc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;/&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">func</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">writer</span> <span style="color:#000">http</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ResponseWriter</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">request</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">http</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Request</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ProtoMajor</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span>
+            <span style="color:#000">strings</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">HasPrefix</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">request</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Header</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Content-Type&#34;</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#4e9a06">&#34;application/grpc&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">grpcServer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ServeHTTP</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">writer</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">request</span><span style="color:#000;font-weight:bold">)</span>
+        <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">restServer</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ServeHTTP</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">writer</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">request</span><span style="color:#000;font-weight:bold">)</span>
+        <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">})</span>
+    
+    <span style="color:#8f5902;font-style:italic">// go&#39;s http server only supports secure HTTP/2 out of box.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// wrap with h2c for plaintext (i.e. if you do TLS termination elsewhere.)
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">h2cServer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">h2c</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewHandler</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">httpServer</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">http2</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Server</span><span style="color:#000;font-weight:bold">{})</span>
+    
+    <span style="color:#8f5902;font-style:italic">// wrap with CORS to support cross-origin requests.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">apiServer</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">cors</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Default</span><span style="color:#000;font-weight:bold">().</span><span style="color:#000">Handler</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">h2cServer</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>That&rsquo;s it!
+Working around TLS termination can be a bit tricky.
+For a closer look at our implementation, take a look at the <a href="https://github.com/depscloud/gateway">gateway</a> process.
+This typically sits behind a reverse proxy and mediates communication with the backend services.</p>
+<h2 id="configuring-an-ingress-controller">Configuring an ingress controller</h2>
+<p>Regardless of where you&rsquo;re running, you&rsquo;ll probably need to do some amount of special configuration to enable gRPC.
+In Kubernetes, this is often done through the use of annotations.
+While each ingress controller uses a different annotation, the practice tends to be the same.
+Below, you will find an example configuration for the Kubernetes <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingress</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>networking.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Ingress<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># cert-manager</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># Sets up certificates for HTTPS support using different issuers. </span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kubernetes.io/tls-acme</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">cert-manager.io/cluster-issuer</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;letsencrypt&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># ingress controller</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># identify the ingress class to handle this definition,</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># if you should force SSL connections,</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># or if you need to swap protocols (i.e. terminate TLS)</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">kubernetes.io/ingress.class</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;nginx&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">nginx.ingress.kubernetes.io/ssl-redirect</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;true&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">nginx.ingress.kubernetes.io/backend-protocol</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;GRPC&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">tls</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">hosts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- depscloud.company.net<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">secretName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>api-certs<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">rules</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">host</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud.company.net<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">http</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">paths</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>/<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">backend</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">serviceName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud-gateway<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">servicePort</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">80</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="connecting-a-client-application">Connecting a client application</h2>
+<p>If you force SSL, you want to make sure clients pass along SSL credentials.
+When using <a href="https://letsencrypt.org/">LetsEncrypt</a>, you shouldn&rsquo;t need to pass in any certificates.
+Simply instantiate empty SSL credentials.</p>
+<p>Here&rsquo;s an example using Go.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#204a87;font-weight:bold">package</span> <span style="color:#000">main</span>
+
+<span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000;font-weight:bold">(</span>
+    <span style="color:#4e9a06">&#34;crypto/tls&#34;</span>
+
+    <span style="color:#4e9a06">&#34;github.com/depscloud/api/v1alpha/tracker&#34;</span>   
+    
+    <span style="color:#4e9a06">&#34;google.golang.org/grpc&#34;</span>
+    <span style="color:#4e9a06">&#34;google.golang.org/grpc/credentials&#34;</span>
+<span style="color:#000;font-weight:bold">)</span>
+
+<span style="color:#204a87;font-weight:bold">func</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">target</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#4e9a06">&#34;depscloud.company.net:443&#34;</span>
+    <span style="color:#000">creds</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">credentials</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewTLS</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">tls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Config</span><span style="color:#000;font-weight:bold">{})</span>
+
+    <span style="color:#000">conn</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">grpc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Dial</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">target</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">grpc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">WithTransportCredentials</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">creds</span><span style="color:#000;font-weight:bold">))</span>
+    <span style="color:#204a87;font-weight:bold">defer</span> <span style="color:#000">conn</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Close</span><span style="color:#000;font-weight:bold">()</span>
+    
+    <span style="color:#000">dependencyService</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">tracker</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">NewDependencyServiceClient</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">conn</span><span style="color:#000;font-weight:bold">)</span>
+    
+    <span style="color:#000">resp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">_</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#000">dependencyService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ListDependents</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">tracker</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">DependencyRequest</span><span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Language</span><span style="color:#000;font-weight:bold">:</span>     <span style="color:#4e9a06">&#34;go&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">Organization</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;github.com&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">Module</span><span style="color:#000;font-weight:bold">:</span>       <span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#000;font-weight:bold">})</span>
+
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">_</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dependent</span> <span style="color:#ce5c00;font-weight:bold">:=</span> <span style="color:#204a87;font-weight:bold">range</span> <span style="color:#000">resp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">GetDependents</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#8f5902;font-style:italic">// ...
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>Here&rsquo;s another example using NodeJS.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">grpc</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;@grpc/grpc-js&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">DependencyService</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;@depscloud/api/v1alpha/tracker&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#000">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">target</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;depscloud.company.net:443&#34;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">creds</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">grpc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">credentials</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createSsl</span><span style="color:#000;font-weight:bold">();</span>
+
+    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">dependencyService</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">DependencyService</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">target</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">creds</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">dependencyService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">listDependents</span><span style="color:#000;font-weight:bold">({</span>
+        <span style="color:#000">language</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;node&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">organization</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;depscloud&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">module</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;api&#34;</span><span style="color:#000;font-weight:bold">,</span>
+    <span style="color:#000;font-weight:bold">},</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">dependents</span> <span style="color:#000;font-weight:bold">})</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#8f5902;font-style:italic">// ...
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">})</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>Because gRPC offers code generation across 12 different languages, supporting new clients is easy.
+Simply resolve the protocol buffer definition, supply the plugin to the compiler, and generate!</p>
+
+  
+
+  <div class="clearfix mb-0 pt-5" style="color:white;">
+  
+  <span style="float:left;">
+    <a href="/blog/2020/06/13/new-default-branch-main/" ><span class="mr-1">←</span> Previous</a>
+  </span>
+  
+
+  
+</div>
+
+<ul class="list-unstyled  justify-content-between align-items-center " style="color: white !important;">
+
+</ul>
+
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark text-white py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing List" aria-label="User mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/depscloud">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for everyone</div>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/depscloud/">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing List" aria-label="Developer mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for developers</div>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
