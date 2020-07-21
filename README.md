@@ -9,4 +9,4 @@ The information is exposed over gRPC or REST for easy consumption by automated p
 
 deps.cloud is governed by the [Contributor Covenant v1.4.1](/contributing/code-of-conduct/index.md).
 
-![Google Analytics](https://www.google-analytics.com/collect?v=1&cid=1&t=event&ec=repo&ea=open&dp=depscloud%2Fdeps.cloud&dt=depscloud%2Fdeps.cloud&tid=UA-143087272-2)
+![Google Analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=event&ec=repo&ea=open&dp=depscloud%2Fdeps.cloud&dt=depscloud%2Fdeps.cloud&tid=UA-143087272-2)
