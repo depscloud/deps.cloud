@@ -4,7 +4,6 @@
     <link>https://deps.cloud/docs/contributing/</link>
     <description>Recent content in Contributing on deps.cloud</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://deps.cloud/docs/contributing/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +16,7 @@
     <item>
       <title>Docs: Code of Conduct</title>
       <link>https://deps.cloud/docs/contributing/code-of-conduct/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/code-of-conduct/</guid>
       <description>
@@ -89,7 +88,7 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
     <item>
       <title>Docs: Community</title>
       <link>https://deps.cloud/docs/contributing/community/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/community/</guid>
       <description>
@@ -110,7 +109,7 @@ If large enough interest has been expressed, we can start them back up again.&lt
     <item>
       <title>Docs: Working with Git</title>
       <link>https://deps.cloud/docs/contributing/git/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/git/</guid>
       <description>
@@ -159,7 +158,7 @@ After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.
     <item>
       <title>Docs: Developing in Docker</title>
       <link>https://deps.cloud/docs/contributing/docker/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/docker/</guid>
       <description>
@@ -201,7 +200,7 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.&l
     <item>
       <title>Docs: Developing Locally</title>
       <link>https://deps.cloud/docs/contributing/local/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/contributing/local/</guid>
       <description>

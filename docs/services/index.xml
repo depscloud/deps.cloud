@@ -4,7 +4,6 @@
     <link>https://deps.cloud/docs/services/</link>
     <description>Recent content in API Services on deps.cloud</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	  <atom:link href="https://deps.cloud/docs/services/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +16,7 @@
     <item>
       <title>Docs: Gateway</title>
       <link>https://deps.cloud/docs/services/gateway/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/gateway/</guid>
       <description>
@@ -51,7 +50,7 @@ You can explore the API further at the links below.&lt;/p&gt;
     <item>
       <title>Docs: Indexer</title>
       <link>https://deps.cloud/docs/services/indexer/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/indexer/</guid>
       <description>
@@ -82,7 +81,7 @@ Two workers is often more than sufficient.&lt;/p&gt;
     <item>
       <title>Docs: Tracker</title>
       <link>https://deps.cloud/docs/services/tracker/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/tracker/</guid>
       <description>
@@ -125,7 +124,7 @@ window.onload = function() {
     <item>
       <title>Docs: Extractor</title>
       <link>https://deps.cloud/docs/services/extractor/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://deps.cloud/docs/services/extractor/</guid>
       <description>
