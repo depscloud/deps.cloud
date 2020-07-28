@@ -2,7 +2,6 @@
 title: "Code of Conduct"
 linkTitle: "Code of Conduct"
 weight: 10
-date: 2020-06-12
 ---
 
 ## Our Pledge

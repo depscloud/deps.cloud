@@ -2,7 +2,6 @@
 title: "Community"
 linkTitle: "Community"
 weight: 20
-date: 2020-07-01
 ---
 
 ## Online

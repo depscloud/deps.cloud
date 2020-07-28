@@ -2,7 +2,6 @@
 title: "GitHub"
 linkTitle: "GitHub"
 weight: 10
-date: 2020-07-01
 ---
 
 GitHub is the largest source of repositories.

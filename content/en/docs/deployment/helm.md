@@ -2,7 +2,6 @@
 title: "Helm"
 linkTitle: "Helm"
 weight: 30
-date: 2020-06-20
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster using the [Helm](https://helm.sh/) package manager.

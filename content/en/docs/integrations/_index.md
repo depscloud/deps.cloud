@@ -3,7 +3,6 @@ title: "Integrations"
 linkTitle: "Integrations"
 weight: 20
 no_list: true
-date: 2020-06-12
 ---
 
 This section provides guidance on how to configure the underlying system.

@@ -2,7 +2,6 @@
 title: Indexer
 linkTitle: Indexer
 weight: 20
-date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/indexer

@@ -2,7 +2,6 @@
 title: Gateway
 linkTitle: Gateway
 weight: 10
-date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/gateway

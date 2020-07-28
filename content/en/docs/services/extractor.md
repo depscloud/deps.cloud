@@ -2,7 +2,6 @@
 title: Extractor
 type: swagger
 weight: 40
-date: 2020-07-01
 ---
 
 * Repository: https://github.com/depscloud/extractor

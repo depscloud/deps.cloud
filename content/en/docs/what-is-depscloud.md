@@ -2,7 +2,6 @@
 title: "What is deps.cloud?"
 linkTitle: "What is deps.cloud?"
 weight: 1
-date: 2020-07-01
 ---
 
 <!--<value statement....>-->

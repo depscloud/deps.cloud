@@ -2,7 +2,6 @@
 title: Tracker
 type: swagger
 weight: 30
-date: 2020-06-12
 ---
 
 * Repository: https://github.com/depscloud/tracker

@@ -2,7 +2,6 @@
 title: "Docker"
 linkTitle: "Docker"
 weight: 10
-date: 2020-06-12
 ---
 
 In this quick start guide, we'll use [docker-compose](https://docs.docker.com/compose) to create our demo infrastructure.

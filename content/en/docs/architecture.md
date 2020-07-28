@@ -2,7 +2,6 @@
 title: "Architecture"
 linkTitle: "Architecture"
 weight: 10
-date: 2020-07-01
 ---
 
 This page serves as documentation of the open source architecture for the deps.cloud system.
