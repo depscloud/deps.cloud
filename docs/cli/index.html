@@ -25,12 +25,12 @@
 $ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/cli/" />
-<meta property="article:modified_time" content="2020-08-02T22:04:02-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-05T10:09:51-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Command Line">
 <meta itemprop="description" content="Repository: https://github.com/depscloud/cli Runtime: Golang Language: Golang  Background Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
 $ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command.">
-<meta itemprop="dateModified" content="2020-08-02T22:04:02-05:00" />
-<meta itemprop="wordCount" content="802">
+<meta itemprop="dateModified" content="2020-08-05T10:09:51-05:00" />
+<meta itemprop="wordCount" content="783">
 
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -152,7 +152,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -301,53 +301,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">API Services</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservices">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesgateway" href="/docs/services/gateway/">Gateway</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesindexer" href="/docs/services/indexer/">Indexer</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicestracker" href="/docs/services/tracker/">Tracker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesextractor" href="/docs/services/extractor/">Extractor</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/contributing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
@@ -377,12 +330,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingdocker" href="/docs/contributing/docker/">Developing in Docker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributinglocal" href="/docs/contributing/local/">Developing Locally</a>
       
       
     </li>
@@ -578,8 +525,7 @@ This should rarely differ from the modules you list in your appropriate manifest
 <span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.23.1&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
 </code></pre></div><h3 id="topology">Topology</h3>
 <p>Topologies are one of the most useful elements of a dependency graph.
-They can provide you with the full set of transitive modules, build orders, and notions of parallelism.
-While the <a href="/docs/services/tracker/">tracker</a> API calls out to a <code>TopologyService</code>, this has only been implemented as a client side feature.</p>
+They can provide you with the full set of transitive modules, build orders, and notions of parallelism.</p>
 <p>This is largely because topological queries can be resource intensive.
 This is due to the fact that the subgraph needs to be buffered before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.</p>
@@ -672,7 +618,7 @@ When one tier is complete, the next tier can be processed safely without worryin
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 2, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/9b51d0832905cf97154a148f90e75125b985c836">Update dependency autoprefixer to v9.8.6 (#51) (9b51d08)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/a39e8761a2564b638fa1650c0109aa240adb834e">gh-53: removed broken links (a39e876)</a>
 </div>
 </div>
 

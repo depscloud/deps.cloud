@@ -22,8 +22,7 @@
       <description>
         
         
-        &lt;!--&lt;value statement....&gt;--&gt;
-&lt;p&gt;deps.cloud is a tool built to help engineers understand how their projects relate to one another.
+        &lt;p&gt;deps.cloud is a tool built to help engineers understand how their projects relate to one another.
 When an organization is small, this is a rather easy thing to do.
 As an organization grows, the number of repositories often grow as well.
 As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.&lt;/p&gt;
@@ -189,16 +188,12 @@ Since there is no standardization across languages, extraction may vary between 
 &lt;p&gt;While there are several components that make up the ecosystem, each of them serve their own purpose.&lt;/p&gt;
 &lt;h3 id=&#34;components&#34;&gt;Components&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
-It provides a RESTful HTTP interface to the backing gRPC services.
-See the &lt;a href=&#34;https://deps.cloud/docs/services/gateway/&#34;&gt;gateway docs&lt;/a&gt; for more information.&lt;/p&gt;
+It provides a RESTful HTTP interface to the backing gRPC services.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph of information.
-This service leverages other storage systems such as SQLite or MySQL to store the graph data.
-See the &lt;a href=&#34;https://deps.cloud/docs/services/tracker/&#34;&gt;tracker docs&lt;/a&gt; for more information.&lt;/p&gt;
+This service leverages other storage systems such as SQLite or MySQL to store the graph data.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/extractor&#34;&gt;Extractor&lt;/a&gt; is responsible for looking at different manifest files and extracting dependency information from them.
-This mechanism is easily pluggable to support a large range of different manifest files.
-See the &lt;a href=&#34;https://deps.cloud/docs/services/extractor/&#34;&gt;extractor docs&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;indexer&lt;/a&gt; is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.
-See the &lt;a href=&#34;https://deps.cloud/docs/services/indexer/&#34;&gt;indexer docs&lt;/a&gt; for more information.&lt;/p&gt;
+This mechanism is easily pluggable to support a large range of different manifest files.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;indexer&lt;/a&gt; is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/cli&#34;&gt;command line interface&lt;/a&gt; or CLI provides end users with an easy ability to query the API.
 See the &lt;a href=&#34;https://deps.cloud/docs/cli/&#34;&gt;CLI docs&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;h2 id=&#34;design-decisions&#34;&gt;Design Decisions&lt;/h2&gt;
@@ -313,7 +308,8 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
         
         
         &lt;p&gt;In this quick start guide, we&amp;rsquo;ll use &lt;a href=&#34;https://docs.docker.com/compose&#34;&gt;docker-compose&lt;/a&gt; to create our demo infrastructure.&lt;/p&gt;
-&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/depscloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;To get started quickly, you should clone the &lt;a href=&#34;https://github.com/depscloud/deploy&#34;&gt;deploy&lt;/a&gt; repository and leverage the configuration under the &lt;code&gt;docker&lt;/code&gt; directory.
+You can pick any storage solution you&amp;rsquo;d like, but this guide follows the configuration in &lt;code&gt;sqlite&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;1---launch-depscloud&#34;&gt;1 - Launch deps.cloud&lt;/h2&gt;
 &lt;p&gt;To launch the demo infrastructure, simply run the following:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ docker-compose up -d
@@ -352,40 +348,6 @@ You may need to re-create the container.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ docker-compose restart indexer
 Restarting docker_indexer_1 ... done
 &lt;/code&gt;&lt;/pre&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Gateway</title>
-      <link>https://deps.cloud/docs/services/gateway/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/services/gateway/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;https://github.com/depscloud/gateway&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;Gateway is an extremely thin, lightweight, reverse proxy.
-It provides a RESTful interface that translates requests into gRPC calls.
-This is done using the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.
-&lt;code&gt;grpc-gateway&lt;/code&gt; provides a library and several Protocol Buffer plugins.
-These plugins make it possible to annotate service calls defined in &lt;code&gt;.proto&lt;/code&gt; files with RESTful semantics.
-These annotations generate associated HTTP handlers and &lt;a href=&#34;https://swagger.io/&#34;&gt;Swagger&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;In addition to servicing requests, it aggregates both the &lt;a href=&#34;https://deps.cloud/docs/services/extractor&#34;&gt;extractor&lt;/a&gt; and &lt;a href=&#34;https://deps.cloud/docs/services/tracker&#34;&gt;tracker&lt;/a&gt; systems behind a single interface.
-This makes configuring tools like the &lt;a href=&#34;https://deps.cloud/docs/cli&#34;&gt;CLI&lt;/a&gt; a lot easier.&lt;/p&gt;
-&lt;h2 id=&#34;swagger-explorers&#34;&gt;Swagger Explorers&lt;/h2&gt;
-&lt;p&gt;In addition to serving the API, it also serves the associated swagger documentation.
-You can explore the API further at the links below.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/extractor/#swagger-explorer&#34;&gt;Extractor Swagger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/services/tracker/#swagger-explorer&#34;&gt;Tracker Swagger&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
       </description>
     </item>
     
@@ -576,37 +538,6 @@ While we work on getting parity between each of the providers take note that thi
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- nvidia&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Indexer</title>
-      <link>https://deps.cloud/docs/services/indexer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/services/indexer/</guid>
-      <description>
-        
-        
-        &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;https://github.com/depscloud/indexer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;The indexer process often runs as a cron job.
-On a configured schedule, it will re-index all available repositories.
-While not ideal, this solution provides an easy way to get started.
-If needed, the indexing process can be sharded across multiple different indexers.
-This will allow some indexers to run on more frequent intervals while others run on less frequent ones.&lt;/p&gt;
-&lt;h2 id=&#34;on-cloning&#34;&gt;On Cloning&lt;/h2&gt;
-&lt;p&gt;When the indexer clones a repository, it uses &lt;code&gt;/tmp&lt;/code&gt; to create an ephemeral directory.
-It then performs a shallow clone of a repository into that tmp directory.
-When the indexing process is complete, all of this is cleaned up.&lt;/p&gt;
-&lt;p&gt;One thing to be wary of when deploying to your infrastructure is the concurrency induced by the number of &lt;code&gt;--workers&lt;/code&gt;.
-A single worker can process many repositories fairly quick.
-Two workers is often more than sufficient.&lt;/p&gt;
-
       </description>
     </item>
     
@@ -903,7 +834,6 @@ The second way to build and run this project.
 This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
 &lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
@@ -1032,8 +962,7 @@ This should rarely differ from the modules you list in your appropriate manifest
 &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;depends&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;version_constraint&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;v1.23.1&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;scopes&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;direct&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]}&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;language&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;go&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;organization&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google.golang.org&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;module&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;grpc&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;topology&#34;&gt;Topology&lt;/h3&gt;
 &lt;p&gt;Topologies are one of the most useful elements of a dependency graph.
-They can provide you with the full set of transitive modules, build orders, and notions of parallelism.
-While the &lt;a href=&#34;https://deps.cloud/docs/services/tracker/&#34;&gt;tracker&lt;/a&gt; API calls out to a &lt;code&gt;TopologyService&lt;/code&gt;, this has only been implemented as a client side feature.&lt;/p&gt;
+They can provide you with the full set of transitive modules, build orders, and notions of parallelism.&lt;/p&gt;
 &lt;p&gt;This is largely because topological queries can be resource intensive.
 This is due to the fact that the subgraph needs to be buffered before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.&lt;/p&gt;
@@ -1076,8 +1005,8 @@ When one tier is complete, the next tier can be processed safely without worryin
       <description>
         
         
-        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the directions .
-You can deploy the stack using either SQLite or MySQL as a backend data store.&lt;/p&gt;
+        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;directions&lt;/a&gt;.
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.&lt;/p&gt;
 &lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
 &lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
 &lt;table&gt;
@@ -1101,71 +1030,11 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.&l
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the docker deployment.&lt;/p&gt;
 &lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
 &lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Developing Locally</title>
-      <link>https://deps.cloud/docs/contributing/local/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contributing/local/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Local targets are available for development.
-In order to leverage those targets, you will need to install the appropriate tooling.
-While most projects are written in Golang, there are a few that will require NodeJS or Ruby.
-To help simplify some of the setup, I&amp;rsquo;ve included a general guide to managing these versions locally.&lt;/p&gt;
-&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
-&lt;p&gt;Install and manage Golang versions using &lt;a href=&#34;https://github.com/moovweb/gvm&#34;&gt;gvm&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-$ source ${HOME}/.gvm/scripts/gvm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you should be able to install and use specific versions of Golang.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ gvm install go1.12.4
-$ gvm alias create default go1.12.4
-$ gvm use default
-$ go version
-go version go1.12.4 darwin/amd64
-$ which go
-${HOME}/.gvm/gos/go1.12.4/bin/go
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nodejs&#34;&gt;NodeJS&lt;/h2&gt;
-&lt;p&gt;Install and manage NodeJS versions using &lt;a href=&#34;https://github.com/nvm-sh/nvm&#34;&gt;nvm&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
-Then, you should be able to install and use specific versions of NodeJS.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ nvm install 10.15.3
-$ nvm alias default v10.15.3    # all new shells will use 10.15.3
-$ nvm use default               # changes node version for the current terminal
-$ nvm current                   # verify you&#39;re using the right version
-v10.15.3
-$ which node
-${HOME}/.nvm/versions/node/v10.15.3/bin/node
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ruby&#34;&gt;Ruby&lt;/h2&gt;
-&lt;p&gt;Install and manage Ruby versions using &lt;a href=&#34;https://rvm.io/&#34;&gt;rvm&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## OSX
-$ brew install gpg2
-$ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-## Linux
-$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-$ curl -sSL https://get.rvm.io | bash -s stable
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
-Then, you should be able to install and use specific versions of Ruby.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ rvm install 2.3.7
-$ rvm alias create default 2.3.7
-$ rvm use default
-$ rvm current
-ruby-2.3.7
-$ which ruby
-${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
-&lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
     

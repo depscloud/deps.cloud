@@ -21,26 +21,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Developing in Docker | deps.cloud</title><meta property="og:title" content="Developing in Docker" />
-<meta property="og:description" content="In order to start developing using Docker, first deploy the stack using the directions . You can deploy the stack using either SQLite or MySQL as a backend data store.
+<meta property="og:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
 Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the existing docker example." />
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contributing/docker/" />
-<meta property="article:modified_time" content="2020-08-02T22:04:02-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-05T10:09:51-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Developing in Docker">
-<meta itemprop="description" content="In order to start developing using Docker, first deploy the stack using the directions . You can deploy the stack using either SQLite or MySQL as a backend data store.
+<meta itemprop="description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
 Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the existing docker example.">
-<meta itemprop="dateModified" content="2020-08-02T22:04:02-05:00" />
-<meta itemprop="wordCount" content="107">
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment.">
+<meta itemprop="dateModified" content="2020-08-05T10:09:51-05:00" />
+<meta itemprop="wordCount" content="105">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Developing in Docker"/>
-<meta name="twitter:description" content="In order to start developing using Docker, first deploy the stack using the directions . You can deploy the stack using either SQLite or MySQL as a backend data store.
+<meta name="twitter:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
 Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the existing docker example."/>
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment."/>
 
 
 <script type="application/javascript">
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -304,53 +304,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">API Services</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservices">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesgateway" href="/docs/services/gateway/">Gateway</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesindexer" href="/docs/services/indexer/">Indexer</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicestracker" href="/docs/services/tracker/">Tracker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesextractor" href="/docs/services/extractor/">Extractor</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/contributing/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
@@ -380,12 +333,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontributingdocker" href="/docs/contributing/docker/">Developing in Docker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributinglocal" href="/docs/contributing/local/">Developing Locally</a>
       
       
     </li>
@@ -478,8 +425,8 @@ if (!doNotTrack) {
 	<h1>Developing in Docker</h1>
     
 	       
-	<p>In order to start developing using Docker, first deploy the stack using the directions .
-You can deploy the stack using either SQLite or MySQL as a backend data store.</p>
+	<p>In order to start developing using Docker, first deploy the stack using the <a href="/docs/deployment/docker/">directions</a>.
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.</p>
 <h2 id="building-local-changes">Building Local Changes</h2>
 <p>To help facilitate contributions, each project has a <code>docker</code> target that builds the project inside a container.</p>
 <table>
@@ -503,7 +450,7 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.</
 </tr>
 </tbody>
 </table>
-<p>The target produces a tagged image that you can deployed using the existing <a href="/docs/deployment/docker/">docker example</a>.</p>
+<p>The target produces a tagged image that you can deployed using the docker deployment.</p>
 <h2 id="deploying-local-changes">Deploying Local Changes</h2>
 <p>Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up -d
@@ -570,7 +517,7 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.</
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 2, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/9b51d0832905cf97154a148f90e75125b985c836">Update dependency autoprefixer to v9.8.6 (#51) (9b51d08)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/a39e8761a2564b638fa1650c0109aa240adb834e">gh-53: removed broken links (a39e876)</a>
 </div>
 </div>
 

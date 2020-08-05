@@ -131,7 +131,6 @@ The second way to build and run this project.
 This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/docker/&#34;&gt;Developing in Docker&lt;/a&gt; (Recommended)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/contributing/local/&#34;&gt;Developing Locally&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
 &lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
@@ -164,8 +163,8 @@ After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.
       <description>
         
         
-        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the directions .
-You can deploy the stack using either SQLite or MySQL as a backend data store.&lt;/p&gt;
+        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;directions&lt;/a&gt;.
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.&lt;/p&gt;
 &lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
 &lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
 &lt;table&gt;
@@ -189,71 +188,11 @@ You can deploy the stack using either SQLite or MySQL as a backend data store.&l
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;The target produces a tagged image that you can deployed using the existing &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;docker example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the docker deployment.&lt;/p&gt;
 &lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
 &lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Developing Locally</title>
-      <link>https://deps.cloud/docs/contributing/local/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contributing/local/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Local targets are available for development.
-In order to leverage those targets, you will need to install the appropriate tooling.
-While most projects are written in Golang, there are a few that will require NodeJS or Ruby.
-To help simplify some of the setup, I&amp;rsquo;ve included a general guide to managing these versions locally.&lt;/p&gt;
-&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
-&lt;p&gt;Install and manage Golang versions using &lt;a href=&#34;https://github.com/moovweb/gvm&#34;&gt;gvm&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ bash &amp;lt; &amp;lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-$ source ${HOME}/.gvm/scripts/gvm
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you should be able to install and use specific versions of Golang.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ gvm install go1.12.4
-$ gvm alias create default go1.12.4
-$ gvm use default
-$ go version
-go version go1.12.4 darwin/amd64
-$ which go
-${HOME}/.gvm/gos/go1.12.4/bin/go
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nodejs&#34;&gt;NodeJS&lt;/h2&gt;
-&lt;p&gt;Install and manage NodeJS versions using &lt;a href=&#34;https://github.com/nvm-sh/nvm&#34;&gt;nvm&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
-Then, you should be able to install and use specific versions of NodeJS.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ nvm install 10.15.3
-$ nvm alias default v10.15.3    # all new shells will use 10.15.3
-$ nvm use default               # changes node version for the current terminal
-$ nvm current                   # verify you&#39;re using the right version
-v10.15.3
-$ which node
-${HOME}/.nvm/versions/node/v10.15.3/bin/node
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ruby&#34;&gt;Ruby&lt;/h2&gt;
-&lt;p&gt;Install and manage Ruby versions using &lt;a href=&#34;https://rvm.io/&#34;&gt;rvm&lt;/a&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## OSX
-$ brew install gpg2
-$ gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-## Linux
-$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-
-$ curl -sSL https://get.rvm.io | bash -s stable
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Once installation is complete, you&amp;rsquo;ll need to restart your shell to pick up the new environment variables.
-Then, you should be able to install and use specific versions of Ruby.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ rvm install 2.3.7
-$ rvm alias create default 2.3.7
-$ rvm use default
-$ rvm current
-ruby-2.3.7
-$ which ruby
-${HOME}/.rvm/rubies/ruby-2.3.7/bin/ruby
-&lt;/code&gt;&lt;/pre&gt;
       </description>
     </item>
     

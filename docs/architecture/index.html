@@ -23,18 +23,18 @@
 <title>Architecture | deps.cloud</title><meta property="og:title" content="Architecture" />
 <meta property="og:description" content="This page serves as documentation of the open source architecture for the deps.cloud system.
 Overview While there are several components that make up the ecosystem, each of them serve their own purpose.
-Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services. See the gateway docs for more information.
+Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services.
 Tracker provides several APIs for navigating the graph of information. This service leverages other storage systems such as SQLite or MySQL to store the graph data." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/architecture/" />
-<meta property="article:modified_time" content="2020-08-02T22:04:02-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-05T10:09:51-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Architecture">
 <meta itemprop="description" content="This page serves as documentation of the open source architecture for the deps.cloud system.
 Overview While there are several components that make up the ecosystem, each of them serve their own purpose.
-Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services. See the gateway docs for more information.
+Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services.
 Tracker provides several APIs for navigating the graph of information. This service leverages other storage systems such as SQLite or MySQL to store the graph data.">
-<meta itemprop="dateModified" content="2020-08-02T22:04:02-05:00" />
-<meta itemprop="wordCount" content="456">
+<meta itemprop="dateModified" content="2020-08-05T10:09:51-05:00" />
+<meta itemprop="wordCount" content="428">
 
 
 
@@ -42,7 +42,7 @@ Tracker provides several APIs for navigating the graph of information. This serv
 <meta name="twitter:title" content="Architecture"/>
 <meta name="twitter:description" content="This page serves as documentation of the open source architecture for the deps.cloud system.
 Overview While there are several components that make up the ecosystem, each of them serve their own purpose.
-Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services. See the gateway docs for more information.
+Components Gateway is the face of the API services. It provides a RESTful HTTP interface to the backing gRPC services.
 Tracker provides several APIs for navigating the graph of information. This service leverages other storage systems such as SQLite or MySQL to store the graph data."/>
 
 
@@ -128,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a21e366a4ed09538b22c45e0b6ae88607a869176211bd6eca95aced8d96bc62879da3325b23c124b631fe806684754a7c860424821e968da069648108cd9d074.json"
+  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
   data-offline-search-base-href="/"
 >
 
@@ -307,53 +307,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/services/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">API Services</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsservices">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesgateway" href="/docs/services/gateway/">Gateway</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesindexer" href="/docs/services/indexer/">Indexer</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicestracker" href="/docs/services/tracker/">Tracker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsservicesextractor" href="/docs/services/extractor/">Extractor</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/contributing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
@@ -383,12 +336,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingdocker" href="/docs/contributing/docker/">Developing in Docker</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributinglocal" href="/docs/contributing/local/">Developing Locally</a>
       
       
     </li>
@@ -493,16 +440,12 @@ if (!doNotTrack) {
 <p>While there are several components that make up the ecosystem, each of them serve their own purpose.</p>
 <h3 id="components">Components</h3>
 <p><a href="https://github.com/depscloud/gateway">Gateway</a> is the face of the API services.
-It provides a RESTful HTTP interface to the backing gRPC services.
-See the <a href="/docs/services/gateway/">gateway docs</a> for more information.</p>
+It provides a RESTful HTTP interface to the backing gRPC services.</p>
 <p><a href="https://github.com/depscloud/tracker">Tracker</a> provides several APIs for navigating the graph of information.
-This service leverages other storage systems such as SQLite or MySQL to store the graph data.
-See the <a href="/docs/services/tracker/">tracker docs</a> for more information.</p>
+This service leverages other storage systems such as SQLite or MySQL to store the graph data.</p>
 <p><a href="https://github.com/depscloud/extractor">Extractor</a> is responsible for looking at different manifest files and extracting dependency information from them.
-This mechanism is easily pluggable to support a large range of different manifest files.
-See the <a href="/docs/services/extractor/">extractor docs</a> for more information.</p>
-<p>The <a href="https://github.com/depscloud/indexer">indexer</a> is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.
-See the <a href="/docs/services/indexer/">indexer docs</a> for more information.</p>
+This mechanism is easily pluggable to support a large range of different manifest files.</p>
+<p>The <a href="https://github.com/depscloud/indexer">indexer</a> is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.</p>
 <p>The <a href="https://github.com/depscloud/cli">command line interface</a> or CLI provides end users with an easy ability to query the API.
 See the <a href="/docs/cli/">CLI docs</a> for more information.</p>
 <h2 id="design-decisions">Design Decisions</h2>
@@ -594,7 +537,7 @@ This makes it easy to swap the storage technology out for different solutions.</
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 2, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/9b51d0832905cf97154a148f90e75125b985c836">Update dependency autoprefixer to v9.8.6 (#51) (9b51d08)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/a39e8761a2564b638fa1650c0109aa240adb834e">gh-53: removed broken links (a39e876)</a>
 </div>
 </div>
 
