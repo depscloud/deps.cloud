@@ -2,6 +2,8 @@
 title: "GitLab"
 linkTitle: "GitLab"
 weight: 20
+aliases:
+- /docs/integrations/gitlab/
 ---
 
 GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider.

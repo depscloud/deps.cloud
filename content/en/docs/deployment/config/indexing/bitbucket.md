@@ -2,6 +2,8 @@
 title: "Bitbucket"
 linkTitle: "Bitbucket"
 weight: 30
+aliases:
+- /docs/integrations/bitbucket/
 ---
 
 BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence).

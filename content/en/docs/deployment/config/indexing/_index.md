@@ -1,8 +1,10 @@
 ---
-title: "Integrations"
-linkTitle: "Integrations"
+title: "Indexing"
+linkTitle: "Indexing"
 weight: 20
 no_list: true
+aliases:
+- /docs/integrations/
 ---
 
 This section provides guidance on how to configure the underlying system.
