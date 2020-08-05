@@ -2,6 +2,8 @@
 title: "Architecture"
 linkTitle: "Architecture"
 weight: 10
+aliases:
+- /docs/architecture/
 ---
 
 This page serves as documentation of the open source architecture for the deps.cloud system.

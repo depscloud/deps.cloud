@@ -2,6 +2,8 @@
 title: "Data Model"
 linkTitle: "Data Model"
 weight: 15
+aliases:
+- /docs/data-model/
 ---
 
 This page serves as documentation of the open source data model for the deps.cloud system.

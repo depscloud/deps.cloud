@@ -1,7 +1,8 @@
 ---
 title: "Command Line"
 linkTitle: "Command Line"
-weight: 40
+aliases:
+- /docs/cli/
 ---
 
 * Repository: https://github.com/depscloud/cli

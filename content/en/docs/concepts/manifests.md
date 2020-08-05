@@ -2,6 +2,8 @@
 title: "Manifest Files"
 linkTitle: "Manifest Files"
 weight: 5
+aliases:
+- /docs/manifests/
 ---
 
 A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.

@@ -1,7 +1,7 @@
 ---
 title: "Deployment"
 linkTitle: "Deployment"
-weight: 30
+weight: 20
 no_list: true
 ---
 

@@ -2,6 +2,8 @@
 title: "What is deps.cloud?"
 linkTitle: "What is deps.cloud?"
 weight: 1
+aliases:
+- /docs/what-is-depscloud/
 ---
 
 deps.cloud is a tool built to help engineers understand how their projects relate to one another.
