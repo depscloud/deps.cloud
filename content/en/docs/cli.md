@@ -156,7 +156,6 @@ $ deps get dependencies -l go -o github.com -m depscloud/api
 
 Topologies are one of the most useful elements of a dependency graph.
 They can provide you with the full set of transitive modules, build orders, and notions of parallelism.
-While the [tracker](/docs/services/tracker/) API calls out to a `TopologyService`, this has only been implemented as a client side feature.
 
 This is largely because topological queries can be resource intensive.
 This is due to the fact that the subgraph needs to be buffered before any results can be returned.

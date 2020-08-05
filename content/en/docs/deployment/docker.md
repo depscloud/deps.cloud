@@ -7,6 +7,7 @@ weight: 10
 In this quick start guide, we'll use [docker-compose](https://docs.docker.com/compose) to create our demo infrastructure.
 
 To get started quickly, you should clone the [deploy](https://github.com/depscloud/deploy) repository and leverage the configuration under the `docker` directory.
+You can pick any storage solution you'd like, but this guide follows the configuration in `sqlite`.
 
 ## 1 - Launch deps.cloud
 
