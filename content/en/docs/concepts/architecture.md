@@ -1,7 +1,7 @@
 ---
 title: "Architecture"
 linkTitle: "Architecture"
-weight: 10
+weight: 40
 aliases:
 - /docs/architecture/
 ---

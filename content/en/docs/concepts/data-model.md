@@ -1,7 +1,7 @@
 ---
 title: "Data Model"
 linkTitle: "Data Model"
-weight: 15
+weight: 30
 aliases:
 - /docs/data-model/
 ---

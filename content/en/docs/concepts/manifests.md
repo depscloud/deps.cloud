@@ -1,7 +1,7 @@
 ---
 title: "Manifest Files"
 linkTitle: "Manifest Files"
-weight: 5
+weight: 20
 aliases:
 - /docs/manifests/
 ---

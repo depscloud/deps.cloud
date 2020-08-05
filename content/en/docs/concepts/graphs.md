@@ -1,6 +1,6 @@
 ---
-title: "Graphs"
-linkTitle: "Graphs"
-weight: 5
+title: "Dependency Graphs"
+linkTitle: "Dependency Graphs"
+weight: 10
 draft: true
 ---
