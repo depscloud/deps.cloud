@@ -4,8 +4,8 @@ linkTitle: Developing in Docker
 weight: 40
 ---
 
-In order to start developing using Docker, first deploy the stack using the directions .
-You can deploy the stack using either SQLite or MySQL as a backend data store.
+In order to start developing using Docker, first deploy the stack using the [directions](/docs/deployment/docker/).
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
 
 ## Building Local Changes
 
@@ -16,7 +16,7 @@ To help facilitate contributions, each project has a `docker` target that builds
 | Golang | `Makefile` | `make docker` |
 | NodeJS | `package.json` | `npm run docker` |
 
-The target produces a tagged image that you can deployed using the existing [docker example](/docs/deployment/docker/).
+The target produces a tagged image that you can deployed using the docker deployment.
 
 ## Deploying Local Changes
 

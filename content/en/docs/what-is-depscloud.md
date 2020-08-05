@@ -4,8 +4,6 @@ linkTitle: "What is deps.cloud?"
 weight: 1
 ---
 
-<!--<value statement....>-->
-
 deps.cloud is a tool built to help engineers understand how their projects relate to one another.
 When an organization is small, this is a rather easy thing to do.
 As an organization grows, the number of repositories often grow as well.
