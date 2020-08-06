@@ -19,6 +19,7 @@ As a result we're able to answer questions like:
 * Which libraries do I depend on and what version?
 * Which projects depend on _library X_ and what version?
 * Which projects can produce _library X_?
+* Which projects do our systems use the most? 
 
 <br/>
 <div style="max-width: 80%;">
