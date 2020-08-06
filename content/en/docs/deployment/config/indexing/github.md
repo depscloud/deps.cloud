@@ -2,6 +2,8 @@
 title: "GitHub"
 linkTitle: "GitHub"
 weight: 10
+aliases:
+- /docs/integrations/github/
 ---
 
 GitHub is the largest source of repositories.
