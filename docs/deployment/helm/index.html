@@ -25,11 +25,11 @@
 Prerequisites  A working Kubernetes cluster. To follow along with this guide, you should set up minikube on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally. The kubectl binary should be installed and in your path on your workstation. The helm binary should be installed and in your path on your workstation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/helm/" />
-<meta property="article:modified_time" content="2020-08-05T10:09:51-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-05T19:05:47-07:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Helm">
 <meta itemprop="description" content="This guide explains how to run the deps.cloud infrastructure within a Kubernetes cluster using the Helm package manager.
 Prerequisites  A working Kubernetes cluster. To follow along with this guide, you should set up minikube on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally. The kubectl binary should be installed and in your path on your workstation. The helm binary should be installed and in your path on your workstation.">
-<meta itemprop="dateModified" content="2020-08-05T10:09:51-05:00" />
+<meta itemprop="dateModified" content="2020-08-05T19:05:47-07:00" />
 <meta itemprop="wordCount" content="440">
 
 
@@ -122,7 +122,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
+  data-offline-search-index-json-src="/offline-search-index.188171a3f12b0c574e5ba58d7ab52120a1d3aa18f78f154fcddbd22800e43a41381cc4300d2d6a1ae935fb51420e2a62b3f6b45afb23bbe3bfbd290136e44b3f.json"
   data-offline-search-base-href="/"
 >
 
@@ -152,7 +152,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c62614cca70285ba5445891383e54ce22c5cb02b0709abf22d1880b4f539a379eb1c050b12504542fd0b87e6a33c0f774cfe21af151a9890beaf3430db999983.json"
+  data-offline-search-index-json-src="/offline-search-index.188171a3f12b0c574e5ba58d7ab52120a1d3aa18f78f154fcddbd22800e43a41381cc4300d2d6a1ae935fb51420e2a62b3f6b45afb23bbe3bfbd290136e44b3f.json"
   data-offline-search-base-href="/"
 >
 
@@ -181,30 +181,6 @@ if (!doNotTrack) {
       
       
       
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docswhat-is-depscloud" href="/docs/what-is-depscloud/">What is deps.cloud?</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsmanifests" href="/docs/manifests/">Manifest Files</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsarchitecture" href="/docs/architecture/">Architecture</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdata-model" href="/docs/data-model/">Data Model</a>
-      
-      
-      
-      
 
 
 
@@ -213,29 +189,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/integrations/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Integrations</a>
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
   </li>
   <ul>
-    <li class="collapse " id="docsintegrations">
+    <li class="collapse " id="docsconcepts">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsgithub" href="/docs/integrations/github/">GitHub</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsgitlab" href="/docs/integrations/gitlab/">GitLab</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsintegrationsbitbucket" href="/docs/integrations/bitbucket/">Bitbucket</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
       
       
     </li>
@@ -279,6 +255,70 @@ if (!doNotTrack) {
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdeploymenthelm" href="/docs/deployment/helm/">Helm</a>
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeploymentconfig">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeploymentconfigindexing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexinggithub" href="/docs/deployment/config/indexing/github/">GitHub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexinggitlab" href="/docs/deployment/config/indexing/gitlab/">GitLab</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexingbitbucket" href="/docs/deployment/config/indexing/bitbucket/">Bitbucket</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -287,8 +327,31 @@ if (!doNotTrack) {
       
       
       
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsguides">
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscli" href="/docs/cli/">Command Line</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
       
@@ -605,7 +668,7 @@ If provides a way to manage Helm releases within a cluster through custom resour
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/a39e8761a2564b638fa1650c0109aa240adb834e">gh-53: removed broken links (a39e876)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/7bed4c3fe6a179a00cc859ac2377534bf0522174">gh-53: refactored core documentation structure (#54) (7bed4c3)</a>
 </div>
 </div>
 

@@ -14,219 +14,6 @@
     
     
     <item>
-      <title>Docs: What is deps.cloud?</title>
-      <link>https://deps.cloud/docs/what-is-depscloud/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/what-is-depscloud/</guid>
-      <description>
-        
-        
-        &lt;p&gt;deps.cloud is a tool built to help engineers understand how their projects relate to one another.
-When an organization is small, this is a rather easy thing to do.
-As an organization grows, the number of repositories often grow as well.
-As the number repositories grow, reasoning about how they relate to one another often becomes a challenge.&lt;/p&gt;
-&lt;p&gt;To solve this problem, deps.cloud stores information in a queryable dependency graph.
-It does this by parsing and indexing &lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;manifest files&lt;/a&gt; that communicate a given projects requirements.
-In NodeJS, this is often a &lt;code&gt;package.json&lt;/code&gt; file.
-In Java, a &lt;code&gt;pom.xml&lt;/code&gt; or &lt;code&gt;build.gradle&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;what-problems-can-depscloud-solve&#34;&gt;What problems can deps.cloud solve?&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Identify heavily used open source solutions across your code base&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Regardless of organization size, deps.cloud can help track open source libraries and their use across your ecosystem.
-Monitor direct consumers of an open source project as well as the full dependency tree.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Refactor interfaces and clean up deprecated code&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Changing existing interfaces can often be problematic.
-You often need to provide two versions of a method, publish a new version of the library, update all consumers, and remove the old method.
-This process can often take several versions to roll through completely.
-With deps.cloud, you can be proactive in propagating changes across library consumers.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Propagate updates for security vulnerabilities across impacted projects&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Using libraries means you eventually have to handle an upgrade to address a CVE.
-deps.cloud not only show what systems are consuming a potentially vulnerable library, but also the versions used by your ecosystem.&lt;/p&gt;
-&lt;h2 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;Manifest Files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/architecture/&#34;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://deps.cloud/docs/integrations/&#34;&gt;Integrations&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Manifest Files</title>
-      <link>https://deps.cloud/docs/manifests/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/manifests/</guid>
-      <description>
-        
-        
-        &lt;p&gt;A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.
-These dependencies come in many shapes and forms, but the most common dependency is a library.
-Libraries are packages containing common code that is shared between projects.&lt;/p&gt;
-&lt;p&gt;Using this information, deps.cloud is able to build a knowledge graph.
-The table below demonstrates how this information is extracted from various manifests.
-Since there is no standardization across languages, extraction may vary between implementations.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Manifest File&lt;/th&gt;
-&lt;th&gt;Language&lt;/th&gt;
-&lt;th&gt;System&lt;/th&gt;
-&lt;th&gt;Example&lt;/th&gt;
-&lt;th&gt;Organization&lt;/th&gt;
-&lt;th&gt;Module&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;bower.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;node&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bower&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;build.gradle, settings.gradle&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;gradle&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava:guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;cargo.toml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;rust&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;cargo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;_&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;composer.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;php&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;composer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;symfony/console&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;symfony&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;console&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Godeps.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;godeps&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;go.mod&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vgo&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Gopkg.toml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;gopkg&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;ivy.xml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ivy&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava;guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;node&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;pom.xml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;maven&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava;guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vendor.conf&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vendor&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Architecture</title>
-      <link>https://deps.cloud/docs/architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/architecture/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This page serves as documentation of the open source architecture for the deps.cloud system.&lt;/p&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
-&lt;p&gt;While there are several components that make up the ecosystem, each of them serve their own purpose.&lt;/p&gt;
-&lt;h3 id=&#34;components&#34;&gt;Components&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
-It provides a RESTful HTTP interface to the backing gRPC services.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph of information.
-This service leverages other storage systems such as SQLite or MySQL to store the graph data.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/extractor&#34;&gt;Extractor&lt;/a&gt; is responsible for looking at different manifest files and extracting dependency information from them.
-This mechanism is easily pluggable to support a large range of different manifest files.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;indexer&lt;/a&gt; is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/cli&#34;&gt;command line interface&lt;/a&gt; or CLI provides end users with an easy ability to query the API.
-See the &lt;a href=&#34;https://deps.cloud/docs/cli/&#34;&gt;CLI docs&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;h2 id=&#34;design-decisions&#34;&gt;Design Decisions&lt;/h2&gt;
-&lt;p&gt;As this system was built out, there were several key decisions that were made along the way.
-In this section, I capture several of the frequently asked questions and document the rationale behind them.&lt;/p&gt;
-&lt;h3 id=&#34;_how-should-services-communicate_&#34;&gt;&lt;em&gt;How should services communicate?&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;There are many different ways services can communicate.
-REST and &lt;a href=&#34;https://grpc.io&#34;&gt;gRPC&lt;/a&gt; are simply two of them.
-While there are many options out there, there were many benefits that came along with leveraging gRPC.
-This includes, but is not limited to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;contractual API definitions using &lt;a href=&#34;https://developers.google.com/protocol-buffers&#34;&gt;Protocol Buffers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;support for multi-language systems&lt;/li&gt;
-&lt;li&gt;built in client side load balancing and health checking&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the end, I decided to leverage gRPC.
-As a result, it&amp;rsquo;s had a great impact on the ecosystem.
-It allowed parts to be prototyped in one language, and rewritten when they didn&amp;rsquo;t scale.
-Adding REST support was easy with the help of the &lt;a href=&#34;https://github.com/grpc-ecosystem/grpc-gateway&#34;&gt;grpc-gateway&lt;/a&gt; project.&lt;/p&gt;
-&lt;h3 id=&#34;_how-should-the-data-be-stored_&#34;&gt;&lt;em&gt;How should the data be stored?&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;When you think of a dependency graph, it&amp;rsquo;s easy to jump to the conclusion to use one of the existing &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_database&#34;&gt;graph databases&lt;/a&gt; out there.
-However, when working with folks in the open source community, it&amp;rsquo;s hard to find people with prior experience on graph databases.
-Most people are still more familiar with things like &lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt; or &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;MongoDB&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Knowing this layer of the stack was likely to be swapped out with Company X&amp;rsquo;s preferred store, I wanted it to be pluggable.
-So the first implementation was on top of an SQL system.
-From there, we were able to extract a simple service interface.
-This makes it easy to swap the storage technology out for different solutions.&lt;/p&gt;
-&lt;p&gt;For more information on the data layer, see the &lt;a href=&#34;https://deps.cloud/docs/data-model/&#34;&gt;Data Model&lt;/a&gt; documentation.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Code of Conduct</title>
       <link>https://deps.cloud/docs/contributing/code-of-conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -353,10 +140,10 @@ Restarting docker_indexer_1 ... done
     
     <item>
       <title>Docs: GitHub</title>
-      <link>https://deps.cloud/docs/integrations/github/</link>
+      <link>https://deps.cloud/docs/deployment/config/indexing/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/integrations/github/</guid>
+      <guid>https://deps.cloud/docs/deployment/config/indexing/github/</guid>
       <description>
         
         
@@ -398,82 +185,6 @@ While we work on getting parity between each of the providers take note that thi
     </item>
     
     <item>
-      <title>Docs: Data Model</title>
-      <link>https://deps.cloud/docs/data-model/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/data-model/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This page serves as documentation of the open source data model for the deps.cloud system.&lt;/p&gt;
-&lt;h2 id=&#34;logical-model&#34;&gt;Logical Model&lt;/h2&gt;
-&lt;p&gt;The logical model is the user facing representation of the data in the system.
-It is defined using &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;protocol buffers&lt;/a&gt;.
-The complete schema can be found in the &lt;a href=&#34;https://github.com/depscloud/api&#34;&gt;API&lt;/a&gt; repository.
-To summarize, there are four distinct entities in the deps.cloud database.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Sources&lt;/em&gt; represent origins for information.
-These can be source control systems like GitHub, GitLab, or BitBucket.
-Or they can be artifactories like JFrog Artifactory or Sonatype Nexus.
-Sources are keyed by their URL and are represented as nodes in the dependency graph.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Modules&lt;/em&gt; represent libraries or applications in the dependency graph.
-Modules are extracted from &lt;a href=&#34;https://deps.cloud/docs/manifests/&#34;&gt;manifest files&lt;/a&gt;.
-They are keyed by all their data, and are represented as nodes in the dependency graph.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Manages&lt;/em&gt; represent the relationship between a &lt;em&gt;source&lt;/em&gt; and a &lt;em&gt;module&lt;/em&gt;.
-It contains information about how a given module is managed such as the toolchain.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Depends&lt;/em&gt; represents the relationship between two &lt;em&gt;modules&lt;/em&gt;.
-It contains information about how the modules depend on one another.
-This includes things like version constraint, scopes, and a reference to the source.&lt;/p&gt;
-&lt;p&gt;This data can be visualized as such:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/data-model.png&#34; alt=&#34;data-model&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;database-schema&#34;&gt;Database Schema&lt;/h2&gt;
-&lt;p&gt;The database schema was inspired by &lt;a href=&#34;https://youtu.be/VZ-zJEWi-Vo?t=588&#34;&gt;EdgeStore&lt;/a&gt; at &lt;a href=&#34;https://dropbox.tech/infrastructure/reintroducing-edgestore&#34;&gt;Dropbox&lt;/a&gt;.
-With a few modifications, we were able to successfully model a dependency graph.
-Below, you will find a copy of a create table statement for MySQL.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;TABLE&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;IF&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;EXISTS&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dts_graphdata&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;varchar&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;55&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k3&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;varchar&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;64&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;encoding&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;tinyint&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_data&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last_modified&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;datetime&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;date_deleted&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;datetime&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NULL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
-  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;graph_item_type&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;k3&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ENGINE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;InnoDB&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;DEFAULT&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;CHARSET&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;utf8mb4&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;COLLATE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;utf8mb4_0900_ai_ci&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This schema is able to represent a dependency graph with the help of a few simple rules.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;When &lt;code&gt;k1 == k2&lt;/code&gt;, the row represents a node in the graph&lt;/li&gt;
-&lt;li&gt;When &lt;code&gt;k1 != k2&lt;/code&gt;, the row represents an edge between &lt;code&gt;k1&lt;/code&gt; and &lt;code&gt;k2&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;k3&lt;/code&gt; allows for multiple edges to exist between nodes, but is restricted to one per source&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;To help make this more concrete, consider the following simplified table:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;| graph_item_type | k1     | k2     | k3     | encoding | graph_item_data |
-|-----------------|--------|--------|--------|----------|-----------------|
-| depends         | msha   | osha   | ssha   |        1 | { ... }         |
-| manages         | ssha   | msha   |        |        1 | { ... }         |
-| module          | msha   | msha   |        |        1 | { ... }         |
-| module          | osha   | osha   |        |        1 | { ... }         |
-| source          | ssha   | ssha   |        |        1 | { ... }         |
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The following statements can be made about the data shown in the table.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Source &lt;code&gt;ssha&lt;/code&gt; manages module &lt;code&gt;msha&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Module &lt;code&gt;msha&lt;/code&gt; depends on module &lt;code&gt;osha&lt;/code&gt; for source &lt;code&gt;ssha&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;swappable-storage-engines&#34;&gt;Swappable Storage Engines&lt;/h2&gt;
-&lt;p&gt;While only SQL support is available today, it&amp;rsquo;s possible to support NoSQL systems too.
-This is made possible by the simplified schema and data abstraction layer.
-Current database support:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sqlite.org/&#34;&gt;SQLite&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.mysql.com/&#34;&gt;MySQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://postgresql.org/&#34;&gt;Postgres&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Community</title>
       <link>https://deps.cloud/docs/contributing/community/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -496,10 +207,10 @@ If large enough interest has been expressed, we can start them back up again.&lt
     
     <item>
       <title>Docs: GitLab</title>
-      <link>https://deps.cloud/docs/integrations/gitlab/</link>
+      <link>https://deps.cloud/docs/deployment/config/indexing/gitlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/integrations/gitlab/</guid>
+      <guid>https://deps.cloud/docs/deployment/config/indexing/gitlab/</guid>
       <description>
         
         
@@ -647,11 +358,132 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
     </item>
     
     <item>
-      <title>Docs: Bitbucket</title>
-      <link>https://deps.cloud/docs/integrations/bitbucket/</link>
+      <title>Docs: Manifest Files</title>
+      <link>https://deps.cloud/docs/concepts/manifests/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/integrations/bitbucket/</guid>
+      <guid>https://deps.cloud/docs/concepts/manifests/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.
+These dependencies come in many shapes and forms, but the most common dependency is a library.
+Libraries are packages containing common code that is shared between projects.&lt;/p&gt;
+&lt;p&gt;Using this information, deps.cloud is able to build a knowledge graph.
+The table below demonstrates how to interpret the information extracted from various manifests.
+Since there is no standardization across languages, extraction may vary between implementations.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Manifest File&lt;/th&gt;
+&lt;th&gt;Example&lt;/th&gt;
+&lt;th&gt;Language&lt;/th&gt;
+&lt;th&gt;System&lt;/th&gt;
+&lt;th&gt;Organization&lt;/th&gt;
+&lt;th&gt;Module&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bower.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;node&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bower&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;build.gradle, settings.gradle&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava:guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gradle&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cargo.toml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;rust&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cargo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;_&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;composer.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;symfony/console&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;php&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;composer&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;symfony&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;console&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Godeps.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;godeps&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;go.mod&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vgo&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Gopkg.toml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gopkg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ivy.xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava;guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ivy&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;node&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pom.xml&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava;guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;maven&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;com.google.guava&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;guava&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;vendor.conf&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vendor&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;github.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;depscloud/api&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Bitbucket</title>
+      <link>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</guid>
       <description>
         
         
@@ -689,6 +521,40 @@ While we work on getting parity between each of the providers take note that thi
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;- atlassian&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;strategy&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt; &lt;/span&gt;HTTP&lt;span style=&#34;color:#f8f8f8;text-decoration:underline&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Data Model</title>
+      <link>https://deps.cloud/docs/concepts/data-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/concepts/data-model/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The backing data model for deps.cloud is a graph.
+Graphs contain two types of data: nodes and edges.
+Nodes often represent entities such as people, places, or things.
+Edges often represent relationships between two entities.&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The following illustrates the various nodes and edges in the deps.cloud ecosystem.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/data-model.png&#34; alt=&#34;data-model&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nodes&#34;&gt;Nodes&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Sources&lt;/em&gt; represent origins for information.
+These can be source control systems like GitHub, GitLab, or BitBucket.
+Or they can be artifactories like JFrog Artifactory or Sonatype Nexus.
+Sources are keyed by their URL and are represented as nodes in the dependency graph.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Modules&lt;/em&gt; represent libraries or applications in the dependency graph.
+These are the components extracted from &lt;a href=&#34;https://deps.cloud/docs/concepts/manifests/&#34;&gt;manifest files&lt;/a&gt;.
+They are keyed by all their data, and are represented as nodes in the dependency graph.&lt;/p&gt;
+&lt;h3 id=&#34;edges&#34;&gt;Edges&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Manages&lt;/em&gt; represent the relationship between a &lt;em&gt;source&lt;/em&gt; and a &lt;em&gt;module&lt;/em&gt;.
+It contains information about how a given module is managed such as the toolchain.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Depends&lt;/em&gt; represents the relationship between two &lt;em&gt;modules&lt;/em&gt;.
+It contains information about how the modules depend on one another.
+This includes things like version constraint, scopes, and a reference to the source.&lt;/p&gt;
+
       </description>
     </item>
     
@@ -858,21 +724,85 @@ After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.
     </item>
     
     <item>
-      <title>Docs: Command Line</title>
-      <link>https://deps.cloud/docs/cli/</link>
+      <title>Docs: Architecture</title>
+      <link>https://deps.cloud/docs/concepts/architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/cli/</guid>
+      <guid>https://deps.cloud/docs/concepts/architecture/</guid>
       <description>
         
         
-        &lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/depscloud/cli&#34;&gt;https://github.com/depscloud/cli&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Runtime: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language: &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API.
+        &lt;p&gt;The following diagram illustrates the general system deployed on top of a kubernetes cluster.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;actors&#34;&gt;Actors&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/cli&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.
+The command line interface (CLI) allows individuals to explore data stored in deps.cloud.
+Other types of clients include processes written using one of our SDKs.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
+It provides both RESTful and gRPC interfaces to clients of the system.
+Not all functionality is available over the RESTful interface.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph.
+This service leverages systems like as SQLite, MySQL, or PostgreSQL to store the graph data.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/extractor&#34;&gt;Extractor&lt;/a&gt; extracts dependency information from manifest files.
+This mechanism is easily pluggable to support a large range of manifest files.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;indexer&lt;/a&gt; crawls repositories looking for manifest files.
+When it discovers manifests, the contents are extracted, stored, and indexed.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Developing in Docker</title>
+      <link>https://deps.cloud/docs/contributing/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/contributing/docker/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;directions&lt;/a&gt;.
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.&lt;/p&gt;
+&lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
+&lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Managed by&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;docker&lt;/code&gt; Target&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Golang&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NodeJS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;npm run docker&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The target produces a tagged image that you can deployed using the docker deployment.&lt;/p&gt;
+&lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
+&lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Command Line</title>
+      <link>https://deps.cloud/docs/guides/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/guides/cli/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API.
 It helps obfuscate the specifics about each endpoint by encapsulating them behind a target.
 Currently, this tool provides read only access to API.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ deps get -h
@@ -993,48 +923,6 @@ Consider the following simple example.&lt;/p&gt;
 Each tier contains a list of modules that can be built in parallel.
 When one tier is complete, the next tier can be processed safely without worrying about transitive dependency issues.&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Developing in Docker</title>
-      <link>https://deps.cloud/docs/contributing/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contributing/docker/</guid>
-      <description>
-        
-        
-        &lt;p&gt;In order to start developing using Docker, first deploy the stack using the &lt;a href=&#34;https://deps.cloud/docs/deployment/docker/&#34;&gt;directions&lt;/a&gt;.
-You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.&lt;/p&gt;
-&lt;h2 id=&#34;building-local-changes&#34;&gt;Building Local Changes&lt;/h2&gt;
-&lt;p&gt;To help facilitate contributions, each project has a &lt;code&gt;docker&lt;/code&gt; target that builds the project inside a container.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Project&lt;/th&gt;
-&lt;th&gt;Managed by&lt;/th&gt;
-&lt;th&gt;&lt;code&gt;docker&lt;/code&gt; Target&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Golang&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Makefile&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;NodeJS&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;npm run docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;The target produces a tagged image that you can deployed using the docker deployment.&lt;/p&gt;
-&lt;h2 id=&#34;deploying-local-changes&#34;&gt;Deploying Local Changes&lt;/h2&gt;
-&lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

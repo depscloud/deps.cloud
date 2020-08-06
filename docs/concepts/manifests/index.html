@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/deployment/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,15 +20,24 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Deployment | deps.cloud</title><meta property="og:title" content="Deployment" />
-<meta property="og:description" content="Track, monitor, and engage with project dependents" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/deployment/" />
-<meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Deployment">
-<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Deployment"/>
-<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
+<title>Manifest Files | deps.cloud</title><meta property="og:title" content="Manifest Files" />
+<meta property="og:description" content="A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies. These dependencies come in many shapes and forms, but the most common dependency is a library. Libraries are packages containing common code that is shared between projects.
+Using this information, deps.cloud is able to build a knowledge graph. The table below demonstrates how to interpret the information extracted from various manifests. Since there is no standardization across languages, extraction may vary between implementations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/concepts/manifests/" />
+<meta property="article:modified_time" content="2020-08-05T19:05:47-07:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Manifest Files">
+<meta itemprop="description" content="A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies. These dependencies come in many shapes and forms, but the most common dependency is a library. Libraries are packages containing common code that is shared between projects.
+Using this information, deps.cloud is able to build a knowledge graph. The table below demonstrates how to interpret the information extracted from various manifests. Since there is no standardization across languages, extraction may vary between implementations.">
+<meta itemprop="dateModified" content="2020-08-05T19:05:47-07:00" />
+<meta itemprop="wordCount" content="154">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Manifest Files"/>
+<meta name="twitter:description" content="A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies. These dependencies come in many shapes and forms, but the most common dependency is a library. Libraries are packages containing common code that is shared between projects.
+Using this information, deps.cloud is able to build a knowledge graph. The table below demonstrates how to interpret the information extracted from various manifests. Since there is no standardization across languages, extraction may vary between implementations."/>
 
 
 <script type="application/javascript">
@@ -64,7 +72,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -97,7 +105,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
 			</li>
 			
 			
@@ -164,10 +172,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs">
+    <li class="collapse " id="docs">
       
       
       
@@ -181,17 +189,17 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Concepts</a>
   </li>
   <ul>
-    <li class="collapse " id="docsconcepts">
+    <li class="collapse show" id="docsconcepts">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
       
       
       
@@ -222,7 +230,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Deployment</a>
+    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Deployment</a>
   </li>
   <ul>
     <li class="collapse " id="docsdeployment">
@@ -257,10 +265,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Configuration</a>
+    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsdeploymentconfig">
+    <li class="collapse " id="docsdeploymentconfig">
       
       
       
@@ -274,10 +282,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Indexing</a>
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexing</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsdeploymentconfigindexing">
+    <li class="collapse " id="docsdeploymentconfigindexing">
       
       
       
@@ -418,8 +426,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Deployment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/concepts/manifests.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Manifest%20Files" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -448,6 +456,9 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -455,8 +466,15 @@ if (!doNotTrack) {
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/concepts/">Concepts</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/deployment/">Deployment</a>
+	<a href="https://deps.cloud/docs/concepts/manifests/">Manifest Files</a>
 </li>
 
 	</ol>
@@ -464,94 +482,117 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Deployment</h1>
-        
-	
-	<p>The deployment of deps.cloud is easy.
-While there may still be some rough edges, the intent was to make it possible for any company to drop it into place.
-The sections below provide you with details around the various deployment options.</p>
-<div class="row" style="max-width: 80%;">
-  <div class="col-sm-6 col-md-4">
+	<h1>Manifest Files</h1>
     
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/docker.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/docker/">Docker</a></h5>
-        
-        <p class="card-text">Deploy to a docker daemon or a swarm cluster.</p>
-    </div>
-</div>
-
-  </div>
-  <div class="col-sm-6 col-md-4">
-    
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/k8s.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/k8s/">Kubernetes</a></h5>
-        
-        <p class="card-text">Deploy to Kubernetes using raw manifest files.</p>
-    </div>
-</div>
-
-  </div>
-  <div class="col-sm-6 col-md-4">
-    
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/helm.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/helm/">Helm</a></h5>
-        
-        <p class="card-text">Deploy to Kubernetes using the Helm package manager.</p>
-    </div>
-</div>
-
-  </div>
-</div>
-
-        <div class="section-index">
-    
-    
-    
-    
-    
-</div>
+	       
+	<p>A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.
+These dependencies come in many shapes and forms, but the most common dependency is a library.
+Libraries are packages containing common code that is shared between projects.</p>
+<p>Using this information, deps.cloud is able to build a knowledge graph.
+The table below demonstrates how to interpret the information extracted from various manifests.
+Since there is no standardization across languages, extraction may vary between implementations.</p>
+<table>
+<thead>
+<tr>
+<th>Manifest File</th>
+<th>Example</th>
+<th>Language</th>
+<th>System</th>
+<th>Organization</th>
+<th>Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bower.json</code></td>
+<td><code>@depscloud/api</code></td>
+<td><code>node</code></td>
+<td><code>bower</code></td>
+<td><code>depscloud</code></td>
+<td><code>api</code></td>
+</tr>
+<tr>
+<td><code>build.gradle, settings.gradle</code></td>
+<td><code>com.google.guava:guava</code></td>
+<td><code>java</code></td>
+<td><code>gradle</code></td>
+<td><code>com.google.guava</code></td>
+<td><code>guava</code></td>
+</tr>
+<tr>
+<td><code>cargo.toml</code></td>
+<td><code>bytes</code></td>
+<td><code>rust</code></td>
+<td><code>cargo</code></td>
+<td><code>_</code></td>
+<td><code>bytes</code></td>
+</tr>
+<tr>
+<td><code>composer.json</code></td>
+<td><code>symfony/console</code></td>
+<td><code>php</code></td>
+<td><code>composer</code></td>
+<td><code>symfony</code></td>
+<td><code>console</code></td>
+</tr>
+<tr>
+<td><code>Godeps.json</code></td>
+<td><code>github.com/depscloud/api</code></td>
+<td><code>go</code></td>
+<td><code>godeps</code></td>
+<td><code>github.com</code></td>
+<td><code>depscloud/api</code></td>
+</tr>
+<tr>
+<td><code>go.mod</code></td>
+<td><code>github.com/depscloud/api</code></td>
+<td><code>go</code></td>
+<td><code>vgo</code></td>
+<td><code>github.com</code></td>
+<td><code>depscloud/api</code></td>
+</tr>
+<tr>
+<td><code>Gopkg.toml</code></td>
+<td><code>github.com/depscloud/api</code></td>
+<td><code>go</code></td>
+<td><code>gopkg</code></td>
+<td><code>github.com</code></td>
+<td><code>depscloud/api</code></td>
+</tr>
+<tr>
+<td><code>ivy.xml</code></td>
+<td><code>com.google.guava;guava</code></td>
+<td><code>java</code></td>
+<td><code>ivy</code></td>
+<td><code>com.google.guava</code></td>
+<td><code>guava</code></td>
+</tr>
+<tr>
+<td><code>package.json</code></td>
+<td><code>@depscloud/api</code></td>
+<td><code>node</code></td>
+<td><code>npm</code></td>
+<td><code>depscloud</code></td>
+<td><code>api</code></td>
+</tr>
+<tr>
+<td><code>pom.xml</code></td>
+<td><code>com.google.guava;guava</code></td>
+<td><code>java</code></td>
+<td><code>maven</code></td>
+<td><code>com.google.guava</code></td>
+<td><code>guava</code></td>
+</tr>
+<tr>
+<td><code>vendor.conf</code></td>
+<td><code>github.com/depscloud/api</code></td>
+<td><code>go</code></td>
+<td><code>vendor</code></td>
+<td><code>github.com</code></td>
+<td><code>depscloud/api</code></td>
+</tr>
+</tbody>
+</table>
 
 	
 		<style>
@@ -618,6 +659,7 @@ The sections below provide you with details around the various deployment option
 	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/7bed4c3fe6a179a00cc859ac2377534bf0522174">gh-53: refactored core documentation structure (#54) (7bed4c3)</a>
 </div>
 </div>
+
 
           </main>
         </div>

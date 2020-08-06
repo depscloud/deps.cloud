@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/deployment/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/deployment/config/indexing/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Deployment | deps.cloud</title><meta property="og:title" content="Deployment" />
+<title>Indexing | deps.cloud</title><meta property="og:title" content="Indexing" />
 <meta property="og:description" content="Track, monitor, and engage with project dependents" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/deployment/" />
+<meta property="og:url" content="https://deps.cloud/docs/deployment/config/indexing/" />
 <meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Deployment">
+<meta itemprop="name" content="Indexing">
 <meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Deployment"/>
+<meta name="twitter:title" content="Indexing"/>
 <meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
 
 
@@ -222,10 +222,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Deployment</a>
+    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Deployment</a>
   </li>
   <ul>
-    <li class="collapse " id="docsdeployment">
+    <li class="collapse show" id="docsdeployment">
       
       
       
@@ -274,10 +274,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Indexing</a>
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Indexing</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsdeploymentconfigindexing">
+    <li class="collapse " id="docsdeploymentconfigindexing">
       
       
       
@@ -418,8 +418,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Deployment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/config/indexing/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Indexing" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -448,6 +448,12 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -455,8 +461,22 @@ if (!doNotTrack) {
 
 
 
-<li class="breadcrumb-item active" aria-current="page">
+<li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/deployment/">Deployment</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/deployment/config/">Configuration</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://deps.cloud/docs/deployment/config/indexing/">Indexing</a>
 </li>
 
 	</ol>
@@ -464,12 +484,17 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Deployment</h1>
+	<h1>Indexing</h1>
         
 	
-	<p>The deployment of deps.cloud is easy.
-While there may still be some rough edges, the intent was to make it possible for any company to drop it into place.
-The sections below provide you with details around the various deployment options.</p>
+	<p>This section provides guidance on how to configure the underlying system.
+Keep in mind, how you update the configuration depends on your deployment strategy.
+If you&rsquo;re using Docker, you will be changing the <code>config.yaml</code> file.
+If you&rsquo;re using Kubernetes, you will need to change the <code>config.yaml</code> key in the <code>indexer</code> <code>Secret</code>.</p>
+<p>Discovery is responsible for the discovery of repositories from different sources.
+These sources include systems like BitBucket, GitHub, and GitLab.
+Configuring the system to read from these different sources is rather easy.
+See the following configuration guides on how to configure the system for your corresponding provider.</p>
 <div class="row" style="max-width: 80%;">
   <div class="col-sm-6 col-md-4">
     
@@ -482,15 +507,15 @@ The sections below provide you with details around the various deployment option
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
         
-        <img src="/images/docker.png" style="width:158px;"/>
+        <img src="/images/github.png" style="width:158px;"/>
         
     </div>
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/deployment/docker/">Docker</a></h5>
+        <h5 class="card-title"><a href="/docs/integrations/github/">GitHub</a></h5>
         
-        <p class="card-text">Deploy to a docker daemon or a swarm cluster.</p>
+        <p class="card-text">Index user and organization repositories.</p>
     </div>
 </div>
 
@@ -506,15 +531,15 @@ The sections below provide you with details around the various deployment option
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
         
-        <img src="/images/k8s.png" style="width:158px;"/>
+        <img src="/images/gitlab.png" style="width:158px;"/>
         
     </div>
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/deployment/k8s/">Kubernetes</a></h5>
+        <h5 class="card-title"><a href="/docs/integrations/gitlab/">GitLab</a></h5>
         
-        <p class="card-text">Deploy to Kubernetes using raw manifest files.</p>
+        <p class="card-text">Index user and group repositories.</p>
     </div>
 </div>
 
@@ -530,15 +555,15 @@ The sections below provide you with details around the various deployment option
 <div class="card" style="margin-bottom: 30px; border-color: white">
     <div class="text-center" style="font-size: 8rem;">
         
-        <img src="/images/helm.png" style="width:158px;"/>
+        <img src="/images/bitbucket.png" style="width:158px;"/>
         
     </div>
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/deployment/helm/">Helm</a></h5>
+        <h5 class="card-title"><a href="/docs/integrations/bitbucket/">BitBucket</a></h5>
         
-        <p class="card-text">Deploy to Kubernetes using the Helm package manager.</p>
+        <p class="card-text">Index user and team repositories.</p>
     </div>
 </div>
 

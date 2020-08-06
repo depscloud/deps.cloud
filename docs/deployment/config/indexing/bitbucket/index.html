@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/deployment/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,15 +20,24 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Deployment | deps.cloud</title><meta property="og:title" content="Deployment" />
-<meta property="og:description" content="Track, monitor, and engage with project dependents" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/deployment/" />
-<meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Deployment">
-<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Deployment"/>
-<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
+<title>Bitbucket | deps.cloud</title><meta property="og:title" content="Bitbucket" />
+<meta property="og:description" content="BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence). Below is the complete set of options that can be used to configure your integration. Either basic or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found that basic using an application password has been the easiest to configure.
+accounts:# full bitbucket schema- bitbucket:users:- &lt;username&gt; teams:- &lt;teamname&gt; strategy: SSH | HTTPbasic:username:&lt;username&gt; password: &lt;app_password&gt;oauth:token:&lt;oauth_token&gt; application_id: &lt;application_id&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/deployment/config/indexing/bitbucket/" />
+<meta property="article:modified_time" content="2020-08-05T19:05:47-07:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Bitbucket">
+<meta itemprop="description" content="BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence). Below is the complete set of options that can be used to configure your integration. Either basic or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found that basic using an application password has been the easiest to configure.
+accounts:# full bitbucket schema- bitbucket:users:- &lt;username&gt; teams:- &lt;teamname&gt; strategy: SSH | HTTPbasic:username:&lt;username&gt; password: &lt;app_password&gt;oauth:token:&lt;oauth_token&gt; application_id: &lt;application_id&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations.">
+<meta itemprop="dateModified" content="2020-08-05T19:05:47-07:00" />
+<meta itemprop="wordCount" content="154">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bitbucket"/>
+<meta name="twitter:description" content="BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence). Below is the complete set of options that can be used to configure your integration. Either basic or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found that basic using an application password has been the easiest to configure.
+accounts:# full bitbucket schema- bitbucket:users:- &lt;username&gt; teams:- &lt;teamname&gt; strategy: SSH | HTTPbasic:username:&lt;username&gt; password: &lt;app_password&gt;oauth:token:&lt;oauth_token&gt; application_id: &lt;application_id&gt;Due to the variance in each of the client, there are a few oddities between each of the implementations."/>
 
 
 <script type="application/javascript">
@@ -64,7 +72,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -97,7 +105,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
 			</li>
 			
 			
@@ -164,10 +172,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs">
+    <li class="collapse " id="docs">
       
       
       
@@ -222,7 +230,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Deployment</a>
+    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Deployment</a>
   </li>
   <ul>
     <li class="collapse " id="docsdeployment">
@@ -257,10 +265,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Configuration</a>
+    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsdeploymentconfig">
+    <li class="collapse " id="docsdeploymentconfig">
       
       
       
@@ -274,7 +282,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Indexing</a>
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Indexing</a>
   </li>
   <ul>
     <li class="collapse show" id="docsdeploymentconfigindexing">
@@ -296,7 +304,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexingbitbucket" href="/docs/deployment/config/indexing/bitbucket/">Bitbucket</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdeploymentconfigindexingbitbucket" href="/docs/deployment/config/indexing/bitbucket/">Bitbucket</a>
       
       
     </li>
@@ -418,8 +426,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Deployment" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/config/indexing/bitbucket.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Bitbucket" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -448,6 +456,15 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -455,8 +472,29 @@ if (!doNotTrack) {
 
 
 
-<li class="breadcrumb-item active" aria-current="page">
+<li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/deployment/">Deployment</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/deployment/config/">Configuration</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/deployment/config/indexing/">Indexing</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://deps.cloud/docs/deployment/config/indexing/bitbucket/">Bitbucket</a>
 </li>
 
 	</ol>
@@ -464,95 +502,43 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Deployment</h1>
-        
-	
-	<p>The deployment of deps.cloud is easy.
-While there may still be some rough edges, the intent was to make it possible for any company to drop it into place.
-The sections below provide you with details around the various deployment options.</p>
-<div class="row" style="max-width: 80%;">
-  <div class="col-sm-6 col-md-4">
+	<h1>Bitbucket</h1>
     
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/docker.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/docker/">Docker</a></h5>
-        
-        <p class="card-text">Deploy to a docker daemon or a swarm cluster.</p>
-    </div>
-</div>
-
-  </div>
-  <div class="col-sm-6 col-md-4">
-    
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/k8s.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/k8s/">Kubernetes</a></h5>
-        
-        <p class="card-text">Deploy to Kubernetes using raw manifest files.</p>
-    </div>
-</div>
-
-  </div>
-  <div class="col-sm-6 col-md-4">
-    
-
-
-
-
-
-
-<div class="card" style="margin-bottom: 30px; border-color: white">
-    <div class="text-center" style="font-size: 8rem;">
-        
-        <img src="/images/helm.png" style="width:158px;"/>
-        
-    </div>
-
-    <div class="card-body text-center">
-        
-        <h5 class="card-title"><a href="/docs/deployment/helm/">Helm</a></h5>
-        
-        <p class="card-text">Deploy to Kubernetes using the Helm package manager.</p>
-    </div>
-</div>
-
-  </div>
-</div>
-
-        <div class="section-index">
-    
-    
-    
-    
-    
-</div>
-
+	       
+	<p>BitBucket is a common provider used by those seeking private repository support with great integration into existing Atlassian products (like Jira and Confluence).
+Below is the complete set of options that can be used to configure your integration.
+Either <code>basic</code> or <code>oauth</code> should be provided.
+Otherwise, you will only have access to public repositories.
+I&rsquo;ve found that <code>basic</code> using an <a href="https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html">application password</a> has been the easiest to configure.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># full bitbucket schema</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">bitbucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">users</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;username<span style="color:#8f5902;font-style:italic">&gt;
+</span><span style="color:#8f5902;font-style:italic">    teams:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;teamname<span style="color:#8f5902;font-style:italic">&gt;
+</span><span style="color:#8f5902;font-style:italic">    strategy: SSH | HTTP</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">basic</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">username</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;username<span style="color:#8f5902;font-style:italic">&gt;
+</span><span style="color:#8f5902;font-style:italic">      password: &lt;app_password&gt;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">oauth</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;oauth_token<span style="color:#8f5902;font-style:italic">&gt;
+</span><span style="color:#8f5902;font-style:italic">      application_id: &lt;application_id&gt;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><p>Due to the variance in each of the client, there are a few oddities between each of the implementations.
+While we work on getting parity between each of the providers take note that this implementation:</p>
+<ul>
+<li>does not pull groups for the authenticated user</li>
+<li>does not pull groups for the configured users</li>
+<li>pulls repositories for all configured users and groups</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Crawl all of Atlassian&rsquo;s public repositories on <a href="https://api.bitbucket.org/2.0/repositories/atlassian">BitBucket</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">bitbucket</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">teams</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- atlassian<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HTTP<span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -618,6 +604,7 @@ The sections below provide you with details around the various deployment option
 	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/7bed4c3fe6a179a00cc859ac2377534bf0522174">gh-53: refactored core documentation structure (#54) (7bed4c3)</a>
 </div>
 </div>
+
 
           </main>
         </div>

@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.1" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Command Line | deps.cloud</title><meta property="og:title" content="Command Line" />
+<meta property="og:description" content="Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/guides/cli/" />
+<meta property="article:modified_time" content="2020-08-05T19:05:47-07:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Command Line">
+<meta itemprop="description" content="Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command.">
+<meta itemprop="dateModified" content="2020-08-05T19:05:47-07:00" />
+<meta itemprop="wordCount" content="776">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Command Line"/>
+<meta name="twitter:description" content="Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
+$ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143087272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.c1ac849557789704f404f365d66e5664bd699a9dad24ac55a210015944584e64.css" as="style">
+<link href="/scss/main.min.c1ac849557789704f404f365d66e5664bd699a9dad24ac55a210015944584e64.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo">
+			<img style="max-height: 35px;" src="/images/depscloud-1.png"/>
+		</span>
+		<span class="text-lowercase" style="vertical-align: bottom; font-weight: bold;">
+			deps.cloud
+		</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.188171a3f12b0c574e5ba58d7ab52120a1d3aa18f78f154fcddbd22800e43a41381cc4300d2d6a1ae935fb51420e2a62b3f6b45afb23bbe3bfbd290136e44b3f.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.188171a3f12b0c574e5ba58d7ab52120a1d3aa18f78f154fcddbd22800e43a41381cc4300d2d6a1ae935fb51420e2a62b3f6b45afb23bbe3bfbd290136e44b3f.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsconcepts">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deployment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeployment">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentdocker" href="/docs/deployment/docker/">Docker</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentk8s" href="/docs/deployment/k8s/">Kubernetes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymenthelm" href="/docs/deployment/helm/">Helm</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deployment/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeploymentconfig">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeploymentconfigindexing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexinggithub" href="/docs/deployment/config/indexing/github/">GitHub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexinggitlab" href="/docs/deployment/config/indexing/gitlab/">GitLab</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexingbitbucket" href="/docs/deployment/config/indexing/bitbucket/">Bitbucket</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsguides">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/contributing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docscontributing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingcode-of-conduct" href="/docs/contributing/code-of-conduct/">Code of Conduct</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingcommunity" href="/docs/contributing/community/">Community</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributinggit" href="/docs/contributing/git/">Working with Git</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontributingdocker" href="/docs/contributing/docker/">Developing in Docker</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/guides/cli.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Command%20Line" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#use-cases">Use Cases</a>
+      <ul>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#dependents">Dependents</a></li>
+        <li><a href="#dependencies">Dependencies</a></li>
+        <li><a href="#topology">Topology</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/guides/">User Guides</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://deps.cloud/docs/guides/cli/">Command Line</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Command Line</h1>
+    
+	       
+	<p>Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API.
+It helps obfuscate the specifics about each endpoint by encapsulating them behind a target.
+Currently, this tool provides read only access to API.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get -h
+Retrieve information from the graph
+
+Usage:
+  deps get <span style="color:#ce5c00;font-weight:bold">[</span>command<span style="color:#ce5c00;font-weight:bold">]</span>
+
+Available Commands:
+  dependencies Get the list of modules the given module depends on
+  dependents   Get the list of modules that depend on the given module
+  modules      Get a list of modules from the service
+  sources      Get a list of <span style="color:#204a87">source</span> repositories from the service
+
+Flags:
+  -h, --help   <span style="color:#204a87">help</span> <span style="color:#204a87;font-weight:bold">for</span> get
+
+Use <span style="color:#4e9a06">&#34;deps get [command] --help&#34;</span> <span style="color:#204a87;font-weight:bold">for</span> more information about a command.
+</code></pre></div><h2 id="installation">Installation</h2>
+<p>You can install our CLI a few different ways.
+On Ubuntu, you can tap our <code>apt</code> repository.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#204a87">echo</span> <span style="color:#4e9a06">&#34;deb [trusted=yes] https://apt.fury.io/depscloud/ /&#34;</span> <span style="color:#000;font-weight:bold">|</span> sudo tee /etc/apt/sources.list.d/depscloud.list
+$ sudo apt-get update
+$ sudo apt-get install depscloud-cli
+
+$ deps version
+deps <span style="color:#ce5c00;font-weight:bold">{</span>version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><p>On OSX, you can tap our <a href="https://brew.sh/">Homebrew</a> repository.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ brew tap depscloud/tap
+$ brew install depscloud-cli
+
+$ deps version
+deps <span style="color:#ce5c00;font-weight:bold">{</span>version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z<span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><p>Finally, you can download one of the latest binaries from GitHub releases.</p>
+<p><a href="https://github.com/depscloud/cli/releases/latest">https://github.com/depscloud/cli/releases/latest</a></p>
+<h2 id="configuration">Configuration</h2>
+<p>The <code>deps</code> can be configured to point at a custom deployment of the deps.cloud ecosystem.
+This is done using the <code>DEPSCLOUD_BASE_URL</code> environment variable.
+Here&rsquo;s an example of how to configure it to use the public API (default behavior)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://api.deps.cloud&#34;</span>
+</code></pre></div><p>If you&rsquo;re trying things out locally, you can also point it at an instance running in <a href="/docs/deployment/docker">docker</a>.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#204a87">export</span> <span style="color:#000">DEPSCLOUD_BASE_URL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;http://localhost:8080&#34;</span>
+</code></pre></div><h2 id="use-cases">Use Cases</h2>
+<p>There are many use cases that this tool supports.
+This section details several sample queries to help get folks started.</p>
+<h3 id="modules">Modules</h3>
+<p>Modules represent both libraries and applications in the dependency graph.
+These can be queried for in one of two ways.
+The first option is to list all modules the service knows about.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get modules
+...
+</code></pre></div><p>The second option is to list all modules produced by a given repository.
+To query for this information, simply add the <code>--url</code> or <code>-u</code> flag.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get modules -u https://github.com/depscloud/api.git
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;vgo&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;latest&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;node&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;npm&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;0.1.0&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;node&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;depscloud&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;api&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+</code></pre></div><h3 id="sources">Sources</h3>
+<p>Currently, a source represents a repository.
+It can later be used to represent other sources of dependency information (like <a href="https://www.sonatype.com/product-nexus-repository">Nexus</a> and other artifact repositories).
+Similar to <code>modules</code>, <code>sources</code> can queried multiple ways.
+The first option is to list all sources the service knowns about.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get sources
+...
+</code></pre></div><p>The second option is to list all sources for a given module.
+To query or this information, the <code>--language</code>, <code>--organization</code>, and <code>--module</code> flags must be provided.
+Alternatively, the corresponding shorthands <code>-l</code>, <code>-o</code>, and <code>-m</code> can be used respectively.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get sources -l go -o github.com -m depscloud/api
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;source&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;url&#34;</span>:<span style="color:#4e9a06">&#34;https://github.com/depscloud/api.git&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#4e9a06">&#34;manages&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;system&#34;</span>:<span style="color:#4e9a06">&#34;vgo&#34;</span>,<span style="color:#4e9a06">&#34;version&#34;</span>:<span style="color:#4e9a06">&#34;latest&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+</code></pre></div><h3 id="dependents">Dependents</h3>
+<p>Dependent modules are those who consume the module you&rsquo;re querying for.
+That is, modules who list your module as a dependency.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents -l go -o github.com -m depscloud/api
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.1.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+</code></pre></div><h3 id="dependencies">Dependencies</h3>
+<p>Dependencies are the modules that your module requires.
+This should rarely differ from the modules you list in your appropriate manifest file (<code>package.json</code>, <code>go.mod</code>, etc.)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependencies -l go -o github.com -m depscloud/api
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.3.0&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;gogo/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.3.2&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;indirect&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/text&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.0.0-20190628185345-da137c7871d7&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;indirect&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/net&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.3.2&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;golang/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.0.0-20190916214212-f660b8655731&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;genproto&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v0.0.0-20190626221950-04f50cda93cb&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;indirect&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/sys&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.11.2&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc-ecosystem/grpc-gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;depends&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;version_constraint&#34;</span>:<span style="color:#4e9a06">&#34;v1.23.1&#34;</span>,<span style="color:#4e9a06">&#34;scopes&#34;</span>:<span style="color:#ce5c00;font-weight:bold">[</span><span style="color:#4e9a06">&#34;direct&#34;</span><span style="color:#ce5c00;font-weight:bold">]}</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc&#34;</span><span style="color:#ce5c00;font-weight:bold">}}</span>
+</code></pre></div><h3 id="topology">Topology</h3>
+<p>Topologies are one of the most useful elements of a dependency graph.
+They can provide you with the full set of transitive modules, build orders, and notions of parallelism.</p>
+<p>This is largely because topological queries can be resource intensive.
+This is due to the fact that the subgraph needs to be buffered before any results can be returned.
+By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.</p>
+<p>Topologies can be queried in both the <code>dependencies</code> and <code>dependents</code> direction.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependencies topology -l go -o github.com -m depscloud/api
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;gogo/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/text&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/net&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;golang/protobuf&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;genproto&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;x/sys&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc-ecosystem/grpc-gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;google.golang.org&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;grpc&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents topology -l go -o github.com -m depscloud/api
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/cli&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><p>By adding the <code>--tiered</code> flag, you will get a structured set of results back.
+This is great for building automation around your source code as it not only identifies the order in which things should be built, but it also provides tiers where parallel builds can occur.
+Consider the following simple example.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependents topology -l go -o github.com -m depscloud/api --tiered
+<span style="color:#ce5c00;font-weight:bold">[{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/api&#34;</span><span style="color:#ce5c00;font-weight:bold">}]</span>
+<span style="color:#ce5c00;font-weight:bold">[{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/gateway&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/cli&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/tracker&#34;</span><span style="color:#ce5c00;font-weight:bold">}</span>,<span style="color:#ce5c00;font-weight:bold">{</span><span style="color:#4e9a06">&#34;language&#34;</span>:<span style="color:#4e9a06">&#34;go&#34;</span>,<span style="color:#4e9a06">&#34;organization&#34;</span>:<span style="color:#4e9a06">&#34;github.com&#34;</span>,<span style="color:#4e9a06">&#34;module&#34;</span>:<span style="color:#4e9a06">&#34;depscloud/indexer&#34;</span><span style="color:#ce5c00;font-weight:bold">}]</span>
+</code></pre></div><p>In this case, we only have two tiers.
+Each tier contains a list of modules that can be built in parallel.
+When one tier is complete, the next tier can be processed safely without worrying about transitive dependency issues.</p>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 5, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/7bed4c3fe6a179a00cc859ac2377534bf0522174">gh-53: refactored core documentation structure (#54) (7bed4c3)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark text-white py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing List" aria-label="User mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/depscloud">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for everyone</div>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/depscloud/">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing List" aria-label="Developer mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for developers</div>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
