@@ -5,12 +5,6 @@ aliases:
 - /docs/cli/
 ---
 
-* Repository: https://github.com/depscloud/cli
-* Runtime: [Golang](https://golang.org/)
-* Language: [Golang](https://golang.org/)
-
-## Background
-
 Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API.
 It helps obfuscate the specifics about each endpoint by encapsulating them behind a target.
 Currently, this tool provides read only access to API.
