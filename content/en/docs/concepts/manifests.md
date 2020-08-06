@@ -11,19 +11,19 @@ These dependencies come in many shapes and forms, but the most common dependency
 Libraries are packages containing common code that is shared between projects.
 
 Using this information, deps.cloud is able to build a knowledge graph.
-The table below demonstrates how this information is extracted from various manifests.
+The table below demonstrates how to interpret the information extracted from various manifests.
 Since there is no standardization across languages, extraction may vary between implementations.
 
-| Manifest File                   | Language | System     | Example                     | Organization       | Module           |
-|---------------------------------|----------|------------|-----------------------------|--------------------|------------------|
-| `bower.json`                    | `node`   | `bower`    | `@depscloud/api`            | `depscloud`        | `api`            |
-| `build.gradle, settings.gradle` | `java`   | `gradle`   | `com.google.guava:guava`    | `com.google.guava` | `guava`          |
-| `cargo.toml`                    | `rust`   | `cargo`    | `bytes`                     | `_`                | `bytes`          |
-| `composer.json`                 | `php`    | `composer` | `symfony/console`           | `symfony`          | `console`        |
-| `Godeps.json`                   | `go`     | `godeps`   | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
-| `go.mod`                        | `go`     | `vgo`      | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
-| `Gopkg.toml`                    | `go`     | `gopkg`    | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
-| `ivy.xml`                       | `java`   | `ivy`      | `com.google.guava;guava`    | `com.google.guava` | `guava`          |
-| `package.json`                  | `node`   | `npm`      | `@depscloud/api`            | `depscloud`        | `api`            |
-| `pom.xml`                       | `java`   | `maven`    | `com.google.guava;guava`    | `com.google.guava` | `guava`          |
-| `vendor.conf`                   | `go`     | `vendor`   | `github.com/depscloud/api`  | `github.com`       | `depscloud/api`  |
+| Manifest File                   | Example                     | Language | System     | Organization       | Module           |
+|---------------------------------|-----------------------------|----------|------------|--------------------|------------------|
+| `bower.json`                    | `@depscloud/api`            | `node`   | `bower`    | `depscloud`        | `api`            |
+| `build.gradle, settings.gradle` | `com.google.guava:guava`    | `java`   | `gradle`   | `com.google.guava` | `guava`          |
+| `cargo.toml`                    | `bytes`                     | `rust`   | `cargo`    | `_`                | `bytes`          |
+| `composer.json`                 | `symfony/console`           | `php`    | `composer` | `symfony`          | `console`        |
+| `Godeps.json`                   | `github.com/depscloud/api`  | `go`     | `godeps`   | `github.com`       | `depscloud/api`  |
+| `go.mod`                        | `github.com/depscloud/api`  | `go`     | `vgo`      | `github.com`       | `depscloud/api`  |
+| `Gopkg.toml`                    | `github.com/depscloud/api`  | `go`     | `gopkg`    | `github.com`       | `depscloud/api`  |
+| `ivy.xml`                       | `com.google.guava;guava`    | `java`   | `ivy`      | `com.google.guava` | `guava`          |
+| `package.json`                  | `@depscloud/api`            | `node`   | `npm`      | `depscloud`        | `api`            |
+| `pom.xml`                       | `com.google.guava;guava`    | `java`   | `maven`    | `com.google.guava` | `guava`          |
+| `vendor.conf`                   | `github.com/depscloud/api`  | `go`     | `vendor`   | `github.com`       | `depscloud/api`  |

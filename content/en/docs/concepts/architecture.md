@@ -6,60 +6,25 @@ aliases:
 - /docs/architecture/
 ---
 
-This page serves as documentation of the open source architecture for the deps.cloud system.
-
-## Overview
+The following diagram illustrates the general system deployed on top of a kubernetes cluster.
 
 ![arch](/images/arch.png)
 
-While there are several components that make up the ecosystem, each of them serve their own purpose.
+### Actors
 
-### Components
+[User CLI](https://github.com/depscloud/cli) represents a single type of consumer.
+The command line interface (CLI) allows individuals to explore data stored in deps.cloud.
+Other types of clients include processes written using one of our SDKs.
 
 [Gateway](https://github.com/depscloud/gateway) is the face of the API services.
-It provides a RESTful HTTP interface to the backing gRPC services.
+It provides both RESTful and gRPC interfaces to clients of the system.
+Not all functionality is available over the RESTful interface.
 
-[Tracker](https://github.com/depscloud/tracker) provides several APIs for navigating the graph of information.
-This service leverages other storage systems such as SQLite or MySQL to store the graph data.
+[Tracker](https://github.com/depscloud/tracker) provides several APIs for navigating the graph.
+This service leverages systems like as SQLite, MySQL, or PostgreSQL to store the graph data.
 
-[Extractor](https://github.com/depscloud/extractor) is responsible for looking at different manifest files and extracting dependency information from them.
-This mechanism is easily pluggable to support a large range of different manifest files.
+[Extractor](https://github.com/depscloud/extractor) extracts dependency information from manifest files.
+This mechanism is easily pluggable to support a large range of manifest files.
 
-The [indexer](https://github.com/depscloud/indexer) is responsible for fetching repository information, cloning and crawling it, leveraging the extractor and tracker where appropriate.
-
-The [command line interface](https://github.com/depscloud/cli) or CLI provides end users with an easy ability to query the API.
-See the [CLI docs](/docs/cli/) for more information.
-
-## Design Decisions
-
-As this system was built out, there were several key decisions that were made along the way.
-In this section, I capture several of the frequently asked questions and document the rationale behind them.
-
-### _How should services communicate?_
-
-There are many different ways services can communicate.
-REST and [gRPC](https://grpc.io) are simply two of them.
-While there are many options out there, there were many benefits that came along with leveraging gRPC.
-This includes, but is not limited to:
-
-* contractual API definitions using [Protocol Buffers](https://developers.google.com/protocol-buffers)
-* support for multi-language systems
-* built in client side load balancing and health checking   
-
-In the end, I decided to leverage gRPC.
-As a result, it's had a great impact on the ecosystem.
-It allowed parts to be prototyped in one language, and rewritten when they didn't scale.
-Adding REST support was easy with the help of the [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) project.
-
-### _How should the data be stored?_
-
-When you think of a dependency graph, it's easy to jump to the conclusion to use one of the existing [graph databases](https://en.wikipedia.org/wiki/Graph_database) out there.
-However, when working with folks in the open source community, it's hard to find people with prior experience on graph databases.
-Most people are still more familiar with things like [MySQL](https://www.mysql.com/) or [MongoDB](https://www.mongodb.com/).
-
-Knowing this layer of the stack was likely to be swapped out with Company X's preferred store, I wanted it to be pluggable.
-So the first implementation was on top of an SQL system.
-From there, we were able to extract a simple service interface.
-This makes it easy to swap the storage technology out for different solutions.
-
-For more information on the data layer, see the [Data Model](/docs/data-model/) documentation.
+The [indexer](https://github.com/depscloud/indexer) crawls repositories looking for manifest files.
+When it discovers manifests, the contents are extracted, stored, and indexed. 
