@@ -25,11 +25,7 @@
         &lt;p&gt;This section provides guidance on how to configure the underlying system.
 Keep in mind, how you update the configuration depends on your deployment strategy.
 If you&amp;rsquo;re using Docker, you will be changing the &lt;code&gt;config.yaml&lt;/code&gt; file.
-If you&amp;rsquo;re using Kubernetes, you will need to change the &lt;code&gt;config.yaml&lt;/code&gt; key in the &lt;code&gt;indexer&lt;/code&gt; &lt;code&gt;Secret&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Discovery is responsible for the discovery of repositories from different sources.
-These sources include systems like BitBucket, GitHub, and GitLab.
-Configuring the system to read from these different sources is rather easy.
-See the following configuration guides on how to configure the system for your corresponding provider.&lt;/p&gt;
+If you&amp;rsquo;re using Kubernetes, you will need to change the &lt;code&gt;config.yaml&lt;/code&gt; key in the &lt;code&gt;depscloud-indexer&lt;/code&gt; &lt;code&gt;Secret&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;row&#34; style=&#34;max-width: 80%;&#34;&gt;
   &lt;div class=&#34;col-sm-6 col-md-4&#34;&gt;
     
@@ -48,7 +44,7 @@ See the following configuration guides on how to configure the system for your c
 
     &lt;div class=&#34;card-body text-center&#34;&gt;
         
-        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/integrations/github/&#34;&gt;GitHub&lt;/a&gt;&lt;/h5&gt;
+        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/github/&#34;&gt;GitHub&lt;/a&gt;&lt;/h5&gt;
         
         &lt;p class=&#34;card-text&#34;&gt;Index user and organization repositories.&lt;/p&gt;
     &lt;/div&gt;
@@ -72,7 +68,7 @@ See the following configuration guides on how to configure the system for your c
 
     &lt;div class=&#34;card-body text-center&#34;&gt;
         
-        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/integrations/gitlab/&#34;&gt;GitLab&lt;/a&gt;&lt;/h5&gt;
+        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/gitlab/&#34;&gt;GitLab&lt;/a&gt;&lt;/h5&gt;
         
         &lt;p class=&#34;card-text&#34;&gt;Index user and group repositories.&lt;/p&gt;
     &lt;/div&gt;
@@ -96,7 +92,7 @@ See the following configuration guides on how to configure the system for your c
 
     &lt;div class=&#34;card-body text-center&#34;&gt;
         
-        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/integrations/bitbucket/&#34;&gt;BitBucket&lt;/a&gt;&lt;/h5&gt;
+        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/bitbucket/&#34;&gt;BitBucket&lt;/a&gt;&lt;/h5&gt;
         
         &lt;p class=&#34;card-text&#34;&gt;Index user and team repositories.&lt;/p&gt;
     &lt;/div&gt;

@@ -114,7 +114,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9eac46273e6d36ac3571a5e41873bec225278f4b29755cf0a83d93bee44ec452c836335c715da9df5f06fd33cfb273006d5ae5c9611be89f72303d6f7dc86fa8.json"
+  data-offline-search-index-json-src="/offline-search-index.0aee5add2b2d288e96818cf4439ca91957ddd6dce9fd40af8b5ff6ed55445103ee916ceb4187023e29b365b6ea6711b25496197c982b113cdd026d6bb974bdd9.json"
   data-offline-search-base-href="/"
 >
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9eac46273e6d36ac3571a5e41873bec225278f4b29755cf0a83d93bee44ec452c836335c715da9df5f06fd33cfb273006d5ae5c9611be89f72303d6f7dc86fa8.json"
+  data-offline-search-index-json-src="/offline-search-index.0aee5add2b2d288e96818cf4439ca91957ddd6dce9fd40af8b5ff6ed55445103ee916ceb4187023e29b365b6ea6711b25496197c982b113cdd026d6bb974bdd9.json"
   data-offline-search-base-href="/"
 >
 
@@ -496,11 +496,7 @@ if (!doNotTrack) {
 	<p>This section provides guidance on how to configure the underlying system.
 Keep in mind, how you update the configuration depends on your deployment strategy.
 If you&rsquo;re using Docker, you will be changing the <code>config.yaml</code> file.
-If you&rsquo;re using Kubernetes, you will need to change the <code>config.yaml</code> key in the <code>indexer</code> <code>Secret</code>.</p>
-<p>Discovery is responsible for the discovery of repositories from different sources.
-These sources include systems like BitBucket, GitHub, and GitLab.
-Configuring the system to read from these different sources is rather easy.
-See the following configuration guides on how to configure the system for your corresponding provider.</p>
+If you&rsquo;re using Kubernetes, you will need to change the <code>config.yaml</code> key in the <code>depscloud-indexer</code> <code>Secret</code>.</p>
 <div class="row" style="max-width: 80%;">
   <div class="col-sm-6 col-md-4">
     
@@ -519,7 +515,7 @@ See the following configuration guides on how to configure the system for your c
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/integrations/github/">GitHub</a></h5>
+        <h5 class="card-title"><a href="/docs/deployment/config/indexing/github/">GitHub</a></h5>
         
         <p class="card-text">Index user and organization repositories.</p>
     </div>
@@ -543,7 +539,7 @@ See the following configuration guides on how to configure the system for your c
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/integrations/gitlab/">GitLab</a></h5>
+        <h5 class="card-title"><a href="/docs/deployment/config/indexing/gitlab/">GitLab</a></h5>
         
         <p class="card-text">Index user and group repositories.</p>
     </div>
@@ -567,7 +563,7 @@ See the following configuration guides on how to configure the system for your c
 
     <div class="card-body text-center">
         
-        <h5 class="card-title"><a href="/docs/integrations/bitbucket/">BitBucket</a></h5>
+        <h5 class="card-title"><a href="/docs/deployment/config/indexing/bitbucket/">BitBucket</a></h5>
         
         <p class="card-text">Index user and team repositories.</p>
     </div>
@@ -646,7 +642,7 @@ See the following configuration guides on how to configure the system for your c
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/cfb9c289606178ff7983e2189dc2ee68c33f42ab">added more on traversals (cfb9c28)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/700b7256960fcb5a2af8b939baae98372f979f2e">added content to storage landing (700b725)</a>
 </div>
 </div>
 
