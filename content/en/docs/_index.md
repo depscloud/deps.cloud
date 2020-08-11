@@ -11,7 +11,7 @@ aliases:
 
 deps.cloud is a tool built to help companies understand how projects relate to one another.
 It does this by detecting dependencies defined in common [manifest files](/docs/concepts/manifests/).
-Using this information, we're able to construct a dependency graph.
+Using this information, we're able to construct a [dependency graph](/docs/concepts/graphs/).
 As a result we're able to answer questions like:
 
 * Which projects have been indexed?

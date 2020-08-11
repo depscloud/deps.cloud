@@ -1,7 +1,7 @@
 ---
 title: "Data Model"
 linkTitle: "Data Model"
-weight: 30
+weight: 20
 aliases:
 - /docs/data-model/
 ---
@@ -36,3 +36,9 @@ It contains information about how a given module is managed such as the toolchai
 *Depends* represents the relationship between two *modules*.
 It contains information about how the modules depend on one another.
 This includes things like version constraint, scopes, and a reference to the source.
+
+## Next Steps
+
+To learn about how information is extracted, head over to the [manifest file](/docs/concepts/manifests/) documentation.
+
+To learn more about how the system is deployed, head over to the [architecture](/docs/concepts/architecture/) documentation.
