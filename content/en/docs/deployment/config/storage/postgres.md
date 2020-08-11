@@ -17,3 +17,6 @@ draft: true
 Compatibility with [CockroachDB] has not yet been tested.
 Since CockroachBD claims to be PostgreSQL compatible, there shouldn't be any issues.
 Contributions are welcome!
+
+[PostgreSQL]: https://www.postgresql.org/
+[CockroachDB]: https://www.cockroachlabs.com/

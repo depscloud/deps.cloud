@@ -23,3 +23,7 @@ Contributions are welcome!
 Compatibility with [Vitess] has not yet been tested.
 Since Vitess claims to be MySQL compatible, there shouldn't be any issues.
 Contributions are welcome!
+
+[MySQL]: https://www.mysql.com/
+[MariaDB]: https://mariadb.org/
+[Vitess]: https://vitess.io/
