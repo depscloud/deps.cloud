@@ -84,8 +84,8 @@ metadata:
   name: depscloud-tracker
 stringData:
   STORAGE_DRIVER: mysql
-  STORAGE_ADDRESS: user:password@tcp(mysql:3306)/depscloud
-  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql-slave:3306)/depscloud
+  STORAGE_ADDRESS: user-rw:password@tcp(mysql:3306)/depscloud
+  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql:3306)/depscloud
 EOF
 ```
 
