@@ -17,17 +17,17 @@ I've found configuring the [`private` token](https://docs.gitlab.com/ee/user/pro
 accounts:
 # full gitlab schema
 - gitlab:
-    base_url: <base_url>
+    base_url: "<base_url>"
     users:
-    - <username>
+    - "<username>"
     groups:
-    - <groupname>
-    strategy: SSH | HTTP
+    - "<groupname>"
+    strategy: "SSH | HTTP"
     private:
-      token: <private_token>
+      token: "<private_token>"
     oauth:
-      token: <oauth_token>
-      application_id: <application_id>
+      token: "<oauth_token>"
+      application_id: "<application_id>"
 ```
 
 Due to the variance in each of the client, there are a few oddities between each of the implementations.

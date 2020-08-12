@@ -15,18 +15,18 @@ Below, you'll find the full set of configuration options that can be specified f
 accounts:
 # full github schema
 - github:
-    base_url: <base_url>
-    upload_url: <base_url>
+    base_url: "<base_url>"
+    upload_url: "<base_url>"
     users:
-    - <username>
+    - "<username>"
     organizations:
-    - <organization>
-    strategy: SSH | HTTP
+    - "<organization>"
+    strategy: "SSH | HTTP"
     oauth2:
-      token: <oauth_token>
-      token_type: <token_type>
-      refresh_token: <refresh_token>
-      expiry: <expiry>
+      token: "<oauth_token>"
+      token_type: "<token_type>"
+      refresh_token: "<refresh_token>"
+      expiry: "<expiry>"
 ```
 
 Due to the variance in each of the client, there are a few oddities between each of the implementations.

@@ -17,16 +17,16 @@ accounts:
 # full bitbucket schema
 - bitbucket:
     users:
-    - <username>
+    - "<username>"
     teams:
-    - <teamname>
-    strategy: SSH | HTTP
+    - "<teamname>"
+    strategy: "SSH | HTTP"
     basic:
-      username: <username>
-      password: <app_password>
+      username: "<username>"
+      password: "<app_password>"
     oauth:
-      token: <oauth_token>
-      application_id: <application_id>
+      token: "<oauth_token>"
+      application_id: "<application_id>"
 ```
 
 Due to the variance in each of the client, there are a few oddities between each of the implementations.
