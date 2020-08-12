@@ -129,8 +129,8 @@ This secret is used to connect the tracker to the previously provisioned MySQL d
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  name: depscloud-tracker
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;stringData:
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_DRIVER: mysql
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_ADDRESS: user:password@tcp(mysql:3306)/depscloud
-&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql-slave:3306)/depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_ADDRESS: user-rw:password@tcp(mysql:3306)/depscloud
+&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;  STORAGE_READ_ONLY_ADDRESS: user:password@tcp(mysql:3306)/depscloud
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;EOF&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To configure the indexer, you&amp;rsquo;ll need to provide a &lt;code&gt;depscloud-indexer&lt;/code&gt; secret.
 This file tells the indexer how to discovery and clone repositories.
