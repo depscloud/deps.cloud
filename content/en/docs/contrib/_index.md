@@ -1,6 +1,8 @@
 ---
 title: "Contributing"
 linkTitle: "Contributing"
+aliases:
+- /docs/contributing/
 ---
 
 All projects are open to contributions.
