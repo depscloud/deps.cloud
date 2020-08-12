@@ -26,12 +26,12 @@ Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object man
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:postrgresSTORAGE_ADDRESS:postgres://user-rw:password@depscloud-postgresql:5432/depscloudSTORAGE_READ_ONLY_ADDRESS:postgres://user:password@depscloud-postgresql:5432/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/config/storage/postgres/" />
-<meta property="article:modified_time" content="2020-08-11T21:33:15-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-11T21:45:04-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="PostgreSQL">
 <meta itemprop="description" content="Driver: postgres Read-Write Connection String: postgres://user-rw:password@depscloud-postgresql:5432/depscloud Read-Only Connection String: postgres://user:password@depscloud-postgresql:5432/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for PostgreSQL.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:postrgresSTORAGE_ADDRESS:postgres://user-rw:password@depscloud-postgresql:5432/depscloudSTORAGE_READ_ONLY_ADDRESS:postgres://user:password@depscloud-postgresql:5432/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2020-08-11T21:33:15-05:00" />
+<meta itemprop="dateModified" content="2020-08-11T21:45:04-05:00" />
 <meta itemprop="wordCount" content="144">
 
 
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.78f54c8d626571648a317916d7a653e2cf24a2e2c7cdb282ff638708a86aa1b25bda6bbd5b439424174d7971791178b3e8cb545bd7a6deba4c69f1a4a1a39301.json"
+  data-offline-search-index-json-src="/offline-search-index.1997554f59d5cf873a32b94445c9d6e2975cfd138c6c77eaeec3c6ec17c46a1a70426e86d76e8ecb75c7d46ac8c8cadee86bea56c039abfdee4e8e2b9745f0e1.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.78f54c8d626571648a317916d7a653e2cf24a2e2c7cdb282ff638708a86aa1b25bda6bbd5b439424174d7971791178b3e8cb545bd7a6deba4c69f1a4a1a39301.json"
+  data-offline-search-index-json-src="/offline-search-index.1997554f59d5cf873a32b94445c9d6e2975cfd138c6c77eaeec3c6ec17c46a1a70426e86d76e8ecb75c7d46ac8c8cadee86bea56c039abfdee4e8e2b9745f0e1.json"
   data-offline-search-base-href="/"
 >
 
@@ -659,7 +659,7 @@ Contributions are welcome!</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/bf784e77d47c0156589ea163c1f93b29c6c17eca">inclusive verbiage (bf784e7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/d9efeb70066b8f57ecc23c01cb37a5578e085d87">added quotes around values to fix syntax highlighting (d9efeb7)</a>
 </div>
 </div>
 

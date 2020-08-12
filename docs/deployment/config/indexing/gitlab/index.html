@@ -24,11 +24,11 @@
 <meta property="og:description" content="GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider. Many companies choose to run this system internally. Below, you will find the list of options that can be configured to get the system running. Either private or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found configuring the private token to be the easiest." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deployment/config/indexing/gitlab/" />
-<meta property="article:modified_time" content="2020-08-11T21:33:15-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-11T21:45:04-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="GitLab">
 <meta itemprop="description" content="GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider. Many companies choose to run this system internally. Below, you will find the list of options that can be configured to get the system running. Either private or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found configuring the private token to be the easiest.">
-<meta itemprop="dateModified" content="2020-08-11T21:33:15-05:00" />
-<meta itemprop="wordCount" content="162">
+<meta itemprop="dateModified" content="2020-08-11T21:45:04-05:00" />
+<meta itemprop="wordCount" content="155">
 
 
 
@@ -119,7 +119,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.78f54c8d626571648a317916d7a653e2cf24a2e2c7cdb282ff638708a86aa1b25bda6bbd5b439424174d7971791178b3e8cb545bd7a6deba4c69f1a4a1a39301.json"
+  data-offline-search-index-json-src="/offline-search-index.1997554f59d5cf873a32b94445c9d6e2975cfd138c6c77eaeec3c6ec17c46a1a70426e86d76e8ecb75c7d46ac8c8cadee86bea56c039abfdee4e8e2b9745f0e1.json"
   data-offline-search-base-href="/"
 >
 
@@ -149,7 +149,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.78f54c8d626571648a317916d7a653e2cf24a2e2c7cdb282ff638708a86aa1b25bda6bbd5b439424174d7971791178b3e8cb545bd7a6deba4c69f1a4a1a39301.json"
+  data-offline-search-index-json-src="/offline-search-index.1997554f59d5cf873a32b94445c9d6e2975cfd138c6c77eaeec3c6ec17c46a1a70426e86d76e8ecb75c7d46ac8c8cadee86bea56c039abfdee4e8e2b9745f0e1.json"
   data-offline-search-base-href="/"
 >
 
@@ -558,17 +558,17 @@ I&rsquo;ve found configuring the <a href="https://docs.gitlab.com/ee/user/profil
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># full gitlab schema</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">gitlab</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">base_url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;base_url<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    users:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;username<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    groups:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;groupname<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    strategy: SSH | HTTP</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">base_url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&lt;base_url&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">users</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#4e9a06">&#34;&lt;username&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">groups</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#4e9a06">&#34;&lt;groupname&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;SSH | HTTP&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">private</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;private_token<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    oauth:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;oauth_token<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">      application_id: &lt;application_id&gt;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&lt;private_token&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">oauth</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&lt;oauth_token&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">application_id</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#4e9a06">&#34;&lt;application_id&gt;&#34;</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><p>Due to the variance in each of the client, there are a few oddities between each of the implementations.
 While we work on getting parity between each of the providers take note that this implementation:</p>
 <ul>
@@ -646,7 +646,7 @@ While we work on getting parity between each of the providers take note that thi
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/bf784e77d47c0156589ea163c1f93b29c6c17eca">inclusive verbiage (bf784e7)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 11, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/d9efeb70066b8f57ecc23c01cb37a5578e085d87">added quotes around values to fix syntax highlighting (d9efeb7)</a>
 </div>
 </div>
 
