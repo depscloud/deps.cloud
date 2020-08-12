@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Code of Conduct</title>
-      <link>https://deps.cloud/docs/contributing/code-of-conduct/</link>
+      <link>https://deps.cloud/docs/contrib/code-of-conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/contributing/code-of-conduct/</guid>
+      <guid>https://deps.cloud/docs/contrib/code-of-conduct/</guid>
       <description>
         
         
@@ -139,10 +139,10 @@ Unlike BFS, there are several possible orderings for the output of a DFS:&lt;/p&
     
     <item>
       <title>Docs: Docker</title>
-      <link>https://deps.cloud/docs/deployment/docker/</link>
+      <link>https://deps.cloud/docs/deploy/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/docker/</guid>
+      <guid>https://deps.cloud/docs/deploy/docker/</guid>
       <description>
         
         
@@ -192,10 +192,10 @@ Restarting docker_indexer_1 ... done
     
     <item>
       <title>Docs: GitHub</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/github/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/github/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/github/</guid>
       <description>
         
         
@@ -238,10 +238,10 @@ While we work on getting parity between each of the providers take note that thi
     
     <item>
       <title>Docs: SQLite</title>
-      <link>https://deps.cloud/docs/deployment/config/storage/sqlite/</link>
+      <link>https://deps.cloud/docs/deploy/config/storage/sqlite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/storage/sqlite/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/storage/sqlite/</guid>
       <description>
         
         
@@ -279,10 +279,10 @@ First, you can pass the values into the helm chart as arguments during installat
     
     <item>
       <title>Docs: Community</title>
-      <link>https://deps.cloud/docs/contributing/community/</link>
+      <link>https://deps.cloud/docs/contrib/community/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/contributing/community/</guid>
+      <guid>https://deps.cloud/docs/contrib/community/</guid>
       <description>
         
         
@@ -337,10 +337,10 @@ This includes things like version constraint, scopes, and a reference to the sou
     
     <item>
       <title>Docs: GitLab</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/gitlab/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/gitlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/gitlab/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/gitlab/</guid>
       <description>
         
         
@@ -384,10 +384,10 @@ While we work on getting parity between each of the providers take note that thi
     
     <item>
       <title>Docs: Kubernetes</title>
-      <link>https://deps.cloud/docs/deployment/k8s/</link>
+      <link>https://deps.cloud/docs/deploy/k8s/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/k8s/</guid>
+      <guid>https://deps.cloud/docs/deploy/k8s/</guid>
       <description>
         
         
@@ -489,10 +489,10 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
     
     <item>
       <title>Docs: MySQL</title>
-      <link>https://deps.cloud/docs/deployment/config/storage/mysql/</link>
+      <link>https://deps.cloud/docs/deploy/config/storage/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/storage/mysql/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/storage/mysql/</guid>
       <description>
         
         
@@ -538,10 +538,10 @@ Contributions are welcome!&lt;/p&gt;
     
     <item>
       <title>Docs: Bitbucket</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/bitbucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/bitbucket/</guid>
       <description>
         
         
@@ -584,10 +584,10 @@ While we work on getting parity between each of the providers take note that thi
     
     <item>
       <title>Docs: Helm</title>
-      <link>https://deps.cloud/docs/deployment/helm/</link>
+      <link>https://deps.cloud/docs/deploy/helm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/helm/</guid>
+      <guid>https://deps.cloud/docs/deploy/helm/</guid>
       <description>
         
         
@@ -825,10 +825,10 @@ Since there is no standardization across languages, extraction may vary between 
     
     <item>
       <title>Docs: PostgreSQL</title>
-      <link>https://deps.cloud/docs/deployment/config/storage/postgres/</link>
+      <link>https://deps.cloud/docs/deploy/config/storage/postgres/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/storage/postgres/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/storage/postgres/</guid>
       <description>
         
         
@@ -870,10 +870,10 @@ Contributions are welcome!&lt;/p&gt;
     
     <item>
       <title>Docs: Working with Git</title>
-      <link>https://deps.cloud/docs/contributing/git/</link>
+      <link>https://deps.cloud/docs/contrib/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/contributing/git/</guid>
+      <guid>https://deps.cloud/docs/contrib/git/</guid>
       <description>
         
         
@@ -946,10 +946,10 @@ When it discovers manifests, the contents are extracted, stored, and indexed.&lt
     
     <item>
       <title>Docs: Developing in Docker</title>
-      <link>https://deps.cloud/docs/contributing/docker/</link>
+      <link>https://deps.cloud/docs/contrib/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/contributing/docker/</guid>
+      <guid>https://deps.cloud/docs/contrib/docker/</guid>
       <description>
         
         

@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.1" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Developing in Docker | deps.cloud</title><meta property="og:title" content="Developing in Docker" />
+<meta property="og:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
+Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/contrib/docker/" />
+<meta property="article:modified_time" content="2020-08-12T08:22:48-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Developing in Docker">
+<meta itemprop="description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
+Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment.">
+<meta itemprop="dateModified" content="2020-08-12T08:22:48-05:00" />
+<meta itemprop="wordCount" content="105">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Developing in Docker"/>
+<meta name="twitter:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
+Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
+   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143087272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.c1ac849557789704f404f365d66e5664bd699a9dad24ac55a210015944584e64.css" as="style">
+<link href="/scss/main.min.c1ac849557789704f404f365d66e5664bd699a9dad24ac55a210015944584e64.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo">
+			<img style="max-height: 35px;" src="/images/depscloud-1.png"/>
+		</span>
+		<span class="text-lowercase" style="vertical-align: bottom; font-weight: bold;">
+			deps.cloud
+		</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82c96b3039721b6c7dc84d20b55840f41868b179e36c592917246060c5fc8369e6442c46eece53c77720840e2400cea22f70ed25b6f56e2bdd8a78acdab946f8.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.82c96b3039721b6c7dc84d20b55840f41868b179e36c592917246060c5fc8369e6442c46eece53c77720840e2400cea22f70ed25b6f56e2bdd8a78acdab946f8.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsconcepts">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsgraphs" href="/docs/concepts/graphs/">Dependency Graphs</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deploy/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Deployment</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeploy">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploydocker" href="/docs/deploy/docker/">Docker</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployk8s" href="/docs/deploy/k8s/">Kubernetes</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployhelm" href="/docs/deploy/helm/">Helm</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deploy/config/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Configuration</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeployconfig">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deploy/config/storage/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Storage</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeployconfigstorage">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigstoragesqlite" href="/docs/deploy/config/storage/sqlite/">SQLite</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigstoragemysql" href="/docs/deploy/config/storage/mysql/">MySQL</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigstoragepostgres" href="/docs/deploy/config/storage/postgres/">PostgreSQL</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/deploy/config/indexing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexing</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsdeployconfigindexing">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigindexinggithub" href="/docs/deploy/config/indexing/github/">GitHub</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigindexinggitlab" href="/docs/deploy/config/indexing/gitlab/">GitLab</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeployconfigindexingbitbucket" href="/docs/deploy/config/indexing/bitbucket/">Bitbucket</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsguides">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docscontrib">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcode-of-conduct" href="/docs/contrib/code-of-conduct/">Code of Conduct</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcommunity" href="/docs/contrib/community/">Community</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribgit" href="/docs/contrib/git/">Working with Git</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontribdocker" href="/docs/contrib/docker/">Developing in Docker</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/contrib/docker.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Developing%20in%20Docker" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/contrib/">Contributing</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://deps.cloud/docs/contrib/docker/">Developing in Docker</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Developing in Docker</h1>
+    
+	       
+	<p>In order to start developing using Docker, first deploy the stack using the <a href="/docs/deployment/docker/">directions</a>.
+You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.</p>
+<h2 id="building-local-changes">Building Local Changes</h2>
+<p>To help facilitate contributions, each project has a <code>docker</code> target that builds the project inside a container.</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Managed by</th>
+<th><code>docker</code> Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Golang</td>
+<td><code>Makefile</code></td>
+<td><code>make docker</code></td>
+</tr>
+<tr>
+<td>NodeJS</td>
+<td><code>package.json</code></td>
+<td><code>npm run docker</code></td>
+</tr>
+</tbody>
+</table>
+<p>The target produces a tagged image that you can deployed using the docker deployment.</p>
+<h2 id="deploying-local-changes">Deploying Local Changes</h2>
+<p>Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up -d
+</code></pre></div>
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 12, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/c9abc8f8cf638cb0cd666292d68097f49e9ff206">forgot to save last aliased file (c9abc8f)</a>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark text-white py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing List" aria-label="User mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/depscloud">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for everyone</div>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/depscloud/">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing List" aria-label="Developer mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for developers</div>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>deps.cloud – Indexing</title>
-    <link>https://deps.cloud/docs/deployment/config/indexing/</link>
+    <link>https://deps.cloud/docs/deploy/config/indexing/</link>
     <description>Recent content in Indexing on deps.cloud</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://deps.cloud/docs/deployment/config/indexing/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://deps.cloud/docs/deploy/config/indexing/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: GitHub</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/github/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/github/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/github/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/github/</guid>
       <description>
         
         
@@ -61,10 +61,10 @@ While we work on getting parity between each of the providers take note that thi
     
     <item>
       <title>Docs: GitLab</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/gitlab/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/gitlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/gitlab/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/gitlab/</guid>
       <description>
         
         
@@ -108,10 +108,10 @@ While we work on getting parity between each of the providers take note that thi
     
     <item>
       <title>Docs: Bitbucket</title>
-      <link>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</link>
+      <link>https://deps.cloud/docs/deploy/config/indexing/bitbucket/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://deps.cloud/docs/deployment/config/indexing/bitbucket/</guid>
+      <guid>https://deps.cloud/docs/deploy/config/indexing/bitbucket/</guid>
       <description>
         
         
