@@ -3,7 +3,6 @@ title: "Storage"
 linkTitle: "Storage"
 weight: 10
 no_list: true
-draft: true
 ---
 
 deps.cloud was built with portability in mind.

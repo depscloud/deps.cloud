@@ -19,7 +19,7 @@ If you're using Kubernetes, you will need to change the `config.yaml` key in the
       src="/images/github.png"
       title="GitHub"
       link="/docs/deployment/config/indexing/github/"
-      text="Index user and organization repositories."
+      text=""
       >}}
   </div>
   <div class="col-sm-6 col-md-4">
@@ -28,7 +28,7 @@ If you're using Kubernetes, you will need to change the `config.yaml` key in the
       src="/images/gitlab.png"
       title="GitLab"
       link="/docs/deployment/config/indexing/gitlab/"
-      text="Index user and group repositories."
+      text=""
     >}}
   </div>
   <div class="col-sm-6 col-md-4">
@@ -37,7 +37,7 @@ If you're using Kubernetes, you will need to change the `config.yaml` key in the
       src="/images/bitbucket.png"
       title="BitBucket"
       link="/docs/deployment/config/indexing/bitbucket/"
-      text="Index user and team repositories."
+      text=""
     >}}
   </div>
 </div>
