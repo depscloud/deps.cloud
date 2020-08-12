@@ -2,6 +2,8 @@
 title: "MySQL"
 linkTitle: "MySQL"
 weight: 20
+aliases:
+- /docs/deployment/config/storage/mysql/
 ---
 
 * Driver: `mysql`

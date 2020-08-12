@@ -5,6 +5,7 @@ weight: 20
 no_list: true
 aliases:
 - /docs/integrations/
+- /docs/deployment/config/indexing/
 ---
 
 This section provides guidance on how to configure the underlying system.

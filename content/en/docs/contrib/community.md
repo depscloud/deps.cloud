@@ -2,6 +2,8 @@
 title: "Community"
 linkTitle: "Community"
 weight: 20
+aliases:
+- /docs/contributing/community/
 ---
 
 ## Online

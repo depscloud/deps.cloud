@@ -2,6 +2,8 @@
 title: "Working with Git"
 linkTitle: "Working with Git"
 weight: 30
+aliases:
+- /docs/contributing/git/
 ---
 
 ## Cloning Projects

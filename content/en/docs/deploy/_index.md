@@ -3,6 +3,8 @@ title: "Deployment"
 linkTitle: "Deployment"
 weight: 20
 no_list: true
+aliases:
+- /docs/deployment/
 ---
 
 The deployment of deps.cloud is easy.

@@ -2,6 +2,8 @@
 title: "Code of Conduct"
 linkTitle: "Code of Conduct"
 weight: 10
+aliases:
+- /docs/contributing/code-of-conduct/
 ---
 
 ## Our Pledge

@@ -2,6 +2,8 @@
 title: Developing in Docker
 linkTitle: Developing in Docker
 weight: 40
+aliases:
+- /docs/contributing/docker/
 ---
 
 In order to start developing using Docker, first deploy the stack using the [directions](/docs/deployment/docker/).

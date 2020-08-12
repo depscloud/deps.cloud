@@ -2,6 +2,8 @@
 title: "PostgreSQL"
 linkTitle: "PostgreSQL"
 weight: 30
+aliases:
+- /docs/deployment/config/storage/postgres/
 ---
 
 * Driver: `postgres`

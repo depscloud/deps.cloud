@@ -2,6 +2,8 @@
 title: "Kubernetes"
 linkTitle: "Kubernetes"
 weight: 20
+aliases:
+- /docs/deployment/k8s/
 ---
 
 This guide explains how to run the deps.cloud infrastructure within a [Kubernetes](https://kubernetes.io/) cluster.

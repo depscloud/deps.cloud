@@ -3,6 +3,8 @@ title: "Storage"
 linkTitle: "Storage"
 weight: 10
 no_list: true
+aliases:
+- /docs/deployment/config/storage/
 ---
 
 deps.cloud was built with portability in mind.

@@ -4,6 +4,7 @@ linkTitle: "GitHub"
 weight: 10
 aliases:
 - /docs/integrations/github/
+- /docs/deployment/config/indexing/github/
 ---
 
 GitHub is the largest source of repositories.

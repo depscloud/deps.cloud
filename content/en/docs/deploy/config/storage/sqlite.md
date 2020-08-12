@@ -2,6 +2,8 @@
 title: "SQLite"
 linkTitle: "SQLite"
 weight: 10
+aliases:
+- /docs/deployment/config/storage/sqlite/
 ---
 
 * Storage Driver: `sqlite`
