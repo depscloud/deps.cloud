@@ -20,21 +20,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>GitLab | deps.cloud</title><meta property="og:title" content="GitLab" />
-<meta property="og:description" content="GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider. Many companies choose to run this system internally. Below, you will find the list of options that can be configured to get the system running. Either private or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found configuring the private token to be the easiest." />
+<title>MySQL | deps.cloud</title><meta property="og:title" content="MySQL" />
+<meta property="og:description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
+Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
+apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user:password@tcp(mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(mysql-slave:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/docs/deployment/config/indexing/gitlab/" />
+<meta property="og:url" content="https://deps.cloud/docs/deployment/config/storage/mysql/" />
 <meta property="article:modified_time" content="2020-08-11T19:56:02-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="GitLab">
-<meta itemprop="description" content="GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider. Many companies choose to run this system internally. Below, you will find the list of options that can be configured to get the system running. Either private or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found configuring the private token to be the easiest.">
+<meta itemprop="name" content="MySQL">
+<meta itemprop="description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
+Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
+apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user:password@tcp(mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(mysql-slave:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
 <meta itemprop="dateModified" content="2020-08-11T19:56:02-05:00" />
-<meta itemprop="wordCount" content="162">
+<meta itemprop="wordCount" content="169">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GitLab"/>
-<meta name="twitter:description" content="GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider. Many companies choose to run this system internally. Below, you will find the list of options that can be configured to get the system running. Either private or oauth should be provided. Otherwise, you will only have access to public repositories. I&rsquo;ve found configuring the private token to be the easiest."/>
+<meta name="twitter:title" content="MySQL"/>
+<meta name="twitter:description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
+Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
+apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user:password@tcp(mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(mysql-slave:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation."/>
 
 
 <script type="application/javascript">
@@ -285,10 +291,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/storage/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Storage</a>
+    <a  href="/docs/deployment/config/storage/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Storage</a>
   </li>
   <ul>
-    <li class="collapse " id="docsdeploymentconfigstorage">
+    <li class="collapse show" id="docsdeploymentconfigstorage">
       
       
       
@@ -301,7 +307,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigstoragemysql" href="/docs/deployment/config/storage/mysql/">MySQL</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdeploymentconfigstoragemysql" href="/docs/deployment/config/storage/mysql/">MySQL</a>
       
       
       
@@ -326,10 +332,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Indexing</a>
+    <a  href="/docs/deployment/config/indexing/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Indexing</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsdeploymentconfigindexing">
+    <li class="collapse " id="docsdeploymentconfigindexing">
       
       
       
@@ -342,7 +348,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsdeploymentconfigindexinggitlab" href="/docs/deployment/config/indexing/gitlab/">GitLab</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsdeploymentconfigindexinggitlab" href="/docs/deployment/config/indexing/gitlab/">GitLab</a>
       
       
       
@@ -470,8 +476,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/config/indexing/gitlab.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=GitLab" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/deployment/config/storage/mysql.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=MySQL" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/deps.cloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -482,6 +488,16 @@ if (!doNotTrack) {
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker">Docker</a></li>
+    <li><a href="#kubernetes">Kubernetes</a></li>
+    <li><a href="#helm">Helm</a></li>
+    <li><a href="#using-mariadb">Using MariaDB</a></li>
+    <li><a href="#using-vitess">Using Vitess</a></li>
+  </ul>
+</nav>
 
 
 
@@ -531,14 +547,14 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item" >
-	<a href="https://deps.cloud/docs/deployment/config/indexing/">Indexing</a>
+	<a href="https://deps.cloud/docs/deployment/config/storage/">Storage</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/deployment/config/indexing/gitlab/">GitLab</a>
+	<a href="https://deps.cloud/docs/deployment/config/storage/mysql/">MySQL</a>
 </li>
 
 	</ol>
@@ -546,44 +562,46 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>GitLab</h1>
+	<h1>MySQL</h1>
     
 	       
-	<p>GitLab is a common provider used by those seeking an on-premise solution who do not want their source code managed by a third party provider.
-Many companies choose to run this system internally.
-Below, you will find the list of options that can be configured to get the system running.
-Either <code>private</code> or <code>oauth</code> should be provided.
-Otherwise, you will only have access to public repositories.
-I&rsquo;ve found configuring the <a href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html"><code>private</code> token</a> to be the easiest.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#8f5902;font-style:italic"># full gitlab schema</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">gitlab</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">base_url</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;base_url<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    users:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;username<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    groups:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- &lt;groupname<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    strategy: SSH | HTTP</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">private</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;private_token<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">    oauth:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">token</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>&lt;oauth_token<span style="color:#8f5902;font-style:italic">&gt;
-</span><span style="color:#8f5902;font-style:italic">      application_id: &lt;application_id&gt;</span><span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div><p>Due to the variance in each of the client, there are a few oddities between each of the implementations.
-While we work on getting parity between each of the providers take note that this implementation:</p>
-<ul>
-<li>pulls groups for the authenticated user</li>
-<li>does not pull groups for the configured users</li>
-<li>pulls repositories for all users and groups (configured and discovered)</li>
+	<ul>
+<li>Driver: <code>mysql</code></li>
+<li>Read-Write Connection String: <code>user-rw:password@tcp(depscloud-mysql:3306)/depscloud</code></li>
+<li>Read-Only Connection String: <code>user:password@tcp(depscloud-mysql:3306)/depscloud</code></li>
 </ul>
-<h2 id="example">Example</h2>
-<p>Crawl all of Nvidia&rsquo;s public repositories on <a href="https://gitlab.com/nvidia">GitLab</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">accounts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span>- <span style="color:#204a87;font-weight:bold">gitlab</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">groups</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- nvidia<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>HTTP<span style="color:#f8f8f8;text-decoration:underline">
-</span></code></pre></div>
+<h2 id="docker">Docker</h2>
+<p>If using the simple <a href="/docs/deployment/docker/">Docker</a> set up, these values can be configured using the <code>--storage-driver</code>, <code>--storage-address</code>, and <code>--storage-readonly-address</code> command line arguments.</p>
+<h2 id="kubernetes">Kubernetes</h2>
+<p>With <a href="/docs/deployment/k8s/">Kubernetes</a>, you&rsquo;ll need to configure the secret object manually.
+The block below demonstrates how to set up the <code>depscloud-tracker</code> configuration for MySQL.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>v1<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Secret<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud-tracker<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">stringData</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">STORAGE_DRIVER</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>mysql<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">STORAGE_ADDRESS</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>user<span style="color:#000;font-weight:bold">:</span>password@tcp(mysql<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">3306</span>)/depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">STORAGE_READ_ONLY_ADDRESS</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>user<span style="color:#000;font-weight:bold">:</span>password@tcp(mysql-slave<span style="color:#000;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">3306</span>)/depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span></code></pre></div><h2 id="helm">Helm</h2>
+<p>With the <a href="/docs/deployment/helm/">Helm</a> chart, you have two options.
+First, you can pass the values into the helm chart as arguments during installation.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ helm upgrade -i depscloud depscloud/depscloud <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    --set tracker.storage.driver<span style="color:#ce5c00;font-weight:bold">=</span>mysql <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    --set <span style="color:#4e9a06">&#34;tracker.storage.address=user-rw:password@tcp(depscloud-mysql:3306)/depscloud&#34;</span> <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    --set <span style="color:#4e9a06">&#34;tracker.storage.readOnlyAddress=user:password@tcp(depscloud-mysql:3306)/depscloud&#34;</span>
+</code></pre></div><p>Or, you can pass a reference to a secret as described in the previous Kubernetes section.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ helm upgrade -i depscloud depscloud/depscloud <span style="color:#4e9a06">\
+</span><span style="color:#4e9a06"></span>    --set tracker.externalStorage.secretRef.name<span style="color:#ce5c00;font-weight:bold">=</span>depscloud-tracker
+</code></pre></div><h2 id="using-mariadb">Using MariaDB</h2>
+<p>Compatibility with <a href="https://mariadb.org/">MariaDB</a> has not yet been tested.
+Since MariaDB claims to be MySQL compatible, there shouldn&rsquo;t be any issues.
+Contributions are welcome!</p>
+<h2 id="using-vitess">Using Vitess</h2>
+<p>Compatibility with <a href="https://vitess.io/">Vitess</a> has not yet been tested.
+Since Vitess claims to be MySQL compatible, there shouldn&rsquo;t be any issues.
+Contributions are welcome!</p>
+
 	
 		<style>
   .feedback--answer {
