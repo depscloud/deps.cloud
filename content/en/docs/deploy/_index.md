@@ -17,8 +17,8 @@ The sections below provide you with details around the various deployment option
       border="white"
       src="/images/docker.png"
       title="Docker"
-      link="/docs/deployment/docker/"
-      text="Deploy to a docker daemon or a swarm cluster."
+      link="/docs/deploy/docker/"
+      text=""
       >}}
   </div>
   <div class="col-sm-6 col-md-4">
@@ -26,8 +26,8 @@ The sections below provide you with details around the various deployment option
       border="white"
       src="/images/k8s.png"
       title="Kubernetes"
-      link="/docs/deployment/k8s/"
-      text="Deploy to Kubernetes using raw manifest files."
+      link="/docs/deploy/k8s/"
+      text=""
     >}}
   </div>
   <div class="col-sm-6 col-md-4">
@@ -35,8 +35,31 @@ The sections below provide you with details around the various deployment option
       border="white"
       src="/images/helm.png"
       title="Helm"
-      link="/docs/deployment/helm/"
-      text="Deploy to Kubernetes using the Helm package manager."
+      link="/docs/deploy/helm/"
+      text=""
+    >}}
+  </div>
+</div>
+
+## Configuration
+
+<div class="row" style="max-width: 80%;">
+  <div class="col-sm-6 col-md-4">
+    {{<card-icon
+      border="white"
+      src="/images/storage.png"
+      title="Storage"
+      link="/docs/deploy/config/storage/"
+      text=""
+      >}}
+  </div>
+  <div class="col-sm-6 col-md-4">
+    {{<card-icon
+      border="white"
+      src="/images/indexing.png"
+      title="Indexing"
+      link="/docs/deploy/config/indexing/"
+      text=""
     >}}
   </div>
 </div>
