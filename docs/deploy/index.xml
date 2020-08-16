@@ -297,7 +297,57 @@ If provides a way to manage Helm releases within a cluster through custom resour
       <description>
         
         
+        &lt;div class=&#34;row&#34; style=&#34;max-width: 80%;&#34;&gt;
+  &lt;div class=&#34;col-sm-6 col-md-4&#34;&gt;
+    
+
+
+
+
+
+
+&lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
+    &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
         
+        &lt;img src=&#34;https://deps.cloud/images/storage.png&#34; style=&#34;width:158px;&#34;/&gt;
+        
+    &lt;/div&gt;
+
+    &lt;div class=&#34;card-body text-center&#34;&gt;
+        
+        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/deploy/config/storage/&#34;&gt;Storage&lt;/a&gt;&lt;/h5&gt;
+        
+        &lt;p class=&#34;card-text&#34;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;col-sm-6 col-md-4&#34;&gt;
+    
+
+
+
+
+
+
+&lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
+    &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
+        
+        &lt;img src=&#34;https://deps.cloud/images/indexing.png&#34; style=&#34;width:158px;&#34;/&gt;
+        
+    &lt;/div&gt;
+
+    &lt;div class=&#34;card-body text-center&#34;&gt;
+        
+        &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;https://deps.cloud/docs/deploy/config/indexing/&#34;&gt;Indexing&lt;/a&gt;&lt;/h5&gt;
+        
+        &lt;p class=&#34;card-text&#34;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
       </description>
     </item>
     
