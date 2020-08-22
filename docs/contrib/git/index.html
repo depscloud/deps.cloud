@@ -20,27 +20,27 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Working with Git | deps.cloud</title><meta property="og:title" content="Working with Git" />
-<meta property="og:description" content="Cloning Projects Once you&rsquo;ve forked the repository, you&rsquo;ll want to clone it locally for development. For convenience, I tend to work out of the GOPATH directory. Using the following command, you can quickly build a directory for all the depscloud related work.
-$ mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, clone the upstream project. This will allow you to regularly pull updates from the origin.
-$ git clone git@github." />
+<title>Working with git | deps.cloud</title><meta property="og:title" content="Working with git" />
+<meta property="og:description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
+mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
+git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contrib/git/" />
-<meta property="article:modified_time" content="2020-08-22T16:24:00-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Working with Git">
-<meta itemprop="description" content="Cloning Projects Once you&rsquo;ve forked the repository, you&rsquo;ll want to clone it locally for development. For convenience, I tend to work out of the GOPATH directory. Using the following command, you can quickly build a directory for all the depscloud related work.
-$ mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, clone the upstream project. This will allow you to regularly pull updates from the origin.
-$ git clone git@github.">
-<meta itemprop="dateModified" content="2020-08-22T16:24:00-05:00" />
-<meta itemprop="wordCount" content="370">
+<meta property="article:modified_time" content="2020-08-22T17:24:10-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta itemprop="name" content="Working with git">
+<meta itemprop="description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
+mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
+git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github.">
+<meta itemprop="dateModified" content="2020-08-22T17:24:10-05:00" />
+<meta itemprop="wordCount" content="236">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Working with Git"/>
-<meta name="twitter:description" content="Cloning Projects Once you&rsquo;ve forked the repository, you&rsquo;ll want to clone it locally for development. For convenience, I tend to work out of the GOPATH directory. Using the following command, you can quickly build a directory for all the depscloud related work.
-$ mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, clone the upstream project. This will allow you to regularly pull updates from the origin.
-$ git clone git@github."/>
+<meta name="twitter:title" content="Working with git"/>
+<meta name="twitter:description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
+mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
+git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github."/>
 
 
 <script type="application/javascript">
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6b0f082949dc62f473ab4e6ecf8f71803e464fdd460bee267e2d4b2774aff1a679ec37b7f8003b3d91236014cf85c7b2edfcf620af95a2a67699089d33ebe8c8.json"
+  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6b0f082949dc62f473ab4e6ecf8f71803e464fdd460bee267e2d4b2774aff1a679ec37b7f8003b3d91236014cf85c7b2edfcf620af95a2a67699089d33ebe8c8.json"
+  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -430,13 +430,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcommunity" href="/docs/contrib/community/">Community</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontribgit" href="/docs/contrib/git/">Working with Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontribgit" href="/docs/contrib/git/">Working with git</a>
       
       
       
@@ -477,7 +471,7 @@ if (!doNotTrack) {
 
 
 <a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/contrib/git.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Working%20with%20Git" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Working%20with%20git" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -492,7 +486,6 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#cloning-projects">Cloning Projects</a></li>
-    <li><a href="#building-and-running-projects">Building and Running Projects</a></li>
     <li><a href="#branching">Branching</a></li>
     <li><a href="#forking-and-submitting-pull-requests">Forking and Submitting Pull Requests</a></li>
   </ul>
@@ -533,7 +526,7 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/contrib/git/">Working with Git</a>
+	<a href="https://deps.cloud/docs/contrib/git/">Working with git</a>
 </li>
 
 	</ol>
@@ -541,35 +534,24 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Working with Git</h1>
+	<h1>Working with git</h1>
     
 	       
 	<h2 id="cloning-projects">Cloning Projects</h2>
-<p>Once you&rsquo;ve forked the repository, you&rsquo;ll want to clone it locally for development.
-For convenience, I tend to work out of the GOPATH directory.
-Using the following command, you can quickly build a directory for all the depscloud related work.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p <span style="color:#4e9a06">${</span><span style="color:#000">GOPATH</span><span style="color:#4e9a06">}</span>/src/github.com/depscloud <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#204a87">cd</span> <span style="color:#000">$_</span>
-</code></pre></div><p>Once you have a workspace, clone the upstream project.
-This will allow you to regularly pull updates from the <code>origin</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone git@github.com:depscloud/&lt;project&gt;.git
-</code></pre></div><h2 id="building-and-running-projects">Building and Running Projects</h2>
-<p>There are two ways you can build and run this project.
-First you can develop using docker (the recommended way).
-Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
-The second way to build and run this project.
-This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.</p>
-<ul>
-<li><a href="/docs/contributing/docker/">Developing in Docker</a> (Recommended)</li>
-</ul>
-<h2 id="branching">Branching</h2>
+<p>Let&rsquo;s get started by creating a workspace for the project.
+Many contributors work with Go and follow their convention.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -p <span style="color:#4e9a06">${</span><span style="color:#000">GOPATH</span><span style="color:#4e9a06">}</span>/src/github.com/depscloud <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#204a87">cd</span> <span style="color:#000">$_</span>
+</code></pre></div><p>Once you have a workspace, you&rsquo;ll want to clone the relevant projects.
+Most people contribute to <code>depscloud</code> but will also need <code>deploy</code> for docker.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone git@github.com:depscloud/depscloud.git    <span style="color:#8f5902;font-style:italic"># source code</span>
+git clone git@github.com:depscloud/deploy.git       <span style="color:#8f5902;font-style:italic"># deployment config</span>
+
+git clone git@github.com:depscloud/deps.cloud.git   <span style="color:#8f5902;font-style:italic"># website</span>
+git clone git@github.com:depscloud/api.git          <span style="color:#8f5902;font-style:italic"># api and sdk</span>
+</code></pre></div><h2 id="branching">Branching</h2>
 <p>The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
 To create a branch for GitHub issue #11, simply create a branch with the name <code>gh-11</code>.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git checkout -b gh-11
-</code></pre></div><p>In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the <a href="https://github.com/depscloud/deps.cloud">deps.cloud</a> repository to create a parent issue that the other issues can reference and link to.
-To link another projects issue, you can use the <code>&lt;user&gt;/&lt;project&gt;#11</code> semantic.
-Similarly, you can create a feature branch using the same syntax.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git checkout -b &lt;user&gt;/&lt;project&gt;#11
 </code></pre></div><h2 id="forking-and-submitting-pull-requests">Forking and Submitting Pull Requests</h2>
 <p>By and large, <a href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">forks</a> are used to submit pull requests to the upstream repositories.</p>
 <p>After a project has been cloned, you will need to add your fork as a remote.</p>
@@ -642,7 +624,7 @@ After a branch has been pushed, you can use <a href="https://help.github.com/en/
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/4f9884087e4486ca9b8dac8b804f5e5dc0c5ebe3">Add license scan report and status (#65) (4f98840)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/b11be660d0ca60a21c37251dc55dc780a0fb194d">updated contributing docs with new monorepo content (b11be66)</a>
 </div>
 </div>
 

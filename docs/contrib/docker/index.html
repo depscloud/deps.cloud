@@ -21,26 +21,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Developing in Docker | deps.cloud</title><meta property="og:title" content="Developing in Docker" />
-<meta property="og:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
-Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment." />
+<meta property="og:description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
+Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
+   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contrib/docker/" />
-<meta property="article:modified_time" content="2020-08-22T16:24:00-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-22T17:24:10-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Developing in Docker">
-<meta itemprop="description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
-Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment.">
-<meta itemprop="dateModified" content="2020-08-22T16:24:00-05:00" />
-<meta itemprop="wordCount" content="105">
+<meta itemprop="description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
+Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
+   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.">
+<meta itemprop="dateModified" content="2020-08-22T17:24:10-05:00" />
+<meta itemprop="wordCount" content="91">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Developing in Docker"/>
-<meta name="twitter:description" content="In order to start developing using Docker, first deploy the stack using the directions. You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.
-Building Local Changes To help facilitate contributions, each project has a docker target that builds the project inside a container.
-   Project Managed by docker Target     Golang Makefile make docker   NodeJS package.json npm run docker    The target produces a tagged image that you can deployed using the docker deployment."/>
+<meta name="twitter:description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
+Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
+   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image."/>
 
 
 <script type="application/javascript">
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6b0f082949dc62f473ab4e6ecf8f71803e464fdd460bee267e2d4b2774aff1a679ec37b7f8003b3d91236014cf85c7b2edfcf620af95a2a67699089d33ebe8c8.json"
+  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6b0f082949dc62f473ab4e6ecf8f71803e464fdd460bee267e2d4b2774aff1a679ec37b7f8003b3d91236014cf85c7b2edfcf620af95a2a67699089d33ebe8c8.json"
+  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -430,13 +430,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcommunity" href="/docs/contrib/community/">Community</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribgit" href="/docs/contrib/git/">Working with Git</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribgit" href="/docs/contrib/git/">Working with git</a>
       
       
       
@@ -535,33 +529,40 @@ if (!doNotTrack) {
 	<h1>Developing in Docker</h1>
     
 	       
-	<p>In order to start developing using Docker, first deploy the stack using the <a href="/docs/deployment/docker/">directions</a>.
-You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data store.</p>
-<h2 id="building-local-changes">Building Local Changes</h2>
-<p>To help facilitate contributions, each project has a <code>docker</code> target that builds the project inside a container.</p>
+	<p>When developing with docker, you&rsquo;ll want to get familiar with how to <a href="/docs/deploy/docker/">deploy the system using Docker</a>.</p>
+<p>Each part of the deps.cloud ecosystem has an associated <code>docker</code> target that builds a container.
+This container can be used with the docker deployment configuration to test changes locally.</p>
 <table>
 <thead>
 <tr>
-<th>Project</th>
-<th>Managed by</th>
-<th><code>docker</code> Target</th>
+<th>Repository</th>
+<th>Path</th>
+<th>Target</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Golang</td>
-<td><code>Makefile</code></td>
+<td><code>depscloud/depscloud</code></td>
+<td><code>/extractor</code></td>
+<td><code>npm run docker</code></td>
+</tr>
+<tr>
+<td><code>depscloud/depscloud</code></td>
+<td><code>/gateway</code></td>
 <td><code>make docker</code></td>
 </tr>
 <tr>
-<td>NodeJS</td>
-<td><code>package.json</code></td>
-<td><code>npm run docker</code></td>
+<td><code>depscloud/depscloud</code></td>
+<td><code>/indexer</code></td>
+<td><code>make docker</code></td>
+</tr>
+<tr>
+<td><code>depscloud/depscloud</code></td>
+<td><code>/tracker</code></td>
+<td><code>make docker</code></td>
 </tr>
 </tbody>
 </table>
-<p>The target produces a tagged image that you can deployed using the docker deployment.</p>
-<h2 id="deploying-local-changes">Deploying Local Changes</h2>
 <p>Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up -d
 </code></pre></div>
@@ -627,7 +628,7 @@ You can deploy the stack using SQLite, MySQL, or PostgreSQL as a backend data st
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/4f9884087e4486ca9b8dac8b804f5e5dc0c5ebe3">Add license scan report and status (#65) (4f98840)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/b11be660d0ca60a21c37251dc55dc780a0fb194d">updated contributing docs with new monorepo content (b11be66)</a>
 </div>
 </div>
 
