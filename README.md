@@ -1,6 +1,7 @@
 # deps.cloud documentation
 
 ![GitHub Pages](https://img.shields.io/github/deployments/depscloud/deps.cloud/github-pages?label=GitHub%20Pages)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud?ref=badge_shield)
 
 This repository contains the source for the [deps.cloud website, blog, and documentation](https://deps.cloud/).
 
@@ -71,3 +72,7 @@ We also have a [Slack] channel.
 deps.cloud is governed by the [Contributor Covenant v1.4.1](/contributing/code-of-conduct/index.md).
 
 ![Google Analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=deps.cloud&dt=deps.cloud&tid=UA-143087272-2)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud?ref=badge_large)
