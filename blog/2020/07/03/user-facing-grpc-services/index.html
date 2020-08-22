@@ -26,12 +26,12 @@ Before getting too far into things, it&rsquo;s important to first understand the
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/" />
 <meta property="article:published_time" content="2020-07-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-08-16T10:34:22-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-22T14:08:14-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="User-facing gRPC services">
 <meta itemprop="description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
 Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC.">
 <meta itemprop="datePublished" content="2020-07-03T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-08-16T10:34:22-05:00" />
+<meta itemprop="dateModified" content="2020-08-22T14:08:14-05:00" />
 <meta itemprop="wordCount" content="766">
 
 
@@ -124,7 +124,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b627407f7bdbca7d09b1b94c91fff6b3f1a0f19da44610a767a6275e434295df6d53f9820068f7b7f5895bb0dec0583f5aa5e41ff7e027dab64e4c432c14284b.json"
+  data-offline-search-index-json-src="/offline-search-index.6b0f082949dc62f473ab4e6ecf8f71803e464fdd460bee267e2d4b2774aff1a679ec37b7f8003b3d91236014cf85c7b2edfcf620af95a2a67699089d33ebe8c8.json"
   data-offline-search-base-href="/"
 >
 
@@ -241,7 +241,7 @@ The Golang snippet below walks you through the general setup.</p>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p>That&rsquo;s it!
 Working around TLS termination can be a bit tricky.
-For a closer look at our implementation, take a look at the <a href="https://github.com/depscloud/gateway">gateway</a> process.
+For a closer look at our implementation, take a look at the <a href="https://github.com/depscloud/depscloud/tree/main/gateway">gateway</a> process.
 This typically sits behind a reverse proxy and mediates communication with the backend services.</p>
 <h2 id="configuring-an-ingress-controller">Configuring an ingress controller</h2>
 <p>Regardless of where you&rsquo;re running, you&rsquo;ll probably need to do some amount of special configuration to enable gRPC.

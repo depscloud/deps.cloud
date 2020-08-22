@@ -928,17 +928,17 @@ After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.
         &lt;p&gt;The following diagram illustrates the general system deployed on top of a kubernetes cluster.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;actors&#34;&gt;Actors&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/cli&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/deps&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.
 The command line interface (CLI) allows individuals to explore data stored in deps.cloud.
 Other types of clients include processes written using one of our SDKs.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
 It provides both RESTful and gRPC interfaces to clients of the system.
 Not all functionality is available over the RESTful interface.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph.
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph.
 This service leverages systems like as SQLite, MySQL, or PostgreSQL to store the graph data.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/extractor&#34;&gt;Extractor&lt;/a&gt; extracts dependency information from manifest files.
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/extractor&#34;&gt;Extractor&lt;/a&gt; extracts dependency information from manifest files.
 This mechanism is easily pluggable to support a large range of manifest files.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/indexer&#34;&gt;indexer&lt;/a&gt; crawls repositories looking for manifest files.
+&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/indexer&#34;&gt;indexer&lt;/a&gt; crawls repositories looking for manifest files.
 When it discovers manifests, the contents are extracted, stored, and indexed.&lt;/p&gt;
 
       </description>
@@ -1029,8 +1029,8 @@ $ brew install depscloud-cli
 
 $ deps version
 deps &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, you can download one of the latest binaries from GitHub releases.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/cli/releases/latest&#34;&gt;https://github.com/depscloud/cli/releases/latest&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, you can download the latest &lt;code&gt;deps&lt;/code&gt; binary from GitHub releases.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/releases/latest&#34;&gt;https://github.com/depscloud/depscloud/releases/latest&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;deps&lt;/code&gt; can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the &lt;code&gt;DEPSCLOUD_BASE_URL&lt;/code&gt; environment variable.

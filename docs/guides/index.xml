@@ -56,8 +56,8 @@ $ brew install depscloud-cli
 
 $ deps version
 deps &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, you can download one of the latest binaries from GitHub releases.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/cli/releases/latest&#34;&gt;https://github.com/depscloud/cli/releases/latest&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, you can download the latest &lt;code&gt;deps&lt;/code&gt; binary from GitHub releases.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/releases/latest&#34;&gt;https://github.com/depscloud/depscloud/releases/latest&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;deps&lt;/code&gt; can be configured to point at a custom deployment of the deps.cloud ecosystem.
 This is done using the &lt;code&gt;DEPSCLOUD_BASE_URL&lt;/code&gt; environment variable.

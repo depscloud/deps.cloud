@@ -109,7 +109,7 @@ The Golang snippet below walks you through the general setup.&lt;/p&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it!
 Working around TLS termination can be a bit tricky.
-For a closer look at our implementation, take a look at the &lt;a href=&#34;https://github.com/depscloud/gateway&#34;&gt;gateway&lt;/a&gt; process.
+For a closer look at our implementation, take a look at the &lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/gateway&#34;&gt;gateway&lt;/a&gt; process.
 This typically sits behind a reverse proxy and mediates communication with the backend services.&lt;/p&gt;
 &lt;h2 id=&#34;configuring-an-ingress-controller&#34;&gt;Configuring an ingress controller&lt;/h2&gt;
 &lt;p&gt;Regardless of where you&amp;rsquo;re running, you&amp;rsquo;ll probably need to do some amount of special configuration to enable gRPC.
