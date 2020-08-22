@@ -1,6 +1,6 @@
 ---
-title: "Working with Git"
-linkTitle: "Working with Git"
+title: "Working with git"
+linkTitle: "Working with git"
 weight: 30
 aliases:
 - /docs/contributing/git/
@@ -8,30 +8,23 @@ aliases:
 
 ## Cloning Projects
 
-Once you've forked the repository, you'll want to clone it locally for development.
-For convenience, I tend to work out of the GOPATH directory.
-Using the following command, you can quickly build a directory for all the depscloud related work.
+Let's get started by creating a workspace for the project.
+Many contributors work with Go and follow their convention.
 
-```bash
-$ mkdir -p ${GOPATH}/src/github.com/depscloud && cd $_
+```shell script
+mkdir -p ${GOPATH}/src/github.com/depscloud && cd $_
 ```
 
-Once you have a workspace, clone the upstream project.
-This will allow you to regularly pull updates from the `origin`.
+Once you have a workspace, you'll want to clone the relevant projects.
+Most people contribute to `depscloud` but will also need `deploy` for docker.
 
-```bash
-$ git clone git@github.com:depscloud/<project>.git
+```shell script
+git clone git@github.com:depscloud/depscloud.git    # source code
+git clone git@github.com:depscloud/deploy.git       # deployment config
+
+git clone git@github.com:depscloud/deps.cloud.git   # website
+git clone git@github.com:depscloud/api.git          # api and sdk
 ```
-
-## Building and Running Projects
-
-There are two ways you can build and run this project.
-First you can develop using docker (the recommended way).
-Each repository ships with two dockerfiles, one for building and testing locally, another for publishing.
-The second way to build and run this project.
-This mechanism is not recommended, but can often help quickly testing things without the overhead of docker.
-
-* [Developing in Docker](/docs/contributing/docker/) (Recommended)
 
 ## Branching
 
@@ -40,15 +33,6 @@ To create a branch for GitHub issue #11, simply create a branch with the name `g
 
 ```bash
 $ git checkout -b gh-11
-```
-
-In some rare occasions you might be working on a issue that requires work across multiple repositories.
-In this case, you should used the [deps.cloud](https://github.com/depscloud/deps.cloud) repository to create a parent issue that the other issues can reference and link to.
-To link another projects issue, you can use the `<user>/<project>#11` semantic.
-Similarly, you can create a feature branch using the same syntax.
-
-```bash
-$ git checkout -b <user>/<project>#11
 ```
 
 ## Forking and Submitting Pull Requests

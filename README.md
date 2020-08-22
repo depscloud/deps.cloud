@@ -33,6 +33,8 @@ You should be able to see any changes made to documentation updated in realtime 
 
 ### Contributing a change
 
+Before getting started, take a look at our [contributing guidelines] and [project board].
+
 When contributing a change, you should submit a pull request from a [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
 Your fork can be added as a remote to the upstream repository.
 This will be the easiest way to stay on top of the latest changes.
@@ -48,6 +50,9 @@ Otherwise, a simple, descriptive name is sufficient (e.g. `ci_update`.)
 ```shell script
 git checkout -b gh-###
 ```
+
+[contributing guidelines]: https://deps.cloud/docs/contrib/
+[project board]: https://github.com/orgs/depscloud/projects/1
 
 ### Pushing changes to a fork
 
@@ -71,8 +76,7 @@ We also have a [Slack] channel.
 
 deps.cloud is governed by the [Contributor Covenant v1.4.1](/contributing/code-of-conduct/index.md).
 
-![Google Analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=deps.cloud&dt=deps.cloud&tid=UA-143087272-2)
+## License Checks
 
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud?ref=badge_large)
+[![fossa](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdepscloud%2Fdeps.cloud?ref=badge_large)
+![analytics](https://www.google-analytics.com/collect?v=1&cid=555&t=pageview&ec=repo&ea=open&dp=deps.cloud&dt=deps.cloud&tid=UA-143087272-2)
