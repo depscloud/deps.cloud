@@ -26,13 +26,13 @@ Each part of the deps.cloud ecosystem has an associated docker target that build
    Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contrib/docker/" />
-<meta property="article:modified_time" content="2020-08-22T17:24:10-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-22T17:26:20-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Developing in Docker">
 <meta itemprop="description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
 Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
    Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.">
-<meta itemprop="dateModified" content="2020-08-22T17:24:10-05:00" />
-<meta itemprop="wordCount" content="91">
+<meta itemprop="dateModified" content="2020-08-22T17:26:20-05:00" />
+<meta itemprop="wordCount" content="90">
 
 
 
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
+  data-offline-search-index-json-src="/offline-search-index.3bd0fbb91200f7e3c760dd0c7f5c3cb9e3690ae7b2f6ddd6d502a8cf9bc141d908538f94f61bb567aa323895a14e334f5090c69eadbae41be2a02b845a5819f4.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
+  data-offline-search-index-json-src="/offline-search-index.3bd0fbb91200f7e3c760dd0c7f5c3cb9e3690ae7b2f6ddd6d502a8cf9bc141d908538f94f61bb567aa323895a14e334f5090c69eadbae41be2a02b845a5819f4.json"
   data-offline-search-base-href="/"
 >
 
@@ -564,7 +564,7 @@ This container can be used with the docker deployment configuration to test chan
 </tbody>
 </table>
 <p>Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-compose up -d
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose up -d
 </code></pre></div>
 	
 		<style>
@@ -628,7 +628,7 @@ This container can be used with the docker deployment configuration to test chan
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/b11be660d0ca60a21c37251dc55dc780a0fb194d">updated contributing docs with new monorepo content (b11be66)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/1224cda8e91933b4818532fd5eca097ab522dfa6">standardized shell representation (1224cda)</a>
 </div>
 </div>
 

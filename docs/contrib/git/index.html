@@ -26,13 +26,13 @@ mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a wor
 git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/contrib/git/" />
-<meta property="article:modified_time" content="2020-08-22T17:24:10-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-08-22T17:26:20-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="Working with git">
 <meta itemprop="description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
 mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
 git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github.">
-<meta itemprop="dateModified" content="2020-08-22T17:24:10-05:00" />
-<meta itemprop="wordCount" content="236">
+<meta itemprop="dateModified" content="2020-08-22T17:26:20-05:00" />
+<meta itemprop="wordCount" content="233">
 
 
 
@@ -125,7 +125,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
+  data-offline-search-index-json-src="/offline-search-index.3bd0fbb91200f7e3c760dd0c7f5c3cb9e3690ae7b2f6ddd6d502a8cf9bc141d908538f94f61bb567aa323895a14e334f5090c69eadbae41be2a02b845a5819f4.json"
   data-offline-search-base-href="/"
 >
 
@@ -155,7 +155,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8d21bf29cd9653a90e96c6c02445375adc34563f72b5115c6bd6bde7d81587305a1e28963a65634742167ae675f68fa6ced8644570f978fdc2294b60997ca7d6.json"
+  data-offline-search-index-json-src="/offline-search-index.3bd0fbb91200f7e3c760dd0c7f5c3cb9e3690ae7b2f6ddd6d502a8cf9bc141d908538f94f61bb567aa323895a14e334f5090c69eadbae41be2a02b845a5819f4.json"
   data-offline-search-base-href="/"
 >
 
@@ -551,14 +551,14 @@ git clone git@github.com:depscloud/api.git          <span style="color:#8f5902;f
 </code></pre></div><h2 id="branching">Branching</h2>
 <p>The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
 To create a branch for GitHub issue #11, simply create a branch with the name <code>gh-11</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git checkout -b gh-11
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b gh-11
 </code></pre></div><h2 id="forking-and-submitting-pull-requests">Forking and Submitting Pull Requests</h2>
 <p>By and large, <a href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">forks</a> are used to submit pull requests to the upstream repositories.</p>
 <p>After a project has been cloned, you will need to add your fork as a remote.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git remote add &lt;myuser&gt; git@github.com:&lt;myuser&gt;/&lt;project&gt;.git
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote add &lt;myuser&gt; git@github.com:&lt;myuser&gt;/&lt;project&gt;.git
 </code></pre></div><p>By doing this, you&rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
 When pushing a branch to, you can specify the <code>-u</code> option to have your local branch track a specific remote.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git push -u &lt;myuser&gt; gh-11
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -u &lt;myuser&gt; gh-11
 </code></pre></div><p>From here, all <code>git push</code> operations will default to using your fork.
 After a branch has been pushed, you can use <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">pull requests</a> to have your code reviewed by the team.</p>
 
@@ -624,7 +624,7 @@ After a branch has been pushed, you can use <a href="https://help.github.com/en/
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/b11be660d0ca60a21c37251dc55dc780a0fb194d">updated contributing docs with new monorepo content (b11be66)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified August 22, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/1224cda8e91933b4818532fd5eca097ab522dfa6">standardized shell representation (1224cda)</a>
 </div>
 </div>
 

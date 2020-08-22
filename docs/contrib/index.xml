@@ -108,14 +108,14 @@ git clone git@github.com:depscloud/api.git          &lt;span style=&#34;color:#8
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
 &lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
 To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git checkout -b gh-11
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git checkout -b gh-11
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
 &lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
 &lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
 When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ git push -u &amp;lt;myuser&amp;gt; gh-11
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git push -u &amp;lt;myuser&amp;gt; gh-11
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
 After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
 
@@ -166,7 +166,7 @@ This container can be used with the docker deployment configuration to test chan
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ docker-compose up -d
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;docker-compose up -d
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
