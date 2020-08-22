@@ -20,6 +20,6 @@ This container can be used with the docker deployment configuration to test chan
 
 Once you've produced an image containing your local changes, you can easily update your stack to pick up the new image.
 
-```bash
-$ docker-compose up -d
+```shell script
+docker-compose up -d
 ```

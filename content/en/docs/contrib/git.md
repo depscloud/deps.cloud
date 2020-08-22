@@ -31,8 +31,8 @@ git clone git@github.com:depscloud/api.git          # api and sdk
 The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
 To create a branch for GitHub issue #11, simply create a branch with the name `gh-11`.
 
-```bash
-$ git checkout -b gh-11
+```shell script
+git checkout -b gh-11
 ```
 
 ## Forking and Submitting Pull Requests
@@ -41,15 +41,15 @@ By and large, [forks](https://help.github.com/en/github/getting-started-with-git
 
 After a project has been cloned, you will need to add your fork as a remote.
 
-```bash
-$ git remote add <myuser> git@github.com:<myuser>/<project>.git
+```shell script
+git remote add <myuser> git@github.com:<myuser>/<project>.git
 ```
 
 By doing this, you're able to maintain two references: one for upstream updates and one for your set of changes.
 When pushing a branch to, you can specify the `-u` option to have your local branch track a specific remote.
 
-```bash
-$ git push -u <myuser> gh-11
+```shell script
+git push -u <myuser> gh-11
 ```
 
 From here, all `git push` operations will default to using your fork.
