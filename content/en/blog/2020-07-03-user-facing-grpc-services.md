@@ -95,7 +95,7 @@ func main() {
 
 That's it!
 Working around TLS termination can be a bit tricky.
-For a closer look at our implementation, take a look at the [gateway](https://github.com/depscloud/gateway) process.
+For a closer look at our implementation, take a look at the [gateway](https://github.com/depscloud/depscloud/tree/main/gateway) process.
 This typically sits behind a reverse proxy and mediates communication with the backend services. 
 
 ## Configuring an ingress controller

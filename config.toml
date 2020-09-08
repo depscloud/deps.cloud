@@ -94,7 +94,7 @@ url_latest_version = "https://deps.cloud"
 github_repo = "https://github.com/depscloud/deps.cloud"
 github_branch = "main"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/depscloud/deps.cloud"
+github_project_repo = "https://github.com/depscloud/depscloud"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""

@@ -52,9 +52,9 @@ $ deps version
 deps {version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z}
 ```
 
-Finally, you can download one of the latest binaries from GitHub releases.
+Finally, you can download the latest `deps` binary from GitHub releases.
 
-https://github.com/depscloud/cli/releases/latest
+https://github.com/depscloud/depscloud/releases/latest
 
 ## Configuration
 

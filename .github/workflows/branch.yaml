@@ -27,7 +27,6 @@ jobs:
           curl -LO https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
           dpkg -i hugo_extended_${HUGO_VERSION}_Linux-64bit.deb && rm hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
           npm install
-          make build-deps
           make build test
 
       - name: Deploy

@@ -1,6 +1,7 @@
 ---
 title: "Contributing"
 linkTitle: "Contributing"
+no_list: true
 aliases:
 - /docs/contributing/
 ---
@@ -8,12 +9,9 @@ aliases:
 All projects are open to contributions.
 Be sure to consult all the resources below prior to contributing.
 
-## Process and Project Management
-
-The deps.cloud project leverages a public [GitHub Project](https://github.com/orgs/depscloud/projects/1) for tracking its work items.
-For new comers, there's a section that provides some detail around how to get started developing on the project.
-If you want to submit an issue, you can open one up under the [deps.cloud](https://github.com/depscloud/deps.cloud/issues/new) project.
-A triager will take care of moving it to the right project.
+* [Project board](https://github.com/orgs/depscloud/projects/1)
+* [Working with git](/docs/contrib/git)
+* [Developing with Docker](/docs/contrib/docker)
 
 ## Contributor Agreements
 
@@ -35,3 +33,12 @@ https://cla-assistant.io/depscloud/deps.cloud
 If you are submitting code on behalf of your company, please ensure your company has submit a copy of our Corporate Contributor Agreement.
 You can find a copy of the corporate agreement [here](https://raw.githubusercontent.com/depscloud/deps.cloud/main/clas/corporate.md).
 When complete, you can [email](mailto:clas@deps.cloud) a copy of it to us.
+
+## Support
+
+Join our [mailing list] and ask any questions there.
+
+We also have [Slack].
+
+[mailing list]: https://groups.google.com/a/deps.cloud/forum/#!forum/community/join
+[Slack]: https://depscloud.slack.com/join/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A
