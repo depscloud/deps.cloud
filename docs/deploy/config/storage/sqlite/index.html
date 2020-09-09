@@ -26,12 +26,12 @@ Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object man
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:sqliteSTORAGE_ADDRESS:file:depscloud.db?cache=shared&amp;mode=rwcSTORAGE_READ_ONLY_ADDRESS:file:depscloud.db?cache=shared&amp;mode=roHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/sqlite/" />
-<meta property="article:modified_time" content="2020-09-08T08:08:00-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-09-09T09:52:38-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="SQLite">
 <meta itemprop="description" content="Storage Driver: sqlite Read-Write Connection String: file:depscloud.db?cache=shared&amp;mode=rwc Read-Only Connection String: file:depscloud.db?cache=shared&amp;mode=ro  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for SQLite.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:sqliteSTORAGE_ADDRESS:file:depscloud.db?cache=shared&amp;mode=rwcSTORAGE_READ_ONLY_ADDRESS:file:depscloud.db?cache=shared&amp;mode=roHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2020-09-08T08:08:00-05:00" />
+<meta itemprop="dateModified" content="2020-09-09T09:52:38-05:00" />
 <meta itemprop="wordCount" content="120">
 
 
@@ -613,7 +613,7 @@ First, you can pass the values into the helm chart as arguments during installat
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 8, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/4681bb6387b7945f0fc389f3151cccebb73d4826">Merge branch &#39;main&#39; of github.com:depscloud/deps.cloud into main (4681bb6)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 9, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/3efc982de3c35592585a29f9e555ce7f46326452">retitled (3efc982)</a>
 </div>
 </div>
 
