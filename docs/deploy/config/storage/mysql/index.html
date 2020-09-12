@@ -26,12 +26,12 @@ Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object man
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user-rw:password@tcp(depscloud-mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(depscloud-mysql:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/mysql/" />
-<meta property="article:modified_time" content="2020-09-09T09:52:38-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-09-12T09:57:28-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user-rw:password@tcp(depscloud-mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(depscloud-mysql:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2020-09-09T09:52:38-05:00" />
+<meta itemprop="dateModified" content="2020-09-12T09:57:28-05:00" />
 <meta itemprop="wordCount" content="169">
 
 
@@ -127,15 +127,6 @@ if (!doNotTrack) {
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -631,7 +622,7 @@ Contributions are welcome!</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified September 9, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/3efc982de3c35592585a29f9e555ce7f46326452">retitled (3efc982)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified September 12, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/6f30375cbf763ad93e3e74289a76c156631ab83d">removing side search (6f30375)</a>
 </div>
 </div>
 
