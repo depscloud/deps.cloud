@@ -1,7 +1,7 @@
 ---
 title: "Hacktoberfest 2020"
 author: Mya Pitzeruse
-date: 2020-09-21
+date: 2020-09-22
 ---
 
 We're excited to announce that deps.cloud will be participating in [Hacktoberfest] as a maintainer this year.
