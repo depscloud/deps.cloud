@@ -20,21 +20,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Search Results | deps.cloud</title><meta property="og:title" content="Search Results" />
-<meta property="og:description" content="" />
+<title>v0.2.28 released | deps.cloud</title><meta property="og:title" content="v0.2.28 released" />
+<meta property="og:description" content="In this release, we&rsquo;ve started to set the project up for general availability. All of our servers (gateway, tracker, and extractor) now provide both HTTP and gRPC servers. By default, they are bound to ports 8080 and 8090 respectively. Each server now accepts a --http-port and --grpc-port option to configure the ports. This also means that we&rsquo;re deprecating the --port flag in favor of the others.
+With the addition of an HTTP server to each project, we now offer endpoints for troubleshooting each system." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/search/" />
+<meta property="og:url" content="https://deps.cloud/blog/2020/09/22/v0.2.28-released/" />
+<meta property="article:published_time" content="2020-09-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-09-22T11:01:11-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Search Results">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="v0.2.28 released">
+<meta itemprop="description" content="In this release, we&rsquo;ve started to set the project up for general availability. All of our servers (gateway, tracker, and extractor) now provide both HTTP and gRPC servers. By default, they are bound to ports 8080 and 8090 respectively. Each server now accepts a --http-port and --grpc-port option to configure the ports. This also means that we&rsquo;re deprecating the --port flag in favor of the others.
+With the addition of an HTTP server to each project, we now offer endpoints for troubleshooting each system.">
+<meta itemprop="datePublished" content="2020-09-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-09-22T11:01:11-05:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="190">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search Results"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="v0.2.28 released"/>
+<meta name="twitter:description" content="In this release, we&rsquo;ve started to set the project up for general availability. All of our servers (gateway, tracker, and extractor) now provide both HTTP and gRPC servers. By default, they are bound to ports 8080 and 8090 respectively. Each server now accepts a --http-port and --grpc-port option to configure the ports. This also means that we&rsquo;re deprecating the --port flag in favor of the others.
+With the addition of an HTTP server to each project, we now offer endpoints for troubleshooting each system."/>
 
 
 <script type="application/javascript">
@@ -64,7 +69,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-page">
+  <body class="td-page td-blog">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -87,7 +92,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+				<a class="nav-link active" href="/blog/" ><span class="active">Blog</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -111,31 +116,68 @@ if (!doNotTrack) {
 </nav>
 
     </header>
-    <div class="container-fluid td-default td-outer">
-      <main role="main" class="td-main">
-        
-<section class="row td-search-result">
-<div class="col-12 col-md-8 offset-md-2">
-<h2 class="ml-4">Search Results</h2>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"></div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none"></div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+            <a class="btn btn-lg -bg-primary td-rss-button d-none d-lg-block" href="https://deps.cloud/blog/index.xml" target="_blank">
+              RSS <i class="fa fa-rss ml-2 "></i>
+            </a>
+            
+<div>
+  <p><a href="/blog/">&lt; Back to Blog</a></p>
+</div>
 
-<script>
-(function() {
-var cx = '017487221271611979926:eoeczqvytvh';
-var gcse = document.createElement('script');
-gcse.type = 'text/javascript';
-gcse.async = true;
-gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(gcse, s);
-})();
-</script>
-			<gcse:searchresults-only></gcse:searchresults-only>
+<div style="max-width:900px;">
+  <h1>v0.2.28 released</h1>
+  
+  <div class="td-byline mb-4">
+    By <b>Mya Pitzeruse</b> |
+    <time datetime="2020-09-22" class="text-muted">Tuesday, September 22, 2020</time>
+  </div>
+  <p>In this release, we&rsquo;ve started to set the project up for general availability.
+All of our servers (<code>gateway</code>, <code>tracker</code>, and <code>extractor</code>) now provide both HTTP and gRPC servers.
+By default, they are bound to ports <code>8080</code> and <code>8090</code> respectively.
+Each server now accepts a <code>--http-port</code> and <code>--grpc-port</code> option to configure the ports.
+This also means that we&rsquo;re deprecating the <code>--port</code> flag in favor of the others.</p>
+<p>With the addition of an HTTP server to each project, we now offer endpoints for troubleshooting each system.
+<code>/healthz</code> provides access to the current health of the system.
+We generate this report using <a href="https://github.com/mjpitz">go-gracefully</a>, a health check library developed to simplify system status.
+<code>/metrics</code> exposes a standard <a href="https://prometheus.io/">Prometheus</a> metrics endpoint.
+This will allow us to hook in service monitors and continue to bolster our ecosystem.</p>
+<p>For a full list of updates, take a look at our <a href="https://github.com/depscloud/depscloud/releases/tag/v0.2.28">release notes</a>.</p>
+<h3 id="notable-updates">Notable Updates</h3>
+<ul>
+<li><code>8db44145</code>: fix: only delete one edge, not all edges</li>
+<li><code>8619b5bf</code>: fix: pull bower out into its own language</li>
+<li><code>8a9fa7f7</code>: feat(dual-servers): sets up an http and grpc server (#77)</li>
+<li><code>5051104c</code>: feat(gh-70): moved over to using global dependency management (#71)</li>
+<li><code>29d23c2a</code>: feat(gh-48): implement v1beta GraphStore (#61)</li>
+</ul>
+
+  
+
+  <div class="clearfix mb-0 pt-5" style="color:white;">
+  
+  <span style="float:left;">
+    <a href="/blog/2020/07/03/user-facing-grpc-services/" ><span class="mr-1">←</span> Previous</a>
+  </span>
+  
+
+  
+</div>
+
+<ul class="list-unstyled  justify-content-between align-items-center " style="color: white !important;">
+
+</ul>
 
 </div>
-</section>
 
-
-      </main>
+          </main>
+        </div>
+      </div>
       
 <footer class="bg-dark text-white py-5 row d-print-none">
   <div class="container-fluid mx-sm-5">

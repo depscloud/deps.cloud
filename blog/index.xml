@@ -15,6 +15,38 @@
     
     
     <item>
+      <title>Blog: v0.2.28 released</title>
+      <link>https://deps.cloud/blog/2020/09/22/v0.2.28-released/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/blog/2020/09/22/v0.2.28-released/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this release, we&amp;rsquo;ve started to set the project up for general availability.
+All of our servers (&lt;code&gt;gateway&lt;/code&gt;, &lt;code&gt;tracker&lt;/code&gt;, and &lt;code&gt;extractor&lt;/code&gt;) now provide both HTTP and gRPC servers.
+By default, they are bound to ports &lt;code&gt;8080&lt;/code&gt; and &lt;code&gt;8090&lt;/code&gt; respectively.
+Each server now accepts a &lt;code&gt;--http-port&lt;/code&gt; and &lt;code&gt;--grpc-port&lt;/code&gt; option to configure the ports.
+This also means that we&amp;rsquo;re deprecating the &lt;code&gt;--port&lt;/code&gt; flag in favor of the others.&lt;/p&gt;
+&lt;p&gt;With the addition of an HTTP server to each project, we now offer endpoints for troubleshooting each system.
+&lt;code&gt;/healthz&lt;/code&gt; provides access to the current health of the system.
+We generate this report using &lt;a href=&#34;https://github.com/mjpitz&#34;&gt;go-gracefully&lt;/a&gt;, a health check library developed to simplify system status.
+&lt;code&gt;/metrics&lt;/code&gt; exposes a standard &lt;a href=&#34;https://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; metrics endpoint.
+This will allow us to hook in service monitors and continue to bolster our ecosystem.&lt;/p&gt;
+&lt;p&gt;For a full list of updates, take a look at our &lt;a href=&#34;https://github.com/depscloud/depscloud/releases/tag/v0.2.28&#34;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;notable-updates&#34;&gt;Notable Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;8db44145&lt;/code&gt;: fix: only delete one edge, not all edges&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;8619b5bf&lt;/code&gt;: fix: pull bower out into its own language&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;8a9fa7f7&lt;/code&gt;: feat(dual-servers): sets up an http and grpc server (#77)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5051104c&lt;/code&gt;: feat(gh-70): moved over to using global dependency management (#71)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;29d23c2a&lt;/code&gt;: feat(gh-48): implement v1beta GraphStore (#61)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: User-facing gRPC services</title>
       <link>https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
