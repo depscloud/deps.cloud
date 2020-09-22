@@ -13,6 +13,50 @@
     
     
     <item>
+      <title>Blog: Hacktoberfest 2020</title>
+      <link>https://deps.cloud/blog/2020/09/22/hacktoberfest-2020/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/blog/2020/09/22/hacktoberfest-2020/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We&amp;rsquo;re excited to announce that deps.cloud will be participating in &lt;a href=&#34;https://hacktoberfest.digitalocean.com/&#34;&gt;Hacktoberfest&lt;/a&gt; as a maintainer this year.
+The easiest place to get started is with our &lt;a href=&#34;https://github.com/orgs/depscloud/projects/1&#34;&gt;project board&lt;/a&gt;.
+There&amp;rsquo;s a quick guide with relevant links, and a column dedicated to new comers.
+Issues have been tagged with &lt;code&gt;hacktoberfest&lt;/code&gt;, &lt;code&gt;good first issue&lt;/code&gt;, and &lt;code&gt;help&lt;/code&gt; appropriately.
+To get started, see the &lt;code&gt;CONTRIBUTING.md&lt;/code&gt; and &lt;code&gt;DEVELOPING.md&lt;/code&gt; guides in each project.&lt;/p&gt;
+&lt;img style=&#34;display: block; width: 100%; height: auto;&#34; alt=&#34;hacktoberfest&#34; src=&#34;https://deps.cloud/images/hacktoberfest-2020.jpg&#34;/&gt;
+&lt;br/&gt;
+&lt;h2 id=&#34;why-contribute&#34;&gt;Why contribute?&lt;/h2&gt;
+&lt;p&gt;deps.cloud is a tool built to help companies sustain open source.
+It helps companies stay on top library versions by providing insights into their ecosystem.
+It can also help identify which libraries an organization uses the most.
+As a result, organizations can invest in libraries that are critical to their systems.
+Many of which, are provided by the open source community.&lt;/p&gt;
+&lt;p&gt;In addition to supporting open source, we have partnered with &lt;a href=&#34;https://opensource.indeedeng.io/&#34;&gt;Indeed&amp;rsquo;s Open Source Program Office&lt;/a&gt; to reward those who contribute.
+To learn more about how to get involved, see their &lt;a href=&#34;https://engineering.indeedblog.com/indeed-hacktoberfest-2020/&#34;&gt;Hacktoberfest 2020&lt;/a&gt; landing page for more details.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2 id=&#34;our-goal&#34;&gt;Our goal&lt;/h2&gt;
+&lt;p&gt;Our goal for this Hacktoberfest is to release &lt;code&gt;v0.3.x&lt;/code&gt;.
+In this release, we hope to include two major features.&lt;/p&gt;
+&lt;p&gt;The first is the development of our &lt;code&gt;v1beta&lt;/code&gt; API.
+It simplifies the complexity of our &lt;code&gt;v1alpha&lt;/code&gt; models.
+This was largely inspired by the second major feature: a web-based user interface.
+Historically, the project has never had a visual interface.
+It&amp;rsquo;s relied on the command line tool and SDKs for interacting with the data.
+After a quick prototype, we&amp;rsquo;re confident we can provide a powerful visual experience.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2 id=&#34;desired-skill-sets&#34;&gt;Desired skill sets&lt;/h2&gt;
+&lt;p&gt;With the addition of a UI, we are looking for front end developers.
+Most of our projects are in &lt;a href=&#34;https://golang.org/&#34;&gt;Golang&lt;/a&gt; and &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;TypeScript&lt;/a&gt;.
+Experience with either language is not a requirement, but often helpful.
+We&amp;rsquo;ve had many folks successfully contribute to the project without any prior experience.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: v0.2.28 released</title>
       <link>https://deps.cloud/blog/2020/09/22/v0.2.28-released/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
