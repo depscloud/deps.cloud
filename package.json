@@ -4,7 +4,7 @@
   "description": "Hugo theme for technical documentation.",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "9.8.6",
+    "autoprefixer": "10.0.1",
     "postcss-cli": "7.1.2"
   }
 }
