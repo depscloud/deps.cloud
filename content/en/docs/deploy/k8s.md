@@ -10,7 +10,7 @@ This guide explains how to run the deps.cloud infrastructure within a [Kubernete
 
 ## Prerequisites
 
-1. A working Kubernetes cluster. To follow along with this guide, you should set up [minikube](https://kubernetes.io/docs/getting-started-guides/minikube/) on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.
+1. A working Kubernetes cluster. To follow along with this guide, you should set up [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.
 1. The `kubectl` binary should be installed and in your path on your workstation.
 
 ## 1 - Configure a Storage Class
