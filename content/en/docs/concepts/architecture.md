@@ -6,7 +6,7 @@ aliases:
 - /docs/architecture/
 ---
 
-The following diagram illustrates the general system deployed on top of a kubernetes cluster.
+The following diagram illustrates the general system deployed on top of a Kubernetes cluster.
 
 ![arch](/images/arch.png)
 
