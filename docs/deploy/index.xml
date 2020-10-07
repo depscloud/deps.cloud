@@ -78,7 +78,7 @@ Restarting docker_indexer_1 ... done
         &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/setup/learning-environment/minikube/&#34;&gt;Minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;1---configure-a-storage-class&#34;&gt;1 - Configure a Storage Class&lt;/h2&gt;
@@ -183,7 +183,7 @@ Forwarding from [::1]:8080 -&amp;gt; 8080
         &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster using the &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; package manager.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/setup/learning-environment/minikube/&#34;&gt;Minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;helm&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;/ol&gt;

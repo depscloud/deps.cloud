@@ -373,7 +373,7 @@ While we work on getting parity between each of the providers take note that thi
         &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/setup/learning-environment/minikube/&#34;&gt;Minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;1---configure-a-storage-class&#34;&gt;1 - Configure a Storage Class&lt;/h2&gt;
@@ -573,7 +573,7 @@ While we work on getting parity between each of the providers take note that thi
         &lt;p&gt;This guide explains how to run the deps.cloud infrastructure within a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; cluster using the &lt;a href=&#34;https://helm.sh/&#34;&gt;Helm&lt;/a&gt; package manager.&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/getting-started-guides/minikube/&#34;&gt;minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
+&lt;li&gt;A working Kubernetes cluster. To follow along with this guide, you should set up &lt;a href=&#34;https://kubernetes.io/docs/setup/learning-environment/minikube/&#34;&gt;Minikube&lt;/a&gt; on your machine. Minikube provides a great way to test and experiment around with Kubernetes locally.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;kubectl&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;helm&lt;/code&gt; binary should be installed and in your path on your workstation.&lt;/li&gt;
 &lt;/ol&gt;
@@ -893,7 +893,7 @@ After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.
       <description>
         
         
-        &lt;p&gt;The following diagram illustrates the general system deployed on top of a kubernetes cluster.&lt;/p&gt;
+        &lt;p&gt;The following diagram illustrates the general system deployed on top of a Kubernetes cluster.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;actors&#34;&gt;Actors&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/deps&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.

@@ -235,7 +235,7 @@ Since there is no standardization across languages, extraction may vary between 
       <description>
         
         
-        &lt;p&gt;The following diagram illustrates the general system deployed on top of a kubernetes cluster.&lt;/p&gt;
+        &lt;p&gt;The following diagram illustrates the general system deployed on top of a Kubernetes cluster.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;actors&#34;&gt;Actors&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/deps&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.
