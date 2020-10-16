@@ -26,12 +26,12 @@ Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object man
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:sqliteSTORAGE_ADDRESS:file:depscloud.db?cache=shared&amp;mode=rwcSTORAGE_READ_ONLY_ADDRESS:file:depscloud.db?cache=shared&amp;mode=roHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/sqlite/" />
-<meta property="article:modified_time" content="2020-10-15T22:22:16-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-10-15T21:27:57-07:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="SQLite">
 <meta itemprop="description" content="Storage Driver: sqlite Read-Write Connection String: file:depscloud.db?cache=shared&amp;mode=rwc Read-Only Connection String: file:depscloud.db?cache=shared&amp;mode=ro  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for SQLite.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:sqliteSTORAGE_ADDRESS:file:depscloud.db?cache=shared&amp;mode=rwcSTORAGE_READ_ONLY_ADDRESS:file:depscloud.db?cache=shared&amp;mode=roHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2020-10-15T22:22:16-05:00" />
+<meta itemprop="dateModified" content="2020-10-15T21:27:57-07:00" />
 <meta itemprop="wordCount" content="120">
 
 
@@ -604,7 +604,7 @@ First, you can pass the values into the helm chart as arguments during installat
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 15, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/e02015a16bb21a3c83186ea96cc6decbb65cc776">added logos to the favicons folder (e02015a)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 15, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/0f1b1f625f5492455bd28635c2fb25f6a1bdecb9">Update cli docs to account for name changes (#74) (0f1b1f6)</a>
 </div>
 </div>
 
