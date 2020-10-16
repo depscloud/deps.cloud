@@ -15,6 +15,34 @@
     
     
     <item>
+      <title>Blog: v0.2.30 released</title>
+      <link>https://deps.cloud/blog/2020/10/15/v0.2.30-released/</link>
+      <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/blog/2020/10/15/v0.2.30-released/</guid>
+      <description>
+        
+        
+        &lt;p&gt;A little over due, but this release is a first great step towards &lt;code&gt;v1beta&lt;/code&gt;.
+The server-side of our ecosystem now supports the &lt;code&gt;name&lt;/code&gt; concept.
+While our CLI quite support it, we&amp;rsquo;re expecting it to be ready in the next release.&lt;/p&gt;
+&lt;p&gt;In addition to our first major stepping stone towards &lt;code&gt;v1beta&lt;/code&gt;, we&amp;rsquo;ve solidified some of our monitoring.
+With all our processes emitting some information, we were able to assemble some preliminary dashboards.
+These are available in our deploy repository and can be download there.&lt;/p&gt;
+&lt;img alt=&#34;Tracker Dashboard&#34; src=&#34;https://deps.cloud/images/2020-10-15-blog-dashboard.png&#34; style=&#34;width:100%&#34;/&gt;
+&lt;p&gt;For a full list of updates, take a look at our &lt;a href=&#34;https://github.com/depscloud/depscloud/releases/tag/v0.2.30&#34;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;notable-updates&#34;&gt;Notable Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bd81bca&lt;/code&gt; : nightly builds&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;6f541f7&lt;/code&gt; : server side implementation of DFS&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;e43c5e6&lt;/code&gt; : /version now available on all processes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;e924b05&lt;/code&gt; : grpc prometheus integration (client and server)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: Hacktoberfest 2020</title>
       <link>https://deps.cloud/blog/2020/09/22/hacktoberfest-2020/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
