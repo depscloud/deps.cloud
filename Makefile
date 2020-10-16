@@ -13,7 +13,7 @@ build:
 
 test: bin/htmltest
 	bin/htmltest
-	bin/htmltest --conf .htmltest.external.yml
+#	bin/htmltest --conf .htmltest.external.yml
 
 serve:
 	hugo serve -D
