@@ -93,8 +93,8 @@ To query for this information, simply add the `--url` or `-u` flag.
 
 ```bash
 $ deps get modules -u https://github.com/depscloud/api.git
-{"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"depscloud/api"}}
-{"manages":{"language":"node","system":"npm","version":"0.1.0"},"module":{"language":"node","organization":"depscloud","module":"api"}}
+{"manages":{"language":"node","system":"npm","version":"0.1.16"},"module":{"language":"node","organization":"depscloud","module":"api","name":"@depscloud/api"}}
+{"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}}
 ```
 
 ### Sources
@@ -110,12 +110,12 @@ $ deps get sources
 ```
 
 The second option is to list all sources for a given module.
-To query or this information, the `--language`, `--organization`, and `--module` flags must be provided.
-Alternatively, the corresponding shorthands `-l`, `-o`, and `-m` can be used respectively.
+To query or this information, the `--language` and `--name` flags must be provided.
+Alternatively, the corresponding shorthands `-l` and `-n` can be used respectively.
 
 ```bash
-$ deps get sources -l go -o github.com -m depscloud/api
-{"source":{"url":"https://github.com/depscloud/api.git"},"manages":{"language":"go","system":"vgo","version":"latest"}}
+$ deps get sources -l go -n github.com/depscloud/api
+{"source":{"url":"https://github.com/depscloud/api.git","ref":"refs/heads/main","kind":"repository"},"manages":{"language":"go","system":"vgo","version":"latest"}}
 ```
 
 ### Dependents
@@ -124,10 +124,9 @@ Dependent modules are those who consume the module you're querying for.
 That is, modules who list your module as a dependency.
 
 ```bash
-$ deps get dependents -l go -o github.com -m depscloud/api
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/gateway"}}
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/tracker"}}
-{"depends":{"language":"go","version_constraint":"v0.1.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"depscloud/indexer"}}
+$ deps get dependents -l go -n github.com/depscloud/api
+{"depends":{"language":"go","version_constraint":"v0.1.15","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"}}
+{"depends":{"language":"go","version_constraint":"v0.1.16","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}}
 ```
 
 ### Dependencies
@@ -136,15 +135,14 @@ Dependencies are the modules that your module requires.
 This should rarely differ from the modules you list in your appropriate manifest file (`package.json`, `go.mod`, etc.)
 
 ```bash
-$ deps get dependencies -l go -o github.com -m depscloud/api
-{"depends":{"language":"go","version_constraint":"v1.3.0","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"gogo/protobuf"}}
-{"depends":{"language":"go","version_constraint":"v0.3.2","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/text"}}
-{"depends":{"language":"go","version_constraint":"v0.0.0-20190628185345-da137c7871d7","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/net"}}
-{"depends":{"language":"go","version_constraint":"v1.3.2","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"golang/protobuf"}}
-{"depends":{"language":"go","version_constraint":"v0.0.0-20190916214212-f660b8655731","scopes":["direct"]},"module":{"language":"go","organization":"google.golang.org","module":"genproto"}}
-{"depends":{"language":"go","version_constraint":"v0.0.0-20190626221950-04f50cda93cb","scopes":["indirect"]},"module":{"language":"go","organization":"golang.org","module":"x/sys"}}
-{"depends":{"language":"go","version_constraint":"v1.11.2","scopes":["direct"]},"module":{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway"}}
-{"depends":{"language":"go","version_constraint":"v1.23.1","scopes":["direct"]},"module":{"language":"go","organization":"google.golang.org","module":"grpc"}}
+$ deps get dependencies -l go -n github.com/depscloud/api
+{"depends":{"language":"go","version_constraint":"v0.0.0-20190626221950-04f50cda93cb","scopes":["indirect"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"golang.org","module":"x/sys","name":"golang.org/x/sys"}}
+{"depends":{"language":"go","version_constraint":"v0.0.0-20201012135029-0c95dc0d88e8","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"google.golang.org","module":"genproto","name":"google.golang.org/genproto"}}
+{"depends":{"language":"go","version_constraint":"v0.3.2","scopes":["indirect"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"golang.org","module":"x/text","name":"golang.org/x/text"}}
+{"depends":{"language":"go","version_constraint":"v1.3.1","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"gogo/protobuf","name":"github.com/gogo/protobuf"}}
+{"depends":{"language":"go","version_constraint":"v1.32.0","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"google.golang.org","module":"grpc","name":"google.golang.org/grpc"}}
+{"depends":{"language":"go","version_constraint":"v1.4.2","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"golang/protobuf","name":"github.com/golang/protobuf"}}
+{"depends":{"language":"go","version_constraint":"v1.15.2","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway","name":"github.com/grpc-ecosystem/grpc-gateway"}}
 ```
 
 ### Topology
@@ -159,25 +157,22 @@ By implementing this as a client-side feature, we defer the memory/disk cost to 
 Topologies can be queried in both the `dependencies` and `dependents` direction.
 
 ```bash
-$ deps get dependencies topology -l go -o github.com -m depscloud/api
-{"language":"go","organization":"github.com","module":"depscloud/api"}
-{"language":"go","organization":"github.com","module":"gogo/protobuf"}
-{"language":"go","organization":"golang.org","module":"x/text"}
-{"language":"go","organization":"golang.org","module":"x/net"}
-{"language":"go","organization":"github.com","module":"golang/protobuf"}
-{"language":"go","organization":"google.golang.org","module":"genproto"}
-{"language":"go","organization":"golang.org","module":"x/sys"}
-{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway"}
-{"language":"go","organization":"google.golang.org","module":"grpc"}
+$ deps get dependencies topology -l go -n github.com/depscloud/api
+{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}
+{"language":"go","organization":"golang.org","module":"x/sys","name":"golang.org/x/sys"}
+{"language":"go","organization":"google.golang.org","module":"genproto","name":"google.golang.org/genproto"}
+{"language":"go","organization":"golang.org","module":"x/text","name":"golang.org/x/text"}
+{"language":"go","organization":"github.com","module":"gogo/protobuf","name":"github.com/gogo/protobuf"}
+{"language":"go","organization":"google.golang.org","module":"grpc","name":"google.golang.org/grpc"}
+{"language":"go","organization":"github.com","module":"golang/protobuf","name":"github.com/golang/protobuf"}
+{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway","name":"github.com/grpc-ecosystem/grpc-gateway"}
 ```
 
 ```bash
-$ deps get dependents topology -l go -o github.com -m depscloud/api
-{"language":"go","organization":"github.com","module":"depscloud/api"}
-{"language":"go","organization":"github.com","module":"depscloud/gateway"}
-{"language":"go","organization":"github.com","module":"depscloud/cli"}
-{"language":"go","organization":"github.com","module":"depscloud/tracker"}
-{"language":"go","organization":"github.com","module":"depscloud/indexer"}
+$ deps get dependents topology -l go -n github.com/depscloud/api
+{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}
+{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"}
+{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}
 ```
 
 By adding the `--tiered` flag, you will get a structured set of results back.
@@ -185,9 +180,9 @@ This is great for building automation around your source code as it not only ide
 Consider the following simple example.
 
 ```bash
-$ deps get dependents topology -l go -o github.com -m depscloud/api --tiered
-[{"language":"go","organization":"github.com","module":"depscloud/api"}]
-[{"language":"go","organization":"github.com","module":"depscloud/gateway"},{"language":"go","organization":"github.com","module":"depscloud/cli"},{"language":"go","organization":"github.com","module":"depscloud/tracker"},{"language":"go","organization":"github.com","module":"depscloud/indexer"}]
+$ deps get dependents topology -l go -n github.com/depscloud/api --tiered
+[{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}]
+[{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"},{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}]
 ```
 
 In this case, we only have two tiers.
