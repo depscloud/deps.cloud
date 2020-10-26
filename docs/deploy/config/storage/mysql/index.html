@@ -26,12 +26,12 @@ Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object man
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user-rw:password@tcp(depscloud-mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(depscloud-mysql:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/mysql/" />
-<meta property="article:modified_time" content="2020-10-26T13:46:45-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2020-10-26T13:58:27-05:00" /><meta property="og:site_name" content="deps.cloud" />
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user-rw:password@tcp(depscloud-mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(depscloud-mysql:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2020-10-26T13:46:45-05:00" />
+<meta itemprop="dateModified" content="2020-10-26T13:58:27-05:00" />
 <meta itemprop="wordCount" content="169">
 
 
@@ -622,7 +622,7 @@ Contributions are welcome!</p>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 26, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/63d91efc26b223a743ccba412c2f917ffbac046c">update data model image (63d91ef)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified October 26, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/141fe72b8114c58cb66096b693a92bdd42f8b113">darken up lines (141fe72)</a>
 </div>
 </div>
 
