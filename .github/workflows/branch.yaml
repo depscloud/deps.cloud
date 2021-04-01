@@ -11,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: node:10-buster
     steps:
       - name: Checkout
         uses: actions/checkout@v2
