@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.69.1" />
+<meta name="generator" content="Hugo 0.82.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -20,27 +20,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Working with git | deps.cloud</title><meta property="og:title" content="Working with git" />
-<meta property="og:description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
-mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
-git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github." />
+<title>NodeJS | deps.cloud</title><meta property="og:title" content="NodeJS" />
+<meta property="og:description" content="All NodeJS dependencies can be accessed by querying the node language graph in deps.cloud.
+deps get dependencies -l node -n &lt;name&gt; deps get dependents -l node -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for npm. For example, the deps.cloud NodeJS SDK is @depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l node -n @depscloud/api To determine consumers of the SDK:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/docs/contrib/git/" />
-<meta property="article:modified_time" content="2020-10-26T13:58:27-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Working with git">
-<meta itemprop="description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
-mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
-git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github.">
-<meta itemprop="dateModified" content="2020-10-26T13:58:27-05:00" />
-<meta itemprop="wordCount" content="233">
+<meta property="og:url" content="https://deps.cloud/docs/languages/nodejs/" /><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2021-04-01T01:04:52-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
-
+<meta itemprop="name" content="NodeJS">
+<meta itemprop="description" content="All NodeJS dependencies can be accessed by querying the node language graph in deps.cloud.
+deps get dependencies -l node -n &lt;name&gt; deps get dependents -l node -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for npm. For example, the deps.cloud NodeJS SDK is @depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l node -n @depscloud/api To determine consumers of the SDK:">
+<meta itemprop="dateModified" content="2021-04-01T01:04:52-05:00" />
+<meta itemprop="wordCount" content="93">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Working with git"/>
-<meta name="twitter:description" content="Cloning Projects Let&rsquo;s get started by creating a workspace for the project. Many contributors work with Go and follow their convention.
-mkdir -p ${GOPATH}/src/github.com/depscloud &amp;&amp; cd $_ Once you have a workspace, you&rsquo;ll want to clone the relevant projects. Most people contribute to depscloud but will also need deploy for docker.
-git clone git@github.com:depscloud/depscloud.git # source code git clone git@github.com:depscloud/deploy.git # deployment config git clone git@github.com:depscloud/deps.cloud.git # website git clone git@github."/>
+<meta name="twitter:title" content="NodeJS"/>
+<meta name="twitter:description" content="All NodeJS dependencies can be accessed by querying the node language graph in deps.cloud.
+deps get dependencies -l node -n &lt;name&gt; deps get dependents -l node -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for npm. For example, the deps.cloud NodeJS SDK is @depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l node -n @depscloud/api To determine consumers of the SDK:"/>
 
 
 <script type="application/javascript">
@@ -59,8 +58,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" as="style">
-<link href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" as="style">
+<link href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -103,7 +102,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
 			</li>
 			
 			
@@ -139,10 +138,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse " id="docs">
+    <li class="collapse show" id="docs">
       
       
       
@@ -172,19 +171,101 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsgraph-traversal" href="/docs/concepts/graph-traversal/">Graph Traversal</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/languages/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Language Support</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docslanguages">
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesgolang" href="/docs/languages/golang/">Golang</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguageshelm" href="/docs/languages/helm/">Helm</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesjava" href="/docs/languages/java/">Java</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docslanguagesnodejs" href="/docs/languages/nodejs/">NodeJS</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesphp" href="/docs/languages/php/">PHP</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagespython" href="/docs/languages/python/">Python</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesrust" href="/docs/languages/rust/">Rust</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsguides">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
       
       
     </li>
@@ -349,39 +430,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
-    <li class="collapse " id="docsguides">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="docscontrib">
+    <li class="collapse " id="docscontrib">
       
       
       
@@ -389,18 +441,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcode-of-conduct" href="/docs/contrib/code-of-conduct/">Code of Conduct</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontribgit" href="/docs/contrib/git/">Working with git</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribdocker" href="/docs/contrib/docker/">Developing in Docker</a>
       
       
     </li>
@@ -434,8 +474,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/contrib/git.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Working%20with%20git" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/languages/nodejs.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=NodeJS" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -446,14 +486,6 @@ if (!doNotTrack) {
 
 
 
-
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#cloning-projects">Cloning Projects</a></li>
-    <li><a href="#branching">Branching</a></li>
-    <li><a href="#forking-and-submitting-pull-requests">Forking and Submitting Pull Requests</a></li>
-  </ul>
-</nav>
 
 
 
@@ -483,14 +515,14 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item" >
-	<a href="https://deps.cloud/docs/contrib/">Contributing</a>
+	<a href="https://deps.cloud/docs/languages/">Language Support</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/contrib/git/">Working with git</a>
+	<a href="https://deps.cloud/docs/languages/nodejs/">NodeJS</a>
 </li>
 
 	</ol>
@@ -498,33 +530,23 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Working with git</h1>
+	<h1>NodeJS</h1>
     
 	       
-	<h2 id="cloning-projects">Cloning Projects</h2>
-<p>Let&rsquo;s get started by creating a workspace for the project.
-Many contributors work with Go and follow their convention.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -p <span style="color:#4e9a06">${</span><span style="color:#000">GOPATH</span><span style="color:#4e9a06">}</span>/src/github.com/depscloud <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#204a87">cd</span> <span style="color:#000">$_</span>
-</code></pre></div><p>Once you have a workspace, you&rsquo;ll want to clone the relevant projects.
-Most people contribute to <code>depscloud</code> but will also need <code>deploy</code> for docker.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone git@github.com:depscloud/depscloud.git    <span style="color:#8f5902;font-style:italic"># source code</span>
-git clone git@github.com:depscloud/deploy.git       <span style="color:#8f5902;font-style:italic"># deployment config</span>
-
-git clone git@github.com:depscloud/deps.cloud.git   <span style="color:#8f5902;font-style:italic"># website</span>
-git clone git@github.com:depscloud/api.git          <span style="color:#8f5902;font-style:italic"># api and sdk</span>
-</code></pre></div><h2 id="branching">Branching</h2>
-<p>The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
-To create a branch for GitHub issue #11, simply create a branch with the name <code>gh-11</code>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout -b gh-11
-</code></pre></div><h2 id="forking-and-submitting-pull-requests">Forking and Submitting Pull Requests</h2>
-<p>By and large, <a href="https://help.github.com/en/github/getting-started-with-github/fork-a-repo">forks</a> are used to submit pull requests to the upstream repositories.</p>
-<p>After a project has been cloned, you will need to add your fork as a remote.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote add &lt;myuser&gt; git@github.com:&lt;myuser&gt;/&lt;project&gt;.git
-</code></pre></div><p>By doing this, you&rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
-When pushing a branch to, you can specify the <code>-u</code> option to have your local branch track a specific remote.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push -u &lt;myuser&gt; gh-11
-</code></pre></div><p>From here, all <code>git push</code> operations will default to using your fork.
-After a branch has been pushed, you can use <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">pull requests</a> to have your code reviewed by the team.</p>
+	<p>All NodeJS dependencies can be accessed by querying the <code>node</code> language graph in deps.cloud.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l node -n &lt;name&gt;
+deps get dependents -l node -n &lt;name&gt;
+</code></pre></div><p>The names of modules in the deps.cloud graph follow the standard convention for npm.
+For example, the deps.cloud NodeJS SDK is <code>@depscloud/api</code>.
+To determine which libraries the SDK requires:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l node -n @depscloud/api
+</code></pre></div><p>To determine consumers of the SDK:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependents -l node -n @depscloud/api
+</code></pre></div><h2 id="supported-formats">Supported Formats</h2>
+<p>deps.cloud builds its <code>node</code> graph from the following files.</p>
+<ul>
+<li><code>package.json</code> (<code>npm</code> in the API)</li>
+</ul>
 
 	
 		<style>
@@ -588,7 +610,7 @@ After a branch has been pushed, you can use <a href="https://help.github.com/en/
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 26, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/141fe72b8114c58cb66096b693a92bdd42f8b113">darken up lines (141fe72)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/14b0e5c457f3c09cb28659c793654591ebff81b5">don&#39;t run in container (14b0e5c)</a>
 </div>
 </div>
 
@@ -655,7 +677,7 @@ After a branch has been pushed, you can use <a href="https://help.github.com/en/
         <div class="font-italic">for developers</div>
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        <small>&copy; 2021 deps.cloud Authors All Rights Reserved</small>
         
 	
 		
@@ -677,7 +699,7 @@ After a branch has been pushed, you can use <a href="https://help.github.com/en/
 
 
 
-<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.8c2d614ce83be0bf4a3a40ad9062428a2e8fe5664d03a27294696756608a0d1f.js" integrity="sha256-jC1hTOg74L9KOkCtkGJCii6P5WZNA6JylGlnVmCKDR8=" crossorigin="anonymous"></script>
 
 
 

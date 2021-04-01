@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.69.1" />
+<meta name="generator" content="Hugo 0.82.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,18 +24,15 @@
 <meta property="og:description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
 Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/" />
-<meta property="article:published_time" content="2020-07-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-10-26T13:58:27-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="og:url" content="https://deps.cloud/blog/2020/07/03/user-facing-grpc-services/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-07-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-01T01:04:52-05:00" /><meta property="og:site_name" content="deps.cloud" />
+
 <meta itemprop="name" content="User-facing gRPC services">
 <meta itemprop="description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
-Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC.">
-<meta itemprop="datePublished" content="2020-07-03T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-10-26T13:58:27-05:00" />
+Before getting too far into things, it&rsquo;s important to first understand the benefits and challenges when using gRPC."><meta itemprop="datePublished" content="2020-07-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-04-01T01:04:52-05:00" />
 <meta itemprop="wordCount" content="766">
-
-
-
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="User-facing gRPC services"/>
 <meta name="twitter:description" content="gRPC is a remote procedure call framework used to facilitate inter-process communication. Originally open sourced by Google, the framework has been adopted my many companies like Square, Netflix, and Cisco. While many companies have adopted gRPC internally, few have leveraged it closer to the edge. In this post, we will demonstrate how we set up a public facing gRPC service.
@@ -58,8 +55,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" as="style">
-<link href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" as="style">
+<link href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -232,11 +229,11 @@ This typically sits behind a reverse proxy and mediates communication with the b
 In Kubernetes, this is often done through the use of annotations.
 While each ingress controller uses a different annotation, the practice tends to be the same.
 Below, you will find an example configuration for the Kubernetes <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingress</a>.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>networking.k8s.io/v1beta1<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>Ingress<span style="color:#f8f8f8;text-decoration:underline">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#204a87;font-weight:bold">apiVersion</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">networking.k8s.io/v1beta1</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">kind</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">Ingress</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">metadata</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">namespace</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">depscloud</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">name</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">depscloud</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">annotations</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># cert-manager</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#8f5902;font-style:italic"># Sets up certificates for HTTPS support using different issuers. </span><span style="color:#f8f8f8;text-decoration:underline">
@@ -253,15 +250,15 @@ Below, you will find an example configuration for the Kubernetes <a href="https:
 </span><span style="color:#f8f8f8;text-decoration:underline"></span><span style="color:#204a87;font-weight:bold">spec</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">tls</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">hosts</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- depscloud.company.net<span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">secretName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>api-certs<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#000">depscloud.company.net</span><span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">secretName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">api-certs</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">  </span><span style="color:#204a87;font-weight:bold">rules</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">host</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud.company.net<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">    </span>- <span style="color:#204a87;font-weight:bold">host</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">depscloud.company.net</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">      </span><span style="color:#204a87;font-weight:bold">http</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">        </span><span style="color:#204a87;font-weight:bold">paths</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>/<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">        </span>- <span style="color:#204a87;font-weight:bold">path</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">/</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">          </span><span style="color:#204a87;font-weight:bold">backend</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline">
-</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">serviceName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span>depscloud-gateway<span style="color:#f8f8f8;text-decoration:underline">
+</span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">serviceName</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">depscloud-gateway</span><span style="color:#f8f8f8;text-decoration:underline">
 </span><span style="color:#f8f8f8;text-decoration:underline">            </span><span style="color:#204a87;font-weight:bold">servicePort</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#0000cf;font-weight:bold">80</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div><h2 id="connecting-a-client-application">Connecting a client application</h2>
 <p>If you force SSL, you want to make sure clients pass along SSL credentials.
@@ -302,7 +299,7 @@ Simply instantiate empty SSL credentials.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">grpc</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;@grpc/grpc-js&#34;</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">DependencyService</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;@depscloud/api/v1alpha/tracker&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
-<span style="color:#000">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#204a87;font-weight:bold">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">main</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">target</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;depscloud.company.net:443&#34;</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">creds</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">grpc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">credentials</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createSsl</span><span style="color:#000;font-weight:bold">();</span>
 
@@ -403,7 +400,7 @@ Simply resolve the protocol buffer definition, supply the plugin to the compiler
         <div class="font-italic">for developers</div>
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        <small>&copy; 2021 deps.cloud Authors All Rights Reserved</small>
         
 	
 		
@@ -425,7 +422,7 @@ Simply resolve the protocol buffer definition, supply the plugin to the compiler
 
 
 
-<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.8c2d614ce83be0bf4a3a40ad9062428a2e8fe5664d03a27294696756608a0d1f.js" integrity="sha256-jC1hTOg74L9KOkCtkGJCii6P5WZNA6JylGlnVmCKDR8=" crossorigin="anonymous"></script>
 
 
 

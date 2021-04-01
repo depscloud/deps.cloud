@@ -1,0 +1,220 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deps.cloud – Language Support</title>
+    <link>https://deps.cloud/docs/languages/</link>
+    <description>Recent content in Language Support on deps.cloud</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://deps.cloud/docs/languages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Golang</title>
+      <link>https://deps.cloud/docs/languages/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/golang/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Golang modules can be accessed by querying the &lt;code&gt;go&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l go -n &amp;lt;name&amp;gt;
+deps get dependents -l go -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The names of modules in the deps.cloud graph follow the standard convention for Go.
+For example, the deps.cloud Go SDK is &lt;code&gt;github.com/depscloud/api&lt;/code&gt;.
+To determine which libraries the SDK requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l go -n github.com/depscloud/api
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine consumers of the SDK:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l go -n github.com/depscloud/api
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-files&#34;&gt;Supported Files&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;go&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Godeps.json&lt;/code&gt; (&lt;code&gt;godeps&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;go.mod&lt;/code&gt; (&lt;code&gt;vgo&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Gopkg.toml&lt;/code&gt; (&lt;code&gt;gopkg&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vendor.conf&lt;/code&gt; (&lt;code&gt;vendor&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Helm</title>
+      <link>https://deps.cloud/docs/languages/helm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/helm/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Helm Charts can be accessed by querying the &lt;code&gt;helm&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l helm -n &amp;lt;name&amp;gt;
+deps get dependents -l helm -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;deps.cloud uses the name of the chart to identify modules in the graph.
+For example, the deps.cloud project consists of several charts composed together.
+You can deploy each component individually, or you can use &lt;code&gt;depscloud&lt;/code&gt; to deploy the whole ecosystem.
+To see the charts used by the &lt;code&gt;depscloud&lt;/code&gt; chart:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l helm -n depscloud
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine what charts require the &lt;code&gt;mysql&lt;/code&gt; chart:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l helm -n mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-files&#34;&gt;Supported Files&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;helm&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Chart.yaml&lt;/code&gt; (&lt;code&gt;helm&lt;/code&gt; in the API)
+&lt;ul&gt;
+&lt;li&gt;Must be in the &lt;code&gt;apiVersion: v2&lt;/code&gt; format&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Java</title>
+      <link>https://deps.cloud/docs/languages/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/java/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Java dependencies can be accessed by querying the &lt;code&gt;java&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l java -n &amp;lt;name&amp;gt;
+deps get dependents -l java -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;deps.cloud uses the concatenation of an artifact&amp;rsquo;s &lt;code&gt;groupId&lt;/code&gt; and &lt;code&gt;artifactId&lt;/code&gt; to identify a module.
+For example, Google&amp;rsquo;s Guava library is &lt;code&gt;com.google.guava:guava&lt;/code&gt;.
+To determine which libraries Guava requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l java -n com.google.guava:guava
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine users of the Guava library:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l java -n com.google.guava:guava
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-formats&#34;&gt;Supported Formats&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;java&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;build.gradle&lt;/code&gt; (&lt;code&gt;gradle&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ivy.xml&lt;/code&gt; (&lt;code&gt;ivy&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pom.xml&lt;/code&gt; (&lt;code&gt;maven&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: NodeJS</title>
+      <link>https://deps.cloud/docs/languages/nodejs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/nodejs/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All NodeJS dependencies can be accessed by querying the &lt;code&gt;node&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l node -n &amp;lt;name&amp;gt;
+deps get dependents -l node -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The names of modules in the deps.cloud graph follow the standard convention for npm.
+For example, the deps.cloud NodeJS SDK is &lt;code&gt;@depscloud/api&lt;/code&gt;.
+To determine which libraries the SDK requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l node -n @depscloud/api
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine consumers of the SDK:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l node -n @depscloud/api
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-formats&#34;&gt;Supported Formats&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;node&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;package.json&lt;/code&gt; (&lt;code&gt;npm&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PHP</title>
+      <link>https://deps.cloud/docs/languages/php/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/php/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All PHP dependencies can be accessed by querying the &lt;code&gt;php&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l php -n &amp;lt;name&amp;gt;
+deps get dependents -l php -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The names of libraries follow the conventions from packagist.
+For example, the Symfony framework is &lt;code&gt;symfony/symfony&lt;/code&gt;.
+To determine which libraries Symfony requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l php -n symfony/symfony
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine consumers of Symfony:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l php -n symfony/symfony
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-formats&#34;&gt;Supported Formats&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;php&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;composer.json&lt;/code&gt; (&lt;code&gt;composer&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Python</title>
+      <link>https://deps.cloud/docs/languages/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/python/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Python dependencies can be accessed by querying the &lt;code&gt;python&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l python -n &amp;lt;name&amp;gt;
+deps get dependents -l python -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;TensorFlow is a popular library amongst data scientists and machine learning practitioners.
+To determine which libraries TensorFlow requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l python -n tensorflow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine consumers of TensorFlow:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l python -n tensorflow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-formats&#34;&gt;Supported Formats&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;python&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Pipfile&lt;/code&gt; (&lt;code&gt;pipfile&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requirements.txt&lt;/code&gt; (&lt;code&gt;pip&lt;/code&gt; in the API)
+&lt;ul&gt;
+&lt;li&gt;Due to limitations in the &lt;code&gt;requirements.txt&lt;/code&gt; format, this is currently a best-effort implementation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Rust</title>
+      <link>https://deps.cloud/docs/languages/rust/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/languages/rust/</guid>
+      <description>
+        
+        
+        &lt;p&gt;All Rust dependencies can be accessed by querying the &lt;code&gt;rust&lt;/code&gt; language graph in deps.cloud.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l rust -n &amp;lt;name&amp;gt;
+deps get dependents -l rust -n &amp;lt;name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Names in the Rust graph follow conventions set by cargo.
+For example, config-rs is a popular configuration library for Rust.
+To determine which libraries config-rs requires:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependencies -l rust -n config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To determine consumers of config-rs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;deps get dependents -l rust -n config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;supported-formats&#34;&gt;Supported Formats&lt;/h2&gt;
+&lt;p&gt;deps.cloud builds its &lt;code&gt;rust&lt;/code&gt; graph from the following files.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cargo.toml&lt;/code&gt; (&lt;code&gt;cargo&lt;/code&gt; in the API)&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

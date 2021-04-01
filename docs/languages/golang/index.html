@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.69.1" />
+<meta name="generator" content="Hugo 0.82.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -20,27 +20,26 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Developing in Docker | deps.cloud</title><meta property="og:title" content="Developing in Docker" />
-<meta property="og:description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
-Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
-   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image." />
+<title>Golang | deps.cloud</title><meta property="og:title" content="Golang" />
+<meta property="og:description" content="All Golang modules can be accessed by querying the go language graph in deps.cloud.
+deps get dependencies -l go -n &lt;name&gt; deps get dependents -l go -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for Go. For example, the deps.cloud Go SDK is github.com/depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l go -n github.com/depscloud/api To determine consumers of the SDK:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/docs/contrib/docker/" />
-<meta property="article:modified_time" content="2020-10-26T13:58:27-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Developing in Docker">
-<meta itemprop="description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
-Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
-   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.">
-<meta itemprop="dateModified" content="2020-10-26T13:58:27-05:00" />
-<meta itemprop="wordCount" content="90">
+<meta property="og:url" content="https://deps.cloud/docs/languages/golang/" /><meta property="article:section" content="docs" />
 
+<meta property="article:modified_time" content="2021-04-01T01:04:52-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
-
+<meta itemprop="name" content="Golang">
+<meta itemprop="description" content="All Golang modules can be accessed by querying the go language graph in deps.cloud.
+deps get dependencies -l go -n &lt;name&gt; deps get dependents -l go -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for Go. For example, the deps.cloud Go SDK is github.com/depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l go -n github.com/depscloud/api To determine consumers of the SDK:">
+<meta itemprop="dateModified" content="2021-04-01T01:04:52-05:00" />
+<meta itemprop="wordCount" content="108">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Developing in Docker"/>
-<meta name="twitter:description" content="When developing with docker, you&rsquo;ll want to get familiar with how to deploy the system using Docker.
-Each part of the deps.cloud ecosystem has an associated docker target that builds a container. This container can be used with the docker deployment configuration to test changes locally.
-   Repository Path Target     depscloud/depscloud /extractor npm run docker   depscloud/depscloud /gateway make docker   depscloud/depscloud /indexer make docker   depscloud/depscloud /tracker make docker    Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image."/>
+<meta name="twitter:title" content="Golang"/>
+<meta name="twitter:description" content="All Golang modules can be accessed by querying the go language graph in deps.cloud.
+deps get dependencies -l go -n &lt;name&gt; deps get dependents -l go -n &lt;name&gt; The names of modules in the deps.cloud graph follow the standard convention for Go. For example, the deps.cloud Go SDK is github.com/depscloud/api. To determine which libraries the SDK requires:
+deps get dependencies -l go -n github.com/depscloud/api To determine consumers of the SDK:"/>
 
 
 <script type="application/javascript">
@@ -59,8 +58,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" as="style">
-<link href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" as="style">
+<link href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -103,7 +102,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
 			</li>
 			
 			
@@ -139,10 +138,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse " id="docs">
+    <li class="collapse show" id="docs">
       
       
       
@@ -172,19 +171,101 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsgraph-traversal" href="/docs/concepts/graph-traversal/">Graph Traversal</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/languages/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Language Support</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docslanguages">
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docslanguagesgolang" href="/docs/languages/golang/">Golang</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguageshelm" href="/docs/languages/helm/">Helm</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesjava" href="/docs/languages/java/">Java</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesnodejs" href="/docs/languages/nodejs/">NodeJS</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesphp" href="/docs/languages/php/">PHP</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagespython" href="/docs/languages/python/">Python</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesrust" href="/docs/languages/rust/">Rust</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsguides">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
       
       
     </li>
@@ -349,39 +430,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
-    <li class="collapse " id="docsguides">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="docscontrib">
+    <li class="collapse " id="docscontrib">
       
       
       
@@ -389,18 +441,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcode-of-conduct" href="/docs/contrib/code-of-conduct/">Code of Conduct</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribgit" href="/docs/contrib/git/">Working with git</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docscontribdocker" href="/docs/contrib/docker/">Developing in Docker</a>
       
       
     </li>
@@ -434,8 +474,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/contrib/docker.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Developing%20in%20Docker" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/languages/golang.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Golang" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -475,14 +515,14 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item" >
-	<a href="https://deps.cloud/docs/contrib/">Contributing</a>
+	<a href="https://deps.cloud/docs/languages/">Language Support</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/contrib/docker/">Developing in Docker</a>
+	<a href="https://deps.cloud/docs/languages/golang/">Golang</a>
 </li>
 
 	</ol>
@@ -490,46 +530,27 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Developing in Docker</h1>
+	<h1>Golang</h1>
     
 	       
-	<p>When developing with docker, you&rsquo;ll want to get familiar with how to <a href="/docs/deploy/docker/">deploy the system using Docker</a>.</p>
-<p>Each part of the deps.cloud ecosystem has an associated <code>docker</code> target that builds a container.
-This container can be used with the docker deployment configuration to test changes locally.</p>
-<table>
-<thead>
-<tr>
-<th>Repository</th>
-<th>Path</th>
-<th>Target</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>depscloud/depscloud</code></td>
-<td><code>/extractor</code></td>
-<td><code>npm run docker</code></td>
-</tr>
-<tr>
-<td><code>depscloud/depscloud</code></td>
-<td><code>/gateway</code></td>
-<td><code>make docker</code></td>
-</tr>
-<tr>
-<td><code>depscloud/depscloud</code></td>
-<td><code>/indexer</code></td>
-<td><code>make docker</code></td>
-</tr>
-<tr>
-<td><code>depscloud/depscloud</code></td>
-<td><code>/tracker</code></td>
-<td><code>make docker</code></td>
-</tr>
-</tbody>
-</table>
-<p>Once you&rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose up -d
-</code></pre></div>
+	<p>All Golang modules can be accessed by querying the <code>go</code> language graph in deps.cloud.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l go -n &lt;name&gt;
+deps get dependents -l go -n &lt;name&gt;
+</code></pre></div><p>The names of modules in the deps.cloud graph follow the standard convention for Go.
+For example, the deps.cloud Go SDK is <code>github.com/depscloud/api</code>.
+To determine which libraries the SDK requires:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l go -n github.com/depscloud/api
+</code></pre></div><p>To determine consumers of the SDK:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependents -l go -n github.com/depscloud/api
+</code></pre></div><h2 id="supported-files">Supported Files</h2>
+<p>deps.cloud builds its <code>go</code> graph from the following files.</p>
+<ul>
+<li><code>Godeps.json</code> (<code>godeps</code> in the API)</li>
+<li><code>go.mod</code> (<code>vgo</code> in the API)</li>
+<li><code>Gopkg.toml</code> (<code>gopkg</code> in the API)</li>
+<li><code>vendor.conf</code> (<code>vendor</code> in the API)</li>
+</ul>
+
 	
 		<style>
   .feedback--answer {
@@ -592,7 +613,7 @@ This container can be used with the docker deployment configuration to test chan
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 26, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/141fe72b8114c58cb66096b693a92bdd42f8b113">darken up lines (141fe72)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/14b0e5c457f3c09cb28659c793654591ebff81b5">don&#39;t run in container (14b0e5c)</a>
 </div>
 </div>
 
@@ -659,7 +680,7 @@ This container can be used with the docker deployment configuration to test chan
         <div class="font-italic">for developers</div>
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        <small>&copy; 2021 deps.cloud Authors All Rights Reserved</small>
         
 	
 		
@@ -681,7 +702,7 @@ This container can be used with the docker deployment configuration to test chan
 
 
 
-<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.8c2d614ce83be0bf4a3a40ad9062428a2e8fe5664d03a27294696756608a0d1f.js" integrity="sha256-jC1hTOg74L9KOkCtkGJCii6P5WZNA6JylGlnVmCKDR8=" crossorigin="anonymous"></script>
 
 
 

@@ -29,21 +29,35 @@ Edges in a graph can be directed or undirected.
 Graphs can be acyclic, meaning they contain no cycles.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dependency_graph&#34;&gt;Dependency graphs&lt;/a&gt; are directed graphs that represent dependencies between objects.
 This data structure is at the heart of deps.cloud.
-To best explain, let us consider a simple example.&lt;/p&gt;
+Most projects we write requires libraries and application dependencies.
+To best explain, let us consider an example.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;A&lt;/code&gt; depends on &lt;code&gt;B&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;B&lt;/code&gt; depends on &lt;code&gt;D&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;B&lt;/code&gt; depends on &lt;code&gt;C&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;B&lt;/code&gt; depends on &lt;code&gt;D&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;C&lt;/code&gt; depends on &lt;code&gt;D&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Conceptually, this looks something like the following.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQSAtLT4gQlxuICBCIC0tPiBEXG4gIEIgLS0-IENcbiAgQyAtLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMTZweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Even with our simple example, we can start to see the complexity that comes with a dependency graph.
+&lt;p&gt;&lt;a href=&#34;https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQSAtLT4gQlxuICBCIC0tPiBEXG4gIEIgLS0-IENcbiAgQyAtLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMTZweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ&#34;&gt;&lt;img src=&#34;https://mermaid.ink/svg/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQSAtLT4gQlxuICBCIC0tPiBEXG4gIEIgLS0-IENcbiAgQyAtLT4gRCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMTZweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As this structure grows, it can grow increasingly more complex.
 Since edges often reference data between nodes of the same type, mapping concepts to traditional solutions can be difficult.&lt;/p&gt;
-&lt;h2 id=&#34;graph-traversal&#34;&gt;Graph traversal&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_traversal&#34;&gt;Graph traversal&lt;/a&gt; refers to the process of walking and navigating a graph.
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Graph Traversal</title>
+      <link>https://deps.cloud/docs/concepts/graph-traversal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/concepts/graph-traversal/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_traversal&#34;&gt;Graph traversal&lt;/a&gt; refers to the process of walking and navigating a graph.
 They are similar to tree traversals, but require tracking nodes you&amp;rsquo;ve visited as it&amp;rsquo;s possible to encounter cycles.
-To simplify this for consumers, deps.cloud provides a search API for traversing it&amp;rsquo;s graph.&lt;/p&gt;
+To simplify this for consumers, deps.cloud provides a search API for traversing its graph.
+These operations are particularly useful for grabbing a portion of the graph.&lt;/p&gt;
 &lt;h3 id=&#34;breadth-first-search&#34;&gt;Breadth-first Search&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Breadth-first_search&#34;&gt;Breadth-first search&lt;/a&gt; (commonly abbreviated BFS) is an algorithm used to traverse tree and graph data structures.
 This approach often starts with a root node.
@@ -58,174 +72,6 @@ Unlike BFS, there are several possible orderings for the output of a DFS:&lt;/p&
 &lt;li&gt;A &lt;em&gt;reverse preordering&lt;/em&gt; lists all nodes in the opposite order they were first visit. This is not the same as a postordering.&lt;/li&gt;
 &lt;li&gt;A &lt;em&gt;reverse postordering&lt;/em&gt; lists all nodes in the opposite order they were last visited. This is not the same as a preordering.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;To learn more about how information is stored, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/data-model/&#34;&gt;data model&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;To learn about how information is extracted, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/manifests/&#34;&gt;manifest file&lt;/a&gt; documentation.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Data Model</title>
-      <link>https://deps.cloud/docs/concepts/data-model/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/concepts/data-model/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The backing data model for deps.cloud is a graph.
-Graphs contain two types of data: nodes and edges.
-Nodes often represent entities such as people, places, or things.
-Edges often represent relationships between two entities.&lt;/p&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The following illustrates the various nodes and edges in the deps.cloud ecosystem.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/data-model.png&#34; alt=&#34;data-model&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;nodes&#34;&gt;Nodes&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Sources&lt;/em&gt; represent origins for information.
-These can be source control systems like GitHub, GitLab, or BitBucket.
-Or they can be artifactories like JFrog Artifactory or Sonatype Nexus.
-Sources are keyed by their URL and are represented as nodes in the dependency graph.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Modules&lt;/em&gt; represent libraries or applications in the dependency graph.
-These are the components extracted from &lt;a href=&#34;https://deps.cloud/docs/concepts/manifests/&#34;&gt;manifest files&lt;/a&gt;.
-They are keyed by all their data, and are represented as nodes in the dependency graph.&lt;/p&gt;
-&lt;h3 id=&#34;edges&#34;&gt;Edges&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Manages&lt;/em&gt; represent the relationship between a &lt;em&gt;source&lt;/em&gt; and a &lt;em&gt;module&lt;/em&gt;.
-It contains information about how a given module is managed such as the toolchain.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Depends&lt;/em&gt; represents the relationship between two &lt;em&gt;modules&lt;/em&gt;.
-It contains information about how the modules depend on one another.
-This includes things like version constraint, scopes, and a reference to the source.&lt;/p&gt;
-&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;To learn about how information is extracted, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/manifests/&#34;&gt;manifest file&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;To learn more about how the system is deployed, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/architecture/&#34;&gt;architecture&lt;/a&gt; documentation.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Manifest Files</title>
-      <link>https://deps.cloud/docs/concepts/manifests/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/concepts/manifests/</guid>
-      <description>
-        
-        
-        &lt;p&gt;A manifest is the generic term used to describe documents that communicate a systems requirements or dependencies.
-These dependencies come in many shapes and forms, but the most common dependency is a library.
-Libraries are packages containing common code that is shared between projects.&lt;/p&gt;
-&lt;p&gt;Using this information, deps.cloud is able to build a knowledge graph.
-The table below demonstrates how to interpret the information extracted from various manifests.
-Since there is no standardization across languages, extraction may vary between implementations.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Manifest File&lt;/th&gt;
-&lt;th&gt;Language&lt;/th&gt;
-&lt;th&gt;Module Name&lt;/th&gt;
-&lt;th&gt;System&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;bower.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;js&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bower&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;build.gradle&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava:guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;gradle&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;cargo.toml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;rust&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;cargo&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;composer.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;php&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;symfony/console&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;composer&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Godeps.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;godeps&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;go.mod&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vgo&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;Gopkg.toml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;gopkg&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;ivy.xml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava:guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;ivy&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;node&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;@depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;pom.xml&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;java&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;com.google.guava:guava&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;maven&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;vendor.conf&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;go&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;github.com/depscloud/api&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vendor&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
-&lt;p&gt;To learn more about how information is stored, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/data-model/&#34;&gt;data model&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;To learn more about how the system is deployed, head over to the &lt;a href=&#34;https://deps.cloud/docs/concepts/architecture/&#34;&gt;architecture&lt;/a&gt; documentation.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Architecture</title>
-      <link>https://deps.cloud/docs/concepts/architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/concepts/architecture/</guid>
-      <description>
-        
-        
-        &lt;p&gt;The following diagram illustrates the general system deployed on top of a Kubernetes cluster.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://deps.cloud/images/arch.png&#34; alt=&#34;arch&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;actors&#34;&gt;Actors&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/deps&#34;&gt;User CLI&lt;/a&gt; represents a single type of consumer.
-The command line interface (CLI) allows individuals to explore data stored in deps.cloud.
-Other types of clients include processes written using one of our SDKs.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/gateway&#34;&gt;Gateway&lt;/a&gt; is the face of the API services.
-It provides both RESTful and gRPC interfaces to clients of the system.
-Not all functionality is available over the RESTful interface.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/tracker&#34;&gt;Tracker&lt;/a&gt; provides several APIs for navigating the graph.
-This service leverages systems like as SQLite, MySQL, or PostgreSQL to store the graph data.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/extractor&#34;&gt;Extractor&lt;/a&gt; extracts dependency information from manifest files.
-This mechanism is easily pluggable to support a large range of manifest files.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://github.com/depscloud/depscloud/tree/main/indexer&#34;&gt;indexer&lt;/a&gt; crawls repositories looking for manifest files.
-When it discovers manifests, the contents are extracted, stored, and indexed.&lt;/p&gt;
 
       </description>
     </item>

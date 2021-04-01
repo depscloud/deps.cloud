@@ -45,7 +45,7 @@ include:&lt;/p&gt;
 advances&lt;/li&gt;
 &lt;li&gt;Trolling, insulting/derogatory comments, and personal or political attacks&lt;/li&gt;
 &lt;li&gt;Public or private harassment&lt;/li&gt;
-&lt;li&gt;Publishing others&amp;rsquo; private information, such as a physical or electronic
+&lt;li&gt;Publishing others&#39; private information, such as a physical or electronic
 address, without explicit permission&lt;/li&gt;
 &lt;li&gt;Other conduct which could reasonably be considered inappropriate in a
 professional setting&lt;/li&gt;
@@ -68,7 +68,7 @@ representative at an online or offline event. Representation of a project may be
 further defined and clarified by project maintainers.&lt;/p&gt;
 &lt;h2 id=&#34;enforcement&#34;&gt;Enforcement&lt;/h2&gt;
 &lt;p&gt;Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project owner on &lt;a href=&#34;https://gitter.im/mjpitz&#34;&gt;Gitter&lt;/a&gt;. All
+reported by contacting the &lt;a href=&#34;mailto:mjpitz@deps.cloud&#34;&gt;project owner&lt;/a&gt;. All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
@@ -82,92 +82,6 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
 &lt;p&gt;For answers to common questions about this code of conduct, see
 &lt;a href=&#34;https://www.contributor-covenant.org/faq&#34;&gt;https://www.contributor-covenant.org/faq&lt;/a&gt;&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Working with git</title>
-      <link>https://deps.cloud/docs/contrib/git/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contrib/git/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;cloning-projects&#34;&gt;Cloning Projects&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s get started by creating a workspace for the project.
-Many contributors work with Go and follow their convention.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;mkdir -p &lt;span style=&#34;color:#4e9a06&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;GOPATH&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;}&lt;/span&gt;/src/github.com/depscloud &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$_&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you have a workspace, you&amp;rsquo;ll want to clone the relevant projects.
-Most people contribute to &lt;code&gt;depscloud&lt;/code&gt; but will also need &lt;code&gt;deploy&lt;/code&gt; for docker.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git clone git@github.com:depscloud/depscloud.git    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# source code&lt;/span&gt;
-git clone git@github.com:depscloud/deploy.git       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# deployment config&lt;/span&gt;
-
-git clone git@github.com:depscloud/deps.cloud.git   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# website&lt;/span&gt;
-git clone git@github.com:depscloud/api.git          &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# api and sdk&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;branching&#34;&gt;Branching&lt;/h2&gt;
-&lt;p&gt;The most common way you will likely create a branch is through the use of a GitHub issue within the repository.
-To create a branch for GitHub issue #11, simply create a branch with the name &lt;code&gt;gh-11&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git checkout -b gh-11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;forking-and-submitting-pull-requests&#34;&gt;Forking and Submitting Pull Requests&lt;/h2&gt;
-&lt;p&gt;By and large, &lt;a href=&#34;https://help.github.com/en/github/getting-started-with-github/fork-a-repo&#34;&gt;forks&lt;/a&gt; are used to submit pull requests to the upstream repositories.&lt;/p&gt;
-&lt;p&gt;After a project has been cloned, you will need to add your fork as a remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git remote add &amp;lt;myuser&amp;gt; git@github.com:&amp;lt;myuser&amp;gt;/&amp;lt;project&amp;gt;.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;By doing this, you&amp;rsquo;re able to maintain two references: one for upstream updates and one for your set of changes.
-When pushing a branch to, you can specify the &lt;code&gt;-u&lt;/code&gt; option to have your local branch track a specific remote.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;git push -u &amp;lt;myuser&amp;gt; gh-11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;From here, all &lt;code&gt;git push&lt;/code&gt; operations will default to using your fork.
-After a branch has been pushed, you can use &lt;a href=&#34;https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request&#34;&gt;pull requests&lt;/a&gt; to have your code reviewed by the team.&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Developing in Docker</title>
-      <link>https://deps.cloud/docs/contrib/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://deps.cloud/docs/contrib/docker/</guid>
-      <description>
-        
-        
-        &lt;p&gt;When developing with docker, you&amp;rsquo;ll want to get familiar with how to &lt;a href=&#34;https://deps.cloud/docs/deploy/docker/&#34;&gt;deploy the system using Docker&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Each part of the deps.cloud ecosystem has an associated &lt;code&gt;docker&lt;/code&gt; target that builds a container.
-This container can be used with the docker deployment configuration to test changes locally.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Repository&lt;/th&gt;
-&lt;th&gt;Path&lt;/th&gt;
-&lt;th&gt;Target&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;depscloud/depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/extractor&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;npm run docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;depscloud/depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/gateway&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;depscloud/depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/indexer&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;depscloud/depscloud&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;/tracker&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;make docker&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Once you&amp;rsquo;ve produced an image containing your local changes, you can easily update your stack to pick up the new image.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;docker-compose up -d
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     

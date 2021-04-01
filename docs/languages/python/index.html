@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/guides/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,15 +20,29 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>User Guides | deps.cloud</title><meta property="og:title" content="User Guides" />
-<meta property="og:description" content="Track, monitor, and engage with project dependents" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/guides/" /><meta property="og:site_name" content="deps.cloud" />
+<title>Python | deps.cloud</title><meta property="og:title" content="Python" />
+<meta property="og:description" content="All Python dependencies can be accessed by querying the python language graph in deps.cloud.
+deps get dependencies -l python -n &lt;name&gt; deps get dependents -l python -n &lt;name&gt; TensorFlow is a popular library amongst data scientists and machine learning practitioners. To determine which libraries TensorFlow requires:
+deps get dependencies -l python -n tensorflow To determine consumers of TensorFlow:
+deps get dependents -l python -n tensorflow Supported Formats deps.cloud builds its python graph from the following files." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/languages/python/" /><meta property="article:section" content="docs" />
 
-<meta itemprop="name" content="User Guides">
-<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="User Guides"/>
-<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
+<meta property="article:modified_time" content="2021-04-01T01:04:52-05:00" /><meta property="og:site_name" content="deps.cloud" />
+
+<meta itemprop="name" content="Python">
+<meta itemprop="description" content="All Python dependencies can be accessed by querying the python language graph in deps.cloud.
+deps get dependencies -l python -n &lt;name&gt; deps get dependents -l python -n &lt;name&gt; TensorFlow is a popular library amongst data scientists and machine learning practitioners. To determine which libraries TensorFlow requires:
+deps get dependencies -l python -n tensorflow To determine consumers of TensorFlow:
+deps get dependents -l python -n tensorflow Supported Formats deps.cloud builds its python graph from the following files.">
+<meta itemprop="dateModified" content="2021-04-01T01:04:52-05:00" />
+<meta itemprop="wordCount" content="99">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python"/>
+<meta name="twitter:description" content="All Python dependencies can be accessed by querying the python language graph in deps.cloud.
+deps get dependencies -l python -n &lt;name&gt; deps get dependents -l python -n &lt;name&gt; TensorFlow is a popular library amongst data scientists and machine learning practitioners. To determine which libraries TensorFlow requires:
+deps get dependencies -l python -n tensorflow To determine consumers of TensorFlow:
+deps get dependents -l python -n tensorflow Supported Formats deps.cloud builds its python graph from the following files."/>
 
 
 <script type="application/javascript">
@@ -59,7 +72,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -180,10 +193,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/languages/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Language Support</a>
+    <a  href="/docs/languages/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Language Support</a>
   </li>
   <ul>
-    <li class="collapse " id="docslanguages">
+    <li class="collapse show" id="docslanguages">
       
       
       
@@ -220,7 +233,7 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagespython" href="/docs/languages/python/">Python</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docslanguagespython" href="/docs/languages/python/">Python</a>
       
       
       
@@ -245,10 +258,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/guides/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">User Guides</a>
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsguides">
+    <li class="collapse " id="docsguides">
       
       
       
@@ -464,8 +477,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/guides/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=User%20Guides" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/languages/python.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Python" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -494,6 +507,9 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -501,8 +517,15 @@ if (!doNotTrack) {
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/languages/">Language Support</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/guides/">User Guides</a>
+	<a href="https://deps.cloud/docs/languages/python/">Python</a>
 </li>
 
 	</ol>
@@ -510,84 +533,27 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>User Guides</h1>
-        
-	
-	
-        <div class="section-index">
+	<h1>Python</h1>
     
-    
-    
-    
-    <hr class="panel-line">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/guides/cli/">Command Line</a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    
-</div>
+	       
+	<p>All Python dependencies can be accessed by querying the <code>python</code> language graph in deps.cloud.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l python -n &lt;name&gt;
+deps get dependents -l python -n &lt;name&gt;
+</code></pre></div><p>TensorFlow is a popular library amongst data scientists and machine learning practitioners.
+To determine which libraries TensorFlow requires:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependencies -l python -n tensorflow
+</code></pre></div><p>To determine consumers of TensorFlow:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">deps get dependents -l python -n tensorflow
+</code></pre></div><h2 id="supported-formats">Supported Formats</h2>
+<p>deps.cloud builds its <code>python</code> graph from the following files.</p>
+<ul>
+<li><code>Pipfile</code> (<code>pipfile</code> in the API)</li>
+<li><code>requirements.txt</code> (<code>pip</code> in the API)
+<ul>
+<li>Due to limitations in the <code>requirements.txt</code> format, this is currently a best-effort implementation.</li>
+</ul>
+</li>
+</ul>
 
 	
 		<style>
@@ -654,6 +620,7 @@ if (!doNotTrack) {
 	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/14b0e5c457f3c09cb28659c793654591ebff81b5">don&#39;t run in container (14b0e5c)</a>
 </div>
 </div>
+
 
           </main>
         </div>

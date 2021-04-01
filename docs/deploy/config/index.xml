@@ -38,8 +38,8 @@ Or &lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt; with
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/sqlite.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/storage/sqlite/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/sqlite.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 
@@ -62,8 +62,8 @@ Or &lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt; with
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/mysql.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/storage/mysql/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/mysql.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 
@@ -86,8 +86,8 @@ Or &lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt; with
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/postgres.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/storage/postgres/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/postgres.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 
@@ -129,8 +129,8 @@ If you&amp;rsquo;re using Kubernetes, you will need to change the &lt;code&gt;co
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/github.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/github/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/github.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 
@@ -153,8 +153,8 @@ If you&amp;rsquo;re using Kubernetes, you will need to change the &lt;code&gt;co
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/gitlab.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/gitlab/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/gitlab.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 
@@ -177,8 +177,8 @@ If you&amp;rsquo;re using Kubernetes, you will need to change the &lt;code&gt;co
 
 &lt;div class=&#34;card&#34; style=&#34;margin-bottom: 30px; border-color: white&#34;&gt;
     &lt;div class=&#34;text-center&#34; style=&#34;font-size: 8rem;&#34;&gt;
-        
-        &lt;img src=&#34;https://deps.cloud/images/bitbucket.png&#34; style=&#34;width:158px;&#34;/&gt;
+        &lt;a href=&#34;https://deps.cloud/docs/deployment/config/indexing/bitbucket/&#34;&gt;
+        &lt;img src=&#34;https://deps.cloud/images/bitbucket.png&#34; style=&#34;width:158px;&#34;/&gt;&lt;/a&gt;
         
     &lt;/div&gt;
 

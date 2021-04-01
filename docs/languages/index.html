@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.69.1" />
+<meta name="generator" content="Hugo 0.82.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
+<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/languages/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -20,27 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Architecture | deps.cloud</title><meta property="og:title" content="Architecture" />
-<meta property="og:description" content="The following diagram illustrates the general system deployed on top of a Kubernetes cluster.
-Actors User CLI represents a single type of consumer. The command line interface (CLI) allows individuals to explore data stored in deps.cloud. Other types of clients include processes written using one of our SDKs.
-Gateway is the face of the API services. It provides both RESTful and gRPC interfaces to clients of the system. Not all functionality is available over the RESTful interface." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/docs/concepts/architecture/" />
-<meta property="article:modified_time" content="2020-10-26T13:58:27-05:00" /><meta property="og:site_name" content="deps.cloud" />
-<meta itemprop="name" content="Architecture">
-<meta itemprop="description" content="The following diagram illustrates the general system deployed on top of a Kubernetes cluster.
-Actors User CLI represents a single type of consumer. The command line interface (CLI) allows individuals to explore data stored in deps.cloud. Other types of clients include processes written using one of our SDKs.
-Gateway is the face of the API services. It provides both RESTful and gRPC interfaces to clients of the system. Not all functionality is available over the RESTful interface.">
-<meta itemprop="dateModified" content="2020-10-26T13:58:27-05:00" />
-<meta itemprop="wordCount" content="139">
+<title>Language Support | deps.cloud</title><meta property="og:title" content="Language Support" />
+<meta property="og:description" content="Track, monitor, and engage with project dependents" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://deps.cloud/docs/languages/" /><meta property="og:site_name" content="deps.cloud" />
 
-
-
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Architecture"/>
-<meta name="twitter:description" content="The following diagram illustrates the general system deployed on top of a Kubernetes cluster.
-Actors User CLI represents a single type of consumer. The command line interface (CLI) allows individuals to explore data stored in deps.cloud. Other types of clients include processes written using one of our SDKs.
-Gateway is the face of the API services. It provides both RESTful and gRPC interfaces to clients of the system. Not all functionality is available over the RESTful interface."/>
+<meta itemprop="name" content="Language Support">
+<meta itemprop="description" content="Track, monitor, and engage with project dependents"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Language Support"/>
+<meta name="twitter:description" content="Track, monitor, and engage with project dependents"/>
 
 
 <script type="application/javascript">
@@ -59,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" as="style">
-<link href="/scss/main.min.167dce54bee4883e8ff5d621104dbd03a169e54778ac6138a994a302446371c6.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" as="style">
+<link href="/scss/main.min.72273d6f661acccf296c9ae7bf78c7a1880cbd327b952c0dc41239e7cd802e0d.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -70,7 +59,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -103,7 +92,7 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
 			</li>
 			
 			
@@ -139,10 +128,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Documentation</a>
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
   </li>
   <ul>
-    <li class="collapse " id="docs">
+    <li class="collapse show" id="docs">
       
       
       
@@ -156,10 +145,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Concepts</a>
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsconcepts">
+    <li class="collapse " id="docsconcepts">
       
       
       
@@ -172,19 +161,101 @@ if (!doNotTrack) {
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsdata-model" href="/docs/concepts/data-model/">Data Model</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsgraph-traversal" href="/docs/concepts/graph-traversal/">Graph Traversal</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/languages/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Language Support</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docslanguages">
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsmanifests" href="/docs/concepts/manifests/">Manifest Files</a>
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesgolang" href="/docs/languages/golang/">Golang</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsconceptsarchitecture" href="/docs/concepts/architecture/">Architecture</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguageshelm" href="/docs/languages/helm/">Helm</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesjava" href="/docs/languages/java/">Java</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesnodejs" href="/docs/languages/nodejs/">NodeJS</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesphp" href="/docs/languages/php/">PHP</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagespython" href="/docs/languages/python/">Python</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docslanguagesrust" href="/docs/languages/rust/">Rust</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsguides">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
       
       
     </li>
@@ -349,35 +420,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/guides/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">User Guides</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsguides">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsguidescli" href="/docs/guides/cli/">Command Line</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/contrib/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
@@ -389,18 +431,6 @@ if (!doNotTrack) {
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribcode-of-conduct" href="/docs/contrib/code-of-conduct/">Code of Conduct</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribgit" href="/docs/contrib/git/">Working with git</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docscontribdocker" href="/docs/contrib/docker/">Developing in Docker</a>
       
       
     </li>
@@ -434,8 +464,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/concepts/architecture.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Architecture" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/languages/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Language%20Support" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -464,9 +494,6 @@ if (!doNotTrack) {
 
 
 
-
-
-
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -474,15 +501,8 @@ if (!doNotTrack) {
 
 
 
-<li class="breadcrumb-item" >
-	<a href="https://deps.cloud/docs/concepts/">Concepts</a>
-</li>
-
-
-
-
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/concepts/architecture/">Architecture</a>
+	<a href="https://deps.cloud/docs/languages/">Language Support</a>
 </li>
 
 	</ol>
@@ -490,24 +510,188 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Architecture</h1>
+	<h1>Language Support</h1>
+        
+	
+	<br/>
+<div class="row" style="max-width: 900px;">
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/golang/">
+        <img src="/images/go.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/golang/">Golang</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/helm/">
+        <img src="/images/helm.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/helm/">Helm</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/java/">
+        <img src="/images/java.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/java/">Java</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/nodejs/">
+        <img src="/images/nodejs.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/nodejs/">NodeJS</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/php/">
+        <img src="/images/php.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/php/">PHP</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/python/">
+        <img src="/images/python.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/python/">Python</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        
+
+
+
+
+
+
+<div class="card" style="margin-bottom: 30px; border-color: transparent">
+    <div class="text-center" style="font-size: 8rem;">
+        <a href="/docs/languages/rust/">
+        <img src="/images/rust.png" style="width:158px;"/></a>
+        
+    </div>
+
+    <div class="card-body text-center">
+        
+        <h5 class="card-title"><a href="/docs/languages/rust/">Rust</a></h5>
+        
+        <p class="card-text"></p>
+    </div>
+</div>
+
+    </div>
+</div>
+
+        <div class="section-index">
     
-	       
-	<p>The following diagram illustrates the general system deployed on top of a Kubernetes cluster.</p>
-<p><img src="/images/arch.png" alt="arch"></p>
-<h3 id="actors">Actors</h3>
-<p><a href="https://github.com/depscloud/depscloud/tree/main/deps">User CLI</a> represents a single type of consumer.
-The command line interface (CLI) allows individuals to explore data stored in deps.cloud.
-Other types of clients include processes written using one of our SDKs.</p>
-<p><a href="https://github.com/depscloud/depscloud/tree/main/gateway">Gateway</a> is the face of the API services.
-It provides both RESTful and gRPC interfaces to clients of the system.
-Not all functionality is available over the RESTful interface.</p>
-<p><a href="https://github.com/depscloud/depscloud/tree/main/tracker">Tracker</a> provides several APIs for navigating the graph.
-This service leverages systems like as SQLite, MySQL, or PostgreSQL to store the graph data.</p>
-<p><a href="https://github.com/depscloud/depscloud/tree/main/extractor">Extractor</a> extracts dependency information from manifest files.
-This mechanism is easily pluggable to support a large range of manifest files.</p>
-<p>The <a href="https://github.com/depscloud/depscloud/tree/main/indexer">indexer</a> crawls repositories looking for manifest files.
-When it discovers manifests, the contents are extracted, stored, and indexed.</p>
+    
+    
+    
+    
+</div>
 
 	
 		<style>
@@ -571,10 +755,9 @@ When it discovers manifests, the contents are extracted, stored, and indexed.</p
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified October 26, 2020: <a  href="https://github.com/depscloud/deps.cloud/commit/141fe72b8114c58cb66096b693a92bdd42f8b113">darken up lines (141fe72)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/14b0e5c457f3c09cb28659c793654591ebff81b5">don&#39;t run in container (14b0e5c)</a>
 </div>
 </div>
-
 
           </main>
         </div>
@@ -638,7 +821,7 @@ When it discovers manifests, the contents are extracted, stored, and indexed.</p
         <div class="font-italic">for developers</div>
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small>&copy; 2020 deps.cloud Authors All Rights Reserved</small>
+        <small>&copy; 2021 deps.cloud Authors All Rights Reserved</small>
         
 	
 		
@@ -660,7 +843,7 @@ When it discovers manifests, the contents are extracted, stored, and indexed.</p
 
 
 
-<script src="/js/main.min.081ca07dfce40dc53745651a91e7a6429571b641c87cb0a059f8cfc3443882af.js" integrity="sha256-CBygffzkDcU3RWUakeemQpVxtkHIfLCgWfjPw0Q4gq8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.8c2d614ce83be0bf4a3a40ad9062428a2e8fe5664d03a27294696756608a0d1f.js" integrity="sha256-jC1hTOg74L9KOkCtkGJCii6P5WZNA6JylGlnVmCKDR8=" crossorigin="anonymous"></script>
 
 
 
