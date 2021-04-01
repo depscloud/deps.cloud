@@ -1,19 +1,19 @@
 clean:
 	rm -rf bin/ node_modules/ public/ resources/_gen/ tmp/
 
-bin/htmltest:
-	curl https://raw.githubusercontent.com/wjdp/htmltest/master/godownloader.sh | bash
+bin: bin.yaml
+	bin-vendor
 
 deps:
 	git submodule update --init --recursive
 	npm install
 
-build:
-	hugo
+build: bin
+	bin/hugo
 
-test: bin/htmltest
+test: bin
 	bin/htmltest
 #	bin/htmltest --conf .htmltest.external.yml
 
-serve:
-	hugo serve -D
+serve: bin
+	bin/hugo serve -D

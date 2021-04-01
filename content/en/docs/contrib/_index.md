@@ -10,8 +10,6 @@ All projects are open to contributions.
 Be sure to consult all the resources below prior to contributing.
 
 * [Project board](https://github.com/orgs/depscloud/projects/1)
-* [Working with git](/docs/contrib/git)
-* [Developing with Docker](/docs/contrib/docker)
 
 ## Contributor Agreements
 
@@ -33,6 +31,7 @@ https://cla-assistant.io/depscloud/deps.cloud
 If you are submitting code on behalf of your company, please ensure your company has submit a copy of our Corporate Contributor Agreement.
 You can find a copy of the corporate agreement [here](https://raw.githubusercontent.com/depscloud/deps.cloud/main/clas/corporate.md).
 When complete, you can [email](mailto:clas@deps.cloud) a copy of it to us.
+All pull requests must originate from your organizations fork of the repository for the CLA check to clear.
 
 ## Support
 

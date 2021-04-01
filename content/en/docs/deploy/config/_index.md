@@ -8,22 +8,22 @@ aliases:
 ---
 
 <div class="row" style="max-width: 80%;">
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-6 col-md-4" style="padding: 20px 0;">
     {{<card-icon
-      border="white"
-      src="/images/storage.png"
+      border="transparent"
+      src=""
       title="Storage"
       link="/docs/deploy/config/storage/"
-      text=""
-      >}}
+      text="Configure deps.cloud for PostgreSQL, MySQL, or SQLite"
+    >}}
   </div>
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-6 col-md-4" style="padding: 20px 0;">
     {{<card-icon
-      border="white"
-      src="/images/indexing.png"
+      border="transparent"
+      src=""
       title="Indexing"
       link="/docs/deploy/config/indexing/"
-      text=""
+      text="Connect deps.cloud to GitHub, GitLab, or BitBucket"
     >}}
   </div>
 </div>

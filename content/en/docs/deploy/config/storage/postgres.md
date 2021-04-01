@@ -51,13 +51,12 @@ $ helm upgrade -i depscloud depscloud/depscloud \
 
 ## Using CockroachDB
 
-Compatibility with [CockroachDB] has not yet been tested.
+Compatibility with [CockroachDB] is not actively tested.
 Since CockroachBD claims to be PostgreSQL compatible, there shouldn't be any issues.
-Contributions are welcome!
 
-[Docker]: /docs/deployment/docker/
-[Kubernetes]: /docs/deployment/k8s/
-[Helm]: /docs/deployment/helm/
+[Docker]: {{< ref "/docs/deploy/docker.md" >}}
+[Kubernetes]: {{< ref "/docs/deploy/k8s.md" >}}
+[Helm]: {{< ref "/docs/deploy/helm.md" >}}
 
 [PostgreSQL]: https://www.postgresql.org/
 [CockroachDB]: https://www.cockroachlabs.com/

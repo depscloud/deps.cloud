@@ -39,7 +39,7 @@ $ sudo apt-get update
 $ sudo apt-get install depscloud-cli
 
 $ deps version
-deps {version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z}
+deps {"version":"0.3.1","commit":"d05c242e8622a7851b228dc8a1cb79f2719c71a6","date":"2021-03-28T04:30:08Z"}
 ```
 
 On OSX, you can tap our [Homebrew](https://brew.sh/) repository.
@@ -49,7 +49,7 @@ $ brew tap depscloud/tap
 $ brew install depscloud-cli
 
 $ deps version
-deps {version: 0.0.13, commit: a99e9a737103b7b79294b3b754e005c49267cdbd, date: 2020-06-27T22:21:27Z}
+deps {"version":"0.3.1","commit":"d05c242e8622a7851b228dc8a1cb79f2719c71a6","date":"2021-03-28T04:30:08Z"}
 ```
 
 Finally, you can download the latest `deps` binary from GitHub releases.
@@ -93,8 +93,8 @@ To query for this information, simply add the `--url` or `-u` flag.
 
 ```bash
 $ deps get modules -u https://github.com/depscloud/api.git
-{"manages":{"language":"node","system":"npm","version":"0.1.16"},"module":{"language":"node","organization":"depscloud","module":"api","name":"@depscloud/api"}}
-{"manages":{"language":"go","system":"vgo","version":"latest"},"module":{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}}
+{"module":{"language":"node","name":"@depscloud/api"},"edge_data":[{"version":"0.1.19","system":"npm"}]}
+{"module":{"language":"go","name":"github.com/depscloud/api"},"edge_data":[{"version":"latest","system":"vgo"}]}
 ```
 
 ### Sources
@@ -115,7 +115,7 @@ Alternatively, the corresponding shorthands `-l` and `-n` can be used respective
 
 ```bash
 $ deps get sources -l go -n github.com/depscloud/api
-{"source":{"url":"https://github.com/depscloud/api.git","ref":"refs/heads/main","kind":"repository"},"manages":{"language":"go","system":"vgo","version":"latest"}}
+{"source":{"kind":"repository","url":"https://github.com/depscloud/api.git"},"edge_data":[{"version":"latest","system":"vgo"}]}
 ```
 
 ### Dependents
@@ -125,8 +125,8 @@ That is, modules who list your module as a dependency.
 
 ```bash
 $ deps get dependents -l go -n github.com/depscloud/api
-{"depends":{"language":"go","version_constraint":"v0.1.15","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"}}
-{"depends":{"language":"go","version_constraint":"v0.1.16","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}}
+{"module":{"language":"go","name":"github.com/depscloud/hacktoberfest"},"edge_data":[{"ref":"https://github.com/depscloud/hacktoberfest.git","version_constraint":"v0.1.19","scopes":["direct"]}]}
+{"module":{"language":"go","name":"github.com/depscloud/depscloud"},"edge_data":[{"ref":"https://github.com/depscloud/depscloud.git","version_constraint":"v0.1.19","scopes":["direct"]}]}
 ```
 
 ### Dependencies
@@ -136,13 +136,13 @@ This should rarely differ from the modules you list in your appropriate manifest
 
 ```bash
 $ deps get dependencies -l go -n github.com/depscloud/api
-{"depends":{"language":"go","version_constraint":"v0.0.0-20190626221950-04f50cda93cb","scopes":["indirect"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"golang.org","module":"x/sys","name":"golang.org/x/sys"}}
-{"depends":{"language":"go","version_constraint":"v0.0.0-20201012135029-0c95dc0d88e8","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"google.golang.org","module":"genproto","name":"google.golang.org/genproto"}}
-{"depends":{"language":"go","version_constraint":"v0.3.2","scopes":["indirect"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"golang.org","module":"x/text","name":"golang.org/x/text"}}
-{"depends":{"language":"go","version_constraint":"v1.3.1","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"gogo/protobuf","name":"github.com/gogo/protobuf"}}
-{"depends":{"language":"go","version_constraint":"v1.32.0","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"google.golang.org","module":"grpc","name":"google.golang.org/grpc"}}
-{"depends":{"language":"go","version_constraint":"v1.4.2","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"golang/protobuf","name":"github.com/golang/protobuf"}}
-{"depends":{"language":"go","version_constraint":"v1.15.2","scopes":["direct"],"ref":"refs/heads/main"},"module":{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway","name":"github.com/grpc-ecosystem/grpc-gateway"}}
+{"module":{"language":"go","name":"github.com/grpc-ecosystem/grpc-gateway"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v1.15.2","scopes":["direct"]}]}
+{"module":{"language":"go","name":"google.golang.org/grpc"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v1.33.1","scopes":["direct"]}]}
+{"module":{"language":"go","name":"github.com/gogo/protobuf"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v1.3.1","scopes":["direct"]}]}
+{"module":{"language":"go","name":"github.com/golang/protobuf"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v1.4.3","scopes":["direct"]}]}
+{"module":{"language":"go","name":"golang.org/x/text"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v0.3.2","scopes":["indirect"]}]}
+{"module":{"language":"go","name":"google.golang.org/genproto"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v0.0.0-20201104152603-2e45c02ce95c","scopes":["direct"]}]}
+{"module":{"language":"go","name":"golang.org/x/sys"},"edge_data":[{"ref":"https://github.com/depscloud/api.git","version_constraint":"v0.0.0-20190626221950-04f50cda93cb","scopes":["indirect"]}]}
 ```
 
 ### Topology
@@ -158,21 +158,21 @@ Topologies can be queried in both the `dependencies` and `dependents` direction.
 
 ```bash
 $ deps get dependencies topology -l go -n github.com/depscloud/api
-{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}
-{"language":"go","organization":"golang.org","module":"x/sys","name":"golang.org/x/sys"}
-{"language":"go","organization":"google.golang.org","module":"genproto","name":"google.golang.org/genproto"}
-{"language":"go","organization":"golang.org","module":"x/text","name":"golang.org/x/text"}
-{"language":"go","organization":"github.com","module":"gogo/protobuf","name":"github.com/gogo/protobuf"}
-{"language":"go","organization":"google.golang.org","module":"grpc","name":"google.golang.org/grpc"}
-{"language":"go","organization":"github.com","module":"golang/protobuf","name":"github.com/golang/protobuf"}
-{"language":"go","organization":"github.com","module":"grpc-ecosystem/grpc-gateway","name":"github.com/grpc-ecosystem/grpc-gateway"}
+{"language":"go","name":"github.com/depscloud/api"}
+{"language":"go","name":"github.com/gogo/protobuf"}
+{"language":"go","name":"github.com/golang/protobuf"}
+{"language":"go","name":"github.com/grpc-ecosystem/grpc-gateway"}
+{"language":"go","name":"google.golang.org/grpc"}
+{"language":"go","name":"golang.org/x/sys"}
+{"language":"go","name":"golang.org/x/text"}
+{"language":"go","name":"google.golang.org/genproto"}
 ```
 
 ```bash
 $ deps get dependents topology -l go -n github.com/depscloud/api
-{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}
-{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"}
-{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}
+{"language":"go","name":"github.com/depscloud/api"}
+{"language":"go","name":"github.com/depscloud/hacktoberfest"}
+{"language":"go","name":"github.com/depscloud/depscloud"}
 ```
 
 By adding the `--tiered` flag, you will get a structured set of results back.
@@ -181,8 +181,8 @@ Consider the following simple example.
 
 ```bash
 $ deps get dependents topology -l go -n github.com/depscloud/api --tiered
-[{"language":"go","organization":"github.com","module":"depscloud/api","name":"github.com/depscloud/api"}]
-[{"language":"go","organization":"github.com","module":"depscloud/hacktoberfest","name":"github.com/depscloud/hacktoberfest"},{"language":"go","organization":"github.com","module":"depscloud/depscloud","name":"github.com/depscloud/depscloud"}]
+[{"language":"go","name":"github.com/depscloud/api"}]
+[{"language":"go","name":"github.com/depscloud/hacktoberfest"},{"language":"go","name":"github.com/depscloud/depscloud"}]
 ```
 
 In this case, we only have two tiers.

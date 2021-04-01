@@ -120,22 +120,17 @@ After the tracker and indexer have been configured, you'll be able to deploy the
 This configuration can be found with the other deployment configuration on [GitHub](https://github.com/depscloud/deploy). 
 
 ```bash
-$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/depscloud-system.yaml
+$ kubectl apply -n depscloud -f https://depscloud.github.io/deploy/k8s/depscloud.yaml
 ```
 
 Once all processes have completed and are healthy, you should be able to interact with the API pretty easily.
 To quickly test this, you can port forward to one of the `gateway` pods directly.
 
 ```
-$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080:80
+$ kubectl port-forward -n depscloud svc/depscloud-gateway 8080
 Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
 ```
 
-Once the port is forwarded, the following endpoints should be able to be reached.
-
-* [What sources have been indexed?](http://localhost:8080/v1alpha/sources)
-* [What modules are produced by this repository?](http://localhost:8080/v1alpha/modules/managed?url=https%3A%2F%2Fgithub.com%2Fdepscloud%2Fextractor.git)
-* [What modules do I depend on and what version?](http://localhost:8080/v1alpha/graph/go/dependencies?organization=github.com&module=depscloud%2Fextractor)
-* [What modules depend on me and what version?](http://localhost:8080/v1alpha/graph/go/dependents?organization=github.com&module=depscloud%2Fapi)
-* [What repositories can produce this module?](http://localhost:8080/v1alpha/modules/source?organization=github.com&module=depscloud%2Fextractor&language=go)
+Once forwarded, you can test it out by installing our command line tool and setting the `DEPSCLOUD_BASE_URL` environment variable.
+To learn more, head on over to our [CLI user guide]({{< ref "/docs/guides/cli.md" >}}).

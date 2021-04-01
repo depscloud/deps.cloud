@@ -8,7 +8,9 @@
 <div class="card" style="margin-bottom: 30px; border-color: {{ $border }}">
     <div class="text-center" style="font-size: 8rem;">
         {{ if $src }}
+        {{- if $link }}<a href="{{ $link }}">{{ end }}
         <img src="{{ $src }}" style="width:158px;"/>
+        {{- if $link }}</a>{{ end }}
         {{ else }}
         <i class="{{ $icon }}" style="width:100%"></i>
         {{ end }}

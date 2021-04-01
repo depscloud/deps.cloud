@@ -1,0 +1,26 @@
+name: depscloud-site
+
+tools:
+  - name: htmltest
+    version: v0.14.0
+    github_release:
+      repo: wjdp/htmltest
+      format: htmltest_{{ .Version | trimPrefix "v" }}_{{ .OS }}_{{ .Arch }}.tar.gz
+      windows: htmltest_{{ .Version | trimPrefix "v" }}_{{ .OS }}_{{ .Arch }}.zip
+      replacements:
+        darwin: macos
+
+  - name: hugo
+    version: v0.82.0
+    github_release:
+      repo: gohugoio/hugo
+      format: hugo_extended_{{ .Version | trimPrefix "v" }}_{{ .OS }}-{{ .Arch }}.tar.gz
+      windows: hugo_extended_{{ .Version | trimPrefix "v" }}_{{ .OS }}-{{ .Arch }}.zip
+      replacements:
+        darwin: macOS
+        linux: Linux
+        windows: Windows
+        amd64: 64bit
+        arm64: ARM64
+
+

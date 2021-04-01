@@ -49,6 +49,6 @@ $ helm upgrade -i depscloud depscloud/depscloud \
     --set tracker.externalStorage.secretRef.name=depscloud-tracker
 ```
 
-[Docker]: /docs/deployment/docker/
-[Kubernetes]: /docs/deployment/k8s/
-[Helm]: /docs/deployment/helm/
+[Docker]: {{< ref "/docs/deploy/docker.md" >}}
+[Kubernetes]: {{< ref "/docs/deploy/k8s.md" >}}
+[Helm]: {{< ref "/docs/deploy/helm.md" >}}

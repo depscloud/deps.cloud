@@ -51,9 +51,8 @@ $ helm upgrade -i depscloud depscloud/depscloud \
 
 ## Using MariaDB
 
-Compatibility with [MariaDB] has not yet been tested.
+Compatibility with [MariaDB] is not actively tested.
 Since MariaDB claims to be MySQL compatible, there shouldn't be any issues.
-Contributions are welcome!
 
 ## Using Vitess
 
@@ -61,9 +60,9 @@ Compatibility with [Vitess] has not yet been tested.
 Since Vitess claims to be MySQL compatible, there shouldn't be any issues.
 Contributions are welcome!
 
-[Docker]: /docs/deployment/docker/
-[Kubernetes]: /docs/deployment/k8s/
-[Helm]: /docs/deployment/helm/
+[Docker]: {{< ref "/docs/deploy/docker.md" >}}
+[Kubernetes]: {{< ref "/docs/deploy/k8s.md" >}}
+[Helm]: {{< ref "/docs/deploy/helm.md" >}}
 
 [MySQL]: https://www.mysql.com/
 [MariaDB]: https://mariadb.org/
