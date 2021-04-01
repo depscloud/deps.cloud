@@ -26,12 +26,12 @@ accounts:# full github schema- github:base_url:&#34;&lt;base_url&gt;&#34;upload_
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/indexing/github/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-04-01T01:04:52-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2021-04-01T01:20:01-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="GitHub">
 <meta itemprop="description" content="GitHub is the largest source of repositories. Most companies have an account where they maintain their code repositories. Due to the system&rsquo;s popularity, it was one of the first integrations that was targeted. Below, you&rsquo;ll find the full set of configuration options that can be specified for a GitHub account.
 accounts:# full github schema- github:base_url:&#34;&lt;base_url&gt;&#34;upload_url:&#34;&lt;base_url&gt;&#34;users:- &#34;&lt;username&gt;&#34;organizations:- &#34;&lt;organization&gt;&#34;strategy:&#34;SSH | HTTP&#34;oauth2:token:&#34;&lt;oauth_token&gt;&#34;token_type:&#34;&lt;token_type&gt;&#34;refresh_token:&#34;&lt;refresh_token&gt;&#34;expiry:&#34;&lt;expiry&gt;&#34;Due to the variance in each of the client, there are a few oddities between each of the implementations.">
-<meta itemprop="dateModified" content="2021-04-01T01:04:52-05:00" />
+<meta itemprop="dateModified" content="2021-04-01T01:20:01-05:00" />
 <meta itemprop="wordCount" content="129">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GitHub"/>
@@ -585,68 +585,8 @@ While we work on getting parity between each of the providers take note that thi
 </span><span style="color:#f8f8f8;text-decoration:underline">    </span><span style="color:#204a87;font-weight:bold">strategy</span><span style="color:#000;font-weight:bold">:</span><span style="color:#f8f8f8;text-decoration:underline"> </span><span style="color:#000">HTTP</span><span style="color:#f8f8f8;text-decoration:underline">
 </span></code></pre></div>
 	
-		<style>
-  .feedback--answer {
-    display: inline-block;
-  }
-  .feedback--answer-no {
-    margin-left: 1em;
-  }
-  .feedback--response {
-    display: none;
-    margin-top: 1em;
-  }
-  .feedback--response__visible {
-    display: block;
-  }
-</style>
-<h2 class="feedback--title">Feedback</h2>
-<p class="feedback--question">Was this page helpful?</p>
-<button class="feedback--answer feedback--answer-yes">Yes</button>
-<button class="feedback--answer feedback--answer-no">No</button>
-<p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
-</p>
-<p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/depscloud/deps.cloud/issues/new">tell us how we can improve</a>.
-</p>
-<script>
-  const yesButton = document.querySelector('.feedback--answer-yes');
-  const noButton = document.querySelector('.feedback--answer-no');
-  const yesResponse = document.querySelector('.feedback--response-yes');
-  const noResponse = document.querySelector('.feedback--response-no');
-  const disableButtons = () => {
-    yesButton.disabled = true;
-    noButton.disabled = true;
-  };
-  const sendFeedback = (value) => {
-    if (typeof ga !== 'function') return;
-    const args = {
-      command: 'send',
-      hitType: 'event',
-      category: 'Helpful',
-      action: 'click',
-      label: window.location.pathname,
-      value: value
-    };
-    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
-  };
-  yesButton.addEventListener('click', () => {
-    yesResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(1);
-  });
-  noButton.addEventListener('click', () => {
-    noResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(0);
-  });
-</script>
-
-		<br />
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/14b0e5c457f3c09cb28659c793654591ebff81b5">don&#39;t run in container (14b0e5c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 1, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/2808550b427d8d7baece8b68658a39b60eac1b2f">fixup description and disable feedback (2808550)</a>
 </div>
 </div>
 
