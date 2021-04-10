@@ -20,23 +20,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>v0.2.30 released | deps.cloud</title><meta property="og:title" content="v0.2.30 released" />
-<meta property="og:description" content="A little over due, but this release is a first great step towards v1beta. The server-side of our ecosystem now supports the name concept. While our CLI can&rsquo;t quite support it, we&rsquo;re expecting it to be ready in the next release.
-In addition to our first major stepping stone towards v1beta, we&rsquo;ve solidified some of our monitoring. With all our processes emitting some information, we were able to assemble some preliminary dashboards." />
+<title>v0.3.x released | deps.cloud</title><meta property="og:title" content="v0.3.x released" />
+<meta property="og:description" content="In the last couple of weeks, we finally released support for v0.3.x. In this release, we made some major changes to the deps.cloud ecosystem.
+If you&rsquo;re coming v0.2.x, the major change to be aware of is the migration from v1alpha to v1beta. In changing the API from v1alpha to v1beta, we introduced a new database table for the v1beta model. The information from v1alpha endpoints will be available until v0.4.x when they&rsquo;ll be released." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://deps.cloud/blog/2020/10/15/v0.2.30-released/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-10-15T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://deps.cloud/blog/2021/04/01/v0.3.x-released/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-04-01T00:00:00&#43;00:00" />
 <meta property="article:modified_time" content="2021-04-10T09:31:06-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
-<meta itemprop="name" content="v0.2.30 released">
-<meta itemprop="description" content="A little over due, but this release is a first great step towards v1beta. The server-side of our ecosystem now supports the name concept. While our CLI can&rsquo;t quite support it, we&rsquo;re expecting it to be ready in the next release.
-In addition to our first major stepping stone towards v1beta, we&rsquo;ve solidified some of our monitoring. With all our processes emitting some information, we were able to assemble some preliminary dashboards."><meta itemprop="datePublished" content="2020-10-15T00:00:00&#43;00:00" />
+<meta itemprop="name" content="v0.3.x released">
+<meta itemprop="description" content="In the last couple of weeks, we finally released support for v0.3.x. In this release, we made some major changes to the deps.cloud ecosystem.
+If you&rsquo;re coming v0.2.x, the major change to be aware of is the migration from v1alpha to v1beta. In changing the API from v1alpha to v1beta, we introduced a new database table for the v1beta model. The information from v1alpha endpoints will be available until v0.4.x when they&rsquo;ll be released."><meta itemprop="datePublished" content="2021-04-01T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-04-10T09:31:06-05:00" />
-<meta itemprop="wordCount" content="126">
+<meta itemprop="wordCount" content="183">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="v0.2.30 released"/>
-<meta name="twitter:description" content="A little over due, but this release is a first great step towards v1beta. The server-side of our ecosystem now supports the name concept. While our CLI can&rsquo;t quite support it, we&rsquo;re expecting it to be ready in the next release.
-In addition to our first major stepping stone towards v1beta, we&rsquo;ve solidified some of our monitoring. With all our processes emitting some information, we were able to assemble some preliminary dashboards."/>
+<meta name="twitter:title" content="v0.3.x released"/>
+<meta name="twitter:description" content="In the last couple of weeks, we finally released support for v0.3.x. In this release, we made some major changes to the deps.cloud ecosystem.
+If you&rsquo;re coming v0.2.x, the major change to be aware of is the migration from v1alpha to v1beta. In changing the API from v1alpha to v1beta, we introduced a new database table for the v1beta model. The information from v1alpha endpoints will be available until v0.4.x when they&rsquo;ll be released."/>
 
 
 <script type="application/javascript">
@@ -128,26 +128,29 @@ if (!doNotTrack) {
 </div>
 
 <div style="max-width:900px;">
-  <h1>v0.2.30 released</h1>
+  <h1>v0.3.x released</h1>
   
   <div class="td-byline mb-4">
     By <b>Mya Pitzeruse</b> |
-    <time datetime="2020-10-15" class="text-muted">Thursday, October 15, 2020</time>
+    <time datetime="2021-04-01" class="text-muted">Thursday, April 01, 2021</time>
   </div>
-  <p>A little over due, but this release is a first great step towards <code>v1beta</code>.
-The server-side of our ecosystem now supports the <code>name</code> concept.
-While our CLI can&rsquo;t quite support it, we&rsquo;re expecting it to be ready in the next release.</p>
-<p>In addition to our first major stepping stone towards <code>v1beta</code>, we&rsquo;ve solidified some of our monitoring.
-With all our processes emitting some information, we were able to assemble some preliminary dashboards.
-These are available in our deploy repository and can be download there.</p>
-<img alt="Tracker Dashboard" src="/images/2020-10-15-blog-dashboard.png" style="width:100%"/>
-<p>For a full list of updates, take a look at our <a href="https://github.com/depscloud/depscloud/releases/tag/v0.2.30">release notes</a>.</p>
+  <p>In the last couple of weeks, we finally released support for <code>v0.3.x</code>.
+In this release, we made some major changes to the deps.cloud ecosystem.</p>
+<p>If you&rsquo;re coming <code>v0.2.x</code>, the major change to be aware of is the migration from <code>v1alpha</code> to <code>v1beta</code>.
+In changing the API from <code>v1alpha</code> to <code>v1beta</code>, we introduced a new database table for the v1beta model.
+The information from v1alpha endpoints will be available until <code>v0.4.x</code> when they&rsquo;ll be released.
+You can learn more about this migration in the <a href="https://github.com/depscloud/depscloud/releases/tag/v0.3.0">v0.3.0 release notes</a>.</p>
+<p>Another big change in <code>v0.3.x</code> was a change in supported architectures.
+In this minor release, we removed support fot 32-bit architectures.
+In addition to dropping 32-bit architecture support, we added support for Apple silicon machines.
+This required upgrading our ecosystem to using Go 1.16 which is still early in its release cycle.
+If you notice anything odd with our system, please do not hesitate to reach out.</p>
 <h3 id="notable-updates">Notable Updates</h3>
 <ul>
-<li><code>bd81bca</code> : nightly builds</li>
-<li><code>6f541f7</code> : server side implementation of DFS</li>
-<li><code>e43c5e6</code> : /version now available on all processes</li>
-<li><code>e924b05</code> : grpc prometheus integration (client and server)</li>
+<li>Support for tracking Helm dependencies via <code>Chart.yaml</code></li>
+<li>Support for tracking Python dependencies via <code>Pipfile</code> and <code>requirements.txt</code></li>
+<li><code>v1beta</code> endpoints and improved data model</li>
+<li>Apple Silicon support for <code>deps</code> CLI</li>
 </ul>
 
   
@@ -155,14 +158,10 @@ These are available in our deploy repository and can be download there.</p>
   <div class="clearfix mb-0 pt-5" style="color:white;">
   
   <span style="float:left;">
-    <a href="/blog/2020/09/22/hacktoberfest-2020/" ><span class="mr-1">←</span> Previous</a>
+    <a href="/blog/2020/10/15/v0.2.30-released/" ><span class="mr-1">←</span> Previous</a>
   </span>
   
 
-  
-  <span style="float:right;">
-    <a href="/blog/2021/04/01/v0.3.x-released/">Next <span class="ml-1">→</span></a>
-  </span>
   
 </div>
 

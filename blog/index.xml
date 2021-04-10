@@ -15,6 +15,37 @@
     
     
     <item>
+      <title>Blog: v0.3.x released</title>
+      <link>https://deps.cloud/blog/2021/04/01/v0.3.x-released/</link>
+      <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/blog/2021/04/01/v0.3.x-released/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In the last couple of weeks, we finally released support for &lt;code&gt;v0.3.x&lt;/code&gt;.
+In this release, we made some major changes to the deps.cloud ecosystem.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re coming &lt;code&gt;v0.2.x&lt;/code&gt;, the major change to be aware of is the migration from &lt;code&gt;v1alpha&lt;/code&gt; to &lt;code&gt;v1beta&lt;/code&gt;.
+In changing the API from &lt;code&gt;v1alpha&lt;/code&gt; to &lt;code&gt;v1beta&lt;/code&gt;, we introduced a new database table for the v1beta model.
+The information from v1alpha endpoints will be available until &lt;code&gt;v0.4.x&lt;/code&gt; when they&amp;rsquo;ll be released.
+You can learn more about this migration in the &lt;a href=&#34;https://github.com/depscloud/depscloud/releases/tag/v0.3.0&#34;&gt;v0.3.0 release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another big change in &lt;code&gt;v0.3.x&lt;/code&gt; was a change in supported architectures.
+In this minor release, we removed support fot 32-bit architectures.
+In addition to dropping 32-bit architecture support, we added support for Apple silicon machines.
+This required upgrading our ecosystem to using Go 1.16 which is still early in its release cycle.
+If you notice anything odd with our system, please do not hesitate to reach out.&lt;/p&gt;
+&lt;h3 id=&#34;notable-updates&#34;&gt;Notable Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for tracking Helm dependencies via &lt;code&gt;Chart.yaml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Support for tracking Python dependencies via &lt;code&gt;Pipfile&lt;/code&gt; and &lt;code&gt;requirements.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v1beta&lt;/code&gt; endpoints and improved data model&lt;/li&gt;
+&lt;li&gt;Apple Silicon support for &lt;code&gt;deps&lt;/code&gt; CLI&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: v0.2.30 released</title>
       <link>https://deps.cloud/blog/2020/10/15/v0.2.30-released/</link>
       <pubDate>Thu, 15 Oct 2020 00:00:00 +0000</pubDate>
