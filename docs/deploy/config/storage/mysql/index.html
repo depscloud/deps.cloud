@@ -27,13 +27,13 @@ apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/mysql/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-04-10T09:49:46-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2021-04-26T21:37:31-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="MySQL">
 <meta itemprop="description" content="Driver: mysql Read-Write Connection String: user-rw:password@tcp(depscloud-mysql:3306)/depscloud Read-Only Connection String: user:password@tcp(depscloud-mysql:3306)/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for MySQL.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:mysqlSTORAGE_ADDRESS:user-rw:password@tcp(depscloud-mysql:3306)/depscloudSTORAGE_READ_ONLY_ADDRESS:user:password@tcp(depscloud-mysql:3306)/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2021-04-10T09:49:46-05:00" />
+<meta itemprop="dateModified" content="2021-04-26T21:37:31-05:00" />
 <meta itemprop="wordCount" content="165">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL"/>
@@ -601,7 +601,7 @@ Contributions are welcome!</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 10, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/84724b5723f074ca54c1d3883e331f9afcbc8901">typod date in post (84724b5)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 26, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/140e5fb4f1b5e3101382c1f28f554277cfa61e10">Update dependency y18n to 4.0.1 [SECURITY] (#77) (140e5fb)</a>
 </div>
 </div>
 
