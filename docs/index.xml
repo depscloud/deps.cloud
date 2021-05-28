@@ -14,6 +14,52 @@
     
     
     <item>
+      <title>Docs: Terminology</title>
+      <link>https://deps.cloud/docs/concepts/terminology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/docs/concepts/terminology/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;manifest-file&#34;&gt;Manifest file&lt;/h3&gt;
+&lt;p&gt;Manifest file is the term used to refer to common dependency management files.
+In NodeJS, &lt;code&gt;package.json&lt;/code&gt; is used to declare dependencies that your project requires.
+In Java, you might use &lt;code&gt;build.gradle&lt;/code&gt; or a &lt;code&gt;pom.xml&lt;/code&gt; depending on our build chain.
+&lt;code&gt;go.mod&lt;/code&gt; in Go, &lt;code&gt;Pipfile&lt;/code&gt; in Python, the list goes for many languages.&lt;/p&gt;
+&lt;p&gt;Simply put, a manifest file can be thought of as any file that communicates what a software project needs.
+It&amp;rsquo;s through these files that deps.cloud is able to construct its knowledge graph.&lt;/p&gt;
+&lt;h3 id=&#34;source&#34;&gt;Source&lt;/h3&gt;
+&lt;p&gt;Sources dictate where a given library can be found.
+A source might be a repository on GitHub or in GitLab.
+It might be an artifactory like JFrog, Sonatype Nexus, or even a Helm Repository.&lt;/p&gt;
+&lt;p&gt;Currently, deps.cloud marks sources using their raw URL.
+We are working on formalizing a provider URL concept that will decouple the discovery source from repository URLs.&lt;/p&gt;
+&lt;h3 id=&#34;module&#34;&gt;Module&lt;/h3&gt;
+&lt;p&gt;Modules in deps.cloud can represent a library (the common case), application, or repository.
+This can largely depend on how a given organization manages their repositories and dependencies.
+Do you use a monorepo or do you have a repo per service?
+Is each service allowed their own set of dependencies or do you pull from one common pool?&lt;/p&gt;
+&lt;!-- todo: illustrate this --&gt;
+&lt;h3 id=&#34;dependency&#34;&gt;Dependency&lt;/h3&gt;
+&lt;p&gt;Dependencies are the connective tissue of deps.cloud.
+A dependency defines a relationship between two modules.
+Specifically a directed, versioned, and historical relationship.
+It&amp;rsquo;s this type of relationship that makes modeling data in traditional data stores difficult.&lt;/p&gt;
+&lt;p&gt;There are many graph databases out there that handle this type of relationship well.&lt;/p&gt;
+&lt;h3 id=&#34;dependent&#34;&gt;Dependent&lt;/h3&gt;
+&lt;p&gt;Dependents is the inverse of dependency.
+A good way to think about this association is through familial bonds.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;my child &lt;em&gt;depends&lt;/em&gt; on me (dependency), and my &lt;em&gt;dependents&lt;/em&gt; include my child&amp;hellip; at least until their older&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is intended to demonstrate that the dependency property is reflexive (i.e. it can be turned back on itself).
+As we traverse edges in our graph, it&amp;rsquo;s important we maintain the direction we are traversing.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Code of Conduct</title>
       <link>https://deps.cloud/docs/contrib/code-of-conduct/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -95,10 +141,19 @@ available at &lt;a href=&#34;https://www.contributor-covenant.org/version/1/4/co
         
         
         &lt;p&gt;Many concepts in the deps.cloud ecosystem stem from &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_theory&#34;&gt;graph theory&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When we think about dependencies, we often immediately think about &lt;a href=&#34;https://en.wikipedia.org/wiki/Tree_%28data_structure%29&#34;&gt;trees&lt;/a&gt;.
+This is likely because as engineers, we&amp;rsquo;re often working within the confines of a handful of projects.
+Each one of these projects are likely a logical root to the tree.
+And as we pull in dependencies, that tree can grow&amp;hellip; and grow&amp;hellip; and grow.
+In practice, this tree is actually a graph (technically a tree with a few special characteristics).&lt;/p&gt;
 &lt;p&gt;Graphs are a data structure used to model relationships between objects.
-They consist of nodes (entities) and edges (associations).
-Edges in a graph can be directed or undirected.
-Graphs can be acyclic, meaning they contain no cycles.&lt;/p&gt;
+They consist of nodes (entities) and edges (associations).&lt;/p&gt;
+&lt;p&gt;Graphs can be either directed or undirected.
+Edges in undirected graphs simply connect two nodes, &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
+Edges in directed graphs have a start at &lt;code&gt;x&lt;/code&gt; and end at &lt;code&gt;y&lt;/code&gt;, indicating a direction to the edge.
+You can only traverse directed edges in their associated direction (i.e. from &lt;code&gt;x&lt;/code&gt; to &lt;code&gt;y&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Graphs can be acyclic, meaning they contain no cycles;
+or they can be cyclic, meaning they have cycles.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Dependency_graph&#34;&gt;Dependency graphs&lt;/a&gt; are directed graphs that represent dependencies between objects.
 This data structure is at the heart of deps.cloud.
 Most software we write requires some kind of dependency.

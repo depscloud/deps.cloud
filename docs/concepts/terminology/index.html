@@ -7,7 +7,6 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://deps.cloud/docs/contrib/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,15 +20,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Contributing | deps.cloud</title><meta property="og:title" content="Contributing" />
-<meta property="og:description" content="Track, monitor, and connect project dependencies" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://deps.cloud/docs/contrib/" /><meta property="og:site_name" content="deps.cloud" />
+<title>Terminology | deps.cloud</title><meta property="og:title" content="Terminology" />
+<meta property="og:description" content="Manifest file Manifest file is the term used to refer to common dependency management files. In NodeJS, package.json is used to declare dependencies that your project requires. In Java, you might use build.gradle or a pom.xml depending on our build chain. go.mod in Go, Pipfile in Python, the list goes for many languages.
+Simply put, a manifest file can be thought of as any file that communicates what a software project needs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/docs/concepts/terminology/" /><meta property="article:section" content="docs" />
 
-<meta itemprop="name" content="Contributing">
-<meta itemprop="description" content="Track, monitor, and connect project dependencies"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Contributing"/>
-<meta name="twitter:description" content="Track, monitor, and connect project dependencies"/>
+<meta property="article:modified_time" content="2021-05-27T19:59:03-05:00" /><meta property="og:site_name" content="deps.cloud" />
+
+<meta itemprop="name" content="Terminology">
+<meta itemprop="description" content="Manifest file Manifest file is the term used to refer to common dependency management files. In NodeJS, package.json is used to declare dependencies that your project requires. In Java, you might use build.gradle or a pom.xml depending on our build chain. go.mod in Go, Pipfile in Python, the list goes for many languages.
+Simply put, a manifest file can be thought of as any file that communicates what a software project needs.">
+<meta itemprop="dateModified" content="2021-05-27T19:59:03-05:00" />
+<meta itemprop="wordCount" content="326">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Terminology"/>
+<meta name="twitter:description" content="Manifest file Manifest file is the term used to refer to common dependency management files. In NodeJS, package.json is used to declare dependencies that your project requires. In Java, you might use build.gradle or a pom.xml depending on our build chain. go.mod in Go, Pipfile in Python, the list goes for many languages.
+Simply put, a manifest file can be thought of as any file that communicates what a software project needs."/>
 
 
 <script type="application/javascript">
@@ -59,7 +66,7 @@ if (!doNotTrack) {
 
 
   </head>
-  <body class="td-section">
+  <body class="td-page">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -145,17 +152,17 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
+    <a  href="/docs/concepts/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Concepts</a>
   </li>
   <ul>
-    <li class="collapse " id="docsconcepts">
+    <li class="collapse show" id="docsconcepts">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsterminology" href="/docs/concepts/terminology/">Terminology</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsconceptsterminology" href="/docs/concepts/terminology/">Terminology</a>
       
       
       
@@ -426,10 +433,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Contributing</a>
+    <a  href="/docs/contrib/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contributing</a>
   </li>
   <ul>
-    <li class="collapse show" id="docscontrib">
+    <li class="collapse " id="docscontrib">
       
       
       
@@ -470,8 +477,8 @@ if (!doNotTrack) {
 
 
 
-<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/contrib/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Contributing" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/depscloud/deps.cloud/edit/main/content/en/docs/concepts/terminology.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/depscloud/deps.cloud/issues/new?title=Terminology" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 
 
 <a href="https://github.com/depscloud/depscloud/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
@@ -485,13 +492,15 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#contributor-agreements">Contributor Agreements</a>
+    <li>
       <ul>
-        <li><a href="#individual-contributors">Individual Contributors</a></li>
-        <li><a href="#corporate-contributors">Corporate Contributors</a></li>
+        <li><a href="#manifest-file">Manifest file</a></li>
+        <li><a href="#source">Source</a></li>
+        <li><a href="#module">Module</a></li>
+        <li><a href="#dependency">Dependency</a></li>
+        <li><a href="#dependent">Dependent</a></li>
       </ul>
     </li>
-    <li><a href="#support">Support</a></li>
   </ul>
 </nav>
 
@@ -512,6 +521,9 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://deps.cloud/docs/">Documentation</a>
 </li>
@@ -519,8 +531,15 @@ if (!doNotTrack) {
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://deps.cloud/docs/concepts/">Concepts</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://deps.cloud/docs/contrib/">Contributing</a>
+	<a href="https://deps.cloud/docs/concepts/terminology/">Terminology</a>
 </li>
 
 	</ol>
@@ -528,46 +547,49 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Contributing</h1>
-        
-	
-	<p>All projects are open to contributions.
-Be sure to consult all the resources below prior to contributing.</p>
-<ul>
-<li><a href="https://github.com/orgs/depscloud/projects/1">Project board</a></li>
-</ul>
-<h2 id="contributor-agreements">Contributor Agreements</h2>
-<p>To help protect the project owners and contributors to the project, we&rsquo;ve established a common set of CLAs.
-The Individual Contributor Agreement should be signed by anyone who submits code to the project.
-The Corporate Contributor Agreement should be signed by any organization whose engineers are submitting code on their behalf.</p>
-<h3 id="individual-contributors">Individual Contributors</h3>
-<p>For the individual contributor agreement, we leverage <a href="https://cla-assistant.io/depscloud/deps.cloud">cla-assistant.io</a>.
-A copy of this agreement can be found <a href="https://raw.githubusercontent.com/depscloud/deps.cloud/main/clas/corporate.md">here</a>.
-This agreement will need to be signed by anyone looking to contribute code to the project.
-To sign this agreement, you can go here and sign using your github account:</p>
-<p><a href="https://cla-assistant.io/depscloud/deps.cloud">https://cla-assistant.io/depscloud/deps.cloud</a></p>
-<h3 id="corporate-contributors">Corporate Contributors</h3>
-<p>If you are submitting code on behalf of your company, please ensure your company has submit a copy of our Corporate Contributor Agreement.
-You can find a copy of the corporate agreement <a href="https://raw.githubusercontent.com/depscloud/deps.cloud/main/clas/corporate.md">here</a>.
-When complete, you can <a href="mailto:clas@deps.cloud">email</a> a copy of it to us.
-All pull requests must originate from your organizations fork of the repository for the CLA check to clear.</p>
-<h2 id="support">Support</h2>
-<p>Join our <a href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">mailing list</a> and ask any questions there.</p>
-<p>We also have <a href="https://depscloud.slack.com/join/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">Slack</a>.</p>
-
-        <div class="section-index">
+	<h1>Terminology</h1>
     
-    
-    
-    
-    
-</div>
+	       
+	<h3 id="manifest-file">Manifest file</h3>
+<p>Manifest file is the term used to refer to common dependency management files.
+In NodeJS, <code>package.json</code> is used to declare dependencies that your project requires.
+In Java, you might use <code>build.gradle</code> or a <code>pom.xml</code> depending on our build chain.
+<code>go.mod</code> in Go, <code>Pipfile</code> in Python, the list goes for many languages.</p>
+<p>Simply put, a manifest file can be thought of as any file that communicates what a software project needs.
+It&rsquo;s through these files that deps.cloud is able to construct its knowledge graph.</p>
+<h3 id="source">Source</h3>
+<p>Sources dictate where a given library can be found.
+A source might be a repository on GitHub or in GitLab.
+It might be an artifactory like JFrog, Sonatype Nexus, or even a Helm Repository.</p>
+<p>Currently, deps.cloud marks sources using their raw URL.
+We are working on formalizing a provider URL concept that will decouple the discovery source from repository URLs.</p>
+<h3 id="module">Module</h3>
+<p>Modules in deps.cloud can represent a library (the common case), application, or repository.
+This can largely depend on how a given organization manages their repositories and dependencies.
+Do you use a monorepo or do you have a repo per service?
+Is each service allowed their own set of dependencies or do you pull from one common pool?</p>
+<!-- todo: illustrate this -->
+<h3 id="dependency">Dependency</h3>
+<p>Dependencies are the connective tissue of deps.cloud.
+A dependency defines a relationship between two modules.
+Specifically a directed, versioned, and historical relationship.
+It&rsquo;s this type of relationship that makes modeling data in traditional data stores difficult.</p>
+<p>There are many graph databases out there that handle this type of relationship well.</p>
+<h3 id="dependent">Dependent</h3>
+<p>Dependents is the inverse of dependency.
+A good way to think about this association is through familial bonds.</p>
+<blockquote>
+<p>my child <em>depends</em> on me (dependency), and my <em>dependents</em> include my child&hellip; at least until their older</p>
+</blockquote>
+<p>This is intended to demonstrate that the dependency property is reflexive (i.e. it can be turned back on itself).
+As we traverse edges in our graph, it&rsquo;s important we maintain the direction we are traversing.</p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">Last modified May 27, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/6bc8f9c845f46160e42ec23e7de8e3bdb4dd17b8">chore: install postcss (6bc8f9c)</a>
 </div>
 </div>
+
 
           </main>
         </div>

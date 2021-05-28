@@ -22,24 +22,21 @@
 
 <title>Dependency Graphs | deps.cloud</title><meta property="og:title" content="Dependency Graphs" />
 <meta property="og:description" content="Many concepts in the deps.cloud ecosystem stem from graph theory.
-Graphs are a data structure used to model relationships between objects. They consist of nodes (entities) and edges (associations). Edges in a graph can be directed or undirected. Graphs can be acyclic, meaning they contain no cycles.
-Dependency graphs are directed graphs that represent dependencies between objects. This data structure is at the heart of deps.cloud. Most software we write requires some kind of dependency." />
+When we think about dependencies, we often immediately think about trees. This is likely because as engineers, we&rsquo;re often working within the confines of a handful of projects. Each one of these projects are likely a logical root to the tree. And as we pull in dependencies, that tree can grow&hellip; and grow&hellip; and grow. In practice, this tree is actually a graph (technically a tree with a few special characteristics)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/concepts/graphs/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-04-26T21:37:31-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2021-05-27T19:59:03-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="Dependency Graphs">
 <meta itemprop="description" content="Many concepts in the deps.cloud ecosystem stem from graph theory.
-Graphs are a data structure used to model relationships between objects. They consist of nodes (entities) and edges (associations). Edges in a graph can be directed or undirected. Graphs can be acyclic, meaning they contain no cycles.
-Dependency graphs are directed graphs that represent dependencies between objects. This data structure is at the heart of deps.cloud. Most software we write requires some kind of dependency.">
-<meta itemprop="dateModified" content="2021-04-26T21:37:31-05:00" />
-<meta itemprop="wordCount" content="185">
+When we think about dependencies, we often immediately think about trees. This is likely because as engineers, we&rsquo;re often working within the confines of a handful of projects. Each one of these projects are likely a logical root to the tree. And as we pull in dependencies, that tree can grow&hellip; and grow&hellip; and grow. In practice, this tree is actually a graph (technically a tree with a few special characteristics).">
+<meta itemprop="dateModified" content="2021-05-27T19:59:03-05:00" />
+<meta itemprop="wordCount" content="308">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dependency Graphs"/>
 <meta name="twitter:description" content="Many concepts in the deps.cloud ecosystem stem from graph theory.
-Graphs are a data structure used to model relationships between objects. They consist of nodes (entities) and edges (associations). Edges in a graph can be directed or undirected. Graphs can be acyclic, meaning they contain no cycles.
-Dependency graphs are directed graphs that represent dependencies between objects. This data structure is at the heart of deps.cloud. Most software we write requires some kind of dependency."/>
+When we think about dependencies, we often immediately think about trees. This is likely because as engineers, we&rsquo;re often working within the confines of a handful of projects. Each one of these projects are likely a logical root to the tree. And as we pull in dependencies, that tree can grow&hellip; and grow&hellip; and grow. In practice, this tree is actually a graph (technically a tree with a few special characteristics)."/>
 
 
 <script type="application/javascript">
@@ -160,6 +157,12 @@ if (!doNotTrack) {
   <ul>
     <li class="collapse show" id="docsconcepts">
       
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsconceptsterminology" href="/docs/concepts/terminology/">Terminology</a>
       
       
       
@@ -534,10 +537,19 @@ if (!doNotTrack) {
     
 	       
 	<p>Many concepts in the deps.cloud ecosystem stem from <a href="https://en.wikipedia.org/wiki/Graph_theory">graph theory</a>.</p>
+<p>When we think about dependencies, we often immediately think about <a href="https://en.wikipedia.org/wiki/Tree_%28data_structure%29">trees</a>.
+This is likely because as engineers, we&rsquo;re often working within the confines of a handful of projects.
+Each one of these projects are likely a logical root to the tree.
+And as we pull in dependencies, that tree can grow&hellip; and grow&hellip; and grow.
+In practice, this tree is actually a graph (technically a tree with a few special characteristics).</p>
 <p>Graphs are a data structure used to model relationships between objects.
-They consist of nodes (entities) and edges (associations).
-Edges in a graph can be directed or undirected.
-Graphs can be acyclic, meaning they contain no cycles.</p>
+They consist of nodes (entities) and edges (associations).</p>
+<p>Graphs can be either directed or undirected.
+Edges in undirected graphs simply connect two nodes, <code>x</code> and <code>y</code>.
+Edges in directed graphs have a start at <code>x</code> and end at <code>y</code>, indicating a direction to the edge.
+You can only traverse directed edges in their associated direction (i.e. from <code>x</code> to <code>y</code>).</p>
+<p>Graphs can be acyclic, meaning they contain no cycles;
+or they can be cyclic, meaning they have cycles.</p>
 <p><a href="https://en.wikipedia.org/wiki/Dependency_graph">Dependency graphs</a> are directed graphs that represent dependencies between objects.
 This data structure is at the heart of deps.cloud.
 Most software we write requires some kind of dependency.
@@ -557,7 +569,7 @@ As it grows in size, it can be difficult to track all the open source software y
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified April 26, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/140e5fb4f1b5e3101382c1f28f554277cfa61e10">Update dependency y18n to 4.0.1 [SECURITY] (#77) (140e5fb)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 27, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/6bc8f9c845f46160e42ec23e7de8e3bdb4dd17b8">chore: install postcss (6bc8f9c)</a>
 </div>
 </div>
 
