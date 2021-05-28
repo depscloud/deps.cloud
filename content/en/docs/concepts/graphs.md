@@ -7,18 +7,17 @@ weight: 10
 
 Many concepts in the deps.cloud ecosystem stem from [graph theory].
 
-When we think about dependencies, we often immediately think about [trees](https://en.wikipedia.org/wiki/Tree_%28data_structure%29).
-This is likely because as engineers, we're often working within the confines of a handful of projects.
-Each one of these projects are likely a logical root to the tree.
-And as we pull in dependencies, that tree can grow... and grow... and grow.
-In practice, this tree is actually a graph (technically a tree with a few special characteristics).
+When we think about dependencies, our first thought is often of a [tree](https://en.wikipedia.org/wiki/Tree_%28data_structure%29).
+These trees stem from the projects that we work on day to day, each with its own set of branches.
+As our projects pull in dependencies, their trees can grow... and grow... and grow.
+In practice, this tree is more of a graph (technically a tree is a type of graph with a few special characteristics).
 
 Graphs are a data structure used to model relationships between objects.
 They consist of nodes (entities) and edges (associations). 
 
 Graphs can be either directed or undirected.
-Edges in undirected graphs simply connect two nodes, `x` and `y`.
-Edges in directed graphs have a start at `x` and end at `y`, indicating a direction to the edge.
+Edges in undirected graphs simply connect two nodes, such as `x` and `y`.
+Edges in directed graphs start at `x` and end at `y`, indicating a direction to the edge.
 You can only traverse directed edges in their associated direction (i.e. from `x` to `y`).
 
 Graphs can be acyclic, meaning they contain no cycles;
