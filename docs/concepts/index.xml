@@ -69,16 +69,15 @@ As we traverse edges in our graph, it&amp;rsquo;s important we maintain the dire
         
         
         &lt;p&gt;Many concepts in the deps.cloud ecosystem stem from &lt;a href=&#34;https://en.wikipedia.org/wiki/Graph_theory&#34;&gt;graph theory&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;When we think about dependencies, we often immediately think about &lt;a href=&#34;https://en.wikipedia.org/wiki/Tree_%28data_structure%29&#34;&gt;trees&lt;/a&gt;.
-This is likely because as engineers, we&amp;rsquo;re often working within the confines of a handful of projects.
-Each one of these projects are likely a logical root to the tree.
-And as we pull in dependencies, that tree can grow&amp;hellip; and grow&amp;hellip; and grow.
-In practice, this tree is actually a graph (technically a tree with a few special characteristics).&lt;/p&gt;
+&lt;p&gt;When we think about dependencies, our first thought is often of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Tree_%28data_structure%29&#34;&gt;tree&lt;/a&gt;.
+These trees stem from the projects that we work on day to day, each with its own set of branches.
+As our projects pull in dependencies, their trees can grow&amp;hellip; and grow&amp;hellip; and grow.
+In practice, this tree is more of a graph (technically a tree is a type of graph with a few special characteristics).&lt;/p&gt;
 &lt;p&gt;Graphs are a data structure used to model relationships between objects.
 They consist of nodes (entities) and edges (associations).&lt;/p&gt;
 &lt;p&gt;Graphs can be either directed or undirected.
-Edges in undirected graphs simply connect two nodes, &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
-Edges in directed graphs have a start at &lt;code&gt;x&lt;/code&gt; and end at &lt;code&gt;y&lt;/code&gt;, indicating a direction to the edge.
+Edges in undirected graphs simply connect two nodes, such as &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
+Edges in directed graphs start at &lt;code&gt;x&lt;/code&gt; and end at &lt;code&gt;y&lt;/code&gt;, indicating a direction to the edge.
 You can only traverse directed edges in their associated direction (i.e. from &lt;code&gt;x&lt;/code&gt; to &lt;code&gt;y&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;Graphs can be acyclic, meaning they contain no cycles;
 or they can be cyclic, meaning they have cycles.&lt;/p&gt;

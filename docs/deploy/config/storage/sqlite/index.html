@@ -27,13 +27,13 @@ apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/sqlite/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-05-27T19:59:03-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2021-05-27T20:34:29-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="SQLite">
 <meta itemprop="description" content="Storage Driver: sqlite Read-Write Connection String: file:depscloud.db?cache=shared&amp;mode=rwc Read-Only Connection String: file:depscloud.db?cache=shared&amp;mode=ro  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for SQLite.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:sqliteSTORAGE_ADDRESS:file:depscloud.db?cache=shared&amp;mode=rwcSTORAGE_READ_ONLY_ADDRESS:file:depscloud.db?cache=shared&amp;mode=roHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2021-05-27T19:59:03-05:00" />
+<meta itemprop="dateModified" content="2021-05-27T20:34:29-05:00" />
 <meta itemprop="wordCount" content="120">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQLite"/>
@@ -590,7 +590,7 @@ First, you can pass the values into the helm chart as arguments during installat
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 27, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/6bc8f9c845f46160e42ec23e7de8e3bdb4dd17b8">chore: install postcss (6bc8f9c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified May 27, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/ed3ebb6487446148050ca7e15392ba74476ab797">concepts: touch up with a fresh set of eyes (ed3ebb6)</a>
 </div>
 </div>
 
