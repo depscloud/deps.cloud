@@ -111,8 +111,7 @@ This should rarely differ from the modules you list in your appropriate manifest
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;topology&#34;&gt;Topology&lt;/h3&gt;
 &lt;p&gt;Topologies are one of the most useful elements of a dependency graph.
 They can provide you with the full set of transitive modules, build orders, and notions of parallelism.&lt;/p&gt;
-&lt;p&gt;This is largely because topological queries can be resource intensive.
-This is due to the fact that the subgraph needs to be buffered before any results can be returned.
+&lt;p&gt;As a result, this operation is rather resource intensive since it needs to buffer the graph before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.&lt;/p&gt;
 &lt;p&gt;Topologies can be queried in both the &lt;code&gt;dependencies&lt;/code&gt; and &lt;code&gt;dependents&lt;/code&gt; direction.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ deps get dependencies topology -l go -n github.com/depscloud/api

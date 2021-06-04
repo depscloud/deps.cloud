@@ -26,13 +26,13 @@ $ deps get -h Retrieve information from the graph Usage: deps get [command] Avai
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/guides/cli/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-05-31T20:44:35-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2021-06-03T23:32:51-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="Command Line">
 <meta itemprop="description" content="Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
 $ deps get -h Retrieve information from the graph Usage: deps get [command] Available Commands: dependencies Get the list of modules the given module depends on dependents Get the list of modules that depend on the given module modules Get a list of modules from the service sources Get a list of source repositories from the service Flags: -h, --help help for get Use &#34;deps get [command] --help&#34; for more information about a command.">
-<meta itemprop="dateModified" content="2021-05-31T20:44:35-05:00" />
-<meta itemprop="wordCount" content="746">
+<meta itemprop="dateModified" content="2021-06-03T23:32:51-05:00" />
+<meta itemprop="wordCount" content="739">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Command Line"/>
 <meta name="twitter:description" content="Prior to the command line tool (CLI) existing, the only way to interact with the system was through the RESTful API. It helps obfuscate the specifics about each endpoint by encapsulating them behind a target. Currently, this tool provides read only access to API.
@@ -641,8 +641,7 @@ This should rarely differ from the modules you list in your appropriate manifest
 </code></pre></div><h3 id="topology">Topology</h3>
 <p>Topologies are one of the most useful elements of a dependency graph.
 They can provide you with the full set of transitive modules, build orders, and notions of parallelism.</p>
-<p>This is largely because topological queries can be resource intensive.
-This is due to the fact that the subgraph needs to be buffered before any results can be returned.
+<p>As a result, this operation is rather resource intensive since it needs to buffer the graph before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.</p>
 <p>Topologies can be queried in both the <code>dependencies</code> and <code>dependents</code> direction.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ deps get dependencies topology -l go -n github.com/depscloud/api
@@ -670,7 +669,7 @@ When one tier is complete, the next tier can be processed safely without worryin
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified May 31, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/10796930afae06656b060a7ec7528f85727c3e69">fix(deps): pin dependency postcss to 8.3.0 (#81) (1079693)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified June 3, 2021: <a  href="https://github.com/depscloud/deps.cloud/commit/2072bb333b00e06daa51bf60c09849e43c578813">guide: cleanup awk sentence (2072bb3)</a>
 </div>
 </div>
 
