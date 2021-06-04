@@ -150,8 +150,7 @@ $ deps get dependencies -l go -n github.com/depscloud/api
 Topologies are one of the most useful elements of a dependency graph.
 They can provide you with the full set of transitive modules, build orders, and notions of parallelism.
 
-This is largely because topological queries can be resource intensive.
-This is due to the fact that the subgraph needs to be buffered before any results can be returned.
+As a result, this operation is rather resource intensive since it needs to buffer the graph before any results can be returned.
 By implementing this as a client-side feature, we defer the memory/disk cost to clients, allowing them to buffer as they see fit while allowing the tracker to be light weight.
 
 Topologies can be queried in both the `dependencies` and `dependents` direction.
