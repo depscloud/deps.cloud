@@ -34,15 +34,16 @@ Below, I call out to a summary of the versions and known issues.&lt;/p&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
 &lt;h3 id=&#34;featgh-301-add-tree-command&#34;&gt;feat(gh-301): add tree command&lt;/h3&gt;
 &lt;p&gt;Occasionally, software systems encounter cycles in the graph.
-As depscloud doesn&amp;rsquo;t currently follow subsets of edges, we occasionally encounter cycles in the graph.
-When this happens, the &lt;code&gt;topology&lt;/code&gt; query truncates silently (not great).
-To help give more information to callers, we added a &amp;ldquo;tree&amp;rdquo; command that will return the entire subtree.
-With the addition of this new &lt;code&gt;tree&lt;/code&gt; command, we&amp;rsquo;ve updated the &lt;code&gt;topology&lt;/code&gt; command to write an error when it encounters a cycle.&lt;/p&gt;
+When this happens, the deps.cloud &lt;code&gt;topology&lt;/code&gt; query truncates silently (not great).
+To help give more information to callers, we added a &amp;ldquo;tree&amp;rdquo; command that will return the entire subtree (nodes and edges included).
+With the addition of this new &lt;code&gt;tree&lt;/code&gt; command, we&amp;rsquo;ve updated the &lt;code&gt;topology&lt;/code&gt; command to write an error when it encounters a cycle.
+Users will still be able to obtain partial orders&amp;hellip; but will need to handle the err message at the end.&lt;/p&gt;
 &lt;h3 id=&#34;featgh-15-support-field-indexes&#34;&gt;feat(gh-15): support field indexes&lt;/h3&gt;
-&lt;p&gt;This started as an idea, and a quick implementation came together rather quick.
-After a quick refactor of the database support structures, adding support for this was much easier.
-This indexes a handful of fields (namely, &lt;code&gt;url&lt;/code&gt; on sources and &lt;code&gt;language&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt; for modules).
-This allows clients to quickly search for nodes in their graph.&lt;/p&gt;
+&lt;p&gt;Data stored in deps.cloud now has some minor indexing support to improve exploration.
+This mostly started as an idea, but was able to grow into a useful implemenation rather quick.
+In order to support indexes, we did need to refactor some elements around the database layer.
+We currently index a handful of fields (namely, &lt;code&gt;url&lt;/code&gt; on sources and &lt;code&gt;language&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt; for modules).
+This allows clients to quickly search for nodes in their graph and use subsequent calls for traversals.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;New Endpoints&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;By adding support for field indexes, we were able to implement the following endpoints in REST and gRPC.&lt;/p&gt;
 &lt;table&gt;
