@@ -13,6 +13,115 @@
     
     
     <item>
+      <title>Blog: v0.3.5 released</title>
+      <link>https://deps.cloud/blog/2021/06/07/v0.3.5-released/</link>
+      <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://deps.cloud/blog/2021/06/07/v0.3.5-released/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Over the last few weeks I&amp;rsquo;ve been making a handful of modifications to the project.
+There was some restructuring to make things easier to navigate but as usual&amp;hellip; I missed something in the process.
+Hence the multiples of releases.
+Below, I call out to a summary of the versions and known issues.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;0.3.2&lt;/strong&gt; - issues with extractor and tracker startup.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0.3.3&lt;/strong&gt; - issues with tracker startup for read-only deployments&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0.3.4&lt;/strong&gt; - Stable&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;0.3.5&lt;/strong&gt; - Stable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;h3 id=&#34;featgh-301-add-tree-command&#34;&gt;feat(gh-301): add tree command&lt;/h3&gt;
+&lt;p&gt;Occasionally, software systems encounter cycles in the graph.
+As depscloud doesn&amp;rsquo;t currently follow subsets of edges, we occasionally encounter cycles in the graph.
+When this happens, the &lt;code&gt;topology&lt;/code&gt; query truncates silently (not great).
+To help give more information to callers, we added a &amp;ldquo;tree&amp;rdquo; command that will return the entire subtree.
+With the addition of this new &lt;code&gt;tree&lt;/code&gt; command, we&amp;rsquo;ve updated the &lt;code&gt;topology&lt;/code&gt; command to write an error when it encounters a cycle.&lt;/p&gt;
+&lt;h3 id=&#34;featgh-15-support-field-indexes&#34;&gt;feat(gh-15): support field indexes&lt;/h3&gt;
+&lt;p&gt;This started as an idea, and a quick implementation came together rather quick.
+After a quick refactor of the database support structures, adding support for this was much easier.
+This indexes a handful of fields (namely, &lt;code&gt;url&lt;/code&gt; on sources and &lt;code&gt;language&lt;/code&gt; and &lt;code&gt;name&lt;/code&gt; for modules).
+This allows clients to quickly search for nodes in their graph.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New Endpoints&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;By adding support for field indexes, we were able to implement the following endpoints in REST and gRPC.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Endpoints&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;List languages deps.cloud has modules for.&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;grpc - &lt;code&gt;depscloud.api.v1beta.LanguageService#List&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;rest -  &lt;code&gt;/v1beta/languages&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cli  - &lt;code&gt;deps get languages&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Search modules containing the provided name part.&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;grpc - &lt;code&gt;depscloud.api.v1beta.ModuleService#Search&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;rest - &lt;code&gt;/v1beta/modules/search?like.name=xxx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cli  - &lt;code&gt;deps search modules&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Search sources containing the provided url part.&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;grpc - &lt;code&gt;depscloud.api.v1beta.SourceService#Search&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;rest - &lt;code&gt;/v1beta/sources/search?like.url=xxx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;cli  - &lt;code&gt;deps search sources&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;featgh-228-move-off-gogo-protobuf&#34;&gt;feat(gh-228): move off gogo protobuf&lt;/h3&gt;
+&lt;p&gt;For better compatibility with the standard tooling provided by the community, we moved from the gogo to upstream protobuf.
+From a usage perspective, you shouldn&amp;rsquo;t notice a difference.
+A big benefit to the project is that we should be able to leverage the reflection API instead of managing a static routing table in &lt;code&gt;gateway&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;upgrade-to-node-16&#34;&gt;Upgrade to Node 16&lt;/h3&gt;
+&lt;p&gt;We&amp;rsquo;ve upgraded the extractor process to use NodeJS 16.
+This is a pretty major upgrade considering the last version we were running on was NodeJS 12.
+For the most part, not much changed that impacted the &lt;code&gt;extractor&lt;/code&gt; process.
+There were some minor modifications, but nothing that appeared to impact the overall functionality.&lt;/p&gt;
+&lt;h2 id=&#34;notable-fixes&#34;&gt;Notable Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: refactor the database layer (#293) &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/3547dc06008485d52153441e47b8a1b1c92ea7b6&#34;&gt;3547dc0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: use repo url to infer vendor.conf files &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/f84759a55f97792262041b84aedeeb66886cd255&#34;&gt;f84759a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: cleanup remaining references to older terminology pairs &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/49d4fcfebcd7e3bc6410aee8361a8fffc033f24f&#34;&gt;49d4fcf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: remove warning output for healthcheck &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/a74639f3c9c5edb97bac562b3534b33ab15c9a5e&#34;&gt;a74639f&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: guard against npe &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/1ac61b9a16913016d20ad98d23d4c4b36ef5e6da&#34;&gt;1ac61b9a&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;fix: upgrade express-prometheus-middleware &lt;a href=&#34;https://github.com/depscloud/depscloud/commit/122c3305af67e3d941af946b1cf232b62154bacf&#34;&gt;122c3305&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Blog: v0.3.x released</title>
       <link>https://deps.cloud/blog/2021/04/10/v0.3.x-released/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>

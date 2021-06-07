@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.82.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>v0.3.5 released | deps.cloud</title><meta property="og:title" content="v0.3.5 released" />
+<meta property="og:description" content="Over the last few weeks I&rsquo;ve been making a handful of modifications to the project. There was some restructuring to make things easier to navigate but as usual&hellip; I missed something in the process. Hence the multiples of releases. Below, I call out to a summary of the versions and known issues.
+ 0.3.2 - issues with extractor and tracker startup. 0.3.3 - issues with tracker startup for read-only deployments 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://deps.cloud/blog/2021/06/07/v0.3.5-released/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-06-07T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-07T09:24:54-05:00" /><meta property="og:site_name" content="deps.cloud" />
+
+<meta itemprop="name" content="v0.3.5 released">
+<meta itemprop="description" content="Over the last few weeks I&rsquo;ve been making a handful of modifications to the project. There was some restructuring to make things easier to navigate but as usual&hellip; I missed something in the process. Hence the multiples of releases. Below, I call out to a summary of the versions and known issues.
+ 0.3.2 - issues with extractor and tracker startup. 0.3.3 - issues with tracker startup for read-only deployments 0."><meta itemprop="datePublished" content="2021-06-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-07T09:24:54-05:00" />
+<meta itemprop="wordCount" content="446">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="v0.3.5 released"/>
+<meta name="twitter:description" content="Over the last few weeks I&rsquo;ve been making a handful of modifications to the project. There was some restructuring to make things easier to navigate but as usual&hellip; I missed something in the process. Hence the multiples of releases. Below, I call out to a summary of the versions and known issues.
+ 0.3.2 - issues with extractor and tracker startup. 0.3.3 - issues with tracker startup for read-only deployments 0."/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-143087272-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.8a35de3cf464bcf29da565aa3a01ff165dbcbe74728afb8a0a6bb717b8ce6ae9.css" as="style">
+<link href="/scss/main.min.8a35de3cf464bcf29da565aa3a01ff165dbcbe74728afb8a0a6bb717b8ce6ae9.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page td-blog">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo">
+			<img style="max-height: 35px;" src="/images/depscloud-1.png"/>
+		</span>
+		<span class="text-lowercase" style="vertical-align: bottom; font-weight: bold;">
+			deps.cloud
+		</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/blog/" ><span class="active">Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/docs/" ><span>Documentation</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"></div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none"></div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+            <a class="btn btn-lg -bg-primary td-rss-button d-none d-lg-block" href="https://deps.cloud/blog/index.xml" target="_blank">
+              RSS <i class="fa fa-rss ml-2 "></i>
+            </a>
+            
+<div>
+  <p><a href="/blog/">&lt; Back to Blog</a></p>
+</div>
+
+<div style="max-width:900px;">
+  <h1>v0.3.5 released</h1>
+  
+  <div class="td-byline mb-4">
+    By <b>Mya Pitzeruse</b> |
+    <time datetime="2021-06-07" class="text-muted">Monday, June 07, 2021</time>
+  </div>
+  <p>Over the last few weeks I&rsquo;ve been making a handful of modifications to the project.
+There was some restructuring to make things easier to navigate but as usual&hellip; I missed something in the process.
+Hence the multiples of releases.
+Below, I call out to a summary of the versions and known issues.</p>
+<ul>
+<li><strong>0.3.2</strong> - issues with extractor and tracker startup.</li>
+<li><strong>0.3.3</strong> - issues with tracker startup for read-only deployments</li>
+<li><strong>0.3.4</strong> - Stable</li>
+<li><strong>0.3.5</strong> - Stable</li>
+</ul>
+<h2 id="features">Features</h2>
+<h3 id="featgh-301-add-tree-command">feat(gh-301): add tree command</h3>
+<p>Occasionally, software systems encounter cycles in the graph.
+As depscloud doesn&rsquo;t currently follow subsets of edges, we occasionally encounter cycles in the graph.
+When this happens, the <code>topology</code> query truncates silently (not great).
+To help give more information to callers, we added a &ldquo;tree&rdquo; command that will return the entire subtree.
+With the addition of this new <code>tree</code> command, we&rsquo;ve updated the <code>topology</code> command to write an error when it encounters a cycle.</p>
+<h3 id="featgh-15-support-field-indexes">feat(gh-15): support field indexes</h3>
+<p>This started as an idea, and a quick implementation came together rather quick.
+After a quick refactor of the database support structures, adding support for this was much easier.
+This indexes a handful of fields (namely, <code>url</code> on sources and <code>language</code> and <code>name</code> for modules).
+This allows clients to quickly search for nodes in their graph.</p>
+<p><strong>New Endpoints</strong></p>
+<p>By adding support for field indexes, we were able to implement the following endpoints in REST and gRPC.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Endpoints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">List languages deps.cloud has modules for.</td>
+<td style="text-align:left">grpc - <code>depscloud.api.v1beta.LanguageService#List</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">rest -  <code>/v1beta/languages</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">cli  - <code>deps get languages</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Search modules containing the provided name part.</td>
+<td style="text-align:left">grpc - <code>depscloud.api.v1beta.ModuleService#Search</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">rest - <code>/v1beta/modules/search?like.name=xxx</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">cli  - <code>deps search modules</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Search sources containing the provided url part.</td>
+<td style="text-align:left">grpc - <code>depscloud.api.v1beta.SourceService#Search</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">rest - <code>/v1beta/sources/search?like.url=xxx</code></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">cli  - <code>deps search sources</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="featgh-228-move-off-gogo-protobuf">feat(gh-228): move off gogo protobuf</h3>
+<p>For better compatibility with the standard tooling provided by the community, we moved from the gogo to upstream protobuf.
+From a usage perspective, you shouldn&rsquo;t notice a difference.
+A big benefit to the project is that we should be able to leverage the reflection API instead of managing a static routing table in <code>gateway</code>.</p>
+<h3 id="upgrade-to-node-16">Upgrade to Node 16</h3>
+<p>We&rsquo;ve upgraded the extractor process to use NodeJS 16.
+This is a pretty major upgrade considering the last version we were running on was NodeJS 12.
+For the most part, not much changed that impacted the <code>extractor</code> process.
+There were some minor modifications, but nothing that appeared to impact the overall functionality.</p>
+<h2 id="notable-fixes">Notable Fixes</h2>
+<ul>
+<li>fix: refactor the database layer (#293) <a href="https://github.com/depscloud/depscloud/commit/3547dc06008485d52153441e47b8a1b1c92ea7b6">3547dc0</a></li>
+<li>fix: use repo url to infer vendor.conf files <a href="https://github.com/depscloud/depscloud/commit/f84759a55f97792262041b84aedeeb66886cd255">f84759a</a></li>
+<li>fix: cleanup remaining references to older terminology pairs <a href="https://github.com/depscloud/depscloud/commit/49d4fcfebcd7e3bc6410aee8361a8fffc033f24f">49d4fcf</a></li>
+<li>fix: remove warning output for healthcheck <a href="https://github.com/depscloud/depscloud/commit/a74639f3c9c5edb97bac562b3534b33ab15c9a5e">a74639f</a></li>
+<li>fix: guard against npe <a href="https://github.com/depscloud/depscloud/commit/1ac61b9a16913016d20ad98d23d4c4b36ef5e6da">1ac61b9a</a></li>
+<li>fix: upgrade express-prometheus-middleware <a href="https://github.com/depscloud/depscloud/commit/122c3305af67e3d941af946b1cf232b62154bacf">122c3305</a></li>
+</ul>
+
+  
+
+  <div class="clearfix mb-0 pt-5" style="color:white;">
+  
+  <span style="float:left;">
+    <a href="/blog/2021/04/10/v0.3.x-released/" ><span class="mr-1">←</span> Previous</a>
+  </span>
+  
+
+  
+</div>
+
+<ul class="list-unstyled  justify-content-between align-items-center " style="color: white !important;">
+
+</ul>
+
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark text-white py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing List" aria-label="User mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://join.slack.com/t/depscloud/shared_invite/zt-fd03dm8x-L5Vxh07smWr_vlK9Qg9q5A">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://twitter.com/depscloud">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for everyone</div>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/depscloud/">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing List" aria-label="Developer mailing List">
+    <a class="text-white" target="_blank" href="https://groups.google.com/a/deps.cloud/forum/#!forum/community/join">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+        <div class="font-italic">for developers</div>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small>&copy; 2021 deps.cloud Authors All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="/js/main.min.8c2d614ce83be0bf4a3a40ad9062428a2e8fe5664d03a27294696756608a0d1f.js" integrity="sha256-jC1hTOg74L9KOkCtkGJCii6P5WZNA6JylGlnVmCKDR8=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
