@@ -27,13 +27,13 @@ apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://deps.cloud/docs/deploy/config/storage/postgres/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-03-18T09:41:15-05:00" /><meta property="og:site_name" content="deps.cloud" />
+<meta property="article:modified_time" content="2022-03-21T09:37:05-05:00" /><meta property="og:site_name" content="deps.cloud" />
 
 <meta itemprop="name" content="PostgreSQL">
 <meta itemprop="description" content="Driver: postgres Read-Write Connection String: postgres://user-rw:password@depscloud-postgresql:5432/depscloud Read-Only Connection String: postgres://user:password@depscloud-postgresql:5432/depscloud  Docker If using the simple Docker set up, these values can be configured using the --storage-driver, --storage-address, and --storage-readonly-address command line arguments.
 Kubernetes With Kubernetes, you&rsquo;ll need to configure the secret object manually. The block below demonstrates how to set up the depscloud-tracker configuration for PostgreSQL.
 apiVersion:v1kind:Secretmetadata:name:depscloud-trackerstringData:STORAGE_DRIVER:postrgresSTORAGE_ADDRESS:postgres://user-rw:password@depscloud-postgresql:5432/depscloudSTORAGE_READ_ONLY_ADDRESS:postgres://user:password@depscloud-postgresql:5432/depscloudHelm With the Helm chart, you have two options. First, you can pass the values into the helm chart as arguments during installation.">
-<meta itemprop="dateModified" content="2022-03-18T09:41:15-05:00" />
+<meta itemprop="dateModified" content="2022-03-21T09:37:05-05:00" />
 <meta itemprop="wordCount" content="140">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PostgreSQL"/>
@@ -602,7 +602,7 @@ Since CockroachBD claims to be PostgreSQL compatible, there shouldn&rsquo;t be a
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified March 18, 2022: <a  href="https://github.com/depscloud/deps.cloud/commit/7f0050c4e2afe6cd35d598d3f5c86ae24ff2d007">chore(deps): update dependency nanoid to 3.1.31 [security] (#86) (7f0050c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">Last modified March 21, 2022: <a  href="https://github.com/depscloud/deps.cloud/commit/bcc4c55bfe6757da46b6e40db7b3a7539cfe083d">chore(deps): update actions/checkout action to v3 (#91) (bcc4c55)</a>
 </div>
 </div>
 
