@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "9.8.8",
-    "postcss-cli": "8.3.1"
+    "postcss-cli": "9.1.0"
   },
   "dependencies": {
     "postcss": "8.3.0"
